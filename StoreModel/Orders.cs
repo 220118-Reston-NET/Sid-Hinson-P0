@@ -3,6 +3,7 @@ namespace StoreModel
     public class Orders
     {
         
+       //Maybe randomize an order number? Or assign it by order from 1? Check best practices
        private int _ordernumber;
 
        public int OrderNumber
