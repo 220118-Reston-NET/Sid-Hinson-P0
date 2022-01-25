@@ -78,7 +78,10 @@ namespace StoreModel
             OrderNumber = 0;
             StoreFrontLocation = "";
             OrderTotal = 0.00;
-            
+            _orderlineItems = new List<LineItems>()
+            {
+                new LineItems()
+            };
         }
 
     }

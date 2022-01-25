@@ -34,9 +34,9 @@ namespace StoreModel
         }   
         //List that stores Orders for the store
         private List<Orders> _storeorders;
-        public List<Products> StoreOrders
+        public List<Orders> StoreOrders
         {
-            get{ return _storeproducts; }
+            get{ return _storeorders; }
 
             set 
             {
@@ -52,13 +52,21 @@ namespace StoreModel
 
             }
         }   
-        
+
         //Default Class Constructor
         public StoreFront()
         {
             Name = "";
             Address = "";
-            
+            _storeorders = new List<Orders>()
+            {
+                new Orders()
+            };
+            _storeproducts = new List<Products>()
+            {
+                new Products()
+            };
+
         }
 
     }

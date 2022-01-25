@@ -117,6 +117,10 @@
             LastName = "";
             Address = "";
             Email = "";
+            _customerorder = new List<Orders>()
+            {
+                new Orders()
+            };
         }
 
     }
