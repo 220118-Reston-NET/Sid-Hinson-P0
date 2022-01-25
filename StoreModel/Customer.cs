@@ -87,7 +87,9 @@
             }
         }
 
+
         //Customer Orders
+        //Orders Will contain Order Number
         private List<Orders> _customerorder;
 
         public List<Orders> CustomerOrder
@@ -103,6 +105,7 @@
         }   
 
         //Default Class Constructor
+        //How to implement constructor List? Research this or see if that's even correct to do.
         public Customer()
         {
             FirstName = "";

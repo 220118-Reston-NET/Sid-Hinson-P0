@@ -29,7 +29,8 @@ namespace StoreModel
         //This is the Location of the StoreFront Ordered From
        public string StoreFrontLocation { get; set; }
 
-       //List of Line Items for an Order
+       //List of Line Items for an Order, Line Items is a String/int type
+       //May need to be ArrayList or something else
        private List<LineItems> _orderlineItems;
        public List<LineItems> OrderLineItems
         {
@@ -63,6 +64,7 @@ namespace StoreModel
 
        }
 
+       //How to implement constructor List? Research this or see if that's even correct to do?
       //Default Constructor
       
         public Orders()

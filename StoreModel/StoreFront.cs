@@ -4,6 +4,10 @@ namespace StoreModel
 
     public class StoreFront
     {
+        //Customer -> OrderNumber -> Order -> Line Items -> 
+
+
+
         //Name of the StoreFront
         public string Name { get; set; }
         //Address of the Storefront
@@ -35,7 +39,7 @@ namespace StoreModel
             }
         }   
 
-
+        //How to implement constructor List? Research this or see if that's even correct to do.
         //Default Class Constructor
         public StoreFront()
         {
