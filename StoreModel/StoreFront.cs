@@ -14,6 +14,8 @@ namespace StoreModel
         //List that stores Orders for the store
         public List<Orders> StoreOrders;
 
+        //Add Constructor Here
+
     }
 
 }

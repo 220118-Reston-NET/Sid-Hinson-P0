@@ -7,5 +7,8 @@ namespace StoreModel
         public string Description; 
         public string Category;
 
+        //Add Constructor Here
+
     }
+
 }

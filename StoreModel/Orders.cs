@@ -58,5 +58,7 @@ namespace StoreModel
 
        }
 
+      //Add Constructor here
+
     }
 }
