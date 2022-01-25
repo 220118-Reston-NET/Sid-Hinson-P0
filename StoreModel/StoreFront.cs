@@ -1,11 +1,19 @@
+
 namespace StoreModel
 {
+
     public class StoreFront
     {
-       public string Name { get; set; }
-       public string Address { get; set; }
-       public List<Products> StoreProducts;
-       private List<Orders> _storeorders;
-       
+        //Name of the StoreFront
+        public string Name { get; set; }
+        //Address of the Storefront
+        public string Address { get; set; }
+        //List that stores Products for the store
+        //***I do not know why this wrong
+        public List<Products> ProductList;
+        //List that stores Orders for the store
+        public List<Orders> StoreOrders;
+
     }
+
 }
