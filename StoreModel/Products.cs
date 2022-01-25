@@ -1,6 +1,6 @@
 namespace StoreModel
 {
-    public class Product
+    public class Products
     {
         public string Name;
         public double Price;
