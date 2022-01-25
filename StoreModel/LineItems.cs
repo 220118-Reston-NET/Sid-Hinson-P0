@@ -31,21 +31,18 @@ namespace StoreModel
            
            set
            {
-               if (value != 0)
-               {
-                   _quantity = value;
-               }
-               else if (value == 0)
-               {
-                   _quantity = 0;
-               }
-               else
-               {
-                   throw new Exception("A whole number equal or greater to Zero must be entered.");
-               }
-           }
 
-       }
+               if (value >= 0)
+                {
+                    _quantity = value;
+                }
+                else
+                {
+                    throw new Exception("A Quanitity equal or greater to Zero must be entered.");
+                }
+        
+            }
+        }
 
 
        //Default Constructor 

@@ -12,13 +12,9 @@ namespace StoreModel
            get { return _ordernumber; }
 
            set {
-                        if (value != 0)
+                        if (value > 0)
                     {
                         _ordernumber = value;
-                    }
-                    else if (value == 0)
-                    {
-                        _ordernumber = 0;
                     }
                     else
                     {
@@ -42,7 +38,7 @@ namespace StoreModel
             set 
             {
 
-                _orderlineItems = value;
+                value = _orderlineItems; 
 
             }
         }   
@@ -55,20 +51,15 @@ namespace StoreModel
 
            set 
            {
-               if (value != 0)
-               {
-                   _ordertotal = value;
-               }
-               else if (value == 0)
-               {
-                   _ordertotal = 0;
-               }
-               else
-               {
-                   throw new Exception("Price must equal or be greater to Zero.");
-               }
-
-           }
+                if (value >= 0.00)
+            {
+                value = _ordertotal;
+            }
+            else
+            {
+                throw new Exception("An Order number equal or greater to Zero must be entered.");
+            }
+        }
 
        }
 
