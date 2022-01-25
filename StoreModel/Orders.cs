@@ -38,8 +38,15 @@ namespace StoreModel
 
             set 
             {
+                if(value.Count <= 3)
+                {
+                _orderlineItems = value;
 
-                value = _orderlineItems; 
+                }
+                else
+                {
+                    throw new Exception("Customer List Must have 3 fields or less.");
+                }
 
             }
         }   
@@ -64,9 +71,8 @@ namespace StoreModel
 
        }
 
-       //How to implement constructor List? Research this or see if that's even correct to do?
-      //Default Constructor
-      
+
+      //Default Constructor      
         public Orders()
         {
             OrderNumber = 0;

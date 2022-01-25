@@ -20,8 +20,15 @@ namespace StoreModel
 
             set 
             {
-
+                if(value.Count <= 2)
+                {
                 _storeproducts = value;
+
+                }
+                else
+                {
+                    throw new Exception("Customer List Must have 2 fields or less.");
+                }
 
             }
         }   
@@ -33,13 +40,19 @@ namespace StoreModel
 
             set 
             {
+                if(value.Count <= 2)
+                {
+                _storeorders = value;
 
-                _storeproducts = value;
+                }
+                else
+                {
+                    throw new Exception("Customer List Must have 2 fields or less.");
+                }
 
             }
         }   
-
-        //How to implement constructor List? Research this or see if that's even correct to do.
+        
         //Default Class Constructor
         public StoreFront()
         {

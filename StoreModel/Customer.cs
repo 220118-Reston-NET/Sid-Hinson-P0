@@ -98,14 +98,19 @@
 
             set 
             {
-
+                if(value.Count <= 4)
+                {
                 _customerorder = value;
 
+                }
+                else
+                {
+                    throw new Exception("Customer List Must have 4 fields or less.");
+                }
             }
         }   
 
         //Default Class Constructor
-        //How to implement constructor List? Research this or see if that's even correct to do.
         public Customer()
         {
             FirstName = "";
