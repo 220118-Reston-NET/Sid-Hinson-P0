@@ -48,7 +48,13 @@ namespace StoreModel
        }
 
 
-       //Add Constructor Here
+       //Default Constructor 
+    public LineItems()
+    {
+      Product = "";
+      Quantity = 0;
+
+    }
 
     }
 }

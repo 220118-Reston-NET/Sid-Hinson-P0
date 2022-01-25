@@ -88,11 +88,28 @@
         }
 
         //Customer Orders
-        //Possibly Figure out how to implement into a Private List
-        public List<Orders> _customerorders;
+        private List<Orders> _customerorder;
 
-        //Add Constructor Here
+        public List<Orders> CustomerOrder
+        {
+            get{ return _customerorder; }
 
+            set 
+            {
+
+                _customerorder = value;
+
+            }
+        }   
+
+        //Default Class Constructor
+        public Customer()
+        {
+            FirstName = "";
+            LastName = "";
+            Address = "";
+            Email = "";
+        }
 
     }
 }
