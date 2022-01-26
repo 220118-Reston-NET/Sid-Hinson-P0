@@ -5,7 +5,7 @@ namespace StoreDL
     public class Repository : IRepository
     {
         //Filepath is to recognize Relative filepath from the entrypoint StoreUI
-        private string _filepath = "../StoreDL/DB";
+        private string _filepath = "../StoreDL/DB/";
         private string _jsonString;
         public Customer AddCustomer(Customer p_cust)
         {
