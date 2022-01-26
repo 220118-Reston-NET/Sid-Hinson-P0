@@ -20,7 +20,7 @@ namespace StoreUI
             Console.WriteLine("=     Please Make a Selection      =");
             Console.WriteLine("=      [0] Exit The Store          =");
             Console.WriteLine("=      [1] Add A New Customer      =");
-            Console.WriteLine("=      [2] Search For Customer     =");       
+            Console.WriteLine("=      [2] Search For Customers    =");       
             Console.WriteLine("====================================");
         }
 
@@ -40,7 +40,7 @@ namespace StoreUI
                 case "1":
                     return "AddCustomer";
                 case "2":
-                    return "SearchCustomer";
+                    return "SearchCustomers";
                 default :
                     Console.WriteLine("Selection Invalid");
                     Console.WriteLine("Press Enter");

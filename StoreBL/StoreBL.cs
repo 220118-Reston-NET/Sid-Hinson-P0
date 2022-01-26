@@ -8,13 +8,19 @@ namespace StoreBL
     {
         /// <summary>
         /// Dependency Injection - Code Usability
-        /// Interface - Field and Constructor
+        /// Interface - Field and **Dependency Constructor**, sets up MyStore to take a p_repo parameter
         /// </summary>
         private IRepository _repo;
         public MyStoreBL(IRepository p_repo)
         {
             _repo = p_repo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_cust"></param>
+        /// <returns></returns>
         public Customer AddCustomer(Customer p_cust)
         {
             //Randomize between Parameter Range
