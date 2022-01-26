@@ -58,15 +58,6 @@ namespace StoreModel
         {
             Name = "";
             Address = "";
-            _storeorders = new List<Orders>()
-            {
-                new Orders()
-            };
-            _storeproducts = new List<Products>()
-            {
-                new Products()
-            };
-
         }
 
     }

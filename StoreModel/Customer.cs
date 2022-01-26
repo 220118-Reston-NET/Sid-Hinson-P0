@@ -65,6 +65,25 @@
 
             }
         }
+        // Phone Number of Customer
+        private string _phonenumber;
+        public string PhoneNumber
+        {
+            get { return _phonenumber; }
+
+            set 
+            {
+                if (value != "")
+                {
+                    _phonenumber = value;
+                }
+                else
+                {
+                    throw new NullReferenceException("Phone Number must be entered.");
+                }
+
+            }
+        }
        
        //Email of Customer
         private string _email;
@@ -86,8 +105,6 @@
 
             }
         }
-
-
         //Customer Orders
         //Orders Will contain Order Number
         private List<Orders> _customerorder;
@@ -107,20 +124,20 @@
                     throw new Exception("Customer List Must have 4 fields or less.");
                 }
             }
-        }   
+        }
+
+        //Randomized Test Stat that will determine Monthly Prize Winner from Customer DB
+        public int OfferLottery { get; set; }
 
         //Default Class Constructor
         public Customer()
         {
-            FirstName = "None";
-            LastName = "None";
-            Address = "None";
-            Email = "None";
-            _customerorder = new List<Orders>()
-            {
-                new Orders()
-            };
+            FirstName = "Tyler";
+            LastName = "Durden";
+            Address = "420 Paper St Wilmington DE 19886";
+            PhoneNumber = "5555555555";
+            Email = "tylerdurden@protonmail.com";
+            OfferLottery = 0;
         }
-
     }
 }

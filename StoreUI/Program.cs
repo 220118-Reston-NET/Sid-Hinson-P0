@@ -1,5 +1,6 @@
-﻿using StoreModel;
-using StoreUI;
+﻿using StoreUI;
+using StoreDL;
+using StoreBL;
 
 /// <summary>
 /// Program Menu Logic Methods; Boolean While Loop
@@ -27,7 +28,8 @@ while(isValid)
             break;
         case "AddCustomer":
             //Variance ; Derived Class
-            mainmenu = new AddCustomer();
+            //Business Layer Dependency
+            mainmenu = new AddCustomer(new MyStoreBL(new Repository()));
             break;
         default:
             Console.WriteLine("No Page Found");

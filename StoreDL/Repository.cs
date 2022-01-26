@@ -1,3 +1,4 @@
+using System.Text.Json;
 using StoreModel;
 namespace StoreDL
 {
@@ -5,14 +6,19 @@ namespace StoreDL
     {
         //Filepath is to recognize Relative filepath from the entrypoint StoreUI
         private string _filepath = "../StoreDL/DB";
-        private string _jsonstring;
+        private string _jsonString;
         public Customer AddCustomer(Customer p_cust)
         {
             //Allows dev JSON file change on other methods
             string path  = _filepath + "Customer.json";
             
-            //Something is WRONG here
-            _jsonstring = JsonSerializer.Serialize(p_cust);
+            //Serialize the Customer Object
+            _jsonString = JsonSerializer.Serialize(p_cust, new JsonSerializerOptions {WriteIndented = true});
+            //Write the Object
+            File.WriteAllText(path, _jsonString);
+
+            //Return Parameter as that is what it is set to be
+            return p_cust;
         }
     }
 }
