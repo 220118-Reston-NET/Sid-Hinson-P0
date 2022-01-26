@@ -16,7 +16,7 @@ namespace StoreModel
                }
                else
                {
-                   throw new NullReferenceException("Email must be entered.");
+                   throw new NullReferenceException("Product has no name value.");
                }
            }
 
@@ -48,7 +48,7 @@ namespace StoreModel
        //Default Constructor 
     public LineItems()
     {
-      Product = "";
+      Product = "None";
       Quantity = 0;
 
     }

@@ -101,7 +101,6 @@
                 if(value.Count <= 4)
                 {
                 _customerorder = value;
-
                 }
                 else
                 {
@@ -113,10 +112,10 @@
         //Default Class Constructor
         public Customer()
         {
-            FirstName = "";
-            LastName = "";
-            Address = "";
-            Email = "";
+            FirstName = "None";
+            LastName = "None";
+            Address = "None";
+            Email = "None";
             _customerorder = new List<Orders>()
             {
                 new Orders()

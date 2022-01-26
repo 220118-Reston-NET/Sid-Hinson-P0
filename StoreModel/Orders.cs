@@ -12,7 +12,7 @@ namespace StoreModel
            get { return _ordernumber; }
 
            set {
-                        if (value > 0)
+                        if (value >= 0)
                     {
                         _ordernumber = value;
                     }
