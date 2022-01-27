@@ -4,36 +4,25 @@ namespace StoreBL
     /// <summary>
     /// BL - Manipulate / Validate/ Process DB data
     /// Contains Add Customer Method which excepts a customer
+    /// Other types of Processing as Needed Here
     /// </summary>
     public interface IStoreBL
     {
         /// <summary>
-        /// Will add Customer Data to DB ; 
-        /// Randomize OfferLottery Stat (Test)
-        /// Limit DB size 5 (Test)
+        /// Adds Customer to DB passing a Customer obj
+        /// Also Randomizes a OfferLottery 
         /// </summary>
         /// <param name="p_cust"></param>
         /// <returns></returns>
         Customer AddCustomer(Customer p_cust);
 
         /// <summary>
-        /// Give a List of Objects based on Search Field
+        /// Will return List of objects related to Search query through p_name parameter
         /// </summary>
-        /// <param name="p_name"> Search Field </param>
-        /// <returns></returns>
-        // public List<Customer> SearchCustomers(string p_name)
-        // {
-        //     List<Customer> listofcustomers = _repo.GetAllCustomers();
+        /// <param name="p_name"></param>
+        /// <returns>Filtered Search Results </returns>
+        List<Customer> SearchCustomer(string p_name);
 
-        //     foreach (Customer x in listofcustomers)
-        //     {
-        //         if(x.LastName.Contains(p_name))
-        //         {
-        //             //Add to List
-        //         }
-        //     }
-        // }
-        // return Filtered List
     }
 
 }

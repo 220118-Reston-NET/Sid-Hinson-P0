@@ -5,10 +5,10 @@ namespace StoreUI
     public class AddCustomer : IStoreMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
-        //This Object will be passed to the Case 1 Repo Object
         private static Customer _newcustomer = new Customer();
         //Dependency Injection
         private IStoreBL _custBL;
+        //
         public AddCustomer(IStoreBL p_custBL)
         {
             _custBL = p_custBL;
@@ -54,7 +54,16 @@ namespace StoreUI
                     _newcustomer.Email = Console.ReadLine();
                     return "AddCustomer";
                 case "5":
-                    _custBL.AddCustomer(_newcustomer);
+                    try
+                    {
+                        _custBL.AddCustomer(_newcustomer);
+                    }
+                    catch (System.Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                    }
                     return "MainMenu";
                 default:
                     return "AddCustomer";

@@ -17,7 +17,7 @@ Log.Logger = new LoggerConfiguration()
 
 bool isValid = true;
 //Interface object points to new StoreMenu
-IStoreMenu mainmenu = new StoreMenu();
+IStoreMenu mainmenu = new StoreMainUI();
 while(isValid)
 {
     
@@ -30,10 +30,10 @@ while(isValid)
     switch(userInput)
     {
         case "MainMenu":
-            Log.Information("Displaying SearchPokemon Menu to user");
+            Log.Information("Displaying Main Menu to user");
             //Variance ; Derived Class
             //Points Interface mainmenu at a new StoreMenu object
-            mainmenu = new StoreMenu();
+            mainmenu = new StoreMainUI();
             break;
         case "Exit":
             isValid = false;
@@ -41,17 +41,17 @@ while(isValid)
         case "AddCustomer":
             //Variance ; Derived Class
             //Business Layer Dependency which also depends on Repository
-            //Points mainmenu to a new Add Customer Class Object
-            //The Add Customer class has a private interface constructor method which excepts an IstoreBL obj
-            //The MyStoreBL in turns excepts a Repostory obj
-            Log.Information("Displaying SearchPokemon Menu to user");
+            Log.Information("Displaying Add Customers Menu to user");
             mainmenu = new AddCustomer(new MyStoreBL(new Repository()));
             break;
-        // case "SearchCustomers":
-        //     Log.Information("Displaying SearchPokemon Menu to user");
-
+        case "SearchCustomer":
+            Log.Information("Displaying Search Results Menu to user");
+            mainmenu = new SearchCustomer(new MyStoreBL((new Repository()));
+            break;
         default:
-            Console.WriteLine("No Page Found");
+            Console.WriteLine("No Page Found!");
+            Console.WriteLine("Press Enter to Continue");
+            Console.ReadLine();
             break;
 
     }

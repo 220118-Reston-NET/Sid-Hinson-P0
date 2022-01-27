@@ -5,7 +5,7 @@ namespace StoreUI
     /// Store Menu Inherits Interface --> Entry Point
     /// User Selection Methods Implemented
     /// </summary>
-    public class StoreMenu : IStoreMenu
+    public class StoreMainUI : IStoreMenu
     {
         /// <summary>
         /// Displays Store Menu

@@ -3,12 +3,12 @@ using StoreDL;
 
 namespace StoreBL
 {
-    //Changed name to MyStoreBL from StoreBL : Amiguity Error
+
     public class MyStoreBL : IStoreBL
     {
         /// <summary>
         /// Dependency Injection - Code Usability
-        /// Interface - Field and **Dependency Constructor**, sets up MyStore to take a p_repo parameter
+        /// Dependency Constructor
         /// </summary>
         private IRepository _repo;
         public MyStoreBL(IRepository p_repo)
@@ -27,7 +27,22 @@ namespace StoreBL
             Random Rand = new Random();
             p_cust.OfferLottery += Rand.Next(0,1000);
             
-            return _repo.AddCustomer(p_cust);
+            //Validation Process; Uses IRepos Dependency
+            List<Customer> listofcustomer = _repo.GetAllCustomers();
+            if(listofcustomer.Count < 10)
+            {
+                return _repo.AddCustomer(p_cust);
+            }
+            else
+            {
+                throw new Exception("Limit of 10 objects is reached");
+            }
+
+        }
+                //Search Function
+        List<Customer> SearchCustomer(string p_name)
+        {
+        List<Customer> listOfCustomer = _repo.GetAllCustomers();
         }
     }
 }
