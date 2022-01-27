@@ -8,7 +8,7 @@ namespace StoreUI
 
         public SearchCustomersMenu(IStoreBL p_custBL)
         {
-            p_custBL = _custBL;
+            _custBL = p_custBL; 
         }
         public void MenuDisplay()
         {   
@@ -17,7 +17,7 @@ namespace StoreUI
             Console.WriteLine("============================================");
             Console.WriteLine("=              Select Option :             =");
             Console.WriteLine("= [0] - Exit Search                        =");
-            Console.WriteLine("= [1] - Search By Name                     =");
+            Console.WriteLine("= [1] - Search By Last Name                =");
             Console.WriteLine("============================================");
         }
 
@@ -33,6 +33,8 @@ namespace StoreUI
                     Console.WriteLine("Please Enter a Name");
                     string name = Console.ReadLine();
                     //Display Logic for Search Function
+                    // List<Customer> listofcustomers = new List<Customer>();
+                    // listofcustomers = _custBL.SearchCustomers(name);
                     List<Customer> listofcustomers = _custBL.SearchCustomers(name);
                     foreach (var Customer in listofcustomers)
                     {

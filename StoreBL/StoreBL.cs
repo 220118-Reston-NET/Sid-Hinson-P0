@@ -44,7 +44,9 @@ namespace StoreBL
         public List<Customer> SearchCustomers(string p_name)
         {
         List<Customer> listofcustomer = _repo.GetAllCustomers();
-        return listofcustomer;
+        return listofcustomer
+                    .Where(Customer => Customer.LastName.Contains(p_name)) //Filter a collection
+                    .ToList(); //ToList method converts into return List collection
         }
     }
 }

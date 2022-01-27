@@ -12,3 +12,51 @@
 2022-01-27 12:29:28.297 -05:00 [INF] Displaying Main Menu to user
 2022-01-27 12:29:30.521 -05:00 [INF] Displaying Add Customers Menu to user
 2022-01-27 12:32:16.528 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 12:52:11.720 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:52:21.018 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:52:30.915 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:53:01.965 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:55:12.148 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:55:39.636 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 13:50:15.533 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 13:51:53.676 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 13:51:56.338 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 13:52:01.396 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 13:52:02.836 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 13:52:06.606 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 14:52:42.108 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:00:57.207 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:01:00.501 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:01:02.670 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:12:40.726 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:13:00.967 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:13:03.810 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:20:23.157 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:21:46.084 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:21:47.730 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:24:33.897 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:24:39.633 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:24:42.127 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:25:39.964 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:27:09.254 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:27:11.607 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:30:02.076 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:30:04.861 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:30:15.255 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:30:17.366 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:30:21.269 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:30:24.928 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 15:30:26.369 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:30:30.410 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:30:43.836 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 15:30:45.506 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:36:37.681 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:39:58.324 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:46:25.109 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:50:22.639 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:52:02.342 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:55:29.640 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 15:56:04.394 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 16:26:43.407 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 16:27:22.238 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 16:48:08.196 -05:00 [INF] Displaying Main Menu to user

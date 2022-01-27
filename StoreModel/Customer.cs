@@ -115,13 +115,13 @@
 
             set 
             {
-                if(value.Count <= 4)
+                if(value.Count <= 10)
                 {
                 _customerorder = value;
                 }
                 else
                 {
-                    throw new Exception("Customer List Must have 4 fields or less.");
+                    throw new Exception("Customer List Must have 10 fields or less.");
                 }
             }
         }
@@ -138,6 +138,7 @@
             PhoneNumber = "5555555555";
             Email = "tylerdurden@protonmail.com";
             OfferLottery = 0;
+            _customerorder = new List<Orders>();
         }
     }
 }

@@ -54,16 +54,17 @@ namespace StoreUI
                     _newcustomer.Email = Console.ReadLine();
                     return "AddCustomer";
                 case "5":
-                    try
-                    {
-                        _custBL.AddCustomer(_newcustomer);
-                    }
-                    catch (System.Exception exc)
-                    {
-                        Console.WriteLine(exc.Message);
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
-                    }
+                    _custBL.AddCustomer(_newcustomer);
+                    // try
+                    // {
+               
+                    // }
+                    // catch (System.Exception exc)
+                    // {
+                    //     Console.WriteLine(exc.Message);
+                    //     Console.WriteLine("Press Enter to Continue");
+                    //     Console.ReadLine();
+                    // }
                     return "MainMenu";
                 default:
                     return "AddCustomer";

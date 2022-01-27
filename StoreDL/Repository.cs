@@ -15,7 +15,7 @@ namespace StoreDL
             listofcustomer.Add(p_cust);
             
             //Serialize the Customer Object
-            _jsonString = JsonSerializer.Serialize(p_cust, new JsonSerializerOptions {WriteIndented = true});
+            _jsonString = JsonSerializer.Serialize(listofcustomer, new JsonSerializerOptions {WriteIndented = true});
             //Write the Object
             File.WriteAllText(path, _jsonString);
 
@@ -27,9 +27,8 @@ namespace StoreDL
         {
             //Grab Information from Path
             _jsonString = File.ReadAllText(_filepath + "Customer.json");
-            //Convert JSON objs string 
+            // Convert JSON objs string 
             return JsonSerializer.Deserialize<List<Customer>>(_jsonString);
-            
         }
     }
 }
