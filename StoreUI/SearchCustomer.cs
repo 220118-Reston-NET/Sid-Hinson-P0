@@ -2,11 +2,11 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class SearchCustomers : IStoreMenu
+    public class SearchCustomersMenu : IStoreMenu
     {
         private IStoreBL _custBL;
 
-        public SearchCustomers(IStoreBL p_custBL)
+        public SearchCustomersMenu(IStoreBL p_custBL)
         {
             p_custBL = _custBL;
         }
@@ -33,7 +33,7 @@ namespace StoreUI
                     Console.WriteLine("Please Enter a Name");
                     string name = Console.ReadLine();
                     //Display Logic for Search Function
-                    List<Customer> listofcustomers = _custBL.SearchCustomer(name);
+                    List<Customer> listofcustomers = _custBL.SearchCustomers(name);
                     foreach (var Customer in listofcustomers)
                     {
                         Console.WriteLine(Customer);
@@ -49,5 +49,4 @@ namespace StoreUI
             }
         }
     }
-
 }

@@ -17,10 +17,10 @@ namespace StoreBL
         }
 
         /// <summary>
-        /// 
+        /// Add Customer Function
         /// </summary>
         /// <param name="p_cust"></param>
-        /// <returns></returns>
+        /// <returns>_repor value parameter for AddCustomer</returns>
         public Customer AddCustomer(Customer p_cust)
         {
             //Randomize between Parameter Range
@@ -39,10 +39,12 @@ namespace StoreBL
             }
 
         }
-                //Search Function
-        List<Customer> SearchCustomer(string p_name)
+        
+        //Search Function
+        public List<Customer> SearchCustomers(string p_name)
         {
-        List<Customer> listOfCustomer = _repo.GetAllCustomers();
+        List<Customer> listofcustomer = _repo.GetAllCustomers();
+        return listofcustomer;
         }
     }
 }

@@ -2,14 +2,14 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class AddCustomer : IStoreMenu
+    public class AddCustomerMenu : IStoreMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
         private static Customer _newcustomer = new Customer();
         //Dependency Injection
         private IStoreBL _custBL;
         //
-        public AddCustomer(IStoreBL p_custBL)
+        public AddCustomerMenu(IStoreBL p_custBL)
         {
             _custBL = p_custBL;
         }

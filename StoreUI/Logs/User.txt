@@ -1,0 +1,14 @@
+2022-01-27 12:13:47.605 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:14:01.566 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 12:21:09.121 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:21:19.051 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:21:24.723 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:22:11.342 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:22:28.382 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:22:33.535 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 12:27:03.432 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:27:14.388 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 12:29:24.958 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 12:29:28.297 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 12:29:30.521 -05:00 [INF] Displaying Add Customers Menu to user
+2022-01-27 12:32:16.528 -05:00 [INF] Displaying Main Menu to user

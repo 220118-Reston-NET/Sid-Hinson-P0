@@ -42,11 +42,11 @@ while(isValid)
             //Variance ; Derived Class
             //Business Layer Dependency which also depends on Repository
             Log.Information("Displaying Add Customers Menu to user");
-            mainmenu = new AddCustomer(new MyStoreBL(new Repository()));
+            mainmenu = new AddCustomerMenu(new MyStoreBL(new Repository()));
             break;
-        case "SearchCustomer":
+        case "SearchCustomerMenu":
             Log.Information("Displaying Search Results Menu to user");
-            mainmenu = new SearchCustomer(new MyStoreBL((new Repository()));
+            mainmenu = new SearchCustomersMenu(new MyStoreBL(new Repository()));
             break;
         default:
             Console.WriteLine("No Page Found!");

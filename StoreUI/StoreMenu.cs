@@ -40,7 +40,7 @@ namespace StoreUI
                 case "1":
                     return "AddCustomer";
                 case "2":
-                    return "SearchCustomers";
+                    return "SearchCustomerMenu";
                 default :
                     Console.WriteLine("Selection Invalid");
                     Console.WriteLine("Press Enter");

@@ -21,7 +21,7 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_name"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Customer> SearchCustomer(string p_name);
+        List<Customer> SearchCustomers(string p_name);
 
     }
 
