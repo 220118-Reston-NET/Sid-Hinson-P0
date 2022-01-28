@@ -13,15 +13,11 @@ namespace StoreUI
         public void MenuDisplay()
         {   
             Console.WriteLine("============================================");
-            Console.WriteLine("=          Menu : Search Customers          ");
+            Console.WriteLine("=          Menu : Search Customers         =");
             Console.WriteLine("============================================");
             Console.WriteLine("=              Select Option :             =");
             Console.WriteLine("= [0] - Exit Search                        =");
-            Console.WriteLine("= [1] - Search By Email                    =");
-            Console.WriteLine("= [2] - Search By Address                  =");
-            Console.WriteLine("= [3] - Search By Last Name                =");
-            Console.WriteLine("= [4] - Search By Phone Number             =");
-            Console.WriteLine("= [5] - Search By Phone# & Last Name       =");
+            Console.WriteLine("= [1] - Find Customer                      =");
             Console.WriteLine("============================================");
         }
 
@@ -34,35 +30,23 @@ namespace StoreUI
                 case "0":
                     return "MainMenu";
                 case "1":
-                    Console.WriteLine("Awaiting Implementation");
-                    return "MainMenu";
-                case "2":
-                    Console.WriteLine("Awaiting Implementation");
-                    return "MainMenu";
-                case "3":
+                    Console.WriteLine("Please Enter a First Name");
+                    string p_fname = Console.ReadLine();
                     Console.WriteLine("Please Enter a Last Name");
-                    string name = Console.ReadLine();
+                    string p_lname = Console.ReadLine();
+                    Console.WriteLine("Please Enter an Email Address");
+                    string p_email = Console.ReadLine();
                     //Display Logic for Search Function
-                    List<Customer> newlistofcustomers = _custBL.SearchCustomers(name);
-                    foreach (var Customer in newlistofcustomers)
+                    List<Customer> listofcustomers3 = _custBL.SearchCustomers(p_fname, p_lname, p_email);
+                    foreach (var Customer in listofcustomers3)
                     {
-                        Console.WriteLine(Customer.ToString);
+                        Console.WriteLine(Customer);
                     }
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "MainMenu";
-                case "4":
-                    Console.WriteLine("Please Enter a Phone Number");
-                    string phone = (Console.ReadLine());
-                    Console.WriteLine("Awaiting Implementation");
-                    Console.WriteLine("Press Enter");
-                    Console.ReadLine();
-                    return "MainMenu";
-                case "5":
-                    Console.WriteLine("Awaiting Implementation");
-                    return "MainMenu";
                 default:
-                    Console.WriteLine("Selection Invalid");
+                    Console.WriteLine("Customer not Found");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "MainMenu";
