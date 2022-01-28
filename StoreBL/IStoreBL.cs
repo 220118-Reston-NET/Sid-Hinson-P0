@@ -3,7 +3,6 @@ namespace StoreBL
 {
     /// <summary>
     /// BL - Manipulate / Validate/ Process DB data
-    /// Contains Add Customer Method which excepts a customer
     /// Other types of Processing as Needed Here
     /// </summary>
     public interface IStoreBL

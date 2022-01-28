@@ -26,7 +26,8 @@ namespace StoreUI
             Console.WriteLine("=[2] - Last Name : " + _newcustomer.LastName); 
             Console.WriteLine("=[3] - Enter Address : " + _newcustomer.Address);
             Console.WriteLine("=[4] - Enter Email : " + _newcustomer.Email);
-            Console.WriteLine("=[5] - Update & Save Information");
+            Console.WriteLine("=[5] - Enter Phone Number : " + _newcustomer.PhoneNumber);
+            Console.WriteLine("=[6] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
 
@@ -54,17 +55,20 @@ namespace StoreUI
                     _newcustomer.Email = Console.ReadLine();
                     return "AddCustomer";
                 case "5":
-                    _custBL.AddCustomer(_newcustomer);
-                    // try
-                    // {
-               
-                    // }
-                    // catch (System.Exception exc)
-                    // {
-                    //     Console.WriteLine(exc.Message);
-                    //     Console.WriteLine("Press Enter to Continue");
-                    //     Console.ReadLine();
-                    // }
+                    Console.WriteLine("Enter a Phone Number :");
+                    _newcustomer.PhoneNumber = Console.ReadLine();
+                    return "AddCustomer";
+                case "6":
+                    try
+                    {
+                        _custBL.AddCustomer(_newcustomer);
+                    }
+                    catch (System.Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                    }
                     return "MainMenu";
                 default:
                     return "AddCustomer";

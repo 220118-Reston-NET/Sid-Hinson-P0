@@ -7,8 +7,8 @@ namespace StoreBL
     public class MyStoreBL : IStoreBL
     {
         /// <summary>
-        /// Dependency Injection - Code Usability
         /// Dependency Constructor
+        /// When we do this the _repo repos functions can now be called
         /// </summary>
         private IRepository _repo;
         public MyStoreBL(IRepository p_repo)
@@ -17,7 +17,7 @@ namespace StoreBL
         }
 
         /// <summary>
-        /// Add Customer Function
+        /// Add Customer
         /// </summary>
         /// <param name="p_cust"></param>
         /// <returns>_repor value parameter for AddCustomer</returns>
@@ -40,23 +40,14 @@ namespace StoreBL
 
         }
         
-        //Search Function
-        //Method Overloads
+        //Search Function Property
         public List<Customer> SearchCustomers(string p_name)
         {
+        //This Pulls all of the Customer Objects into the list to be filtered
         List<Customer> listofcustomer = _repo.GetAllCustomers();
         return listofcustomer
-                    .Where(Customer => Customer.LastName.Contains(p_name)) //Filter a collection
+                    .Where(Customer => Customer.LastName.Contains(p_name)) //Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
-
-        public List<Customer> SearchCustomers(string p_name, string p_name2)
-        {
-        List<Customer> listofcustomer = _repo.GetAllCustomers();
-        return listofcustomer
-                    .Where(Customer => Customer.FirstName.Contains(p_name)) & Customer.LastName.Contains(p_name2)) //Filter a collection
-                    .ToList(); //ToList method converts into return List collection
-        }
-
     }
 }

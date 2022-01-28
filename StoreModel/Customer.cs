@@ -42,9 +42,6 @@
             }
         }
 
-        // Birthdate of Customer ( Age restrictions Safeguard)
-        //Figure out how to implement a stored date of birth Here (datetime?)
-
 
         // Address of Customer
         private string _address;
@@ -73,13 +70,13 @@
 
             set 
             {
-                if (value != "")
+                if (value.Length >= 10)
                 {
                     _phonenumber = value;
                 }
                 else
                 {
-                    throw new NullReferenceException("Phone Number must be entered.");
+                    throw new NullReferenceException("Not Enough Phone Digits");
                 }
 
             }
