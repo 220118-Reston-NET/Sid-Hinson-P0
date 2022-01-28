@@ -41,6 +41,7 @@ namespace StoreBL
         }
         
         //Search Function
+        //Method Overloads
         public List<Customer> SearchCustomers(string p_name)
         {
         List<Customer> listofcustomer = _repo.GetAllCustomers();
@@ -48,5 +49,14 @@ namespace StoreBL
                     .Where(Customer => Customer.LastName.Contains(p_name)) //Filter a collection
                     .ToList(); //ToList method converts into return List collection
         }
+
+        public List<Customer> SearchCustomers(string p_name, string p_name2)
+        {
+        List<Customer> listofcustomer = _repo.GetAllCustomers();
+        return listofcustomer
+                    .Where(Customer => Customer.FirstName.Contains(p_name)) & Customer.LastName.Contains(p_name2)) //Filter a collection
+                    .ToList(); //ToList method converts into return List collection
+        }
+
     }
 }

@@ -60,3 +60,5 @@
 2022-01-27 16:26:43.407 -05:00 [INF] Displaying Search Results Menu to user
 2022-01-27 16:27:22.238 -05:00 [INF] Displaying Search Results Menu to user
 2022-01-27 16:48:08.196 -05:00 [INF] Displaying Main Menu to user
+2022-01-27 17:05:09.958 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-27 17:05:17.280 -05:00 [INF] Displaying Main Menu to user
