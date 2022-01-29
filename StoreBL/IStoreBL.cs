@@ -10,9 +10,9 @@ namespace StoreBL
         /// <summary>
         /// Adds Customer to DB passing a Customer obj
         /// </summary>
-        /// <param name="p_cust"></param>
+        /// <param name="p_custs"></param>
         /// <returns></returns>
-        Customers AddCustomer(Customers p_cust);
+        Customers AddCustomer(Customers p_custs);
 
         /// <summary>
         /// Will return List of objects related to Search query through p_name parameter
@@ -27,19 +27,53 @@ namespace StoreBL
         /// <summary>
         /// Adds Customer to DB passing a Customer obj
         /// </summary>
-        /// <param name="p_cust"></param>
+        /// <param name="p_sfront"></param>
         /// <returns></returns>
-        StoreFronts AddStoreFronts(StoreFronts p_sfronts);
+        StoreFronts AddStoreFronts(StoreFronts p_sfront);
 
         /// <summary>
         /// Will return List of objects related to Search query through p_name parameter
         /// </summary>
-        /// <param name="p_name"></param>
+        /// <param name="p_storeNumber"></param>
         /// <returns>Filtered Search Results </returns>
         List<StoreFronts> SearchStoreFronts(int p_storeNumber);
         
     }
 
+    public interface IProductsBL
+    {
+        /// <summary>
+        /// Adds Customer to DB passing a Customer obj
+        /// </summary>
+        /// <param name="p_product"></param>
+        /// <returns></returns>
+        Products AddProducts(Products p_product);
 
+        /// <summary>
+        /// Will return List of objects related to Search query through p_name parameter
+        /// </summary>
+        /// <param name="p_productNumber"></param>
+        /// <returns>Filtered Search Results </returns>
+        List<Products> SearchProducts(int p_productNumber);
+        
+    }
+
+    public interface IOrdersBL
+    {
+        /// <summary>
+        /// Adds Customer to DB passing a Customer obj
+        /// </summary>
+        /// <param name="p_order"></param>
+        /// <returns></returns>
+        Orders AddOrders(Orders p_order);
+
+        /// <summary>
+        /// Will return List of objects related to Search query through p_name parameter
+        /// </summary>
+        /// <param name="p_order"></param>
+        /// <returns>Filtered Search Results </returns>
+        List<Orders> SearchOrders(int p_order);
+        
+    }
 }
 

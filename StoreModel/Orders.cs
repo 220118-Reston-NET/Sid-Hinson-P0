@@ -2,9 +2,7 @@ namespace StoreModel
 {
     public class Orders
     {
-        //Customer Order Number
-       //Maybe randomize an order number? Or assign it by order from 1? Check best practices
-       //In backend SQL this is likely to be A Primary Key generated but we are not there yet
+ 
        private int _orderNumber;
 
        public int orderNumber

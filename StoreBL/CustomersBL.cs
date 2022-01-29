@@ -21,8 +21,8 @@ namespace StoreBL
         /// <returns> Returns _repo.AddCustomer the Passed Customer Obj</returns>
         public Customers AddCustomer(Customers p_cust)
         {
-            List<Customers> listofcustomer = _repo.GetAllCustomers();
-            if(listofcustomer.Count < 20)
+            List<Customers> listofcustomers = _repo.GetAllCustomers();
+            if(listofcustomers.Count < 20)
             {
                 return _repo.AddCustomer(p_cust);
             }
@@ -42,8 +42,8 @@ namespace StoreBL
         /// <returns></returns>
         public List<Customers> SearchCustomers(string p_fname, string p_lname, string p_email)
         {
-        List<Customers> listofcustomer = _repo.GetAllCustomers();
-        return listofcustomer
+        List<Customers> listofcustomers = _repo.GetAllCustomers();
+        return listofcustomers
                     .Where(Customer => Customer.firstName.Contains(p_fname))
                     .Where(Customer => Customer.lastName.Contains(p_lname))
                     .Where(Customer => Customer.Email.Contains(p_email)) //Filter a collection with a Lamda

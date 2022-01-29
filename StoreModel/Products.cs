@@ -2,6 +2,7 @@ namespace StoreModel
 {
     public class Products
     {
+        public int productNumber { get; set; }
         //Product Name
         public string productName;
         //Product Price
@@ -19,6 +20,7 @@ namespace StoreModel
             productPrice = 0.00;
             productDescription = "";
             productCategory = "";
+            productNumber =0;
         }
 
     }
