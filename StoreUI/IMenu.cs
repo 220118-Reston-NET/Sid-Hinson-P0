@@ -2,7 +2,7 @@
 namespace StoreUI
 {
 
-    interface IStoreMenu
+    interface IMenu
     {
 
         /// <summary>

@@ -90,3 +90,5 @@
 2022-01-28 14:47:05.197 -05:00 [INF] Displaying Main Menu to user
 2022-01-28 14:47:06.920 -05:00 [INF] Displaying Search Results Menu to user
 2022-01-28 14:47:21.143 -05:00 [INF] Displaying Main Menu to user
+2022-01-29 16:32:04.314 -05:00 [INF] Displaying Main Menu to user
+2022-01-29 16:32:13.051 -05:00 [INF] User has Exited The Program

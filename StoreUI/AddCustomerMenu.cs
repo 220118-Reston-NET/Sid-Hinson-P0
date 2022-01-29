@@ -2,7 +2,7 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class AddCustomerMenu : IStoreMenu
+    public class AddCustomerMenu : IMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
         private static Customers _newCustomer = new Customers();

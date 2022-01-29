@@ -5,7 +5,7 @@ namespace StoreUI
     /// Store Menu Inherits Interface --> Entry Point
     /// User Selection Methods Implemented
     /// </summary>
-    public class StoreMainUI : IStoreMenu
+    public class StoreMainMenu : IMenu
     {
         /// <summary>
         /// Displays Store Menu
@@ -19,8 +19,8 @@ namespace StoreUI
             Console.WriteLine("====================================");
             Console.WriteLine("=     Please Make a Selection      =");
             Console.WriteLine("=      [0] Exit The Store          =");
-            Console.WriteLine("=      [1] Add A New Customer      =");
-            Console.WriteLine("=      [2] Search For Customers    =");       
+            Console.WriteLine("=      [1] Customer Menu           =");
+            Console.WriteLine("=      [2] Administration Menu     =");       
             Console.WriteLine("====================================");
         }
 
@@ -38,9 +38,9 @@ namespace StoreUI
                 case "0":
                     return "Exit";
                 case "1":
-                    return "AddCustomer";
+                    return "CustomerMenu";
                 case "2":
-                    return "SearchCustomerMenu";
+                    return "AdministrationMenu";
                 default :
                     Console.WriteLine("Selection Invalid");
                     Console.WriteLine("Press Enter");

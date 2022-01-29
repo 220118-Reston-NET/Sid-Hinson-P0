@@ -2,7 +2,7 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class SearchCustomersMenu : IStoreMenu
+    public class SearchCustomersMenu : IMenu
     {
         private ICustomersBL _custBL;
 
