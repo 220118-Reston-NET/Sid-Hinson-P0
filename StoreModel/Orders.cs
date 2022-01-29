@@ -5,16 +5,16 @@ namespace StoreModel
         //Customer Order Number
        //Maybe randomize an order number? Or assign it by order from 1? Check best practices
        //In backend SQL this is likely to be A Primary Key generated but we are not there yet
-       private int _ordernumber;
+       private int _orderNumber;
 
-       public int OrderNumber
+       public int orderNumber
        {
-           get { return _ordernumber; }
+           get { return _orderNumber; }
 
            set {
                         if (value >= 0)
                     {
-                        _ordernumber = value;
+                        _orderNumber = value;
                     }
                     else
                     {
@@ -27,20 +27,20 @@ namespace StoreModel
 
 
         //This is the Location of the StoreFront Ordered From
-       public string StoreFrontLocation { get; set; }
+       public int storeNumber { get; set; }
 
        //List of Line Items for an Order, Line Items is a String/int type
        //May need to be ArrayList or something else
-       private List<LineItems> _orderlineItems;
+       private List<LineItems> _orderLineItems;
        public List<LineItems> OrderLineItems
         {
-            get{ return _orderlineItems; }
+            get{ return _orderLineItems; }
 
             set 
             {
                 if(value.Count <= 3)
                 {
-                _orderlineItems = value;
+                _orderLineItems = value;
 
                 }
                 else
@@ -51,17 +51,17 @@ namespace StoreModel
             }
         }   
         //Order total of Customer Order
-       private double _ordertotal;
+       private double _orderTotal;
 
-       public double OrderTotal
+       public double orderTotal
        {
-           get { return _ordertotal; }
+           get { return _orderTotal; }
 
            set 
            {
                 if (value >= 0.00)
             {
-                value = _ordertotal;
+                value = _orderTotal;
             }
             else
             {
@@ -75,9 +75,9 @@ namespace StoreModel
       //Default Constructor      
         public Orders()
         {
-            OrderNumber = 0;
-            StoreFrontLocation = "";
-            OrderTotal = 0.00;
+            orderNumber = 0;
+            storeNumber = 0;
+            orderTotal = 0.00;
         }
 
     }

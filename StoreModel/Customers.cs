@@ -1,18 +1,22 @@
 ﻿namespace StoreModel
 {
-    public class Customer
+
+    /// <summary>
+    /// Customer Class with Private Fields,Default Constructor
+    /// </summary>
+    public class Customers
     {
-        //First Name of Customer
-        private string _firstname;
-        public string FirstName
+
+        private string _firstName;
+        public string firstName
         {
-            get { return _firstname; }
+            get { return _firstName; }
 
             set 
             {
                 if (value != "")
                 {
-                    _firstname = value;
+                    _firstName = value;
                 }
                 else
                 {
@@ -22,17 +26,16 @@
             }
         }
 
-        // Last Name of Customer
-        private string _lastname;
-        public string LastName
+        private string _lastName;
+        public string lastName
         {
-            get { return _lastname; }
+            get { return _lastName; }
 
             set 
             {
                 if (value != "")
                 {
-                    _lastname = value;
+                    _lastName = value;
                 }
                 else
                 {
@@ -42,10 +45,27 @@
             }
         }
 
+        private string _dateBirth;
+        public string dateBirth
+        {
+            get { return _dateBirth; }
 
-        // Address of Customer
+            set 
+            { 
+                if (value != "")
+                {
+                    _dateBirth = value; 
+            
+                }
+                else
+                {
+                    throw new NullReferenceException("Last Name must be entered.");
+                } 
+                
+            }
+        }
         private string _address;
-        public string Address
+        public string customerAddress
         {
             get { return _address; }
 
@@ -62,9 +82,9 @@
 
             }
         }
-        // Phone Number of Customer
+   
         private string _phonenumber;
-        public string PhoneNumber
+        public string phoneNumber
         {
             get { return _phonenumber; }
 
@@ -82,7 +102,6 @@
             }
         }
        
-       //Email of Customer
         private string _email;
 
         public string Email
@@ -102,19 +121,18 @@
 
             }
         }
-        //Customer Orders
-        //Orders Will contain Order Number
-        private List<Orders> _customerorder;
 
-        public List<Orders> CustomerOrder
+        private List<Orders> _customerOrder;
+
+        public List<Orders> customerOrder
         {
-            get{ return _customerorder; }
+            get{ return _customerOrder; }
 
             set 
             {
                 if(value.Count <= 10)
                 {
-                _customerorder = value;
+                _customerOrder = value;
                 }
                 else
                 {
@@ -123,19 +141,17 @@
             }
         }
 
-        //Randomized Test Stat that will determine Monthly Prize Winner from Customer DB
-        public int OfferLottery { get; set; }
 
         //Default Class Constructor
-        public Customer()
+        public Customers()
         {
-            FirstName = "Tyler";
-            LastName = "Durden";
-            Address = "420 Paper St Wilmington DE 19886";
-            PhoneNumber = "5555555555";
+            firstName = "Tyler";
+            lastName = "Durden";
+            dateBirth = "102180";
+            customerAddress = "420 Paper St Wilmington DE 19886";
+            phoneNumber = "5555555555";
             Email = "tylerdurden@protonmail.com";
-            OfferLottery = 0;
-            _customerorder = new List<Orders>();
+            customerOrder = new List<Orders>();
         }
     }
 }

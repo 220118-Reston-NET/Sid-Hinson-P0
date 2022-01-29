@@ -5,11 +5,11 @@ namespace StoreUI
     public class AddCustomerMenu : IStoreMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
-        private static Customer _newcustomer = new Customer();
+        private static Customers _newCustomer = new Customers();
         //Dependency Injection
-        private IStoreBL _custBL;
+        private ICustomersBL _custBL;
         //
-        public AddCustomerMenu(IStoreBL p_custBL)
+        public AddCustomerMenu(ICustomersBL p_custBL)
         {
             _custBL = p_custBL;
         }
@@ -19,14 +19,15 @@ namespace StoreUI
             Console.WriteLine("================================================");
             Console.WriteLine("=             Menu : Add Customer              =");
             Console.WriteLine("===============================================");
-            Console.WriteLine("=         Enter Customer Info : Select         =");     
+            Console.WriteLine("=       Enter New Customer Info : Select       =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu");
-            Console.WriteLine("=[1] - First Name : " + _newcustomer.FirstName); 
-            Console.WriteLine("=[2] - Last Name : " + _newcustomer.LastName); 
-            Console.WriteLine("=[3] - Enter Address : " + _newcustomer.Address);
-            Console.WriteLine("=[4] - Enter Email : " + _newcustomer.Email);
-            Console.WriteLine("=[5] - Enter Phone Number : " + _newcustomer.PhoneNumber);
+            Console.WriteLine("=[1] - First Name : " + _newCustomer.firstName); 
+            Console.WriteLine("=[2] - Last Name : " + _newCustomer.lastName); 
+            Console.WriteLine("=[3] - Address : " + _newCustomer.customerAddress);
+            Console.WriteLine("=[4] - Email : " + _newCustomer.Email);
+            Console.WriteLine("=[5] - Phone Number : " + _newCustomer.phoneNumber);
+            Console.WriteLine("=[5] - Date Of Birth : " + _newCustomer.phoneNumber);
             Console.WriteLine("=[6] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
@@ -40,37 +41,45 @@ namespace StoreUI
                     return "MainMenu";
                 case "1":
                     Console.WriteLine("Enter a First Name :");
-                    _newcustomer.FirstName = Console.ReadLine();
+                    _newCustomer.firstName = Console.ReadLine();
                     return "AddCustomer";
                 case "2":
                     Console.WriteLine("Enter a Last Name : ");
-                    _newcustomer.LastName = Console.ReadLine();
+                    _newCustomer.lastName = Console.ReadLine();
                     return "AddCustomer";
                 case "3":
                     Console.WriteLine("Enter an Address : ");
-                    _newcustomer.Address = Console.ReadLine();
+                    _newCustomer.customerAddress = Console.ReadLine();
                     return "AddCustomer";
                 case "4":
                     Console.WriteLine("Enter an Email Address :");
-                    _newcustomer.Email = Console.ReadLine();
+                    _newCustomer.Email = Console.ReadLine();
                     return "AddCustomer";
                 case "5":
                     Console.WriteLine("Enter a Phone Number :");
-                    _newcustomer.PhoneNumber = Console.ReadLine();
+                    _newCustomer.phoneNumber = Console.ReadLine();
                     return "AddCustomer";
                 case "6":
+                    Console.WriteLine("Enter a Date Of Birth : ########");
+                    Console.WriteLine("Example : 10211980 for October 21st 1980");
+                    _newCustomer.dateBirth = Console.ReadLine();
+                    return "AddCustomer";
+                case "7":
                     try
-                    {
-                        _custBL.AddCustomer(_newcustomer);
+                    {   
+                        _custBL.AddCustomer(_newCustomer);
+                        Console.WriteLine("New Customer was Saved to Database");
+
                     }
                     catch (System.Exception exc)
                     {
                         Console.WriteLine(exc.Message);
+                        Console.WriteLine("Something Unexpected Happened");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
                     }
                     return "MainMenu";
-                default:
+                    default:
                     return "AddCustomer";
             }
         }

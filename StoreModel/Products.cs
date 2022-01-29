@@ -3,22 +3,22 @@ namespace StoreModel
     public class Products
     {
         //Product Name
-        public string Name;
+        public string productName;
         //Product Price
-        public double Price;
+        public double productPrice;
         //Product Description
-        public string Description;
+        public string productDescription;
         //Product Category 
-        public string Category;
+        public string productCategory;
 
         //Default Constructor
 
         public Products()
         {
-            Name = "";
-            Price = 0.00;
-            Description = "";
-            Category = "";
+            productName = "";
+            productPrice = 0.00;
+            productDescription = "";
+            productCategory = "";
         }
 
     }

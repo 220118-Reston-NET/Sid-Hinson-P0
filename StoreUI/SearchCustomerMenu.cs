@@ -4,9 +4,9 @@ namespace StoreUI
 {
     public class SearchCustomersMenu : IStoreMenu
     {
-        private IStoreBL _custBL;
+        private ICustomersBL _custBL;
 
-        public SearchCustomersMenu(IStoreBL p_custBL)
+        public SearchCustomersMenu(ICustomersBL p_custBL)
         {
             _custBL = p_custBL; 
         }
@@ -37,7 +37,7 @@ namespace StoreUI
                     Console.WriteLine("Please Enter an Email Address");
                     string p_email = Console.ReadLine();
                     //Display Logic for Search Function
-                    List<Customer> listofcustomers3 = _custBL.SearchCustomers(p_fname, p_lname, p_email);
+                    List<Customers> listofcustomers3 = _custBL.SearchCustomers(p_fname, p_lname, p_email);
                     foreach (var Customer in listofcustomers3)
                     {
                         Console.WriteLine(Customer);
