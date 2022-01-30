@@ -3,38 +3,36 @@ namespace StoreModel
     public class LineItems
     {
         //Product Name
-       private string _product;
-       public string Product
+       private string _productName;
+       public string productName
        {
-           get { return _product; }
+           get { return _productName; }
            
            set
            {
                if (value != "")
                {
-                   _product = value;
+                   _productName = value;
                }
                else
                {
                    throw new NullReferenceException("Product has no name value.");
                }
            }
-
-
        }
 
         //Quantity of Product
-       private int _quantity;
-       public int Quantity
+       private int _productQuantity;
+       public int productQuantity
        {
-           get { return _quantity; }
+           get { return _productQuantity; }
            
            set
            {
 
                if (value >= 0)
                 {
-                    _quantity = value;
+                    _productQuantity = value;
                 }
                 else
                 {
@@ -45,11 +43,11 @@ namespace StoreModel
         }
 
 
-       //Default Constructor 
+    //Default Constructor 
     public LineItems()
     {
-      Product = "None";
-      Quantity = 0;
+      productName = "None";
+      productQuantity = 0;
 
     }
 

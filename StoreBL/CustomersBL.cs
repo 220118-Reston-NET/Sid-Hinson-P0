@@ -50,7 +50,7 @@ namespace StoreBL
                     .ToList(); //ToList method converts into return List collection
         }
 
-        public void GetIndex()
-        {}
+        
+
     }
 }

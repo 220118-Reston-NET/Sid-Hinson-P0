@@ -2,7 +2,8 @@ namespace StoreModel
 {
     public class Orders
     {
- 
+        
+       //Need an Order ID *****
        private int _orderNumber;
 
        public int orderNumber

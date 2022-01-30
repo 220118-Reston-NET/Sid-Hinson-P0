@@ -6,6 +6,7 @@
     /// </summary>
     public class Customers
     {
+        //Need a Customer ID *****
         private string _firstName;
         public string firstName
         {
@@ -116,6 +117,24 @@
                 else
                 {
                     throw new NullReferenceException("Email must be entered.");
+                }
+
+            }
+        }
+        private string _password;
+        public string password
+        {
+            get { return _password; }
+
+            set 
+            {
+                if (value != "")
+                {
+                    _password = value;
+                }
+                else
+                {
+                    throw new NullReferenceException("password must be entered.");
                 }
 
             }

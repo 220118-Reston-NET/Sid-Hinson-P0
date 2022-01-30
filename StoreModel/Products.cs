@@ -2,6 +2,7 @@ namespace StoreModel
 {
     public class Products
     {
+        //Need a Product ID *****
         public int productNumber { get; set; }
         //Product Name
         public string productName;

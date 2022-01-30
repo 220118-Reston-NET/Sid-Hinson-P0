@@ -27,8 +27,9 @@ namespace StoreUI
             Console.WriteLine("=[3] - Address : " + _newCustomer.customerAddress);
             Console.WriteLine("=[4] - Email : " + _newCustomer.Email);
             Console.WriteLine("=[5] - Phone Number : " + _newCustomer.phoneNumber);
-            Console.WriteLine("=[5] - Date Of Birth : " + _newCustomer.phoneNumber);
-            Console.WriteLine("=[6] - Update & Save Information");
+            Console.WriteLine("=[6] - Date Of Birth : " + _newCustomer.phoneNumber);
+            Console.WriteLine("=[7] - Password : " + _newCustomer.password);
+            Console.WriteLine("=[8] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
 
@@ -65,6 +66,11 @@ namespace StoreUI
                     _newCustomer.dateBirth = Console.ReadLine();
                     return "AddCustomer";
                 case "7":
+                    Console.WriteLine("Enter a Date Of Birth : ########");
+                    Console.WriteLine("Example : 10211980 for October 21st 1980");
+                    _newCustomer.password = Console.ReadLine();
+                    return "AddCustomer";       
+                case "8":
                     try
                     {   
                         _custBL.AddCustomer(_newCustomer);
