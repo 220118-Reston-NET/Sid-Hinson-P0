@@ -7,7 +7,7 @@
     public class Customers
     {
         //Need a Customer ID *****
-        public int customerID;
+        public string customerID;
         private string _firstName;
         public string firstName
         {
@@ -164,7 +164,7 @@
         //Default Class Constructor
         public Customers()
         {
-            customerID = 0;
+            customerID = "";
             firstName = "Tyler";
             lastName = "Durden";
             dateBirth = "102180";

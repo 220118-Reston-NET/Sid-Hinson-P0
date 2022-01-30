@@ -25,11 +25,11 @@ namespace StoreBL
             }
         }
 
-        public List<Products> SearchProducts(int p_productNumber) 
+        public List<Products> SearchProducts(string p_productName) 
         {
         List<Products> listofproducts = _repo.GetAllProducts();
         return listofproducts
-                    .Where(Products => Products.Equals(p_productNumber))//Filter a collection with a Lamda
+                    .Where(Products => Products.Equals(p_productName))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
     }

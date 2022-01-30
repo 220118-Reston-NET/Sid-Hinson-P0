@@ -2,30 +2,32 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class NewStoreFrontMenu : IMenu
+    public class NewProductsMenu : IMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
-        private static StoreFronts _newStoreFronts = new StoreFronts();
+        private static Products _newProduct = new Products();
         //Dependency Injection
-        private IStoreFrontsBL _frontBL;
+        private IProductsBL _productBL;
         //
-        public NewStoreFrontMenu(IStoreFrontsBL p_front)
+        public NewProductsMenu(IProductsBL p_product)
         {
-            _frontBL = p_front;
+            _productBL = p_product;
         }
         public void MenuDisplay()
         {
             Console.Clear();
             Console.WriteLine("================================================");
-            Console.WriteLine("=             Menu : Add StoreFront            =");
-            Console.WriteLine("===============================================");
-            Console.WriteLine("=       Enter New StoreFronts Info : Select       =");     
+            Console.WriteLine("=             Menu : Add Product               =");
+            Console.WriteLine("================================================");
+            Console.WriteLine("=       Enter New Product Info : Select        =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu");
-            Console.WriteLine("=[1] - Enter StoreFront Number" + _newStoreFronts.storeNumber );
-            Console.WriteLine("=[2] - Enter StoreFront Street Address" + _newStoreFronts.storeAddress );
-            Console.WriteLine("=[2] - Enter StoreFront Zipcode" + _newStoreFronts.storeZipCode );
-            Console.WriteLine("=[2] - Enter StoreFront State" + _newStoreFronts.storeState);
+            Console.WriteLine("=[1] - Enter Store Number: " + _newProduct.storeNumber);
+            Console.WriteLine("=[2] - Enter Product Name: " + _newProduct.productName);
+            Console.WriteLine("=[3] - Enter Product Price:" + _newProduct.productPrice); 
+            Console.WriteLine("=[4] - Enter Product Description: " + _newProduct.productDescription);
+            Console.WriteLine("=[4] - Enter Product Category: " + _newProduct.productCategory);
+            Console.WriteLine("=[4] - Enter Product Quantity: " + _newProduct.productQuantity);
             Console.WriteLine("=[3] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
@@ -39,21 +41,20 @@ namespace StoreUI
                     return "MainMenu";
                 case "1":
                     Console.WriteLine("Enter a Store Number :");
-                    _newStoreFronts.storeNumber = Convert.ToInt32(Console.ReadLine());
-                    return "AddStoreFronts";
+                    _newProduct.storeNumber = Convert.ToInt32(Console.ReadLine());
+                    return "NewProductMenu";
                 case "2":
-                    Console.WriteLine("Enter a Street Address : ");
-                    _newStoreFronts.storeAddress = Console.ReadLine();
-                    return "AddStoreFronts";
+                    Console.WriteLine("Enter a Product Name : ");
+                    _newProduct.productName = Console.ReadLine();
+                    return "NewProductMenu";
                 case "3":
-                    Console.WriteLine("Enter a Zip Code : ");
-                    _newStoreFronts.storeZipCode = Console.ReadLine();
-                    return "AddStoreFronts";
+                    Console.WriteLine("Enter a Product Price : ");
+                    _newProduct.productPrice = Convert.ToInt32(Console.ReadLine());
+                    return "NewProductMenu";
                 case "7":
                     try
                     {   
-                        _frontBL.AddStoreFronts(_newStoreFronts);
-                        Console.WriteLine("New StoreFronts was Saved to Database");
+                        _productBL.AddProducts(_newProduct);
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
 
@@ -67,7 +68,7 @@ namespace StoreUI
                     }
                     return "MainMenu";
                     default:
-                    return "AddStoreFronts";
+                    return "NewProductsMenu";
             }
         }
     }

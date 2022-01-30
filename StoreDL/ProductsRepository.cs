@@ -17,10 +17,17 @@ namespace StoreDL
         /// <returns></returns>
         public Products AddProducts(Products p_product)
         {
-            string path = _filepath + "Products.json";
+            
+            string _path = _filepath + "Products.json";
+            //Add an ID at the time of Save
+            p_product.productID = Guid.NewGuid().ToString();
+            
+            //Create file
+            //Adds the Product with Global Univeral ID Generated
             List<Products> listofproducts = GetAllProducts();
             listofproducts.Add(p_product);
-            Console.WriteLine($"Saved {p_product} in Database");
+            _jsonString = JsonSerializer.Serialize(listofproducts, new JsonSerializerOptions {WriteIndented = true});
+            File.WriteAllText(_path, _jsonString);
             return p_product;
         }
         /// <summary>
@@ -33,6 +40,32 @@ namespace StoreDL
             return JsonSerializer.Deserialize<List<Products>>(_jsonString);
         }
 
+        /// <summary>
+        /// Returns All Products in a Given StoreNumber
+        /// </summary>
+        /// <param name="storeNumber"></param>
+        /// <returns></returns>
+        public List<Products> GetAllProductsSF(string productName)
+        {
+            string _path = _filepath + "Product.json";
+            List<Products> listofproducts = GetAllProducts();
+            List<Products> listofselected = new List<Products>();
+            for (int i = 0; i < listofproducts.Count(); i++)
+            {
+                if (listofproducts[i].productName.Contains(productName))
+                {
+                    listofselected.Add(listofproducts[i]);
+                    return listofselected;
+                }
+                else
+                {   
+                    Console.WriteLine("No products to List");
+                    return listofselected;
+                }
 
+            }
+            return listofselected;
+
+        }
     }
 }

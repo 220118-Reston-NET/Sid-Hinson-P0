@@ -18,15 +18,16 @@ namespace StoreDL
         /// <returns></returns>
         public Customers AddCustomer(Customers p_cust)
         {
-            string path  = _filepath + "Customers.json";
-            List<Customers> listofcustomer = GetAllCustomers();
-            int index = listofcustomer.Count;
-            Customers cust = new Customers();
-            cust.customerID = index;
-            p_cust.customerID = cust.customerID;
-            listofcustomer.Add(p_cust);
-            _jsonString = JsonSerializer.Serialize(listofcustomer, new JsonSerializerOptions {WriteIndented = true});
-            File.WriteAllText(path, _jsonString);
+            string _path = _filepath + "Customers.json";
+            //Add an Unique ID at the time of Save
+            p_cust.customerID = Guid.NewGuid().ToString();
+            
+            //Create file
+            //Adds the Customer with Global Univeral ID Generated
+            List<Customers> listofcustomers = GetAllCustomers();
+            listofcustomers.Add(p_cust);
+            _jsonString = JsonSerializer.Serialize(listofcustomers, new JsonSerializerOptions {WriteIndented = true});
+            File.WriteAllText(_path, _jsonString);
             return p_cust;
         }
         /// <summary>

@@ -40,35 +40,43 @@ while(isValid)
         //Added in very primtive password protection : Pass is "8675309"
         //Added in For Effect ONLY; to be implemented better in future projects
         case "AdministrationMenu":
-            AdminValidate admin = new AdminValidate();
-            bool uservalidate = admin.ValidateAdminPassword();
-            if (uservalidate == true)
-            {
-                mainmenu =  new AdministrationMenu();
-            }
-            else
-            {
-                Console.WriteLine("Incorrect Password");
-                mainmenu = new StoreMainMenu();
-                break;
-            }
+            // AdminValidate admin = new AdminValidate();
+            // bool uservalidate = admin.ValidateAdminPassword();
+            // if (uservalidate == true)
+            // {
+            //     mainmenu =  new AdministrationMenu();
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Incorrect Password");
+            //     mainmenu = new StoreMainMenu();
+            //     break;
+            // }
+            // break;
+            mainmenu =  new AdministrationMenu();
             break;
         case "CustomerMenu":
             mainmenu = new CustomerMenu();
             break;
         case "NewCustomerMenu":
             Log.Information("Displaying New Customer Menu to user");
-            mainmenu = new NewCustomerMenu(new CustomersBL(new CustomersRepository()));
+            mainmenu = new NewCustomersMenu(new CustomersBL(new CustomersRepository()));
             break;
         case "SearchCustomerMenu":
             Log.Information("Displaying Search Results Menu to user");
             mainmenu = new SearchCustomersMenu(new CustomersBL(new CustomersRepository()));
             break;
         case "NewStoreFrontMenu":
-            mainmenu = new NewStoreFrontMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
             break;
         case "SearchStoreFrontMenu":
-            mainmenu = new NewStoreFrontMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            break;
+        case "NewProductMenu":
+            mainmenu = new NewProductsMenu(new ProductsBL(new ProductsRepository()));
+            break;
+        case "SearchProductsMenu":
+            mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
         case "Exit":
             Log.Information("User has Exited The Program");

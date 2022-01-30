@@ -54,7 +54,7 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_productNumber"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Products> SearchProducts(int p_productNumber);
+        List<Products> SearchProducts(string p_productName);
         
     }
 

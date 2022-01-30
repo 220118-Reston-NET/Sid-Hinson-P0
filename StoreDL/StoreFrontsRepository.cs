@@ -22,6 +22,7 @@ namespace StoreDL
             listofstorefronts.Add(p_front);
             _jsonString = JsonSerializer.Serialize(listofstorefronts, new JsonSerializerOptions {WriteIndented = true});
             File.WriteAllText(path, _jsonString);
+            Console.WriteLine("New StoreFront was Saved to Database");
             return p_front;
         }
         /// <summary>

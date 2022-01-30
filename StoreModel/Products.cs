@@ -2,27 +2,39 @@ namespace StoreModel
 {
     public class Products
     {
-        //Need a Product ID *****
-        public int productNumber { get; set; }
+        public string productID { get; set; }
+
+        public int storeNumber { get; set; }
         //Product Name
-        public string productName;
+        public string productName { get; set; }
         //Product Price
-        public double productPrice;
+        public double productPrice { get; set; }
         //Product Description
-        public string productDescription;
+        public string productDescription { get; set; }
         //Product Category 
-        public string productCategory;
+        public string productCategory { get; set; }
+
+        public int productQuantity { get; set; }
 
         //Default Constructor
 
         public Products()
         {
+            productID ="";
+            storeNumber = 0;
             productName = "";
             productPrice = 0.00;
             productDescription = "";
             productCategory = "";
-            productNumber =0;
+            productQuantity = 0;
         }
+
+    public override string ToString()
+    {
+      return $"Product Id: {productID}\nStore Number: {storeNumber} Name: {productName}" +
+      $"\nPrice: {productPrice}\nDes: {productDescription}\n Category: {productCategory}" +
+      $"\nQuantity: {productQuantity}";
+    }
 
     }
 
