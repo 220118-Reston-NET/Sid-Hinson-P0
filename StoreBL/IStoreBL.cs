@@ -12,7 +12,7 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_custs"></param>
         /// <returns></returns>
-        Customers AddCustomer(Customers p_custs);
+        Customers AddCustomers(Customers p_custs);
 
         /// <summary>
         /// Will return List of objects related to Search query through p_name parameter

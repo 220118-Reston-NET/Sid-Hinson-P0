@@ -7,6 +7,7 @@
     public class Customers
     {
         //Need a Customer ID *****
+        public int customerID;
         private string _firstName;
         public string firstName
         {
@@ -163,6 +164,7 @@
         //Default Class Constructor
         public Customers()
         {
+            customerID = 0;
             firstName = "Tyler";
             lastName = "Durden";
             dateBirth = "102180";
@@ -170,6 +172,7 @@
             phoneNumber = "5555555555";
             Email = "tylerdurden@protonmail.com";
             customerOrder = new List<Orders>();
+            password = "robertpaulson";
         }
 
         public override string ToString()

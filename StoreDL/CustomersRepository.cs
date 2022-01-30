@@ -20,6 +20,10 @@ namespace StoreDL
         {
             string path  = _filepath + "Customers.json";
             List<Customers> listofcustomer = GetAllCustomers();
+            int index = listofcustomer.Count;
+            Customers cust = new Customers();
+            cust.customerID = index;
+            p_cust.customerID = cust.customerID;
             listofcustomer.Add(p_cust);
             _jsonString = JsonSerializer.Serialize(listofcustomer, new JsonSerializerOptions {WriteIndented = true});
             File.WriteAllText(path, _jsonString);

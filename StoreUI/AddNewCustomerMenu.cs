@@ -43,37 +43,36 @@ namespace StoreUI
                 case "1":
                     Console.WriteLine("Enter a First Name :");
                     _newCustomer.firstName = Console.ReadLine();
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
                 case "2":
                     Console.WriteLine("Enter a Last Name : ");
                     _newCustomer.lastName = Console.ReadLine();
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
                 case "3":
                     Console.WriteLine("Enter an Address : ");
                     _newCustomer.customerAddress = Console.ReadLine();
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
                 case "4":
                     Console.WriteLine("Enter an Email Address :");
                     _newCustomer.Email = Console.ReadLine();
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
                 case "5":
                     Console.WriteLine("Enter a Phone Number :");
                     _newCustomer.phoneNumber = Console.ReadLine();
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
                 case "6":
-                    Console.WriteLine("Enter a Date Of Birth : ########");
+                    Console.WriteLine("Enter a Password");
                     Console.WriteLine("Example : 10211980 for October 21st 1980");
                     _newCustomer.dateBirth = Console.ReadLine();
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
                 case "7":
-                    Console.WriteLine("Enter a Date Of Birth : ########");
-                    Console.WriteLine("Example : 10211980 for October 21st 1980");
+                    Console.WriteLine("Enter a Password");
                     _newCustomer.password = Console.ReadLine();
-                    return "AddCustomer";       
+                    return "NewCustomerMenu";       
                 case "8":
                     try
                     {   
-                        _custBL.AddCustomer(_newCustomer);
+                        _custBL.AddCustomers(_newCustomer);
                         Console.WriteLine("New Customer was Saved to Database");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
@@ -88,7 +87,7 @@ namespace StoreUI
                     }
                     return "MainMenu";
                     default:
-                    return "AddCustomer";
+                    return "NewCustomerMenu";
             }
         }
     }

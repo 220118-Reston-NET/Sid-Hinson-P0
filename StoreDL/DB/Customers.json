@@ -1,18 +1,3 @@
 [
-  {
-    "FirstName": "Tyler",
-    "LastName": "Durden",
-    "Address": "420 Paper St Wilmington DE 19886",
-    "PhoneNumber": "5555555555",
-    "Email": "tylerdurden@protonmail.com",
-    "CustomerOrder": []
-  },
-  {
-    "FirstName": "Victor",
-    "LastName": "VonDoom",
-    "Address": "1000 Monarch Pkwy Capital City Latveria 33665-10",
-    "PhoneNumber": "5555555555",
-    "Email": "victorvondoom@compuserve.net",
-    "CustomerOrder": []
-  }
+
 ]

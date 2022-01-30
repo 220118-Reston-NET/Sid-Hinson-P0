@@ -105,3 +105,11 @@
 2022-01-29 23:58:48.134 -05:00 [INF] Displaying Search Results Menu to user
 2022-01-30 00:10:41.508 -05:00 [INF] Displaying Main Menu to user
 2022-01-30 00:11:06.477 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-30 01:13:22.384 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 01:22:16.822 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 01:23:28.986 -05:00 [INF] Displaying Main Menu to user
+2022-01-30 01:23:35.959 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 01:23:49.411 -05:00 [INF] User input wrong selection
+2022-01-30 01:26:50.747 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 01:26:57.881 -05:00 [INF] User input wrong selection
+2022-01-30 01:27:06.773 -05:00 [INF] User input wrong selection

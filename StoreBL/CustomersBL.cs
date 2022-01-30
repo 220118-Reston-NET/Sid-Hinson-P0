@@ -19,9 +19,10 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_cust"></param>
         /// <returns> Returns _repo.AddCustomer the Passed Customer Obj</returns>
-        public Customers AddCustomer(Customers p_cust)
+        public Customers AddCustomers(Customers p_cust)
         {
             List<Customers> listofcustomers = _repo.GetAllCustomers();
+
             if(listofcustomers.Count < 20)
             {
                 return _repo.AddCustomer(p_cust);
@@ -49,8 +50,6 @@ namespace StoreBL
                     .Where(Customer => Customer.Email.Contains(p_email)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
-
-        
 
     }
 }
