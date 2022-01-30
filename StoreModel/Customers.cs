@@ -6,7 +6,6 @@
     /// </summary>
     public class Customers
     {
-
         private string _firstName;
         public string firstName
         {
@@ -152,6 +151,12 @@
             phoneNumber = "5555555555";
             Email = "tylerdurden@protonmail.com";
             customerOrder = new List<Orders>();
+        }
+
+        public override string ToString()
+        {
+            return $"First Name: {firstName}\nLast name: {lastName}\nDate of Birth {dateBirth}" +
+            $"\nAddress: {customerAddress}\nPhone Number : {phoneNumber}\nEmail: {Email}";
         }
     }
 }

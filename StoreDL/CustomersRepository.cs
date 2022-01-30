@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Text.Json;
 using StoreModel;
 namespace StoreDL
@@ -33,7 +34,6 @@ namespace StoreDL
             _jsonString = File.ReadAllText(_filepath + "Customers.json");
             return JsonSerializer.Deserialize<List<Customers>>(_jsonString);
         }
-
 
     }
 }

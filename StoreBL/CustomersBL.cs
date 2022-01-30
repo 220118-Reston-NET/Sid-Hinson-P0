@@ -46,8 +46,11 @@ namespace StoreBL
         return listofcustomers
                     .Where(Customer => Customer.firstName.Contains(p_fname))
                     .Where(Customer => Customer.lastName.Contains(p_lname))
-                    .Where(Customer => Customer.Email.Contains(p_email)) //Filter a collection with a Lamda
+                    .Where(Customer => Customer.Email.Contains(p_email)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
+
+        public void GetIndex()
+        {}
     }
 }

@@ -18,8 +18,10 @@ namespace StoreDL
         public StoreFronts AddStoreFronts(StoreFronts p_front)
         {
             string path = _filepath + "StoreFronts.json";
-            List<StoreFronts> listofStoreFronts = GetAllStoreFronts();
-            listofStoreFronts.Add(p_front);
+            List<StoreFronts> listofstorefronts = GetAllStoreFronts();
+            listofstorefronts.Add(p_front);
+            _jsonString = JsonSerializer.Serialize(listofstorefronts, new JsonSerializerOptions {WriteIndented = true});
+            File.WriteAllText(path, _jsonString);
             return p_front;
         }
         /// <summary>
@@ -28,7 +30,7 @@ namespace StoreDL
         /// <returns></returns>
         public List<StoreFronts> GetAllStoreFronts()
         {
-            _jsonString = File.ReadAllText(_filepath + "Customers.json");
+            _jsonString = File.ReadAllText(_filepath + "StoreFronts.json");
             return JsonSerializer.Deserialize<List<StoreFronts>>(_jsonString);
         }
 

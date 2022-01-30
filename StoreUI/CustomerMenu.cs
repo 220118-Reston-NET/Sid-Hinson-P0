@@ -2,7 +2,7 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class UserMenu : IMenu
+    public class CustomerMenu : IMenu
     {
 
         public void MenuDisplay()
@@ -14,9 +14,9 @@ namespace StoreUI
             Console.WriteLine("=          Enter Number to Select Option       =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=[1] - Enter New Customer                      ="); 
-            Console.WriteLine("=[2] - Update Customer Information             =");
-            Console.WriteLine("===============================================");
+            Console.WriteLine("=[1] - Enter New Customer                      =");
+            Console.WriteLine("=[2] - Search For StoreFront                   ="); 
+            Console.WriteLine("================================================");
         }
 
         public string UserSelection()
@@ -26,8 +26,12 @@ namespace StoreUI
             {
                 case "0":
                     return "MainMenu";
+                case "1":
+                    return "NewCustomerMenu";
+                case "2":
+                    return "MainMenu";
                 default:
-                    return "AddCustomer";
+                    return "MainMenu";
             }
         }
     }

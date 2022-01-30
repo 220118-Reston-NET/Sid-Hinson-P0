@@ -2,14 +2,14 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class AddCustomerMenu : IMenu
+    public class NewCustomerMenu : IMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
         private static Customers _newCustomer = new Customers();
         //Dependency Injection
         private ICustomersBL _custBL;
         //
-        public AddCustomerMenu(ICustomersBL p_custBL)
+        public NewCustomerMenu(ICustomersBL p_custBL)
         {
             _custBL = p_custBL;
         }
@@ -69,6 +69,8 @@ namespace StoreUI
                     {   
                         _custBL.AddCustomer(_newCustomer);
                         Console.WriteLine("New Customer was Saved to Database");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
 
                     }
                     catch (System.Exception exc)

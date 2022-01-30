@@ -38,6 +38,7 @@ while(isValid)
             mainmenu = new StoreMainMenu();
             break;
         //Added in very primtive password protection : Pass is "8675309"
+        //Added in For Effect ONLY; to be implemented better in future projects
         case "AdministrationMenu":
             AdminValidate admin = new AdminValidate();
             bool uservalidate = admin.ValidateAdminPassword();
@@ -52,16 +53,23 @@ while(isValid)
                 break;
             }
             break;
-        // case "AddCustomer":
-        //     //Variance ; Derived Class
-        //     //Business Layer Dependency which also depends on Repository
-        //     Log.Information("Displaying Add Customers Menu to user");
-        //     mainmenu = new AddCustomerMenu(new CustomersBL(new CustomersRepository()));
-        //     break;
-        // case "SearchCustomerMenu":
-        //     Log.Information("Displaying Search Results Menu to user");
-        //     mainmenu = new SearchCustomersMenu(new CustomersBL(new CustomersRepository()));
-        //     break;
+        case "CustomerMenu":
+            mainmenu = new CustomerMenu();
+            break;
+        case "NewCustomerMenu":
+            Log.Information("Displaying New Customer Menu to user");
+            mainmenu = new NewCustomerMenu(new CustomersBL(new CustomersRepository()));
+            break;
+        case "SearchCustomerMenu":
+            Log.Information("Displaying Search Results Menu to user");
+            mainmenu = new SearchCustomersMenu(new CustomersBL(new CustomersRepository()));
+            break;
+        case "NewStoreFrontMenu":
+            mainmenu = new NewStoreFrontMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            break;
+        case "SearchStoreFrontMenu":
+            mainmenu = new NewStoreFrontMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            break;
         case "Exit":
             Log.Information("User has Exited The Program");
             Log.CloseAndFlush(); //To close our logger resource
