@@ -23,7 +23,7 @@ namespace StoreDL
             return p_order;
         }
         /// <summary>
-        /// Grab Orders from DB
+        /// Grab Orders From DB
         /// </summary>
         /// <returns></returns>
         public List<Orders> GetAllOrders()

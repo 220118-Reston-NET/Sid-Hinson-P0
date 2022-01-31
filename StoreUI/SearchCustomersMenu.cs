@@ -12,6 +12,7 @@ namespace StoreUI
         }
         public void MenuDisplay()
         {   
+            Console.Clear();
             Console.WriteLine("============================================");
             Console.WriteLine("=          Menu : Search Customers         =");
             Console.WriteLine("============================================");

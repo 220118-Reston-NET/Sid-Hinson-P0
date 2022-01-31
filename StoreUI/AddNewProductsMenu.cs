@@ -2,14 +2,14 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class NewProductsMenu : IMenu
+    public class AddNewProductsMenu : IMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
         private static Products _newProduct = new Products();
         //Dependency Injection
         private IProductsBL _productBL;
         //
-        public NewProductsMenu(IProductsBL p_product)
+        public AddNewProductsMenu(IProductsBL p_product)
         {
             _productBL = p_product;
         }
@@ -43,31 +43,31 @@ namespace StoreUI
                 case "1":
                     Console.WriteLine("Enter a Store Number :");
                     _newProduct.storeNumber = Convert.ToInt32(Console.ReadLine());
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "2":
                     Console.WriteLine("Enter a Product Name : ");
                     _newProduct.productName = Console.ReadLine();
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "3":
                     Console.WriteLine("Enter a Product Company : ");
                     _newProduct.productCompany = Console.ReadLine();
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "4":
                     Console.WriteLine("Enter a Product Price : ");
                     _newProduct.productPrice = Convert.ToDouble(Console.ReadLine());
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "5":
                     Console.WriteLine("Enter a Product Description : ");
                     _newProduct.productDescription = Console.ReadLine();
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "6":
                     Console.WriteLine("Enter a Product Price : ");
                     _newProduct.productCategory = Console.ReadLine();
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "7":
                     Console.WriteLine("Enter a Quantity : ");
                     _newProduct.productQuantity = Convert.ToInt32(Console.ReadLine());
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
                 case "8":
                     try
                     {   
@@ -83,7 +83,7 @@ namespace StoreUI
                     }
                     return "MainMenu";
                     default:
-                    return "NewProductsMenu";
+                    return "AddNewProductsMenu";
             }
         }
     }

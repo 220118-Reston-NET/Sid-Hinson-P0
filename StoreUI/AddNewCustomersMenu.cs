@@ -34,7 +34,7 @@ namespace StoreUI
             Console.WriteLine("=[10] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
-
+        
         public string UserSelection()
         {
             string userInput = Console.ReadLine();

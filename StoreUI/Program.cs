@@ -72,12 +72,15 @@ while(isValid)
         case "SearchStoreFrontsMenu":
             mainmenu = new SearchStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
             break;
-        case "NewProductsMenu":
-            mainmenu = new NewProductsMenu(new ProductsBL(new ProductsRepository()));
+        case "AddNewProductsMenu":
+            mainmenu = new AddNewProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
         case "SearchProductsMenu":
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
+        case "AddNewOrdersMenu":
+            mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
+            break;          
         case "Exit":
             // Log.Information("User has Exited The Program");
             // Log.CloseAndFlush(); //To close our logger resource

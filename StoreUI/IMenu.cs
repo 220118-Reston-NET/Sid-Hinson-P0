@@ -25,7 +25,7 @@ namespace StoreUI
 
 
         string UserSelection();
-
+        
     }
 
 }

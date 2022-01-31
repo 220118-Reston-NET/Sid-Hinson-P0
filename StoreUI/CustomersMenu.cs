@@ -16,7 +16,7 @@ namespace StoreUI
             Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
             Console.WriteLine("=[1] - Enter New Customer                      =");
             Console.WriteLine("=[2] - Search For StoreFront                   =");
-            Console.WriteLine("=[3] - Shop for Products                       =");
+            Console.WriteLine("=[3] - Order Products                          =");
             Console.WriteLine("================================================");
         }
 
@@ -30,9 +30,9 @@ namespace StoreUI
                 case "1":
                     return "NewCustomersMenu";
                 case "2":
-                    return "MainMenu";
+                    return "SearchStoreFrontsMenu";
                 case "3":
-                    return "StoreShopMenu";                    
+                    return "AddNewOrdersMenu";                    
                 default:
                     return "MainMenu";
             }

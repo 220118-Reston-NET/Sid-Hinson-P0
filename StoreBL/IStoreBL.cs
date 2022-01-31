@@ -70,7 +70,7 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_order"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Orders> SearchOrders(string p_email);
+        // List<Orders> SearchOrders(string p_email);
         
     }
 }

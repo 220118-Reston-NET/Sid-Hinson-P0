@@ -45,21 +45,6 @@ namespace StoreDL
         /// <returns>Returns StoreFront Lists</returns>
         List<StoreFronts> GetAllStoreFronts();
     }
-
-    
-
-       /// <summary>
-       /// Orders Interface
-       /// </summary>
-    public interface IOrdersRepo
-    {
-        //*********************************************** Shopping Logic Here
-        Orders AddOrders(Orders p_order);
-
-        List<Orders> GetAllOrders();
-    }
-
-
        /// <summary>
        /// Products Interface
        /// </summary>
@@ -77,4 +62,16 @@ namespace StoreDL
         /// <returns>Returns Products List</returns>
         List<Products> GetAllProducts();
     }
+       /// <summary>
+       /// Orders Interface
+       /// </summary>
+    public interface IOrdersRepo
+    {
+        //*********************************************** Shopping Logic Here
+        Orders AddOrders(Orders p_order);
+
+        List<Orders> GetAllOrders();
+    }
+
+
 }
