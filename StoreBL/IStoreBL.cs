@@ -55,16 +55,14 @@ namespace StoreBL
         /// <param name="p_productNumber"></param>
         /// <returns>Filtered Search Results </returns>
         List<Products> SearchProducts(string p_productName);
+        List<Products> SearchProductsCat(string p_productCat);
+        List<Products> SearchProductsComp(string p_productComp);
         
     }
 
     public interface IOrdersBL
     {
-        /// <summary>
-        /// Adds Customer to DB passing a Customer obj
-        /// </summary>
-        /// <param name="p_order"></param>
-        /// <returns></returns>
+        //******************************************Shopping Logic Here
         Orders AddOrders(Orders p_order);
 
         /// <summary>
@@ -72,7 +70,7 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_order"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Orders> SearchOrders(int p_order);
+        List<Orders> SearchOrders(string p_email);
         
     }
 }

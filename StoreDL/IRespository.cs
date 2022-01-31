@@ -53,16 +53,9 @@ namespace StoreDL
        /// </summary>
     public interface IOrdersRepo
     {
-        /// <summary>
-        /// Add Customer to DB
-        /// </summary>
-        /// <param name="p_order"></param> Customer Object
-        /// <returns>Returns Orders Added</returns>
+        //*********************************************** Shopping Logic Here
         Orders AddOrders(Orders p_order);
-        /// <summary>
-        /// Will Get All Customers in DB
-        /// </summary>
-        /// <returns>Returns Orders List</returns>
+
         List<Orders> GetAllOrders();
     }
 
@@ -73,13 +66,13 @@ namespace StoreDL
     public interface IProductsRepo
     {
         /// <summary>
-        /// Add Customer to DB
+        /// Add Products to DB
         /// </summary>
         /// <param name="p_product"></param> Customer Object
         /// <returns>Returns Products Added</returns>
         Products AddProducts(Products p_product);
         /// <summary>
-        /// Will Get All Customers in DB
+        /// Will Get All Products in DB
         /// </summary>
         /// <returns>Returns Products List</returns>
         List<Products> GetAllProducts();

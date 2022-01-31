@@ -26,7 +26,7 @@ namespace StoreModel
 
         public override string ToString()
         {
-            return $"Store Number: {storeNumber}\n Store Address: {storeAddress}\nStore ZipCode: {storeZipCode}" +
+            return $"Store Number: {storeNumber}\nStore Address: {storeAddress}\nStore ZipCode: {storeZipCode}" +
             $"\nStore City: {storeCity}\nStore State: {storeState}";
         }
 

@@ -2,21 +2,23 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class CustomersMenu : IMenu
+    public class StoreShopMenu : IOrdersMenu
     {
 
         public void MenuDisplay()
         {
             Console.Clear();
             Console.WriteLine("================================================");
-            Console.WriteLine("=               Customer Menu                  =");
+            Console.WriteLine("=    Retro Barbarian Gaming Lair Shop Menu     =");
             Console.WriteLine("================================================");
             Console.WriteLine("=          Enter Number to Select Option       =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=[1] - Enter New Customer                      =");
-            Console.WriteLine("=[2] - Search For StoreFront                   =");
-            Console.WriteLine("=[3] - Shop for Products                       =");
+            Console.WriteLine("=[1] - Log In To Enable Shopping               =");
+            Console.WriteLine("=[2] - Shop for Products                       =");
+            Console.WriteLine("=[3] - Remove Products From Order              =");
+            Console.WriteLine("=[4] - Remove ALL Products From Order          =");
+            Console.WriteLine("=[5] - Finalize Customer Order                 =");
             Console.WriteLine("================================================");
         }
 

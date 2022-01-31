@@ -13,11 +13,11 @@ namespace StoreUI
         public void MenuDisplay()
         {   
             Console.WriteLine("============================================");
-            Console.WriteLine("=          Menu : Search StoreFronts         =");
+            Console.WriteLine("=          Menu : Search StoreFronts       =");
             Console.WriteLine("============================================");
             Console.WriteLine("=              Select Option :             =");
             Console.WriteLine("= [0] - Exit Search                        =");
-            Console.WriteLine("= [1] - Find StoreFront                      =");
+            Console.WriteLine("= [1] - Find StoreFront Information        =");
             Console.WriteLine("============================================");
         }
 
@@ -38,7 +38,7 @@ namespace StoreUI
                     {
                         Console.WriteLine(StoreFront);
                     }
-                    Console.WriteLine("Press Enter");
+                    Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
                     return "MainMenu";
                 default:

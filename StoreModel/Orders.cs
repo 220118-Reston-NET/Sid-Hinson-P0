@@ -3,27 +3,15 @@ namespace StoreModel
     public class Orders
     {
         
-       //Need an Order ID *****
-       private int _orderNumber;
+       public string orderID { get; set; }
 
-       public int orderNumber
-       {
-           get { return _orderNumber; }
+       public string customerID { get; set; }
 
-           set {
-                        if (value >= 0)
-                    {
-                        _orderNumber = value;
-                    }
-                    else
-                    {
-                        throw new Exception("An Order number equal or greater to Zero must be entered.");
-                    }
-            
-               }
-               
-        }
+       public string customerEmail { get; set; }
 
+       public string storeID { get; set; }
+
+       public string orderDate { get; set; }
 
         //This is the Location of the StoreFront Ordered From
        public int storeNumber { get; set; }
@@ -70,13 +58,16 @@ namespace StoreModel
 
        }
 
-
       //Default Constructor      
         public Orders()
         {
-            orderNumber = 0;
-            storeNumber = 0;
+            orderID = "";
+            customerID = "";
+            storeID = "";
+            orderDate = "";
             orderTotal = 0.00;
+            customerEmail = "";
+            
         }
 
     }

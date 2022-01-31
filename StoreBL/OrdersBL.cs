@@ -26,11 +26,11 @@ namespace StoreBL
             }
         }
 
-        public List<Orders> SearchOrders(int p_orderNumber)
+        public List<Orders> SearchOrders(string p_email)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
             return listoforders
-                    .Where(Orders => Orders.Equals(p_orderNumber))
+                    .Where(Orders => Orders.Equals(p_email))
                     .ToList(); //ToList method converts into return List collection
         }
     }

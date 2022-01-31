@@ -28,9 +28,26 @@ namespace StoreBL
 
         public List<Products> SearchProducts(string p_productName) 
         {
-        List<Products> listofproducts = _repo.GetAllProducts();
-        return listofproducts
-                    .Where(Products => Products.Equals(p_productName))//Filter a collection with a Lamda
+            Console.WriteLine("Searching for Product ...........");
+            List<Products> listofproducts = _repo.GetAllProducts();
+            return listofproducts
+                    .Where(Products => Products.productName.Equals(p_productName))//Filter a collection with a Lamda
+                    .ToList(); //ToList method converts into return List collection
+        }
+        public List<Products> SearchProductsComp(string p_productComp) 
+        {
+            Console.WriteLine("Searching for Product ...........");
+            List<Products> listofproducts = _repo.GetAllProducts();
+            return listofproducts
+                    .Where(Products => Products.productCompany.Equals(p_productComp))//Filter a collection with a Lamda
+                    .ToList(); //ToList method converts into return List collection
+        }
+        public List<Products> SearchProductsCat(string p_productCat) 
+        {
+            Console.WriteLine("Searching for Product ...........");
+            List<Products> listofproducts = _repo.GetAllProducts();
+            return listofproducts
+                    .Where(Products => Products.productCategory.Equals(p_productCat))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
     }

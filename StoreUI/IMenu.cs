@@ -17,6 +17,15 @@ namespace StoreUI
         string UserSelection();
 
     }
+    interface IOrdersMenu
+    {
+        //***********************************Shopping Menu Here
 
+        void MenuDisplay();
+
+
+        string UserSelection();
+
+    }
 
 }

@@ -15,9 +15,9 @@ using StoreBL;
 /// Creates Logger and Config
 /// </summary>
 /// <returns></returns>
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.File("./Logs/User.txt") 
-    .CreateLogger();
+// Log.Logger = new LoggerConfiguration()
+    // .WriteTo.File("./Logs/User.txt") 
+    // .CreateLogger();
 
 
 /// <summary>
@@ -34,7 +34,7 @@ while(isValid)
     switch(userInput)
     {
         case "MainMenu":
-            Log.Information("Displaying Main Menu to user");
+            // Log.Information("Displaying Main Menu to user");
             mainmenu = new StoreMainMenu();
             break;
         //Added in very primtive password protection : Pass is "8675309"
@@ -59,18 +59,18 @@ while(isValid)
             mainmenu = new CustomersMenu();
             break;
         case "NewCustomersMenu":
-            Log.Information("Displaying New Customer Menu to user");
+            // Log.Information("Displaying New Customer Menu to user");
             mainmenu = new NewCustomersMenu(new CustomersBL(new CustomersRepository()));
             break;
         case "SearchCustomersMenu":
-            Log.Information("Displaying Search Results Menu to user");
+            // Log.Information("Displaying Search Results Menu to user");
             mainmenu = new SearchCustomersMenu(new CustomersBL(new CustomersRepository()));
             break;
         case "NewStoreFrontsMenu":
             mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
             break;
         case "SearchStoreFrontsMenu":
-            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            mainmenu = new SearchStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
             break;
         case "NewProductsMenu":
             mainmenu = new NewProductsMenu(new ProductsBL(new ProductsRepository()));
@@ -79,12 +79,12 @@ while(isValid)
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
         case "Exit":
-            Log.Information("User has Exited The Program");
-            Log.CloseAndFlush(); //To close our logger resource
+            // Log.Information("User has Exited The Program");
+            // Log.CloseAndFlush(); //To close our logger resource
             isValid = false;
             break;
         default:
-            Log.Information("User input wrong selection");
+            // Log.Information("User input wrong selection");
             Console.WriteLine("No Page Found!");
             Console.WriteLine("Press Enter to Continue");
             Console.ReadLine();
