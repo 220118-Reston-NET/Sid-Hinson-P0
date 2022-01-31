@@ -28,6 +28,9 @@ namespace StoreDL
             listofcustomers.Add(p_cust);
             _jsonString = JsonSerializer.Serialize(listofcustomers, new JsonSerializerOptions {WriteIndented = true});
             File.WriteAllText(_path, _jsonString);
+            Console.WriteLine("New Customer was Saved to Database");
+            Console.WriteLine("Press Enter to Continue");
+            Console.ReadLine();
             return p_cust;
         }
         /// <summary>

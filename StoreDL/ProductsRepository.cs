@@ -8,7 +8,7 @@ namespace StoreDL
     /// </summary>
     public class ProductsRepository : IProductsRepo
     {
-        private string _filepath = "../StoreDL/";
+        private string _filepath = "../StoreDL/DB/";
         private string _jsonString;
         /// <summary>
         /// Write Products to DB
@@ -28,6 +28,9 @@ namespace StoreDL
             listofproducts.Add(p_product);
             _jsonString = JsonSerializer.Serialize(listofproducts, new JsonSerializerOptions {WriteIndented = true});
             File.WriteAllText(_path, _jsonString);
+            Console.WriteLine("New Product was Saved to Database");
+            Console.WriteLine("Press Enter to Continue");
+            Console.ReadLine();
             return p_product;
         }
         /// <summary>

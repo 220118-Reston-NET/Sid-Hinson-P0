@@ -7,6 +7,7 @@ namespace StoreModel
         public int storeNumber { get; set; }
         //Product Name
         public string productName { get; set; }
+        public string productCompany { get; set; }
         //Product Price
         public double productPrice { get; set; }
         //Product Description
@@ -23,6 +24,7 @@ namespace StoreModel
             productID ="";
             storeNumber = 0;
             productName = "";
+            productCompany ="";
             productPrice = 0.00;
             productDescription = "";
             productCategory = "";
@@ -33,7 +35,7 @@ namespace StoreModel
     {
       return $"Product Id: {productID}\nStore Number: {storeNumber} Name: {productName}" +
       $"\nPrice: {productPrice}\nDes: {productDescription}\n Category: {productCategory}" +
-      $"\nQuantity: {productQuantity}";
+      $"\nCompany: {productCompany}\nQuantity: {productQuantity}";
     }
 
     }

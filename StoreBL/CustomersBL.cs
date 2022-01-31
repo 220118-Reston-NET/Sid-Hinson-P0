@@ -25,6 +25,7 @@ namespace StoreBL
 
             if(listofcustomers.Count < 20)
             {
+                Console.WriteLine("Adding Customer............");
                 return _repo.AddCustomer(p_cust);
             }
             else

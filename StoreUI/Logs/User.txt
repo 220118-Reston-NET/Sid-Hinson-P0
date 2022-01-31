@@ -113,3 +113,31 @@
 2022-01-30 01:26:50.747 -05:00 [INF] Displaying New Customer Menu to user
 2022-01-30 01:26:57.881 -05:00 [INF] User input wrong selection
 2022-01-30 01:27:06.773 -05:00 [INF] User input wrong selection
+2022-01-30 18:01:29.222 -05:00 [INF] User input wrong selection
+2022-01-30 18:01:43.848 -05:00 [INF] User input wrong selection
+2022-01-30 18:02:05.617 -05:00 [INF] User input wrong selection
+2022-01-30 18:07:39.848 -05:00 [INF] User input wrong selection
+2022-01-30 18:07:46.250 -05:00 [INF] Displaying Main Menu to user
+2022-01-30 18:08:33.280 -05:00 [INF] Displaying Search Results Menu to user
+2022-01-30 18:08:39.818 -05:00 [INF] Displaying Main Menu to user
+2022-01-30 18:08:46.479 -05:00 [INF] User input wrong selection
+2022-01-30 18:12:50.282 -05:00 [INF] User input wrong selection
+2022-01-30 18:13:00.476 -05:00 [INF] User input wrong selection
+2022-01-30 18:23:19.207 -05:00 [INF] Displaying Main Menu to user
+2022-01-30 18:23:32.847 -05:00 [INF] User input wrong selection
+2022-01-30 18:34:37.164 -05:00 [INF] Displaying Main Menu to user
+2022-01-30 18:40:01.940 -05:00 [INF] User input wrong selection
+2022-01-30 18:40:08.429 -05:00 [INF] User input wrong selection
+2022-01-30 18:40:10.775 -05:00 [INF] Displaying Main Menu to user
+2022-01-30 18:42:45.764 -05:00 [INF] User input wrong selection
+2022-01-30 18:42:49.190 -05:00 [INF] User input wrong selection
+2022-01-30 18:42:51.710 -05:00 [INF] User has Exited The Program
+2022-01-30 18:43:10.970 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:43:31.997 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:43:36.214 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:43:46.216 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:43:57.890 -05:00 [INF] User input wrong selection
+2022-01-30 18:45:16.224 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:45:24.486 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:45:37.523 -05:00 [INF] Displaying New Customer Menu to user
+2022-01-30 18:59:14.686 -05:00 [INF] Displaying New Customer Menu to user

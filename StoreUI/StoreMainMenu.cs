@@ -38,7 +38,7 @@ namespace StoreUI
                 case "0":
                     return "Exit";
                 case "1":
-                    return "CustomerMenu";
+                    return "CustomersMenu";
                 case "2":
                     return "AdministrationMenu";
                 default :

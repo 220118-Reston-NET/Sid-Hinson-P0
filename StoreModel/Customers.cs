@@ -83,26 +83,54 @@
 
             }
         }
-   
-        private string _phonenumber;
-        public string phoneNumber
+        private string _customerCity;
+        public string customerCity
         {
-            get { return _phonenumber; }
+            get { return _customerCity; }
 
             set 
             {
-                if (value.Length >= 10)
+                if (value != "")
                 {
-                    _phonenumber = value;
+                    _customerCity = value;
                 }
                 else
                 {
-                    throw new NullReferenceException("Not Enough Phone Digits");
+                    throw new NullReferenceException("City must be entered.");
                 }
 
             }
         }
-       
+   
+        private string _customerState;
+        public string customerState
+        {
+            get { return _customerState; }
+
+            set 
+            {
+               _customerState = value;
+            }
+        }
+        private string _customerZipcode;
+        public string customerZipcode
+        {
+            get { return _customerZipcode; }
+
+            set 
+            {
+                if (value.Length >= 5)
+                {
+                    _customerZipcode = value;
+                }
+                else
+                {
+                    throw new NullReferenceException("Not Enough Digits");
+                }
+
+            }
+        }
+
         private string _email;
 
         public string Email
@@ -169,7 +197,9 @@
             lastName = "Durden";
             dateBirth = "102180";
             customerAddress = "420 Paper St Wilmington DE 19886";
-            phoneNumber = "5555555555";
+            customerState = "CA";
+            customerCity = "Lancaster";
+            customerZipcode = "55555";
             Email = "tylerdurden@protonmail.com";
             customerOrder = new List<Orders>();
             password = "robertpaulson";
@@ -178,7 +208,7 @@
         public override string ToString()
         {
             return $"First Name: {firstName}\nLast name: {lastName}\nDate of Birth {dateBirth}" +
-            $"\nAddress: {customerAddress}\nPhone Number : {phoneNumber}\nEmail: {Email}";
+            $"\nAddress: {customerAddress}\nEmail: {Email}";
         }
     }
 }

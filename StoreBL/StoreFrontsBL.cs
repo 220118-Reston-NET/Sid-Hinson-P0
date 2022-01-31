@@ -18,6 +18,7 @@ namespace StoreBL
             List<StoreFronts> listofstorefronts = _repo.GetAllStoreFronts();
             if(listofstorefronts.Count < 20)
             {
+                Console.WriteLine("Adding Store Front............");
                 return _repo.AddStoreFronts(p_front);
             }
             else

@@ -35,11 +35,11 @@ namespace StoreUI
                 case "2":
                     return "SearchCustomersMenu";
                 case "3":
-                    return "NewStoreFrontMenu";
+                    return "NewStoreFrontsMenu";
                 case "4":
                     return "SearchStoreFrontsMenu";
                 case "5":
-                    return "NewProductMenu";
+                    return "NewProductsMenu";
                 case "6":
                     return "SearchProductsMenu";
                 case "7":

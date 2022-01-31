@@ -55,24 +55,24 @@ while(isValid)
             // break;
             mainmenu =  new AdministrationMenu();
             break;
-        case "CustomerMenu":
-            mainmenu = new CustomerMenu();
+        case "CustomersMenu":
+            mainmenu = new CustomersMenu();
             break;
-        case "NewCustomerMenu":
+        case "NewCustomersMenu":
             Log.Information("Displaying New Customer Menu to user");
             mainmenu = new NewCustomersMenu(new CustomersBL(new CustomersRepository()));
             break;
-        case "SearchCustomerMenu":
+        case "SearchCustomersMenu":
             Log.Information("Displaying Search Results Menu to user");
             mainmenu = new SearchCustomersMenu(new CustomersBL(new CustomersRepository()));
             break;
-        case "NewStoreFrontMenu":
+        case "NewStoreFrontsMenu":
             mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
             break;
-        case "SearchStoreFrontMenu":
+        case "SearchStoreFrontsMenu":
             mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
             break;
-        case "NewProductMenu":
+        case "NewProductsMenu":
             mainmenu = new NewProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
         case "SearchProductsMenu":

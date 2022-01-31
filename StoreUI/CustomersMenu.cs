@@ -2,7 +2,7 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class CustomerMenu : IMenu
+    public class CustomersMenu : IMenu
     {
 
         public void MenuDisplay()
@@ -27,7 +27,7 @@ namespace StoreUI
                 case "0":
                     return "MainMenu";
                 case "1":
-                    return "NewCustomerMenu";
+                    return "NewCustomersMenu";
                 case "2":
                     return "MainMenu";
                 default:

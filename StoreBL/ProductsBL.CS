@@ -17,6 +17,7 @@ namespace StoreBL
             List<Products> listofproducts = _repo.GetAllProducts();
             if(listofproducts.Count < 20)
             {
+                Console.WriteLine("Adding Product............");
                 return _repo.AddProducts(p_product);
             }
             else

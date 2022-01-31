@@ -8,7 +8,7 @@ namespace StoreDL
     public class StoreFrontsRepository : IStoreFrontsRepo
     {
         //Path to DB
-        private string _filepath = "../StoreDL/";
+        private string _filepath = "../StoreDL/DB/";
         private string _jsonString;
         /// <summary>
         /// Write StoreFront to DB
@@ -23,6 +23,8 @@ namespace StoreDL
             _jsonString = JsonSerializer.Serialize(listofstorefronts, new JsonSerializerOptions {WriteIndented = true});
             File.WriteAllText(path, _jsonString);
             Console.WriteLine("New StoreFront was Saved to Database");
+            Console.WriteLine("Press Enter to Continue");
+            Console.ReadLine();
             return p_front;
         }
         /// <summary>
