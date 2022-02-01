@@ -33,7 +33,7 @@ while(isValid)
 
     switch(userInput)
     {
-        case "MainMenu":
+        case "StoreMainMenu":
             // Log.Information("Displaying Main Menu to user");
             mainmenu = new StoreMainMenu();
             break;
@@ -79,7 +79,7 @@ while(isValid)
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
         case "AddNewOrdersMenu": //FIX
-            mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
+            mainmenu = new AddNewOrdersMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
             break;
         case "Exit":
             // Log.Information("User has Exited The Program");
@@ -91,6 +91,7 @@ while(isValid)
             Console.WriteLine("No Page Found!");
             Console.WriteLine("Press Enter to Continue");
             Console.ReadLine();
+            mainmenu = new StoreMainMenu();
             break;
 
     }

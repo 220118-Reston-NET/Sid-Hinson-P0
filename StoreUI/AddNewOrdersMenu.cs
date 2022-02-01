@@ -2,12 +2,13 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class AddNewOrdersMenu : IOrdersMenu
+    public class AddNewOrdersMenu : IMenu
     {
         private static LineItems _newLineItem = new LineItems();
         private static Orders _newOrder = new Orders();
-        public string p_CustomerEmail;
-        public string p_CustomerID;
+        public static string p_CustomerEmail;
+        public static string p_CustomerID;
+        public static string p_Company;
         //Dependency Injection
         private IProductsBL _productBL;
         private IOrdersBL _orderBL;
@@ -42,7 +43,8 @@ namespace StoreUI
             string userInput = Console.ReadLine();
 
             //**********************************WORK IN PROGRESS*******************************
-            //********todo:Convert these Switch Statements into BL void/return Methods**********
+            //********todo:Convert these Switch Statements into BL void/return Methods*********
+            //********todo: Make Display pages for Some of these ******************************
             //*************Code here is to just get the program to a working state*************
             //*********************************************************************************
 
@@ -62,11 +64,14 @@ namespace StoreUI
                 p_CustomerEmail = Console.ReadLine();
                 List<Customers> listofcustomers = _customerBL.SearchCustomers(p_fname, p_lname, p_CustomerEmail);
                 try
-                {
+                {            //******************************This is Broke*****************************
                 foreach (var Customer in listofcustomers)
                 {
+                    Console.WriteLine("Saving CustomerID to Order.......");
                     Customer.CustomerID = p_CustomerID;
-                    Console.WriteLine(Customer.CustomerID);
+                    Console.WriteLine(p_CustomerID);
+                    _newOrder.CustomerID = p_CustomerID;
+                    Console.WriteLine("Customer ID saved");
                 }
                 }
                 catch(NullReferenceException)
@@ -93,7 +98,7 @@ namespace StoreUI
                 Console.WriteLine("*******************************************************************");
                 Console.WriteLine("***** Enter a Category To See Inventory - Games - or - Systems ****");
                 Console.WriteLine("*******************************************************************");
-                Console.WriteLine("*                 [1] = Games      [2] = Systems                  *");
+                Console.WriteLine("*       [1] = Games      [2] = Systems    [3] = Merchandise       *");
                 Console.WriteLine("*******************************************************************");
                 string userinput = Console.ReadLine();
                 Console.Clear();
@@ -123,6 +128,18 @@ namespace StoreUI
                             Console.WriteLine("Press Enter to Continue");
                             Console.ReadLine();
                         return "AddNewOrdersMenu";
+                        case "3":
+                        string answer3 = "Merchandise";
+                        List<Products> listofprod3 = _productBL.SearchProductsCat(answer3);
+                            foreach (var Products in listofprod3)
+                            {
+                                Console.WriteLine("***********************");
+                                Console.WriteLine(Products);
+                                Console.WriteLine("***********************");
+                            }
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
+                        return "AddNewOrdersMenu";                    
                         default:
                         Console.WriteLine("Choose [1] or [2]");
                         return "AddNewOrdersMenu";
@@ -130,7 +147,20 @@ namespace StoreUI
    
 
                 case "3":
-
+                Console.Clear();
+                Console.WriteLine("*******************************************************************************");
+                Console.WriteLine("*               Retro Barbarian Gaming Lair Order Screen                      *");
+                Console.WriteLine("*******************************************************************************");
+                Console.WriteLine("* Store #  - " + _newOrder.StoreID);
+                Console.WriteLine("* Name     - " + _newLineItem.ProductName);
+                Console.WriteLine("* Company  - " + p_Company);
+                Console.WriteLine("* StoreID  - " + _newOrder.StoreID);
+                Console.WriteLine("* Quantity - " + _newLineItem.ProductQuantity);
+                Console.WriteLine("*******************************************************************************");
+                Console.WriteLine("* Please Enter Order Information                                              *");
+                Console.WriteLine("*******************************************************************************");
+                Console.ReadLine();
+                
 
 
 

@@ -118,5 +118,35 @@
     "productDescription": "Retro Game Cartridge",
     "productCategory": "Game",
     "productQuantity": 10
+  },
+  {
+    "productID": "d946df4d-953f-450d-aab5-27fd08d58d0d",
+    "storeNumber": 1,
+    "productName": "DOOM Hoodie",
+    "productCompany": "ID Software",
+    "productPrice": 15,
+    "productDescription": "Hoodie featuring the Doomslayer",
+    "productCategory": "Merchandise",
+    "productQuantity": 10
+  },
+  {
+    "productID": "3a0d6118-70ee-437e-838e-5645e44f0414",
+    "storeNumber": 2,
+    "productName": "DOOM Hoodie",
+    "productCompany": "ID Software",
+    "productPrice": 15,
+    "productDescription": "Hoodie featuring the Doomslayer",
+    "productCategory": "Merchandise",
+    "productQuantity": 10
+  },
+  {
+    "productID": "b9448711-6be6-4af9-b7c4-7108b537b377",
+    "storeNumber": 3,
+    "productName": "DOOM Hoodie",
+    "productCompany": "ID Software",
+    "productPrice": 15,
+    "productDescription": "Hoodie featuring the Doomslayer",
+    "productCategory": "Merchandise",
+    "productQuantity": 10
   }
 ]
