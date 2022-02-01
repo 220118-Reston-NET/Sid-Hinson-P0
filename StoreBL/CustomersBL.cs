@@ -46,9 +46,9 @@ namespace StoreBL
         {
         List<Customers> listofcustomers = _repo.GetAllCustomers();
         return listofcustomers
-                    .Where(Customer => Customer.firstName.Contains(p_fname))
-                    .Where(Customer => Customer.lastName.Contains(p_lname))
-                    .Where(Customer => Customer.Email.Contains(p_email)) //Filter a collection with a Lambda
+                    .Where(Customers => Customers.FirstName.Contains(p_fname))
+                    .Where(Customers => Customers.LastName.Contains(p_lname))
+                    .Where(Customers => Customers.Email.Contains(p_email)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
 

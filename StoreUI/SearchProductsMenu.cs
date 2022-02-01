@@ -13,15 +13,15 @@ namespace StoreUI
         public void MenuDisplay()
         {   
             Console.Clear();
-            Console.WriteLine("============================================");
-            Console.WriteLine("=          Menu : Search Products          =");
-            Console.WriteLine("============================================");
-            Console.WriteLine("=              Select Option :             =");
-            Console.WriteLine("= [0] - Exit Search                        =");
-            Console.WriteLine("= [1] - Find Product by Name               =");
-            Console.WriteLine("= [2] - Find Product by Category           =");
-            Console.WriteLine("= [3] - Find Product by Company            =");    
-            Console.WriteLine("============================================");
+            Console.WriteLine("================================================================");
+            Console.WriteLine("=          Menu : Search Products                              =");
+            Console.WriteLine("================================================================");
+            Console.WriteLine("=              Select Option :                                 =");
+            Console.WriteLine("= [0] - Exit Search                                            =");
+            Console.WriteLine("= [1] - Find Product by Store                                  ="); 
+            Console.WriteLine("= [2] - Find Product by Category                               =");
+            Console.WriteLine("= [3] - Find Product by Company                                =");
+            Console.WriteLine("================================================================");
         }
 
         public string UserSelection()
@@ -32,11 +32,18 @@ namespace StoreUI
             {
                 case "0":
                     return "MainMenu";
+
+
+
                 case "1":
                     Console.WriteLine("Please Enter a Product Name");
                     string p_productName = Console.ReadLine();
+                    Console.WriteLine("Please Enter a Product Company");
+                    string p_productComp = Console.ReadLine();
+                    Console.WriteLine("Please Enter a StoreID");
+                    int p_productStoreID = Convert.ToInt32(Console.ReadLine());
                     //Display Logic for Search Function
-                    List<Products> listofproducts = _productBL.SearchProducts(p_productName);
+                    List<Products> listofproducts = _productBL.SearchProducts(p_productName, p_productComp, p_productStoreID);
                     foreach (var Product in listofproducts)
                     {
                         Console.WriteLine(Product);
@@ -44,6 +51,9 @@ namespace StoreUI
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "SearchProductsMenu";
+
+
+
                 case "2":
                     Console.WriteLine("Please Enter a Product Category");
                     string p_productCat = Console.ReadLine();
@@ -56,18 +66,23 @@ namespace StoreUI
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "SearchProductsMenu";
+
+
+
                 case "3":
                     Console.WriteLine("Please Enter a Product Company");
-                    string p_productComp = Console.ReadLine();
+                    string p_productComp2 = Console.ReadLine();
                     //Display Logic for Search Function
-                    List<Products> listofproducts3 = _productBL.SearchProductsComp(p_productComp);
+                    List<Products> listofproducts3 = _productBL.SearchProductsComp(p_productComp2);
                     foreach (var Product in listofproducts3)
                     {
                         Console.WriteLine(Product);
                     }
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
-                    return "SearchProductsMenu";         
+                    return "SearchProductsMenu";
+
+
                 default:
                     Console.WriteLine("Customer not Found");
                     Console.WriteLine("Press Enter");

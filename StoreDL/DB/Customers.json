@@ -1,14 +1,26 @@
 [
   {
-    "firstName": "Tyler",
-    "lastName": "Durden",
-    "dateBirth": "102180",
-    "customerAddress": "420 Paper St Wilmington DE 19886",
-    "customerCity": "Lancaster",
-    "customerState": "CA",
-    "customerZipcode": "55555",
-    "Email": "tylerdurden@aol.com",
-    "password": "robertpaulson",
-    "customerOrder": []
+    "FirstName": "James",
+    "LastName": "Bohannon",
+    "DateofBirth": "102180",
+    "CustomerAddress": "1070 Waluhiyi Trail",
+    "CustomerCity": "Macon",
+    "CustomerState": "GA",
+    "CustomerZipcode": "55555",
+    "Email": "jamesbohannon@aol.com",
+    "Password": "robertpaulson",
+    "CustomerOrder": []
+  },
+  {
+    "FirstName": "William",
+    "LastName": "Riker",
+    "DateofBirth": "091779",
+    "CustomerAddress": "1070 Waluhiyi Trail",
+    "CustomerCity": "BirmingHam",
+    "CustomerState": "AL",
+    "CustomerZipcode": "55555",
+    "Email": "williamriker@aol.com",
+    "Password": "robertpaulson",
+    "CustomerOrder": []
   }
 ]

@@ -20,7 +20,7 @@ namespace StoreDL
         {
             string _path = _filepath + "Customers.json";
             //Add an Unique ID at the time of Save
-            p_cust.customerID = Guid.NewGuid().ToString();
+            p_cust.CustomerID = Guid.NewGuid().ToString();
             
             //Create file
             //Adds the Customer with Global Univeral ID Generated

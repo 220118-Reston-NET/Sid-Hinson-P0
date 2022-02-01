@@ -3,15 +3,15 @@ namespace StoreModel
     public class Orders
     {
         
-       public string orderID { get; set; }
+       public string OrderID { get; set; }
 
-       public string customerID { get; set; }
+       public string CustomerID { get; set; }
 
-       public string customerEmail { get; set; }
+       public string CustomerEmail { get; set; }
 
-       public string storeID { get; set; }
+       public string StoreID { get; set; }
 
-       public string orderDate { get; set; }
+       public string OrderDate { get; set; }
 
         //This is the Location of the StoreFront Ordered From
        public int storeNumber { get; set; }
@@ -40,7 +40,7 @@ namespace StoreModel
         //Order total of Customer Order
        private double _orderTotal;
 
-       public double orderTotal
+       public double OrderTotal
        {
            get { return _orderTotal; }
 
@@ -61,14 +61,20 @@ namespace StoreModel
       //Default Constructor      
         public Orders()
         {
-            orderID = "";
-            customerID = "";
-            storeID = "";
-            orderDate = "";
-            orderTotal = 0.00;
-            customerEmail = "";
-            
+            OrderID = "";
+            CustomerID = "";
+            StoreID = "";
+            OrderDate = "";
+            OrderTotal = 0.00;
+            CustomerEmail = "";
+            OrderLineItems = new List<LineItems>() { new LineItems() };
         }
 
+        
+        public override string ToString()
+        {
+            return $"OrderID: {OrderID}\nCustomerID: {CustomerID}\nStoreID: {StoreID}\nOrder Date: {OrderDate}" +
+            $"\nOrderTotal: {OrderTotal}\nCustomer Email: {CustomerEmail}";
+        }
     }
 }

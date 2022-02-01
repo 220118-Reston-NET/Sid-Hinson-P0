@@ -5,5 +5,19 @@
     "storeState": "GA",
     "storeAddress": "1079 Elm Street",
     "storeCity": "Macon"
+  },
+  {
+    "storeNumber": 2,
+    "storeZipCode": "85465",
+    "storeState": "AL",
+    "storeAddress": "1000 Williams Lane",
+    "storeCity": "Birmingham"
+  },
+  {
+    "storeNumber": 3,
+    "storeZipCode": "66987",
+    "storeState": "TN",
+    "storeAddress": "999 Paul Rudd Ave",
+    "storeCity": "Knoxville"
   }
 ]

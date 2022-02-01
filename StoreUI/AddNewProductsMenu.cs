@@ -61,7 +61,7 @@ namespace StoreUI
                     _newProduct.productDescription = Console.ReadLine();
                     return "AddNewProductsMenu";
                 case "6":
-                    Console.WriteLine("Enter a Product Price : ");
+                    Console.WriteLine("Enter a Product Category : ");
                     _newProduct.productCategory = Console.ReadLine();
                     return "AddNewProductsMenu";
                 case "7":
@@ -81,7 +81,7 @@ namespace StoreUI
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
                     }
-                    return "MainMenu";
+                    return "AddNewProductsMenu";
                     default:
                     return "AddNewProductsMenu";
             }

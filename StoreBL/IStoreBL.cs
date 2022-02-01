@@ -20,7 +20,6 @@ namespace StoreBL
         /// <param name="p_name"></param>
         /// <returns>Filtered Search Results </returns>
         List<Customers> SearchCustomers(string p_name1, string p_name2, string p_email);
-        
     }
     public interface IStoreFrontsBL
     {
@@ -54,10 +53,12 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_productNumber"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Products> SearchProducts(string p_productName);
-        List<Products> SearchProductsCat(string p_productCat);
-        List<Products> SearchProductsComp(string p_productComp);
-        
+        List<Products> SearchProducts(string p_productName, string p_productComp, int p_productStoreID);
+        // List<Products> SearchProductsCat(string p_productCat);
+        // List<Products> SearchProductsComp(string p_productComp);
+        public List<Products> SearchProductsComp(string p_productComp);
+        public List<Products> SearchProductsCat(string p_productCat);
+
     }
 
     public interface IOrdersBL

@@ -78,9 +78,9 @@ while(isValid)
         case "SearchProductsMenu":
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
-        case "AddNewOrdersMenu":
+        case "AddNewOrdersMenu": //FIX
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
-            break;          
+            break;
         case "Exit":
             // Log.Information("User has Exited The Program");
             // Log.CloseAndFlush(); //To close our logger resource

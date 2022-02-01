@@ -6,10 +6,10 @@
     /// </summary>
     public class Customers
     {
-        //Need a Customer ID *****
-        public string customerID;
+    
+        public string CustomerID;
         private string _firstName;
-        public string firstName
+        public string FirstName
         {
             get { return _firstName; }
 
@@ -28,7 +28,7 @@
         }
 
         private string _lastName;
-        public string lastName
+        public string LastName
         {
             get { return _lastName; }
 
@@ -46,16 +46,16 @@
             }
         }
 
-        private string _dateBirth;
-        public string dateBirth
+        private string _dateofBirth;
+        public string DateofBirth
         {
-            get { return _dateBirth; }
+            get { return _dateofBirth; }
 
             set 
             { 
                 if (value != "")
                 {
-                    _dateBirth = value; 
+                    _dateofBirth = value; 
             
                 }
                 else
@@ -65,16 +65,16 @@
                 
             }
         }
-        private string _address;
-        public string customerAddress
+        private string _customerAddress;
+        public string CustomerAddress
         {
-            get { return _address; }
+            get { return _customerAddress; }
 
             set 
             {
                 if (value != "")
                 {
-                    _address = value;
+                    _customerAddress = value;
                 }
                 else
                 {
@@ -84,7 +84,7 @@
             }
         }
         private string _customerCity;
-        public string customerCity
+        public string CustomerCity
         {
             get { return _customerCity; }
 
@@ -103,7 +103,7 @@
         }
    
         private string _customerState;
-        public string customerState
+        public string CustomerState
         {
             get { return _customerState; }
 
@@ -113,7 +113,7 @@
             }
         }
         private string _customerZipcode;
-        public string customerZipcode
+        public string CustomerZipcode
         {
             get { return _customerZipcode; }
 
@@ -151,7 +151,7 @@
             }
         }
         private string _password;
-        public string password
+        public string Password
         {
             get { return _password; }
 
@@ -171,7 +171,7 @@
 
         private List<Orders> _customerOrder;
 
-        public List<Orders> customerOrder
+        public List<Orders> CustomerOrder
         {
             get{ return _customerOrder; }
 
@@ -192,23 +192,23 @@
         //Default Class Constructor
         public Customers()
         {
-            customerID = "";
-            firstName = "Tyler";
-            lastName = "Durden";
-            dateBirth = "102180";
-            customerAddress = "420 Paper St Wilmington DE 19886";
-            customerState = "CA";
-            customerCity = "Lancaster";
-            customerZipcode = "55555";
+            CustomerID = "";
+            FirstName = "Tyler";
+            LastName = "Durden";
+            DateofBirth = "102180";
+            CustomerAddress = "420 Paper St Wilmington DE 19886";
+            CustomerState = "CA";
+            CustomerCity = "Lancaster";
+            CustomerZipcode = "55555";
             Email = "tylerdurden@protonmail.com";
-            customerOrder = new List<Orders>();
-            password = "robertpaulson";
+            CustomerOrder = new List<Orders>();
+            Password = "robertpaulson";
         }
 
         public override string ToString()
         {
-            return $"First Name: {firstName}\nLast name: {lastName}\nDate of Birth {dateBirth}" +
-            $"\nAddress: {customerAddress}\nEmail: {Email}";
+            return $"First Name: {FirstName}\nLast name: {LastName}\nDate of Birth {DateofBirth}" +
+            $"\nAddress: {CustomerAddress}\nEmail: {Email}";
         }
     }
 }

@@ -33,5 +33,16 @@ namespace StoreBL
                     .Where(Orders => Orders.Equals(p_email))
                     .ToList(); //ToList method converts into return List collection
         }
+
+        //May Need to make strings public in passing class
+        // public List<Orders> GetUserID(string p_email, string p_password)
+        // {
+        //     List<Orders> listoforders = _repo.GetAllOrders();
+        //     return listoforders
+        //             .Where(Orders => Orders.Equals(p_email))
+        //             .Where(Orders => Orders.Equals(p_password))
+        //             .ToList();
+        // }
+
     }
 }
