@@ -1,26 +1,15 @@
 [
   {
-    "FirstName": "James",
-    "LastName": "Bohannon",
+    "CustomerID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
+    "FirstName": "Victor",
+    "LastName": "VonDoom",
     "DateofBirth": "102180",
-    "CustomerAddress": "1070 Waluhiyi Trail",
-    "CustomerCity": "Macon",
-    "CustomerState": "GA",
+    "CustomerAddress": "420 Paper St Wilmington",
+    "CustomerCity": "Lancaster",
+    "CustomerState": "PA",
     "CustomerZipcode": "55555",
-    "Email": "jamesbohannon@aol.com",
-    "Password": "robertpaulson",
-    "CustomerOrder": []
-  },
-  {
-    "FirstName": "William",
-    "LastName": "Riker",
-    "DateofBirth": "091779",
-    "CustomerAddress": "1070 Waluhiyi Trail",
-    "CustomerCity": "BirmingHam",
-    "CustomerState": "AL",
-    "CustomerZipcode": "55555",
-    "Email": "williamriker@aol.com",
-    "Password": "robertpaulson",
+    "Email": "victor@aol.com",
+    "Password": "victor",
     "CustomerOrder": []
   }
 ]

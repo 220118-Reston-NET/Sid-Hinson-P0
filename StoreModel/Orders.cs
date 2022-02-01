@@ -66,7 +66,6 @@ namespace StoreModel
             StoreID = "";
             OrderDate = "";
             OrderTotal = 0.00;
-            CustomerEmail = "";
             OrderLineItems = new List<LineItems>() { new LineItems() };
         }
 
@@ -74,7 +73,7 @@ namespace StoreModel
         public override string ToString()
         {
             return $"OrderID: {OrderID}\nCustomerID: {CustomerID}\nStoreID: {StoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}\nCustomer Email: {CustomerEmail}";
+            $"\nOrderTotal: {OrderTotal}";
         }
     }
 }

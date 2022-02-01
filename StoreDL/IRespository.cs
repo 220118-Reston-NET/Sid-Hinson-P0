@@ -6,12 +6,11 @@ namespace StoreDL
     /// Data Layer Interface - DB - CRUD
     /// </summary>
     
-
-
-
+    
     /// <summary>
     /// Customers Interface
     /// </summary>
+    /// 
     public interface ICustomersRepo
     {
         /// <summary>

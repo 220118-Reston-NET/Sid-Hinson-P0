@@ -7,7 +7,7 @@
     public class Customers
     {
     
-        public string CustomerID;
+        public string CustomerID { get; set; }
         private string _firstName;
         public string FirstName
         {
@@ -196,7 +196,7 @@
             FirstName = "Tyler";
             LastName = "Durden";
             DateofBirth = "102180";
-            CustomerAddress = "420 Paper St Wilmington DE 19886";
+            CustomerAddress = "420 Paper St";
             CustomerState = "CA";
             CustomerCity = "Lancaster";
             CustomerZipcode = "55555";
@@ -207,7 +207,7 @@
 
         public override string ToString()
         {
-            return $"First Name: {FirstName}\nLast name: {LastName}\nDate of Birth {DateofBirth}" +
+            return $"Product Id: {CustomerID}\nFirst Name: {FirstName}\nLast name: {LastName}\nDate of Birth {DateofBirth}" +
             $"\nAddress: {CustomerAddress}\nEmail: {Email}";
         }
     }

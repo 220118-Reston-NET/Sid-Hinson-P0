@@ -19,11 +19,10 @@ namespace StoreDL
         public Customers AddCustomer(Customers p_cust)
         {
             string _path = _filepath + "Customers.json";
-            //Add an Unique ID at the time of Save
-            p_cust.CustomerID = Guid.NewGuid().ToString();
-            
             //Create file
             //Adds the Customer with Global Univeral ID Generated
+            p_cust.CustomerID = Guid.NewGuid().ToString();
+            //Write Customer to File
             List<Customers> listofcustomers = GetAllCustomers();
             listofcustomers.Add(p_cust);
             _jsonString = JsonSerializer.Serialize(listofcustomers, new JsonSerializerOptions {WriteIndented = true});

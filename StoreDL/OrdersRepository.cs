@@ -18,6 +18,7 @@ namespace StoreDL
         public Orders AddOrders(Orders p_order)
         {
             string path = _filepath + "Orders.json";
+            p_order.OrderID = Guid.NewGuid().ToString();
             List<Orders> listoforders = GetAllOrders();
             listoforders.Add(p_order);
             return p_order;

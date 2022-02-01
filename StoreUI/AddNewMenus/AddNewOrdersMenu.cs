@@ -4,11 +4,11 @@ namespace StoreUI
 {
     public class AddNewOrdersMenu : IMenu
     {
-        private static LineItems _newLineItem = new LineItems();
-        private static Orders _newOrder = new Orders();
-        public static string p_CustomerEmail;
-        public static string p_CustomerID;
-        public static string p_Company;
+        private static LineItems _NewLineItem = new LineItems();
+        private static Orders _NewOrder = new Orders();
+        public static string CustomerEmail;
+        public static string CustomerID;
+        public static string Company;
         //Dependency Injection
         private IProductsBL _productBL;
         private IOrdersBL _orderBL;
@@ -31,8 +31,9 @@ namespace StoreUI
             Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
             Console.WriteLine("=[1] - Enter Name & Pass For Shopping          =");
             Console.WriteLine("=[2] - Display Product By Category             =");  
-            Console.WriteLine("=[3] - Order Your Products                     =");
-            Console.WriteLine("=[4] - Display / Remove Products From Order    =");
+            Console.WriteLine("=[3] - Add Product to Order                    =");
+            Console.WriteLine("=[4] - Display Current Order                   =");
+            Console.WriteLine("=[4] - Remove Products From Order              =");
             Console.WriteLine("=[5] - Remove ALL Products From Order          =");
             Console.WriteLine("=[6] - Save Customer Order                     =");
             Console.WriteLine("================================================");
@@ -61,14 +62,18 @@ namespace StoreUI
                 Console.WriteLine("Please Enter a Last Name");
                 string p_lname = Console.ReadLine();
                 Console.WriteLine("Enter Customer Email Address");
-                p_CustomerEmail = Console.ReadLine();
+                string p_CustomerEmail = Console.ReadLine();
                 List<Customers> listofcustomers = _customerBL.SearchCustomers(p_fname, p_lname, p_CustomerEmail);
                 try
                 {            //******************************This is Broke*****************************
                 foreach (var Customer in listofcustomers)
                 {
+                    _NewOrder.CustomerID = Customer.CustomerID;
                     Console.WriteLine(Customer);
+
                 }
+                Console.WriteLine("Press Enter");
+                Console.ReadLine();
                 }
                 catch(NullReferenceException)
                 {
@@ -147,11 +152,10 @@ namespace StoreUI
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("*               Retro Barbarian Gaming Lair Order Screen                      *");
                 Console.WriteLine("*******************************************************************************");
-                Console.WriteLine("* Store #  - " + _newOrder.StoreID);
-                Console.WriteLine("* Name     - " + _newLineItem.ProductName);
-                Console.WriteLine("* Company  - " + p_Company);
-                Console.WriteLine("* StoreID  - " + _newOrder.StoreID);
-                Console.WriteLine("* Quantity - " + _newLineItem.ProductQuantity);
+                Console.WriteLine("* CustomerID - " + _NewOrder.CustomerID);
+                Console.WriteLine("* Store #  - " + _NewOrder.StoreID);
+                Console.WriteLine("* Name     - " + _NewLineItem.ProductName);
+                Console.WriteLine("* Quantity - " + _NewLineItem.ProductQuantity);
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("* Please Enter Order Information                                              *");
                 Console.WriteLine("*******************************************************************************");
@@ -180,7 +184,7 @@ namespace StoreUI
 
 
                 case "6":
-                _orderBL.AddOrders(_newOrder);
+                _orderBL.AddOrders(_NewOrder);
                 return "AddNewOrdersMenu";
 
 

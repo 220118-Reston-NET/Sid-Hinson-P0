@@ -21,7 +21,7 @@ namespace StoreUI
             Console.WriteLine("===============================================");
             Console.WriteLine("=       Enter New Customer Info : Select       =");     
             Console.WriteLine("================================================");
-            Console.WriteLine("=[0] - Return to Main Menu");
+            Console.WriteLine("=[0] - Return to Main Menu"); 
             Console.WriteLine("=[1] - First Name : " + _newCustomer.FirstName); 
             Console.WriteLine("=[2] - Last Name : " + _newCustomer.LastName); 
             Console.WriteLine("=[3] - Address : " + _newCustomer.CustomerAddress);
@@ -33,6 +33,8 @@ namespace StoreUI
             Console.WriteLine("=[9] - Password : " + _newCustomer.Password);
             Console.WriteLine("=[10] - Update & Save Information");
             Console.WriteLine("===============================================");
+            Console.WriteLine("=Customer Generated ID : " + _newCustomer.CustomerID);
+            Console.WriteLine("================================================");
         }
         
         public string UserSelection()
