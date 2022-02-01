@@ -29,7 +29,7 @@ namespace StoreUI
             Console.WriteLine("=         Enter Number to Select Option        =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=[1] - Enter Last Name & Pass For Shopping     =");
+            Console.WriteLine("=[1] - Enter Name & Pass For Shopping          =");
             Console.WriteLine("=[2] - Display Product By Category             =");  
             Console.WriteLine("=[3] - Order Your Products                     =");
             Console.WriteLine("=[4] - Display / Remove Products From Order    =");
@@ -67,11 +67,7 @@ namespace StoreUI
                 {            //******************************This is Broke*****************************
                 foreach (var Customer in listofcustomers)
                 {
-                    Console.WriteLine("Saving CustomerID to Order.......");
-                    Customer.CustomerID = p_CustomerID;
-                    Console.WriteLine(p_CustomerID);
-                    _newOrder.CustomerID = p_CustomerID;
-                    Console.WriteLine("Customer ID saved");
+                    Console.WriteLine(Customer);
                 }
                 }
                 catch(NullReferenceException)

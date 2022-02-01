@@ -29,7 +29,7 @@ namespace StoreUI
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return "StoreMainMenu";
                 case "1":
                     Console.WriteLine("Please Enter a First Name");
                     string p_fname = Console.ReadLine();
@@ -45,12 +45,12 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return "SearchCustomersMenu";
                 default:
                     Console.WriteLine("Customer not Found");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return "StoreMainMenu";
             }
         }
     }
