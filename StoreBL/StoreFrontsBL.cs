@@ -32,7 +32,7 @@ namespace StoreBL
             Console.WriteLine("Searching for Store Front Information ...........");
             List<StoreFronts> listofstorefronts = _repo.GetAllStoreFronts();
             return listofstorefronts
-                    .Where(StoreFronts => StoreFronts.storeNumber.Equals(p_storeNumber))//Filter a collection with a Lamda
+                    .Where(StoreFronts => StoreFronts.StoreID.Equals(p_storeNumber))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
 

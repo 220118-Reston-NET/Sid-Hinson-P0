@@ -22,11 +22,11 @@ namespace StoreUI
             Console.WriteLine("=       Enter New StoreFronts Info : Select       =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu");
-            Console.WriteLine("=[1] - Enter StoreFront Number: " + _newStoreFronts.storeNumber );
-            Console.WriteLine("=[2] - Enter StoreFront Street Address: " + _newStoreFronts.storeAddress );
-            Console.WriteLine("=[3] - Enter StoreFront Street City: " + _newStoreFronts.storeCity );        
-            Console.WriteLine("=[4] - Enter StoreFront Zipcode: " + _newStoreFronts.storeZipCode );
-            Console.WriteLine("=[5] - Enter StoreFront State: " + _newStoreFronts.storeState);
+            Console.WriteLine("=[1] - Enter StoreFront Number: " + _newStoreFronts.StoreID );
+            Console.WriteLine("=[2] - Enter StoreFront Street Address: " + _newStoreFronts.StoreAddress );
+            Console.WriteLine("=[3] - Enter StoreFront Street City: " + _newStoreFronts.StoreCity );        
+            Console.WriteLine("=[4] - Enter StoreFront Zipcode: " + _newStoreFronts.StoreZipCode );
+            Console.WriteLine("=[5] - Enter StoreFront State: " + _newStoreFronts.StoreState);
             Console.WriteLine("=[6] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
@@ -40,23 +40,23 @@ namespace StoreUI
                     return "MainMenu";
                 case "1":
                     Console.WriteLine("Enter a Store Number :");
-                    _newStoreFronts.storeNumber = Convert.ToInt32(Console.ReadLine());
+                    _newStoreFronts.StoreID = Convert.ToInt32(Console.ReadLine());
                     return "NewStoreFrontsMenu";
                 case "2":
                     Console.WriteLine("Enter a Street Address : ");
-                    _newStoreFronts.storeAddress = Console.ReadLine();
+                    _newStoreFronts.StoreAddress = Console.ReadLine();
                     return "NewStoreFrontsMenu";
                 case "3":
                     Console.WriteLine("Enter a Store City : ");
-                    _newStoreFronts.storeCity = Console.ReadLine();
+                    _newStoreFronts.StoreCity = Console.ReadLine();
                     return "NewStoreFrontsMenu";
                 case "4":
                     Console.WriteLine("Enter a Zip Code : ");
-                    _newStoreFronts.storeZipCode = Console.ReadLine();
+                    _newStoreFronts.StoreZipCode = Console.ReadLine();
                     return "NewStoreFrontsMenu";
                 case "5":
                     Console.WriteLine("Enter a State Location : ");
-                    _newStoreFronts.storeState = Console.ReadLine();
+                    _newStoreFronts.StoreState = Console.ReadLine();
                     return "NewStoreFrontsMenu";               
                 case "6":
                     try

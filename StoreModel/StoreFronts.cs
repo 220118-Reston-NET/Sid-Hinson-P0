@@ -5,29 +5,26 @@ namespace StoreModel
     public class StoreFronts
     {
  
-        public int storeNumber { get; set; }
-        public string storeZipCode { get; set; }
-        public string storeState { get; set; }
-        public string storeAddress { get; set; }
+        public int StoreID { get; set; }
+        public string StoreZipCode { get; set; }
+        public string StoreState { get; set; }
+        public string StoreAddress { get; set; }
 
-        public string storeCity { get; set; }
+        public string StoreCity { get; set; }
         //Default Class Constructor
         public StoreFronts()
         {
-            storeNumber = 0;
-            storeAddress = "";
-            storeZipCode = "";
-            storeState = "";
-            storeCity ="";
-            // _storeOrders = new List<Orders>();
-            // _storeProducts = new List<Products>();
-
+            StoreID = 0;
+            StoreAddress = "";
+            StoreZipCode = "";
+            StoreState = "";
+            StoreCity = "";
         }
 
         public override string ToString()
         {
-            return $"Store Number: {storeNumber}\nStore Address: {storeAddress}\nStore ZipCode: {storeZipCode}" +
-            $"\nStore City: {storeCity}\nStore State: {storeState}";
+            return $"Store Number: {StoreID}\nStore Address: {StoreAddress}\nStore ZipCode: {StoreZipCode}" +
+            $"\nStore City: {StoreCity}\nStore State: {StoreState}";
         }
 
     }
