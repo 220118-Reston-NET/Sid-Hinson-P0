@@ -11,5 +11,18 @@
     "Email": "victor@aol.com",
     "Password": "victor",
     "CustomerOrder": []
+  },
+  {
+    "CustomerID": "af3b73a3-c827-4f96-8b81-524341a45510",
+    "FirstName": "A",
+    "LastName": "A",
+    "DateofBirth": "102180",
+    "CustomerAddress": "A",
+    "CustomerCity": "A",
+    "CustomerState": "A",
+    "CustomerZipcode": "55555",
+    "Email": "A",
+    "Password": "robertpaulson",
+    "CustomerOrder": []
   }
 ]

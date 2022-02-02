@@ -78,8 +78,14 @@ while(isValid)
         case "SearchProductsMenu":
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
-        case "AddNewOrdersMenu": //FIX
+        case "AddNewOrdersMenu":
             mainmenu = new AddNewOrdersMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+            break;
+        case "NewCustomerOrderMenu":
+            mainmenu = new NewCustomerOrderMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+            break;
+        case "AddProductsDisplay":
+            mainmenu = new AddProductsDisplay(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
             break;
         case "Exit":
             // Log.Information("User has Exited The Program");

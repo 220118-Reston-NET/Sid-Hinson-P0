@@ -18,8 +18,8 @@ namespace StoreUI
             Console.WriteLine("================================================================");
             Console.WriteLine("=              Select Option :                                 =");
             Console.WriteLine("= [0] - Exit Search                                            =");
-            Console.WriteLine("= [1] - Find Product by Store                                  ="); 
-            Console.WriteLine("= [2] - Find Product by Category                               =");
+            Console.WriteLine("= [1] - Find Product by Name, Store, and Company               ="); 
+            Console.WriteLine("= [2] - Find Product by Specific Category                    =");
             Console.WriteLine("= [3] - Find Product by Company                                =");
             Console.WriteLine("================================================================");
         }

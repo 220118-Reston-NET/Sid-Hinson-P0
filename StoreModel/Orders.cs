@@ -18,11 +18,9 @@ namespace StoreModel
 
        //List of Line Items for an Order, Line Items is a String/int type
        //May need to be ArrayList or something else
-       public List<LineItems> OrderLineItems;
+       public List<LineItems> OrderLineItems { get; set;}
         //Order total of Customer Order
-
        public double OrderTotal { get; set; }
-
       //Default Constructor      
         public Orders()
         {
@@ -34,15 +32,12 @@ namespace StoreModel
             OrderTotal = 0.00;
             OrdCustEmail = "";
             OrderLineItems = new List<LineItems>();
-
-
-        }
-
         
+        }
         public override string ToString()
         {
             return $"OrderID: {OrderID}\nCustomerID: {OrdCustID}\nStoreID: {OrdStoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {OrdCustEmail}";
+            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {OrdCustEmail}\nOrder Items{OrderLineItems}";
         }
     }
 }
