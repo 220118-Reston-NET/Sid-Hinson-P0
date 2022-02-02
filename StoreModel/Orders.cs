@@ -18,62 +18,31 @@ namespace StoreModel
 
        //List of Line Items for an Order, Line Items is a String/int type
        //May need to be ArrayList or something else
-       private List<LineItems> _orderLineItems;
-       public List<LineItems> OrderLineItems
-        {
-            get{ return _orderLineItems; }
-
-            set 
-            {
-                if(value.Count <= 3)
-                {
-                _orderLineItems = value;
-
-                }
-                else
-                {
-                    throw new Exception("Customer List Must have 3 fields or less.");
-                }
-
-            }
-        }   
+       public List<LineItems> OrderLineItems;
         //Order total of Customer Order
-       private double _orderTotal;
 
-       public double OrderTotal
-       {
-           get { return _orderTotal; }
-
-           set 
-           {
-                if (value >= 0.00)
-            {
-                value = _orderTotal;
-            }
-            else
-            {
-                throw new Exception("An Order number equal or greater to Zero must be entered.");
-            }
-        }
-
-       }
+       public double OrderTotal { get; set; }
 
       //Default Constructor      
         public Orders()
         {
-            OrderID = "";
+
+            OrderID= "";
             CustomerID = "";
             StoreID = "";
             OrderDate = "";
             OrderTotal = 0.00;
-            OrderLineItems = new List<LineItems>() { new LineItems() };
+            CustomerEmail = "";
+            OrderLineItems = new List<LineItems>();
+
+
         }
 
         
         public override string ToString()
         {
             return $"OrderID: {OrderID}\nCustomerID: {CustomerID}\nStoreID: {StoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}";
+            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {CustomerEmail}";
         }
     }
 }

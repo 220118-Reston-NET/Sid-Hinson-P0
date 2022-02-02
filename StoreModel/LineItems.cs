@@ -3,6 +3,7 @@ namespace StoreModel
     public class LineItems
     {
         
+       public string ProdCompany { get; set;}
        public int StoreID {get; set;}
        private string _productName;
        public string ProductName
@@ -49,7 +50,7 @@ namespace StoreModel
         {
         StoreID = 0;
         ProductName = "None";
-        ProductQuantity = 0;
+        ProductName = "None";
         ProductPrice = 0;
         }
         

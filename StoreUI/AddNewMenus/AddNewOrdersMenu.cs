@@ -4,11 +4,11 @@ namespace StoreUI
 {
     public class AddNewOrdersMenu : IMenu
     {
-        private static LineItems _NewLineItem = new LineItems();
-        private static Orders _NewOrder = new Orders();
-        public static string CustomerEmail;
+        //Variables, Collections to Store Information for BL,DL processing
+        public static LineItems p_LineToOrder = new LineItems();
+        private static Orders p_NewOrder = new Orders();
+        private static List<Customers> p_ListofCustomers = new List<Customers>();
         public static string CustomerID;
-        public static string Company;
         //Dependency Injection
         private IProductsBL _productBL;
         private IOrdersBL _orderBL;
@@ -33,9 +33,9 @@ namespace StoreUI
             Console.WriteLine("=[2] - Display Product By Category             =");  
             Console.WriteLine("=[3] - Add Product to Order                    =");
             Console.WriteLine("=[4] - Display Current Order                   =");
-            Console.WriteLine("=[4] - Remove Products From Order              =");
-            Console.WriteLine("=[5] - Remove ALL Products From Order          =");
-            Console.WriteLine("=[6] - Save Customer Order                     =");
+            Console.WriteLine("=[5] - Remove Products From Order              =");
+            Console.WriteLine("=[6] - Remove ALL Products From Order          =");
+            Console.WriteLine("=[7] - Save Customer Order                     =");
             Console.WriteLine("================================================");
         }
 
@@ -44,36 +44,40 @@ namespace StoreUI
             string userInput = Console.ReadLine();
 
             //**********************************WORK IN PROGRESS*******************************
-            //********todo:Convert these Switch Statements into BL void/return Methods*********
-            //********todo: Make Display pages for Some of these ******************************
+            //*********todo:Convert some Switch Statements into BL void/return Methods*********
             //*************Code here is to just get the program to a working state*************
             //*********************************************************************************
 
             switch (userInput)
             {
+                //Return to Main Menu
                 case "0":
                 return "StoreMainMenu";
 
 
-
+                //Registration
                 case "1":
+                Console.Clear();
+                Console.WriteLine("================================================");
+                Console.WriteLine("=    Retro Barbarian Gaming Lair Shop Menu     =");
+                Console.WriteLine("================================================");
                 Console.WriteLine("Please Enter a First Name");
                 string p_fname = Console.ReadLine();
                 Console.WriteLine("Please Enter a Last Name");
                 string p_lname = Console.ReadLine();
                 Console.WriteLine("Enter Customer Email Address");
-                string p_CustomerEmail = Console.ReadLine();
-                List<Customers> listofcustomers = _customerBL.SearchCustomers(p_fname, p_lname, p_CustomerEmail);
+                p_NewOrder.CustomerEmail = Console.ReadLine();
+                Console.WriteLine("Thank you for Registering! Now you can save ORDERS.");
+                Console.WriteLine("================================================");
+                List<Customers> listofcustomers = _customerBL.SearchCustomers(p_fname, p_lname, p_NewOrder.CustomerEmail);
+                p_ListofCustomers = listofcustomers;
                 try
-                {            //******************************This is Broke*****************************
+                {          
                 foreach (var Customer in listofcustomers)
                 {
-                    _NewOrder.CustomerID = Customer.CustomerID;
+                    p_NewOrder.CustomerID = Customer.CustomerID;
                     Console.WriteLine(Customer);
-
                 }
-                Console.WriteLine("Press Enter");
-                Console.ReadLine();
                 }
                 catch(NullReferenceException)
                 {
@@ -84,8 +88,9 @@ namespace StoreUI
                 return "AddNewOrdersMenu";
 
 
-
+                //Choose Product Category
                 case "2":
+                Console.Clear();
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("*        Retro Barbarian Gaming Lair Has (3) Locations to Serve You           *");
                 Console.WriteLine("*******************************************************************************");
@@ -102,7 +107,6 @@ namespace StoreUI
                 Console.WriteLine("*       [1] = Games      [2] = Systems    [3] = Merchandise       *");
                 Console.WriteLine("*******************************************************************");
                 string userinput = Console.ReadLine();
-                Console.Clear();
                     switch(userinput)
                     {
                         case "1":
@@ -146,49 +150,85 @@ namespace StoreUI
                         return "AddNewOrdersMenu";
                     }
    
-
+                //Order Creation
                 case "3":
                 Console.Clear();
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("*               Retro Barbarian Gaming Lair Order Screen                      *");
                 Console.WriteLine("*******************************************************************************");
-                Console.WriteLine("* CustomerID - " + _NewOrder.CustomerID);
-                Console.WriteLine("* Store #  - " + _NewOrder.StoreID);
-                Console.WriteLine("* Name     - " + _NewLineItem.ProductName);
-                Console.WriteLine("* Quantity - " + _NewLineItem.ProductQuantity);
+                Console.WriteLine("* CustomerID - " + p_NewOrder.CustomerID);
+                Console.WriteLine("* Store # - " + p_NewOrder.StoreID);
+                Console.WriteLine("* Product Name - " + p_LineToOrder.ProductName);
+                Console.WriteLine("* Quantity - " + p_LineToOrder.ProductQuantity);
+                Console.WriteLine("* Company - " + p_LineToOrder.ProdCompany);                
+                Console.WriteLine("* Customer Email - " + p_NewOrder.CustomerEmail);
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("* Please Enter Order Information                                              *");
                 Console.WriteLine("*******************************************************************************");
+                Console.WriteLine("Enter Store Number:");
+                p_NewOrder.StoreID = Console.ReadLine();
+                Console.WriteLine("Enter Product Name:");
+                p_LineToOrder.ProductName = Console.ReadLine();
+                Console.WriteLine("Enter Product Company:");
+                p_LineToOrder.ProdCompany = Console.ReadLine();
+                Console.WriteLine("Enter Quantity of product:");
+                p_LineToOrder.ProductQuantity = Convert.ToInt32(Console.ReadLine());
+
+                //Add LineItem Order to Order List
+                p_NewOrder.OrderLineItems.Add(p_LineToOrder);
+                Console.WriteLine("*****************************");
+                Console.WriteLine("***Press Enter to Continue***");
+                Console.WriteLine("*****************************");
                 Console.ReadLine();
-                
+                return "AddNewOrdersMenu"; 
 
 
-
-
-
-
-
-
-                return "AddNewOrdersMenu";
-
-
-
+                //Display Order
                 case "4":
+                Console.Clear();
+                Console.WriteLine("*****************************");
+                _orderBL.DisplayOrder(p_NewOrder);
+                Console.WriteLine("*****************************");
+                Console.WriteLine("***Press Enter to Continue***");
+                Console.WriteLine("*****************************");
+                Console.ReadLine();
                 return "AddNewOrdersMenu";
 
 
-
+                // //Remove Product
                 case "5":
+                Console.Clear();
+                // Console.WriteLine("******************************");
+                // Console.WriteLine("*******Remove Products********");
+                // Console.WriteLine("******************************");
+                // Console.WriteLine("Enter Product Name:");
+                // string p_ProdName = Console.ReadLine();
+                // Console.WriteLine("Enter Product Company:");
+                // string p_ProdCompany = Console.ReadLine();
+
                 return "AddNewOrdersMenu";
 
 
-
+                //Remove ALL Products
                 case "6":
-                _orderBL.AddOrders(_NewOrder);
+                p_NewOrder.OrderLineItems.Clear();
+                Console.WriteLine("*****************************");
+                _orderBL.DisplayOrder(p_NewOrder);
+                Console.WriteLine("*****************************");
+                Console.WriteLine("****All Products Cleared!****");
+                Console.WriteLine("*****************************");
+                Console.WriteLine("***Press Enter to Continue***");
+                Console.WriteLine("*****************************");
+                Console.ReadLine();
                 return "AddNewOrdersMenu";
 
-
-
+                //Save Order
+                case "7":
+                p_NewOrder.OrderLineItems.Add(p_LineToOrder);
+                Console.WriteLine(p_NewOrder.OrderLineItems);
+                Console.ReadLine();
+                _orderBL.AddOrders(p_NewOrder);
+                return "AddNewOrdersMenu";
                 default:
                 return "AddNewOrdersMenu";
             }

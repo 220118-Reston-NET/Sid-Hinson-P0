@@ -72,7 +72,19 @@ namespace StoreBL
         /// <param name="p_order"></param>
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
+
+        public List<Orders> SearchOrders(string p_email);
+        public void DisplayOrder(Orders p_order);
+        // public void RemoveProdFromOrder(Orders p_Order, string p_Prodname, string p_ProdComp);
         
+        public void GeneralDisplay()
+        {
+            
+        }
+        public void GetFirstName();
+        public void GetLastName();
+        public void GetEmail();
+    
     }
 }
 

@@ -8,7 +8,7 @@ namespace StoreDL
     /// </summary>
     public class OrdersRepository : IOrdersRepo
     {
-        private string _filepath = "../StoreDL/";
+        private string _filepath = "../StoreDL/DB/";
         private string _jsonString;
         /// <summary>
         /// Write Orders to DB

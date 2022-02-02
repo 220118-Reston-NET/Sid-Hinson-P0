@@ -34,14 +34,25 @@ namespace StoreBL
                     .ToList(); //ToList method converts into return List collection
         }
 
-        //May Need to make strings public in passing class
-        // public List<Orders> GetUserID(string p_email, string p_password)
+        public void DisplayOrder(Orders p_order)
+        {
+
+                Console.WriteLine("*************************");
+                Console.WriteLine(p_order);
+                Console.WriteLine("*************************");
+
+        }
+
+        // public List<LineItems> RemoveProdFromOrder(string p_Prodname, string p_ProdComp)
         // {
-        //     List<Orders> listoforders = _repo.GetAllOrders();
-        //     return listoforders
-        //             .Where(Orders => Orders.Equals(p_email))
-        //             .Where(Orders => Orders.Equals(p_password))
-        //             .ToList();
+
+        //         Console.WriteLine("*****************************");
+        //         Console.WriteLine("       Product removed       ");
+        //         Console.WriteLine("*****************************");
+        //         Console.WriteLine("***Press Enter to Continue***");
+        //         Console.WriteLine("*****************************");
+        //         Console.ReadLine();
+
         // }
 
     }

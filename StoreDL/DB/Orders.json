@@ -1,0 +1,15 @@
+[
+    {
+      "CustomerID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
+      "FirstName": "Victor",
+      "LastName": "VonDoom",
+      "DateofBirth": "102180",
+      "CustomerAddress": "420 Paper St Wilmington",
+      "CustomerCity": "Lancaster",
+      "CustomerState": "PA",
+      "CustomerZipcode": "55555",
+      "Email": "victor@aol.com",
+      "Password": "victor",
+      "CustomerOrder": []
+    }
+  ]
