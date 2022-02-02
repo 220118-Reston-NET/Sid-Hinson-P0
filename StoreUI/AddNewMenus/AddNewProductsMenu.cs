@@ -39,7 +39,7 @@ namespace StoreUI
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return "StoreMainMenu";
                 case "1":
                     Console.WriteLine("Enter a Store Number :");
                     _newProduct.StoreID = Convert.ToInt32(Console.ReadLine());

@@ -31,7 +31,7 @@ namespace StoreBL
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductCompany.Equals(p_productComp))//Filter a collection with a Lamda
+                    .Where(Products => Products.ProductCompany.Contains(p_productComp))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
         public List<Products> SearchProductsCat(string p_productCat) 
@@ -39,7 +39,7 @@ namespace StoreBL
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductCategory.Equals(p_productCat))//Filter a collection with a Lamda
+                    .Where(Products => Products.ProductCategory.Contains(p_productCat))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
         public List<Products> SearchProducts(string p_prodName, string p_prodComp, int p_StoreID)
@@ -47,8 +47,8 @@ namespace StoreBL
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductName.Equals(p_prodName))//Filter a collection with a Lamda
-                    .Where(Products => Products.ProductCompany.Equals(p_prodComp))//Filter a collection with a Lamda
+                    .Where(Products => Products.ProductName.Contains(p_prodName))//Filter a collection with a Lamda
+                    .Where(Products => Products.ProductCompany.Contains(p_prodComp))//Filter a collection with a Lamda
                     .Where(Products => Products.StoreID.Equals(p_StoreID))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }

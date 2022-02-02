@@ -15,10 +15,10 @@ namespace StoreModel
         public StoreFronts()
         {
             StoreID = 0;
-            StoreAddress = "";
-            StoreZipCode = "";
-            StoreState = "";
-            StoreCity = "";
+            StoreAddress = "100 Test Ave";
+            StoreZipCode = "66666";
+            StoreState = "AL";
+            StoreCity = "Anchorage";
         }
 
         public override string ToString()

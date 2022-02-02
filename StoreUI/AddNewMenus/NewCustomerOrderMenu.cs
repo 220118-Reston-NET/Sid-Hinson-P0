@@ -46,24 +46,24 @@ namespace StoreUI
                 case "1":
                     Console.WriteLine("Enter a Store ID :");
                     p_NewOrder.OrderStoreID = Console.ReadLine();
-                    return "NewCustomerorderMenu";
+                    return "NewCustomerOrderMenu";
                 case "2":
                     Console.WriteLine("Enter a Product Name : ");
                     p_LineToOrder.ProductName = Console.ReadLine();
-                    return "NewCustomerorderMenu";
+                    return "NewCustomerOrderMenu";
                 case "3":
                     Console.WriteLine("Enter a Product Company :");
                     p_LineToOrder.ProductCompany = Console.ReadLine();
-                    return "NewCustomerorderMenu";
+                    return "NewCustomerOrderMenu";
                 case "4":
                     Console.WriteLine("Enter an Product Quantity : ");
                     p_LineToOrder.ProductQuantity = Convert.ToInt32(Console.ReadLine());
-                    return "NewCustomerorderMenu";
+                    return "NewCustomerOrderMenu";
 
                 case "5":
                     Console.WriteLine("Enter Customer Email :");
                     p_NewOrder.OrderCustomerEmail = Console.ReadLine();
-                    return "NewCustomerorderMenu";
+                    return "NewCustomerOrderMenu";
                 case "6":
                     try
                     {   

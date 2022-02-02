@@ -27,14 +27,13 @@ namespace StoreUI
             Console.WriteLine("=[3] - Address : " + _newCustomer.CustomerAddress);
             Console.WriteLine("=[4] - City : " + _newCustomer.CustomerCity);        
             Console.WriteLine("=[5] - State : " + _newCustomer.CustomerState);
-            Console.WriteLine("=[6] - Zipcode : " + _newCustomer.CustomerZipcode);
-            Console.WriteLine("=[7] - Email : " + _newCustomer.CustomerEmail);
-            Console.WriteLine("=[8] - Date Of Birth : " + _newCustomer.CDateofBirth);
-            Console.WriteLine("=[9] - Password : " + _newCustomer.CPassword);
-            Console.WriteLine("=[10] - Update & Save Information");
+            Console.WriteLine("=[6] - Country : " + _newCustomer.CustCountry);
+            Console.WriteLine("=[7] - Zipcode : " + _newCustomer.CustomerZipcode);
+            Console.WriteLine("=[8] - Email : " + _newCustomer.CustomerEmail);
+            Console.WriteLine("=[9] - Date Of Birth : " + _newCustomer.CDateofBirth);
+            Console.WriteLine("=[10] - Password : " + _newCustomer.CPassword);
+            Console.WriteLine("=[11] - Update & Save Information");
             Console.WriteLine("===============================================");
-            Console.WriteLine("=Customer Generated ID : " + _newCustomer.CustomerID);
-            Console.WriteLine("================================================");
         }
         
         public string UserSelection()
@@ -43,7 +42,7 @@ namespace StoreUI
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return "StoreMainMenu";
                 case "1":
                     Console.WriteLine("Enter a First Name :");
                     _newCustomer.CFirstName = Console.ReadLine();
@@ -65,23 +64,27 @@ namespace StoreUI
                     _newCustomer.CustomerState = Console.ReadLine();
                     return "NewCustomersMenu";
                 case "6":
+                    Console.WriteLine("Enter a USA :");
+                    _newCustomer.CustCountry = Console.ReadLine();
+                    return "NewCustomersMenu";               
+                case "7":
                     Console.WriteLine("Enter a Zipcode :");
                     _newCustomer.CustomerZipcode = Console.ReadLine();
                     return "NewCustomersMenu";
-                case "7":
+                case "8":
                     Console.WriteLine("Enter an Email Address :");
                     _newCustomer.CustomerEmail = Console.ReadLine();
                     return "NewCustomersMenu";
-                case "8":
+                case "9":
                     Console.WriteLine("Enter a Date of Birth");
                     Console.WriteLine("Example : 10211980 for October 21st 1980");
                     _newCustomer.CDateofBirth = Console.ReadLine();
                     return "NewCustomersMenu";
-                case "9":
+                case "10":
                     Console.WriteLine("Enter a Password");
                     _newCustomer.CPassword = Console.ReadLine();
                     return "NewCustomersMenu";       
-                case "10":
+                case "11":
                     try
                     {   
                         _custBL.AddCustomers(_newCustomer);
@@ -94,7 +97,7 @@ namespace StoreUI
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
                     }
-                    return "CustomersMenu";
+                    return "NewCustomersMenu";
                     default:
                     return "NewCustomersMenu";
             }

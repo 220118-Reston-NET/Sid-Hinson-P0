@@ -28,7 +28,7 @@ namespace StoreUI
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return "StoreMainMenu";
                 case "1":
                     return "NewCustomersMenu";
                 case "2":

@@ -16,7 +16,7 @@ namespace StoreDL
         /// </summary>
         /// <param name="p_cust"></param>
         /// <returns></returns>
-        public Customers AddCustomer(Customers p_cust)
+        public Customers AddCustomers(Customers p_cust)
         {
             string _path = _filepath + "Customers.json";
             //Create file

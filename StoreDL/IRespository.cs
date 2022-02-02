@@ -18,7 +18,7 @@ namespace StoreDL
         /// </summary>
         /// <param name="p_cust"></param> Customer Object
         /// <returns>Customer Added</returns>
-        Customers AddCustomer(Customers p_cust);
+        Customers AddCustomers(Customers p_cust);
         /// <summary>
         /// Will Get All Customers in DB
         /// </summary>

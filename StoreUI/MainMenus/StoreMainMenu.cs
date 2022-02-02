@@ -45,7 +45,7 @@ namespace StoreUI
                     Console.WriteLine("Selection Invalid");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return "StoreMainMenu";
 
             }
         }

@@ -1,152 +1,32 @@
 [
   {
-    "productID": "cc1b12b2-2e0c-4f70-a5ad-7b0287e11864",
-    "storeNumber": 1,
-    "productName": "Xbox",
-    "productCompany": "Microsoft",
-    "productPrice": 500,
-    "productDescription": "State of the Art Gaming System",
-    "productCategory": "System",
-    "productQuantity": 10
+    "ProductID": 0,
+    "StoreID": 1,
+    "ProductName": "SNES",
+    "ProductCompany": "Nintendo",
+    "ProductPrice": 150,
+    "ProductDescription": "Super Nes 16bit Gaming System",
+    "ProductCategory": "System",
+    "ProductSTQuantity": 10
   },
   {
-    "productID": "0acf288c-9cf2-4be7-afdf-fd4cc08948ca",
-    "storeNumber": 2,
-    "productName": "Xbox",
-    "productCompany": "Microsoft",
-    "productPrice": 500,
-    "productDescription": "State of the Art Gaming System",
-    "productCategory": "System",
-    "productQuantity": 10
+    "ProductID": 0,
+    "StoreID": 2,
+    "ProductName": "SNES",
+    "ProductCompany": "Nintendo",
+    "ProductPrice": 150,
+    "ProductDescription": "Super Nes 16bit Gaming System",
+    "ProductCategory": "System",
+    "ProductSTQuantity": 10
   },
   {
-    "productID": "e1d8e66e-d0b1-4235-89fa-625bd66a7eff",
-    "storeNumber": 3,
-    "productName": "Xbox",
-    "productCompany": "Microsoft",
-    "productPrice": 500,
-    "productDescription": "State of the Art Gaming System",
-    "productCategory": "System",
-    "productQuantity": 10
-  },
-  {
-    "productID": "a3cc7ef7-8a9a-4f9a-8edd-9e9a549a3d5c",
-    "storeNumber": 1,
-    "productName": "Halo Infinite",
-    "productCompany": "Microsoft",
-    "productPrice": 60,
-    "productDescription": "New Edition to the Halo Multiplayer Franchise",
-    "productCategory": "Game",
-    "productQuantity": 10
-  },
-  {
-    "productID": "b93bb56a-7964-4e5a-97a4-923b658eceda",
-    "storeNumber": 2,
-    "productName": "Halo Infinite",
-    "productCompany": "Microsoft",
-    "productPrice": 60,
-    "productDescription": "New Edition to the Halo Multiplayer Franchise",
-    "productCategory": "Game",
-    "productQuantity": 10
-  },
-  {
-    "productID": "a60878bd-0413-4712-bda8-571c7d4c4e6c",
-    "storeNumber": 3,
-    "productName": "Halo Infinite",
-    "productCompany": "Microsoft",
-    "productPrice": 60,
-    "productDescription": "New Edition to the Halo Multiplayer Franchise",
-    "productCategory": "Game",
-    "productQuantity": 10
-  },
-  {
-    "productID": "18b8d9ed-d283-4b55-b651-22b1c85d7a10",
-    "storeNumber": 1,
-    "productName": "NES",
-    "productCompany": "Nintendo",
-    "productPrice": 200,
-    "productDescription": "Retro Gaming Console",
-    "productCategory": "System",
-    "productQuantity": 10
-  },
-  {
-    "productID": "af3dedd1-147d-46f0-9ccf-a997ed4dc4d8",
-    "storeNumber": 2,
-    "productName": "NES",
-    "productCompany": "Nintendo",
-    "productPrice": 200,
-    "productDescription": "Retro Gaming Console",
-    "productCategory": "System",
-    "productQuantity": 10
-  },
-  {
-    "productID": "ff9a8049-7832-4b41-8c09-d17bb48c5416",
-    "storeNumber": 3,
-    "productName": "NES",
-    "productCompany": "Nintendo",
-    "productPrice": 200,
-    "productDescription": "Retro Gaming Console",
-    "productCategory": "System",
-    "productQuantity": 10
-  },
-  {
-    "productID": "ba94f8f8-08c3-48e0-a0b2-4beb8f7eb697",
-    "storeNumber": 3,
-    "productName": "The Legend of Zelda",
-    "productCompany": "Nintendo",
-    "productPrice": 100,
-    "productDescription": "Retro Game Cartridge",
-    "productCategory": "Game",
-    "productQuantity": 10
-  },
-  {
-    "productID": "82fa3df7-d0a4-49d2-a384-aa97fb76f10b",
-    "storeNumber": 2,
-    "productName": "The Legend of Zelda",
-    "productCompany": "Nintendo",
-    "productPrice": 100,
-    "productDescription": "Retro Game Cartridge",
-    "productCategory": "Game",
-    "productQuantity": 10
-  },
-  {
-    "productID": "7255f0be-0c0e-47f3-a8d2-6fbc04a915da",
-    "storeNumber": 1,
-    "productName": "The Legend of Zelda",
-    "productCompany": "Nintendo",
-    "productPrice": 100,
-    "productDescription": "Retro Game Cartridge",
-    "productCategory": "Game",
-    "productQuantity": 10
-  },
-  {
-    "productID": "d946df4d-953f-450d-aab5-27fd08d58d0d",
-    "storeNumber": 1,
-    "productName": "DOOM Hoodie",
-    "productCompany": "ID Software",
-    "productPrice": 15,
-    "productDescription": "Hoodie featuring the Doomslayer",
-    "productCategory": "Merchandise",
-    "productQuantity": 10
-  },
-  {
-    "productID": "3a0d6118-70ee-437e-838e-5645e44f0414",
-    "storeNumber": 2,
-    "productName": "DOOM Hoodie",
-    "productCompany": "ID Software",
-    "productPrice": 15,
-    "productDescription": "Hoodie featuring the Doomslayer",
-    "productCategory": "Merchandise",
-    "productQuantity": 10
-  },
-  {
-    "productID": "b9448711-6be6-4af9-b7c4-7108b537b377",
-    "storeNumber": 3,
-    "productName": "DOOM Hoodie",
-    "productCompany": "ID Software",
-    "productPrice": 15,
-    "productDescription": "Hoodie featuring the Doomslayer",
-    "productCategory": "Merchandise",
-    "productQuantity": 10
+    "ProductID": 0,
+    "StoreID": 3,
+    "ProductName": "SNES",
+    "ProductCompany": "Nintendo",
+    "ProductPrice": 150,
+    "ProductDescription": "Super Nes 16bit Gaming System",
+    "ProductCategory": "System",
+    "ProductSTQuantity": 10
   }
 ]

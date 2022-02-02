@@ -1,29 +1,3 @@
 [
-  {
-    "OrderID": "",
-    "OrdCustID": "",
-    "OrdCustEmail": "",
-    "OrdStoreID": "",
-    "OrderDate": "",
-    "storeNumber": 0,
-    "OrderTotal": 0
-  },
-  {
-    "OrderID": "19f00ca4-b5ce-4b75-a984-99535038d1c2",
-    "OrdCustID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
-    "OrdCustEmail": "victor@aol.com",
-    "OrdStoreID": "1",
-    "OrderDate": "",
-    "storeNumber": 0,
-    "OrderTotal": 0
-  },
-  {
-    "OrderID": "1f43a613-031b-4e09-b88f-93aa754fb825",
-    "OrdCustID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
-    "OrdCustEmail": "victor@aol.com",
-    "OrdStoreID": "1",
-    "OrderDate": "",
-    "storeNumber": 0,
-    "OrderTotal": 0
-  }
+
 ]

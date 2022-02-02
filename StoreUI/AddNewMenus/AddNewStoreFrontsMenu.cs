@@ -24,7 +24,7 @@ namespace StoreUI
             Console.WriteLine("=[0] - Return to Main Menu");
             Console.WriteLine("=[1] - Enter StoreFront Number: " + _newStoreFronts.StoreID );
             Console.WriteLine("=[2] - Enter StoreFront Street Address: " + _newStoreFronts.StoreAddress );
-            Console.WriteLine("=[3] - Enter StoreFront Street City: " + _newStoreFronts.StoreCity );        
+            Console.WriteLine("=[3] - Enter StoreFront City: " + _newStoreFronts.StoreCity );        
             Console.WriteLine("=[4] - Enter StoreFront Zipcode: " + _newStoreFronts.StoreZipCode );
             Console.WriteLine("=[5] - Enter StoreFront State: " + _newStoreFronts.StoreState);
             Console.WriteLine("=[6] - Update & Save Information");
@@ -37,7 +37,7 @@ namespace StoreUI
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return "StoreMainMenu";
                 case "1":
                     Console.WriteLine("Enter a Store Number :");
                     _newStoreFronts.StoreID = Convert.ToInt32(Console.ReadLine());

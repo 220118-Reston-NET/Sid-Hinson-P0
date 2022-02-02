@@ -8,16 +8,16 @@
     {
     
         public int CustomerID { get; set; }
-        private string _FirstName;
+        private string _CFirstName;
         public string CFirstName
         {
-            get { return _FirstName; }
+            get { return _CFirstName; }
 
             set 
             {
                 if (value != "")
                 {
-                    _FirstName = value;
+                    _CFirstName = value;
                 }
                 else
                 {
@@ -27,16 +27,16 @@
             }
         }
 
-        private string _FastName;
+        private string _CLastName;
         public string CLastName
         {
-            get { return _FastName; }
+            get { return _CLastName; }
 
             set 
             {
                 if (value != "")
                 {
-                    _FastName = value;
+                    _CLastName = value;
                 }
                 else
                 {
@@ -134,7 +134,7 @@
         private string _CustCountry;
         public string CustCountry
         {
-            get { return CustCountry; }
+            get { return _CustCountry; }
 
             set 
             {
@@ -187,26 +187,6 @@
             }
         }
 
-        private List<Orders> _CustomerOrder;
-
-        public List<Orders> CustomerOrder
-        {
-            get{ return _CustomerOrder; }
-
-            set 
-            {
-                if(value.Count <= 10)
-                {
-                _CustomerOrder = value;
-                }
-                else
-                {
-                    throw new Exception("Customer List Must have 10 fields or less.");
-                }
-            }
-        }
-
-
         //Default Class Constructor
         public Customers()
         {
@@ -220,7 +200,6 @@
             CustomerZipcode = "55555";
             CustCountry = "USA";
             CustomerEmail = "john@aol.com";
-            CustomerOrder = new List<Orders>();
             CPassword = "john@aol.com";
         }
 

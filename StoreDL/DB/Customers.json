@@ -1,28 +1,28 @@
 [
   {
-    "CustomerID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
-    "FirstName": "Victor",
-    "LastName": "VonDoom",
-    "DateofBirth": "102180",
-    "CustomerAddress": "420 Paper St Wilmington",
-    "CustomerCity": "Lancaster",
-    "CustomerState": "PA",
+    "CustomerID": 0,
+    "CFirstName": "John",
+    "CLastName": "Doe",
+    "CDateofBirth": "010180",
+    "CustomerAddress": "111 Street St",
+    "CustomerCity": "Macon",
+    "CustomerState": "GA",
     "CustomerZipcode": "55555",
-    "Email": "victor@aol.com",
-    "Password": "victor",
-    "CustomerOrder": []
+    "CustCountry": "USA",
+    "CustomerEmail": "john@aol.com",
+    "CPassword": "john@aol.com"
   },
   {
-    "CustomerID": "af3b73a3-c827-4f96-8b81-524341a45510",
-    "FirstName": "A",
-    "LastName": "A",
-    "DateofBirth": "102180",
-    "CustomerAddress": "A",
-    "CustomerCity": "A",
-    "CustomerState": "A",
+    "CustomerID": 0,
+    "CFirstName": "Jane",
+    "CLastName": "Doe",
+    "CDateofBirth": "010180",
+    "CustomerAddress": "111 Street St",
+    "CustomerCity": "Macon",
+    "CustomerState": "GA",
     "CustomerZipcode": "55555",
-    "Email": "A",
-    "Password": "robertpaulson",
-    "CustomerOrder": []
+    "CustCountry": "USA",
+    "CustomerEmail": "jane@aol.com",
+    "CPassword": "jane@aol.com"
   }
 ]

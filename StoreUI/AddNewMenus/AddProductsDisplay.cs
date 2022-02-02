@@ -33,7 +33,7 @@ namespace StoreUI
             Console.WriteLine("*******************************************************************");
             Console.WriteLine("***** Enter a Category To See Inventory - Games - or - Systems ****");
             Console.WriteLine("*******************************************************************");
-            Console.WriteLine("*[1] =EXIT      [1] = Games     [2] = Systems    [3] = Merchandise*");
+            Console.WriteLine("*[0] =EXIT      [1] = Games     [2] = Systems    [3] = Merchandise*");
             Console.WriteLine("*******************************************************************");
         }
 
@@ -59,7 +59,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                return " AddProductsDisplay";
+                return "AddProductsDisplay";
 
 
 
@@ -74,7 +74,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                return " AddProductsDisplay";
+                return "AddProductsDisplay";
 
 
 
@@ -89,12 +89,12 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                return " AddProductsDisplay";  
+                return "AddProductsDisplay";  
 
 
 
                 default:
-                return " AddProductsDisplay";
+                return "AddProductsDisplay";
              }
         }
     }
