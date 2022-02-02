@@ -1,15 +1,20 @@
 [
-    {
-      "CustomerID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
-      "FirstName": "Victor",
-      "LastName": "VonDoom",
-      "DateofBirth": "102180",
-      "CustomerAddress": "420 Paper St Wilmington",
-      "CustomerCity": "Lancaster",
-      "CustomerState": "PA",
-      "CustomerZipcode": "55555",
-      "Email": "victor@aol.com",
-      "Password": "victor",
-      "CustomerOrder": []
-    }
-  ]
+  {
+    "OrderID": "",
+    "OrdCustID": "",
+    "OrdCustEmail": "",
+    "OrdStoreID": "",
+    "OrderDate": "",
+    "storeNumber": 0,
+    "OrderTotal": 0
+  },
+  {
+    "OrderID": "19f00ca4-b5ce-4b75-a984-99535038d1c2",
+    "OrdCustID": "3fcf38ca-0c79-49f1-aeb4-5625512ae482",
+    "OrdCustEmail": "victor@aol.com",
+    "OrdStoreID": "1",
+    "OrderDate": "",
+    "storeNumber": 0,
+    "OrderTotal": 0
+  }
+]

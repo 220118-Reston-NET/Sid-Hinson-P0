@@ -66,16 +66,16 @@ namespace StoreUI
                 Console.WriteLine("Please Enter a Last Name");
                 string p_lname = Console.ReadLine();
                 Console.WriteLine("Enter Customer Email Address");
-                p_NewOrder.CustomerEmail = Console.ReadLine();
+                p_NewOrder.OrdCustEmail = Console.ReadLine();
                 Console.WriteLine("Thank you for Registering! Now you can save ORDERS.");
                 Console.WriteLine("================================================");
-                List<Customers> listofcustomers = _customerBL.SearchCustomers(p_fname, p_lname, p_NewOrder.CustomerEmail);
+                List<Customers> listofcustomers = _customerBL.SearchCustomers(p_fname, p_lname, p_NewOrder.OrdCustEmail);
                 p_ListofCustomers = listofcustomers;
                 try
                 {          
                 foreach (var Customer in listofcustomers)
                 {
-                    p_NewOrder.CustomerID = Customer.CustomerID;
+                    p_NewOrder.OrdCustID = Customer.CustomerID;
                     Console.WriteLine(Customer);
                 }
                 }
@@ -156,17 +156,17 @@ namespace StoreUI
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("*               Retro Barbarian Gaming Lair Order Screen                      *");
                 Console.WriteLine("*******************************************************************************");
-                Console.WriteLine("* CustomerID - " + p_NewOrder.CustomerID);
-                Console.WriteLine("* Store # - " + p_NewOrder.StoreID);
+                Console.WriteLine("* CustomerID - " + p_NewOrder.OrdCustID);
+                Console.WriteLine("* Store # - " + p_NewOrder.OrdStoreID);
                 Console.WriteLine("* Product Name - " + p_LineToOrder.ProductName);
                 Console.WriteLine("* Quantity - " + p_LineToOrder.ProductQuantity);
                 Console.WriteLine("* Company - " + p_LineToOrder.ProdCompany);                
-                Console.WriteLine("* Customer Email - " + p_NewOrder.CustomerEmail);
+                Console.WriteLine("* Customer Email - " + p_NewOrder.OrdCustEmail);
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("* Please Enter Order Information                                              *");
                 Console.WriteLine("*******************************************************************************");
                 Console.WriteLine("Enter Store Number:");
-                p_NewOrder.StoreID = Console.ReadLine();
+                p_NewOrder.OrdStoreID = Console.ReadLine();
                 Console.WriteLine("Enter Product Name:");
                 p_LineToOrder.ProductName = Console.ReadLine();
                 Console.WriteLine("Enter Product Company:");
@@ -226,9 +226,14 @@ namespace StoreUI
                 case "7":
                 p_NewOrder.OrderLineItems.Add(p_LineToOrder);
                 Console.WriteLine(p_NewOrder.OrderLineItems);
+                Console.WriteLine("Added Line Items to Order");
                 Console.ReadLine();
+                Console.WriteLine("Attempting to Save Order");
                 _orderBL.AddOrders(p_NewOrder);
                 return "AddNewOrdersMenu";
+
+
+                //Default Case
                 default:
                 return "AddNewOrdersMenu";
             }

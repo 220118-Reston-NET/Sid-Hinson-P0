@@ -5,11 +5,11 @@ namespace StoreModel
         
        public string OrderID { get; set; }
 
-       public string CustomerID { get; set; }
+       public string OrdCustID { get; set; }
 
-       public string CustomerEmail { get; set; }
+       public string OrdCustEmail { get; set; }
 
-       public string StoreID { get; set; }
+       public string OrdStoreID { get; set; }
 
        public string OrderDate { get; set; }
 
@@ -28,11 +28,11 @@ namespace StoreModel
         {
 
             OrderID= "";
-            CustomerID = "";
-            StoreID = "";
+            OrdCustID = "";
+            OrdStoreID = "";
             OrderDate = "";
             OrderTotal = 0.00;
-            CustomerEmail = "";
+            OrdCustEmail = "";
             OrderLineItems = new List<LineItems>();
 
 
@@ -41,8 +41,8 @@ namespace StoreModel
         
         public override string ToString()
         {
-            return $"OrderID: {OrderID}\nCustomerID: {CustomerID}\nStoreID: {StoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {CustomerEmail}";
+            return $"OrderID: {OrderID}\nCustomerID: {OrdCustID}\nStoreID: {OrdStoreID}\nOrder Date: {OrderDate}" +
+            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {OrdCustEmail}";
         }
     }
 }

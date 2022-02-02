@@ -29,7 +29,7 @@ namespace StoreUI
             switch (userInput)
             {
                 case "0":
-                    return "MainMenu";
+                    return "StoreMainMenu";
                 case "1":
                     Console.WriteLine("Please Enter a Store Front Number (1-10)");
                     int p_storeNumber = Convert.ToInt32(Console.ReadLine());
@@ -41,12 +41,12 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return "SearchStoreFrontsMenu";
                 default:
                     Console.WriteLine("StoreFront not Found");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
-                    return "MainMenu";
+                    return "StoreMainMenu";
             }
         }
     }
