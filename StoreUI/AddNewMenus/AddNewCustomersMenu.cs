@@ -22,15 +22,15 @@ namespace StoreUI
             Console.WriteLine("=       Enter New Customer Info : Select       =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu"); 
-            Console.WriteLine("=[1] - First Name : " + _newCustomer.FirstName); 
-            Console.WriteLine("=[2] - Last Name : " + _newCustomer.LastName); 
+            Console.WriteLine("=[1] - First Name : " + _newCustomer.CFirstName); 
+            Console.WriteLine("=[2] - Last Name : " + _newCustomer.CLastName); 
             Console.WriteLine("=[3] - Address : " + _newCustomer.CustomerAddress);
             Console.WriteLine("=[4] - City : " + _newCustomer.CustomerCity);        
             Console.WriteLine("=[5] - State : " + _newCustomer.CustomerState);
             Console.WriteLine("=[6] - Zipcode : " + _newCustomer.CustomerZipcode);
             Console.WriteLine("=[7] - Email : " + _newCustomer.CustomerEmail);
-            Console.WriteLine("=[8] - Date Of Birth : " + _newCustomer.DateofBirth);
-            Console.WriteLine("=[9] - Password : " + _newCustomer.Password);
+            Console.WriteLine("=[8] - Date Of Birth : " + _newCustomer.CDateofBirth);
+            Console.WriteLine("=[9] - Password : " + _newCustomer.CPassword);
             Console.WriteLine("=[10] - Update & Save Information");
             Console.WriteLine("===============================================");
             Console.WriteLine("=Customer Generated ID : " + _newCustomer.CustomerID);
@@ -46,11 +46,11 @@ namespace StoreUI
                     return "MainMenu";
                 case "1":
                     Console.WriteLine("Enter a First Name :");
-                    _newCustomer.FirstName = Console.ReadLine();
+                    _newCustomer.CFirstName = Console.ReadLine();
                     return "NewCustomersMenu";
                 case "2":
                     Console.WriteLine("Enter a Last Name : ");
-                    _newCustomer.LastName = Console.ReadLine();
+                    _newCustomer.CLastName = Console.ReadLine();
                     return "NewCustomersMenu";
                 case "3":
                     Console.WriteLine("Enter an Address : ");
@@ -75,11 +75,11 @@ namespace StoreUI
                 case "8":
                     Console.WriteLine("Enter a Date of Birth");
                     Console.WriteLine("Example : 10211980 for October 21st 1980");
-                    _newCustomer.DateofBirth = Console.ReadLine();
+                    _newCustomer.CDateofBirth = Console.ReadLine();
                     return "NewCustomersMenu";
                 case "9":
                     Console.WriteLine("Enter a Password");
-                    _newCustomer.Password = Console.ReadLine();
+                    _newCustomer.CPassword = Console.ReadLine();
                     return "NewCustomersMenu";       
                 case "10":
                     try

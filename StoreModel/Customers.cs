@@ -9,7 +9,7 @@
     
         public int CustomerID { get; set; }
         private string _FirstName;
-        public string FirstName
+        public string CFirstName
         {
             get { return _FirstName; }
 
@@ -28,7 +28,7 @@
         }
 
         private string _FastName;
-        public string LastName
+        public string CLastName
         {
             get { return _FastName; }
 
@@ -47,7 +47,7 @@
         }
 
         private string _DateofBirth;
-        public string DateofBirth
+        public string CDateofBirth
         {
             get { return _DateofBirth; }
 
@@ -169,7 +169,7 @@
             }
         }
         private string _Password;
-        public string Password
+        public string CPassword
         {
             get { return _Password; }
 
@@ -211,9 +211,9 @@
         public Customers()
         {
             CustomerID = 0;
-            FirstName = "John";
-            LastName = "Doe";
-            DateofBirth = "010180";
+            CFirstName = "John";
+            CLastName = "Doe";
+            CDateofBirth = "010180";
             CustomerAddress = "111 Street St";
             CustomerState = "GA";
             CustomerCity = "Macon";
@@ -221,12 +221,12 @@
             CustCountry = "USA";
             CustomerEmail = "john@aol.com";
             CustomerOrder = new List<Orders>();
-            Password = "john@aol.com";
+            CPassword = "john@aol.com";
         }
 
         public override string ToString()
         {
-            return $"Product Id: {CustomerID}\nFirst Name: {FirstName}\nLast name: {LastName}\nDate of Birth {DateofBirth}" +
+            return $"Product Id: {CustomerID}\nFirst Name: {CFirstName}\nLast name: {CLastName}\nDate of Birth {CDateofBirth}" +
             $"\nAddress: {CustomerAddress}\nEmail: {CustomerEmail}";
         }
     }

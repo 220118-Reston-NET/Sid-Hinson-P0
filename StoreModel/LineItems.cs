@@ -43,7 +43,7 @@ namespace StoreModel
         
             }
         }
-        public int ProductPrice {get; set;}
+        public double ProductPrice {get; set;}
 
         //Default Constructor 
         public LineItems()
@@ -54,6 +54,7 @@ namespace StoreModel
         ProductName = "None";
         ProductCompany = "None";
         ProductPrice = 0;
+        ProductQuantity = 0;
         }
         
         public override string ToString()

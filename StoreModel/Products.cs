@@ -15,7 +15,7 @@ namespace StoreModel
         //Product Category 
         public string ProductCategory { get; set; }
 
-        public int ProductQuantity { get; set; }
+        public int ProductSTQuantity { get; set; }
 
         //Default Constructor
 
@@ -28,14 +28,14 @@ namespace StoreModel
             ProductPrice = 0.00;
             ProductDescription = "";
             ProductCategory = "";
-            ProductQuantity = 0;
+            ProductSTQuantity = 0;
         }
 
     public override string ToString()
     {
       return $"Product Id: {ProductID}\nStore Number: {StoreID}\n Name: {ProductName}" +
       $"\nPrice: {ProductPrice}\nDes: {ProductDescription}\nCategory: {ProductCategory}" +
-      $"\nCompany: {ProductCompany}\nQuantity: {ProductQuantity}";
+      $"\nCompany: {ProductCompany}\nQuantity: {ProductSTQuantity}";
     }
 
     }
