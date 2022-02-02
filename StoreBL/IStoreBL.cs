@@ -77,14 +77,6 @@ namespace StoreBL
         public void DisplayOrder(Orders p_order);
         // public void RemoveProdFromOrder(Orders p_Order, string p_Prodname, string p_ProdComp);
         
-        public void GeneralDisplay()
-        {
-            
-        }
-        public void GetFirstName();
-        public void GetLastName();
-        public void GetEmail();
-    
     }
 }
 
