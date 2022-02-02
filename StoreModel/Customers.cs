@@ -7,17 +7,17 @@
     public class Customers
     {
     
-        public string CustomerID { get; set; }
-        private string _firstName;
+        public int CustomerID { get; set; }
+        private string _FirstName;
         public string FirstName
         {
-            get { return _firstName; }
+            get { return _FirstName; }
 
             set 
             {
                 if (value != "")
                 {
-                    _firstName = value;
+                    _FirstName = value;
                 }
                 else
                 {
@@ -27,16 +27,16 @@
             }
         }
 
-        private string _lastName;
+        private string _FastName;
         public string LastName
         {
-            get { return _lastName; }
+            get { return _FastName; }
 
             set 
             {
                 if (value != "")
                 {
-                    _lastName = value;
+                    _FastName = value;
                 }
                 else
                 {
@@ -46,16 +46,16 @@
             }
         }
 
-        private string _dateofBirth;
+        private string _DateofBirth;
         public string DateofBirth
         {
-            get { return _dateofBirth; }
+            get { return _DateofBirth; }
 
             set 
             { 
                 if (value != "")
                 {
-                    _dateofBirth = value; 
+                    _DateofBirth = value; 
             
                 }
                 else
@@ -65,16 +65,16 @@
                 
             }
         }
-        private string _customerAddress;
+        private string _CustomerAddress;
         public string CustomerAddress
         {
-            get { return _customerAddress; }
+            get { return _CustomerAddress; }
 
             set 
             {
                 if (value != "")
                 {
-                    _customerAddress = value;
+                    _CustomerAddress = value;
                 }
                 else
                 {
@@ -83,16 +83,16 @@
 
             }
         }
-        private string _customerCity;
+        private string _CustomerCity;
         public string CustomerCity
         {
-            get { return _customerCity; }
+            get { return _CustomerCity; }
 
             set 
             {
                 if (value != "")
                 {
-                    _customerCity = value;
+                    _CustomerCity = value;
                 }
                 else
                 {
@@ -102,26 +102,26 @@
             }
         }
    
-        private string _customerState;
+        private string _CustomerState;
         public string CustomerState
         {
-            get { return _customerState; }
+            get { return _CustomerState; }
 
             set 
             {
-               _customerState = value;
+               _CustomerState = value;
             }
         }
-        private string _customerZipcode;
+        private string _CustomerZipcode;
         public string CustomerZipcode
         {
-            get { return _customerZipcode; }
+            get { return _CustomerZipcode; }
 
             set 
             {
                 if (value.Length >= 5)
                 {
-                    _customerZipcode = value;
+                    _CustomerZipcode = value;
                 }
                 else
                 {
@@ -131,17 +131,35 @@
             }
         }
 
-        private string _email;
-
-        public string Email
+        private string _CustCountry;
+        public string CustCountry
         {
-            get { return _email; }
+            get { return CustCountry; }
 
             set 
             {
                 if (value != "")
                 {
-                    _email = value;
+                    _CustCountry = value;
+                }
+                else
+                {
+                    throw new NullReferenceException("City must be entered.");
+                }
+
+            }
+        }
+        private string _CustomerEmail;
+
+        public string CustomerEmail
+        {
+            get { return _CustomerEmail; }
+
+            set 
+            {
+                if (value != "")
+                {
+                    _CustomerEmail = value;
                 }
                 else
                 {
@@ -150,16 +168,16 @@
 
             }
         }
-        private string _password;
+        private string _Password;
         public string Password
         {
-            get { return _password; }
+            get { return _Password; }
 
             set 
             {
                 if (value != "")
                 {
-                    _password = value;
+                    _Password = value;
                 }
                 else
                 {
@@ -169,17 +187,17 @@
             }
         }
 
-        private List<Orders> _customerOrder;
+        private List<Orders> _CustomerOrder;
 
         public List<Orders> CustomerOrder
         {
-            get{ return _customerOrder; }
+            get{ return _CustomerOrder; }
 
             set 
             {
                 if(value.Count <= 10)
                 {
-                _customerOrder = value;
+                _CustomerOrder = value;
                 }
                 else
                 {
@@ -192,23 +210,24 @@
         //Default Class Constructor
         public Customers()
         {
-            CustomerID = "";
-            FirstName = "Tyler";
-            LastName = "Durden";
-            DateofBirth = "102180";
-            CustomerAddress = "420 Paper St";
-            CustomerState = "CA";
-            CustomerCity = "Lancaster";
+            CustomerID = 0;
+            FirstName = "John";
+            LastName = "Doe";
+            DateofBirth = "010180";
+            CustomerAddress = "111 Street St";
+            CustomerState = "GA";
+            CustomerCity = "Macon";
             CustomerZipcode = "55555";
-            Email = "tylerdurden@protonmail.com";
+            CustCountry = "USA";
+            CustomerEmail = "john@aol.com";
             CustomerOrder = new List<Orders>();
-            Password = "robertpaulson";
+            Password = "john@aol.com";
         }
 
         public override string ToString()
         {
             return $"Product Id: {CustomerID}\nFirst Name: {FirstName}\nLast name: {LastName}\nDate of Birth {DateofBirth}" +
-            $"\nAddress: {CustomerAddress}\nEmail: {Email}";
+            $"\nAddress: {CustomerAddress}\nEmail: {CustomerEmail}";
         }
     }
 }

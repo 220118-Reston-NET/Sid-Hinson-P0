@@ -18,7 +18,10 @@ namespace StoreDL
         public Orders AddOrders(Orders p_order)
         {
             string _path = _filepath + "Orders.json";
-            p_order.OrderID = Guid.NewGuid().ToString();
+            //Generate OrderID
+            // p_order.OrderID = Guid.NewGuid().ToString();
+
+            //Write File
             List<Orders> listoforders = GetAllOrders();
             listoforders.Add(p_order);
             _jsonString = JsonSerializer.Serialize(listoforders, new JsonSerializerOptions {WriteIndented = true});

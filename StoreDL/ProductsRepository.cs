@@ -20,10 +20,9 @@ namespace StoreDL
             
             string _path = _filepath + "Products.json";
             //Add an ID at the time of Save
-            p_product.productID = Guid.NewGuid().ToString();
+            // p_product.ProductID = Guid.NewGuid().ToString();
             
             //Create file
-            //Adds the Product with Global Univeral ID Generated
             List<Products> listofproducts = GetAllProducts();
             listofproducts.Add(p_product);
             _jsonString = JsonSerializer.Serialize(listofproducts, new JsonSerializerOptions {WriteIndented = true});
@@ -55,7 +54,7 @@ namespace StoreDL
             List<Products> listofselected = new List<Products>();
             for (int i = 0; i < listofproducts.Count(); i++)
             {
-                if (listofproducts[i].productName.Contains(productName))
+                if (listofproducts[i].ProductName.Contains(productName))
                 {
                     listofselected.Add(listofproducts[i]);
                     return listofselected;

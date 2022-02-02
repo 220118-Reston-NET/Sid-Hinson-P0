@@ -3,18 +3,15 @@ namespace StoreModel
     public class Orders
     {
         
-       public string OrderID { get; set; }
+       public int OrderID { get; set; }
 
-       public string OrdCustID { get; set; }
+       public int OrderCustID { get; set; }
 
-       public string OrdCustEmail { get; set; }
+       public string OrderCustomerEmail { get; set; }
 
-       public string OrdStoreID { get; set; }
+       public string OrderStoreID { get; set; }
 
        public string OrderDate { get; set; }
-
-        //This is the Location of the StoreFront Ordered From
-       public int storeNumber { get; set; }
 
        //List of Line Items for an Order, Line Items is a String/int type
        //May need to be ArrayList or something else
@@ -25,19 +22,19 @@ namespace StoreModel
         public Orders()
         {
 
-            OrderID= "";
-            OrdCustID = "";
-            OrdStoreID = "";
+            OrderID= 0;
+            OrderCustID = 0;
+            OrderStoreID = "";
             OrderDate = "";
             OrderTotal = 0.00;
-            OrdCustEmail = "";
+            OrderCustomerEmail = "";
             OrderLineItems = new List<LineItems>();
         
         }
         public override string ToString()
         {
-            return $"OrderID: {OrderID}\nCustomerID: {OrdCustID}\nStoreID: {OrdStoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {OrdCustEmail}\nOrder Items{OrderLineItems}";
+            return $"OrderID: {OrderID}\nCustomerID: {OrderCustID}\nStoreID: {OrderStoreID}\nOrder Date: {OrderDate}" +
+            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {OrderCustomerEmail}\nOrder Items{OrderLineItems}";
         }
     }
 }

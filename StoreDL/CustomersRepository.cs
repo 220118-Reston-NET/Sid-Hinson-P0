@@ -21,7 +21,8 @@ namespace StoreDL
             string _path = _filepath + "Customers.json";
             //Create file
             //Adds the Customer with Global Univeral ID Generated
-            p_cust.CustomerID = Guid.NewGuid().ToString();
+            // p_cust.CustomerID = Guid.NewGuid().ToString();
+            
             //Write Customer to File
             List<Customers> listofcustomers = GetAllCustomers();
             listofcustomers.Add(p_cust);

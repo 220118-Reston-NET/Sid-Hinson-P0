@@ -48,7 +48,7 @@ namespace StoreBL
         return listofcustomers
                     .Where(Customers => Customers.FirstName.Equals(p_fname))
                     .Where(Customers => Customers.LastName.Equals(p_lname))
-                    .Where(Customers => Customers.Email.Equals(p_email)) //Filter a collection with a Lambda
+                    .Where(Customers => Customers.CustomerEmail.Equals(p_email)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
 

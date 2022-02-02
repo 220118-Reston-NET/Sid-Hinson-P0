@@ -28,7 +28,7 @@ namespace StoreUI
             Console.WriteLine("=[4] - City : " + _newCustomer.CustomerCity);        
             Console.WriteLine("=[5] - State : " + _newCustomer.CustomerState);
             Console.WriteLine("=[6] - Zipcode : " + _newCustomer.CustomerZipcode);
-            Console.WriteLine("=[7] - Email : " + _newCustomer.Email);
+            Console.WriteLine("=[7] - Email : " + _newCustomer.CustomerEmail);
             Console.WriteLine("=[8] - Date Of Birth : " + _newCustomer.DateofBirth);
             Console.WriteLine("=[9] - Password : " + _newCustomer.Password);
             Console.WriteLine("=[10] - Update & Save Information");
@@ -70,7 +70,7 @@ namespace StoreUI
                     return "NewCustomersMenu";
                 case "7":
                     Console.WriteLine("Enter an Email Address :");
-                    _newCustomer.Email = Console.ReadLine();
+                    _newCustomer.CustomerEmail = Console.ReadLine();
                     return "NewCustomersMenu";
                 case "8":
                     Console.WriteLine("Enter a Date of Birth");

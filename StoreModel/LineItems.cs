@@ -2,19 +2,19 @@ namespace StoreModel
 {
     public class LineItems
     {
-        
-       public string ProdCompany { get; set;}
+       public int ProductID {get; set; }
+       public string ProductCompany { get; set;}
        public int StoreID {get; set;}
-       private string _productName;
+       private string _ProductName;
        public string ProductName
        {
-           get { return _productName; }
+           get { return _ProductName; }
            
            set
            {
                if (value != "")
                {
-                   _productName = value;
+                   _ProductName = value;
                }
                else
                {
@@ -24,17 +24,17 @@ namespace StoreModel
        }
 
         //Quantity of Product
-       private int _productQuantity;
+       private int _ProductQuantity;
        public int ProductQuantity
        {
-           get { return _productQuantity; }
+           get { return _ProductQuantity; }
            
            set
            {
 
                if (value >= 0)
                 {
-                    _productQuantity = value;
+                    _ProductQuantity = value;
                 }
                 else
                 {
@@ -48,9 +48,11 @@ namespace StoreModel
         //Default Constructor 
         public LineItems()
         {
+        
+        ProductID = 0;
         StoreID = 0;
         ProductName = "None";
-        ProductName = "None";
+        ProductCompany = "None";
         ProductPrice = 0;
         }
         

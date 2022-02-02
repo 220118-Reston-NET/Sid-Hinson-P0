@@ -27,11 +27,11 @@ namespace StoreUI
             Console.WriteLine("=       Enter New Order Info : Select          =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] -Return to Main Menu"); 
-            Console.WriteLine("*[1]  Store # - " + p_NewOrder.OrdStoreID);
+            Console.WriteLine("*[1]  Store # - " + p_NewOrder.OrderStoreID);
             Console.WriteLine("*[2]  Product Name - " + p_LineToOrder.ProductName);
-            Console.WriteLine("*[3]  Product Company - " + p_LineToOrder.ProdCompany);
+            Console.WriteLine("*[3]  Product Company - " + p_LineToOrder.ProductCompany);
             Console.WriteLine("*[3]  Quantity - " + p_LineToOrder.ProductQuantity);      
-            Console.WriteLine("*[5]  Customer Email - " + p_NewOrder.OrdCustEmail);
+            Console.WriteLine("*[5]  Customer Email - " + p_NewOrder.OrderCustomerEmail);
             Console.WriteLine("=[6] Update & Save Information");
             Console.WriteLine("===============================================");
         }
@@ -45,7 +45,7 @@ namespace StoreUI
                     return "StoreMainMenu";
                 case "1":
                     Console.WriteLine("Enter a Store ID :");
-                    p_NewOrder.OrdStoreID = Console.ReadLine();
+                    p_NewOrder.OrderStoreID = Console.ReadLine();
                     return "NewCustomerorderMenu";
                 case "2":
                     Console.WriteLine("Enter a Product Name : ");
@@ -53,7 +53,7 @@ namespace StoreUI
                     return "NewCustomerorderMenu";
                 case "3":
                     Console.WriteLine("Enter a Product Company :");
-                    p_LineToOrder.ProdCompany = Console.ReadLine();
+                    p_LineToOrder.ProductCompany = Console.ReadLine();
                     return "NewCustomerorderMenu";
                 case "4":
                     Console.WriteLine("Enter an Product Quantity : ");
@@ -62,7 +62,7 @@ namespace StoreUI
 
                 case "5":
                     Console.WriteLine("Enter Customer Email :");
-                    p_NewOrder.OrdCustEmail = Console.ReadLine();
+                    p_NewOrder.OrderCustomerEmail = Console.ReadLine();
                     return "NewCustomerorderMenu";
                 case "6":
                     try
