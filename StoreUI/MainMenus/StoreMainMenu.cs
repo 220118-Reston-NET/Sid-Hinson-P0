@@ -13,15 +13,21 @@ namespace StoreUI
         public void MenuDisplay()
         {
             Console.Clear();
-            Console.WriteLine("====================================");
-            Console.WriteLine("=            Welcome To            =");
-            Console.WriteLine("=    Retro Barbarian Gaming Lair   =");
-            Console.WriteLine("====================================");
-            Console.WriteLine("=     Please Make a Selection      =");
-            Console.WriteLine("=      [0] Exit The Store          =");
-            Console.WriteLine("=      [1] Customer Menu           =");
-            Console.WriteLine("=      [2] Administration Menu     =");       
-            Console.WriteLine("====================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("         ====================================");
+            Console.WriteLine("         =            Welcome To            =");
+            Console.WriteLine("         =    Retro Barbarian Gaming Lair   =");
+            Console.WriteLine("         ====================================");
+            Console.WriteLine("         =     Please Make a Selection      =");
+            Console.WriteLine("         =      [0] Exit The Store          =");
+            Console.WriteLine("         =      [1] Customer Menu           =");
+            Console.WriteLine("         =      [2] Administration Menu     =");       
+            Console.WriteLine("         ====================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
         }
 
         /// <summary>

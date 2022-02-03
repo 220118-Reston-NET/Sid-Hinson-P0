@@ -206,7 +206,8 @@
         public override string ToString()
         {
             return $"Product Id: {CustomerID}\nFirst Name: {CFirstName}\nLast name: {CLastName}\nDate of Birth {CDateofBirth}" +
-            $"\nAddress: {CustomerAddress}\nEmail: {CustomerEmail}";
+            $"\nAddress: {CustomerAddress}\nCustomer State: {CustomerState}\nCustomer City: {CustomerCity}" +
+            $"\nCustomer Country: {CustCountry}\nEmail: {CustomerEmail}";
         }
     }
 }

@@ -1,3 +1,19 @@
 [
-
+  {
+    "OrderID": 0,
+    "OrderCustID": 0,
+    "OrderStoreID": "1",
+    "OrderDate": "",
+    "OrderLineItems": [
+      {
+        "ProductID": 0,
+        "ProductCompany": "Nintendo",
+        "StoreID": 0,
+        "ProductName": "SNES",
+        "ProductQuantity": 5,
+        "ProductPrice": 0
+      }
+    ],
+    "OrderTotal": 0
+  }
 ]

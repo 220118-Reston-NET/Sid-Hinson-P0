@@ -7,9 +7,7 @@ namespace StoreModel
 
        public int OrderCustID { get; set; }
 
-       public string OrderCustomerEmail { get; set; }
-
-       public string OrderStoreID { get; set; }
+       public int OrderStoreID { get; set; }
 
        public string OrderDate { get; set; }
 
@@ -24,17 +22,21 @@ namespace StoreModel
 
             OrderID= 0;
             OrderCustID = 0;
-            OrderStoreID = "";
+            OrderStoreID = 0;
             OrderDate = "";
             OrderTotal = 0.00;
-            OrderCustomerEmail = "";
             OrderLineItems = new List<LineItems>();
         
         }
         public override string ToString()
         {
             return $"OrderID: {OrderID}\nCustomerID: {OrderCustID}\nStoreID: {OrderStoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}\nCustomerEmail : {OrderCustomerEmail}\nOrder Items{OrderLineItems}";
+            $"\nOrderTotal: {OrderTotal}\nOrder Items{OrderLineItems}";
+        }
+
+        public string AlsoToString()
+        {
+            return $"{OrderLineItems}";
         }
     }
 }

@@ -33,7 +33,7 @@ namespace StoreUI
             Console.WriteLine("*******************************************************************");
             Console.WriteLine("***** Enter a Category To See Inventory - Games - or - Systems ****");
             Console.WriteLine("*******************************************************************");
-            Console.WriteLine("*[0] =EXIT      [1] = Games     [2] = Systems    [3] = Merchandise*");
+            Console.WriteLine("*[0] = EXIT      [1] = Games     [2] = Systems   [3] = Merchandise*");
             Console.WriteLine("*******************************************************************");
         }
 
@@ -49,7 +49,7 @@ namespace StoreUI
 
 
                 case "1":
-                string answer1 = "Game";
+                string answer1 = "Games";
                 List<Products> listofprod1 = _productBL.SearchProductsCat(answer1);
                     foreach (var Products in listofprod1)
                     {

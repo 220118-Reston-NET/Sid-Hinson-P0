@@ -40,19 +40,19 @@ while(isValid)
         //Added in very primtive password protection : Pass is "8675309"
         //Added in For Effect ONLY; to be implemented better in future projects
         case "AdministrationMenu":
-            // AdminValidate admin = new AdminValidate();
-            // bool uservalidate = admin.ValidateAdminPassword();
-            // if (uservalidate == true)
-            // {
-            //     mainmenu =  new AdministrationMenu();
-            // }
-            // else
-            // {
-            //     Console.WriteLine("Incorrect Password");
-            //     mainmenu = new StoreMainMenu();
-            //     break;
-            // }
-            // break;
+            AdminValidate admin = new AdminValidate();
+            bool uservalidate = admin.ValidateAdminPassword();
+            if (uservalidate == true)
+            {
+                mainmenu =  new AdministrationMenu();
+            }
+            else
+            {
+                Console.WriteLine("Incorrect Password");
+                mainmenu = new StoreMainMenu();
+                break;
+            }
+            break;
             mainmenu =  new AdministrationMenu();
             break;
         case "CustomersMenu":

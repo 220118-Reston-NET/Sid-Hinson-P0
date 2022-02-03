@@ -25,6 +25,12 @@ namespace StoreBL
                 throw new Exception("Limit of 20 Orders is reached");
             }
         }
+        public Orders AddOrdersHistory(Orders p_order)
+        {
+            List<Orders> listoforders = _repo.GetAllOrders();
+            return _repo.AddOrders(p_order);
+
+        }
 
         public List<Orders> SearchOrders(string p_email)
         {
@@ -33,27 +39,6 @@ namespace StoreBL
                     .Where(Orders => Orders.Equals(p_email))
                     .ToList(); //ToList method converts into return List collection
         }
-
-        public void DisplayOrder(Orders p_order)
-        {
-
-                Console.WriteLine("*************************");
-                Console.WriteLine(p_order);
-                Console.WriteLine("*************************");
-
-        }
-
-        // public List<LineItems> RemoveProdFromOrder(string p_Prodname, string p_ProdComp)
-        // {
-
-        //         Console.WriteLine("*****************************");
-        //         Console.WriteLine("       Product removed       ");
-        //         Console.WriteLine("*****************************");
-        //         Console.WriteLine("***Press Enter to Continue***");
-        //         Console.WriteLine("*****************************");
-        //         Console.ReadLine();
-
-        // }
-
+        
     }
 }

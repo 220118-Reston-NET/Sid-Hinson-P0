@@ -8,16 +8,19 @@ namespace StoreUI
         public void MenuDisplay()
         {
             Console.Clear();
-            Console.WriteLine("================================================");
-            Console.WriteLine("=               Customer Menu                  =");
-            Console.WriteLine("================================================");
-            Console.WriteLine("=          Enter Number to Select Option       =");     
-            Console.WriteLine("================================================");
-            Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=[1] - Enter New Customer                      =");
-            Console.WriteLine("=[2] - Search For StoreFront                   =");
-            Console.WriteLine("=[3] - Order Products                          =");
-            Console.WriteLine("================================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("=                     Customer Menu                      =");
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("=              Enter Number to Select Option             =");     
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("=          [0] - Return to Main Menu / Exit              =");
+            Console.WriteLine("=          [1] - Enter New Customer                      =");
+            Console.WriteLine("=          [2] - Search For StoreFront                   =");
+            Console.WriteLine("=          [3] - Order Products                          =");
+            Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()

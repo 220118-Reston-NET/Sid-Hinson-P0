@@ -20,6 +20,9 @@ namespace StoreUI
             Console.WriteLine("=[5] - Enter New Product                       =");
             Console.WriteLine("=[6] - Search For Product                      =");
             Console.WriteLine("================================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()

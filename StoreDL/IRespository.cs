@@ -68,7 +68,7 @@ namespace StoreDL
     {
         //*********************************************** Shopping Logic Here
         Orders AddOrders(Orders p_order);
-
+        Orders AddOrdersHistory(Orders p_order);
         List<Orders> GetAllOrders();
     }
 

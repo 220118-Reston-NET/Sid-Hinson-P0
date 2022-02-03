@@ -4,7 +4,6 @@ namespace StoreUI
 
     interface IMenu
     {
-
         /// <summary>
         ///  Displays Menu for Retro Barbarian Gaming Lair
         /// </summary>

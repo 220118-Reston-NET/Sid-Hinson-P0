@@ -27,7 +27,7 @@ namespace StoreBL
             {
                 Console.WriteLine("Adding Customer............");
                 return _repo.AddCustomers(p_cust);
-            }
+            }   
             else
             {
                 throw new Exception("Limit of 20 Customers is reached");
@@ -50,6 +50,18 @@ namespace StoreBL
                     .Where(Customers => Customers.CLastName.Equals(p_lname))
                     .Where(Customers => Customers.CustomerEmail.Equals(p_email)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
+        }
+
+        public List<Customers> SearchCustomers(string p_fname, string p_lname, string p_email, string p_pass)
+        {
+        List<Customers> listofcustomers = _repo.GetAllCustomers();
+        return listofcustomers
+                    .Where(Customers => Customers.CFirstName.Equals(p_fname))
+                    .Where(Customers => Customers.CLastName.Equals(p_lname))
+                    .Where(Customers => Customers.CustomerEmail.Equals(p_email))
+                    .Where(Customers => Customers.CPassword.Equals(p_pass)) //Filter a collection with a Lambda
+                    .ToList(); //ToList method converts into return List collection
+
         }
 
     }
