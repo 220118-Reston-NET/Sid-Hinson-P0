@@ -1,6 +1,6 @@
 [
   {
-    "CustomerID": 0,
+    "CustomerID": 1,
     "CFirstName": "John",
     "CLastName": "Doe",
     "CDateofBirth": "010180",
@@ -13,7 +13,7 @@
     "CPassword": "john@aol.com"
   },
   {
-    "CustomerID": 0,
+    "CustomerID": 2,
     "CFirstName": "Jane",
     "CLastName": "Doe",
     "CDateofBirth": "010180",

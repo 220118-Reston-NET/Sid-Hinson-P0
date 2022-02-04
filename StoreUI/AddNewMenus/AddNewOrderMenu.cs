@@ -7,15 +7,14 @@ namespace StoreUI
         public static List<LineItems> ShoppingCart = new List<LineItems>();
         public LineItems Item = new LineItems();
         public static Orders ShoppingOrder = new Orders();
-        private static string? p_fname;
-        private static string? p_lname;
-        private static string? p_email;
-        private string? p_pass;
+        private static string p_Fname;
+        private static string p_Lname;
+        public static string p_Email;
         public static int ProductID;
-        public static double ProductPrice ;
+        public static double ProductPrice;
         public static int ProductStoreID;
-        public static string? ProductName;
-        public static string? ProductCompany;
+        public static string ProductName;
+        public static string ProductCompany;
         public static int ProductQuantity;
 
         //Dependency Injection
@@ -31,6 +30,7 @@ namespace StoreUI
 
         public void MenuDisplay()
         {
+
             Console.Clear();
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
@@ -73,6 +73,8 @@ namespace StoreUI
 
                 // Get Store Id of Product
                 case "1":
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Store ID :");
                     ProductStoreID = Convert.ToInt32(Console.ReadLine());
                     return "AddNewOrderMenu";
@@ -80,6 +82,8 @@ namespace StoreUI
 
                 // Get Product Name
                 case "2":
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Name : ");
                     ProductName = Console.ReadLine();
                     return "AddNewOrderMenu";
@@ -87,61 +91,79 @@ namespace StoreUI
 
                 //Get Product Company
                 case "3":
-                Console.WriteLine("Enter a Product Company :");
-                ProductCompany = Console.ReadLine();
-                return "AddNewOrderMenu";
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
+                    Console.WriteLine("Enter a Product Company :");
+                    ProductCompany = Console.ReadLine();
+                    return "AddNewOrderMenu";
 
 
 
                 //Get Product Quantity
                 case "4":
-                Console.WriteLine("Enter an Product Quantity : ");
-                ProductQuantity = Convert.ToInt32(Console.ReadLine());
-                return "AddNewOrderMenu";
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
+                    Console.WriteLine("Enter an Product Quantity : ");
+                    ProductQuantity = Convert.ToInt32(Console.ReadLine());
+                    return "AddNewOrderMenu";
 
 
 
                 //Add Item to Cart
                 case "5":
-                Item = _orderBL.AddItem(ProductID, ProductStoreID, ProductName, ProductCompany, ProductPrice, ProductQuantity);
-                ProductID = _productBL.GetID(ProductName, ProductCompany, ProductStoreID);
-                ProductPrice = _productBL.GetPrice(ProductName, ProductCompany, ProductStoreID);
-                ShoppingCart.Add(Item);
-                Console.WriteLine("Item was Added to cart.");
-                Console.WriteLine("Press Enter to Continue");
-                Console.ReadLine();
-                return "AddNewOrderMenu";
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
+                    Item = _orderBL.AddItem(ProductID, ProductStoreID, ProductName, ProductCompany, ProductPrice, ProductQuantity);
+                    ProductID = _productBL.GetID(ProductName, ProductCompany, ProductStoreID);
+                    ProductPrice = _productBL.GetPrice(ProductName, ProductCompany, ProductStoreID);
+                    ShoppingCart.Add(Item);
+                    Console.WriteLine("Item was Added to cart.");
+                    Console.WriteLine("Press Enter to Continue");
+                    Console.ReadLine();
+                    return "AddNewOrderMenu";
 
 
 
                 // Clear Items from cart
                 case "6":
-                ShoppingCart.Clear();
-                Console.WriteLine("Cart is Empty! Press Enter to Continue");
-                Console.ReadLine();
-                return "AddNewOrderMenu";
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
+                    ShoppingCart.Clear();
+                    Console.WriteLine("Cart is Empty! Press Enter to Continue");
+                    Console.ReadLine();
+                    return "AddNewOrderMenu";
 
 
 
                 //Display ShoppingCart
                 case "7":
-                _orderBL.DisplayGraphic();
-                _orderBL.DisplayCart(ShoppingCart);
-                Console.WriteLine("Press Enter to Continue");
-                Console.ReadLine();
-                return "AddNewOrderMenu";
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
+                    _orderBL.DisplayCart(ShoppingCart);
+                    Console.WriteLine("Press Enter to Continue");
+                    Console.ReadLine();
+                    return "AddNewOrderMenu";
 
 
 
                 // Save and Checkout
                 case "8":
-                ShoppingOrder.OrderLineItems = new List<LineItems>();
-                ShoppingOrder.OrderLineItems = ShoppingCart;
-                _orderBL.DisplayCart(ShoppingOrder.OrderLineItems);
-                Console.WriteLine("Press Enter to Continue");
-                Console.ReadLine();
-                _orderBL.AddOrders(ShoppingOrder);      
-                return "AddNewOrderMenu";
+                    Console.Clear();
+                    _orderBL.DisplayGraphic();
+                    Console.WriteLine("Enter Your User Email");
+                    string userEmail = Console.ReadLine();
+                    Console.WriteLine("Enter Your User Password");
+                    string userPass = Console.ReadLine();
+                    ShoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
+                    DateTime localDate = DateTime.Now;
+                    localDate.ToString(ShoppingOrder.OrderDate);
+                    ShoppingOrder.OrderLineItems = new List<LineItems>();
+                    ShoppingOrder.OrderLineItems = ShoppingCart;
+                    _orderBL.DisplayCart(ShoppingOrder.OrderLineItems);
+                    Console.WriteLine("Press Enter to Continue");
+                    Console.ReadLine();
+                    _orderBL.AddOrders(ShoppingOrder);      
+                    return "AddNewOrderMenu";
 
 
                 //Default Menu

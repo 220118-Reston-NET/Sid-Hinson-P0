@@ -61,8 +61,29 @@ namespace StoreBL
                     .Where(Customers => Customers.CustomerEmail.Equals(p_email))
                     .Where(Customers => Customers.CPassword.Equals(p_pass)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
-
         }
 
+
+        /// <summary>
+        /// Grabs Customer ID from Email and Password
+        /// </summary>
+        /// <param name="p_email"></param>
+        /// <param name="p_pass"></param>
+        /// <returns></returns>
+        public int GetID(string p_email, string p_pass)
+        {   
+            int CustomerID = 0;
+            List<Customers> listofcustomers = _repo.GetAllCustomers();
+            for(int i = 0; i < listofcustomers.Count; i++)
+            {
+                if(listofcustomers[i].CustomerEmail.Contains(p_email) & listofcustomers[i].CPassword.Contains(p_pass))
+                {
+                    CustomerID = listofcustomers[i].CustomerID;    
+                }
+            }
+            return CustomerID;
+        }
+
+        
     }
 }

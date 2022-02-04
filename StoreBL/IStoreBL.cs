@@ -21,6 +21,9 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         List<Customers> SearchCustomers(string p_name1, string p_name2, string p_email);
         List<Customers> SearchCustomers(string p_fname, string p_lname, string p_email, string p_pass);
+        public int GetID(string p_email, string p_pass);
+
+
     }
     public interface IStoreFrontsBL
     {
