@@ -2,16 +2,48 @@
   {
     "OrderID": 0,
     "OrderCustID": 0,
-    "OrderStoreID": "1",
+    "OrderStoreID": 0,
     "OrderDate": "",
     "OrderLineItems": [
       {
         "ProductID": 0,
         "ProductCompany": "Nintendo",
-        "StoreID": 0,
+        "StoreID": 1,
         "ProductName": "SNES",
         "ProductQuantity": 5,
         "ProductPrice": 0
+      },
+      {
+        "ProductID": 1,
+        "ProductCompany": "Nintendo",
+        "StoreID": 1,
+        "ProductName": "SNES",
+        "ProductQuantity": 5,
+        "ProductPrice": 150
+      },
+      {
+        "ProductID": 1,
+        "ProductCompany": "Nintendo",
+        "StoreID": 1,
+        "ProductName": "SNES",
+        "ProductQuantity": 5,
+        "ProductPrice": 150
+      },
+      {
+        "ProductID": 1,
+        "ProductCompany": "Nintendo",
+        "StoreID": 1,
+        "ProductName": "SNES",
+        "ProductQuantity": 5,
+        "ProductPrice": 150
+      },
+      {
+        "ProductID": 1,
+        "ProductCompany": "Nintendo",
+        "StoreID": 1,
+        "ProductName": "SNES",
+        "ProductQuantity": 5,
+        "ProductPrice": 150
       }
     ],
     "OrderTotal": 0

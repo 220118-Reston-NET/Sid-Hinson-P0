@@ -25,7 +25,7 @@ namespace StoreUI
 
         public string UserSelection()
         {
-            string userInput = Console.ReadLine();
+            string? userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "0":
@@ -35,7 +35,7 @@ namespace StoreUI
                 case "2":
                     return "SearchStoreFrontsMenu";
                 case "3":
-                    return "AddNewOrdersMenu";                    
+                    return "AddNewOrderMenu";                    
                 default:
                     return "StoreMainMenu";
             }

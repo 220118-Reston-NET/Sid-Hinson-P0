@@ -66,9 +66,22 @@ namespace StoreDL
        /// </summary>
     public interface IOrdersRepo
     {
-        //*********************************************** Shopping Logic Here
+        /// <summary>
+        /// Add Orders
+        /// </summary>
+        /// <param name="p_order"></param>
+        /// <returns>returns Order</returns>
         Orders AddOrders(Orders p_order);
+        /// <summary>
+        /// Adds Orders to Order History
+        /// </summary>
+        /// <param name="p_order"></param>
+        /// <returns></returns>
         Orders AddOrdersHistory(Orders p_order);
+        /// <summary>
+        /// Returns All Orders
+        /// </summary>
+        /// <returns>List of Orders</returns>
         List<Orders> GetAllOrders();
     }
 

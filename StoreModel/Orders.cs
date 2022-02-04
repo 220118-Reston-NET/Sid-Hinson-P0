@@ -11,6 +11,7 @@ namespace StoreModel
 
        public string OrderDate { get; set; }
 
+
        //List of Line Items for an Order, Line Items is a String/int type
        //May need to be ArrayList or something else
        public List<LineItems> OrderLineItems { get; set;}
@@ -25,7 +26,8 @@ namespace StoreModel
             OrderStoreID = 0;
             OrderDate = "";
             OrderTotal = 0.00;
-            OrderLineItems = new List<LineItems>();
+            OrderLineItems = new List<LineItems>(){ new LineItems() };
+    
         
         }
         public override string ToString()

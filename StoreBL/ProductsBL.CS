@@ -68,7 +68,7 @@ namespace StoreBL
 
             return Price;
         }
-        public int GetID(string p_prodName, string p_prodComp, int p_StoreID)
+        public int GetID(string? p_prodName, string? p_prodComp, int p_StoreID)
         {   
             int StoreID = 0;
             List<Products> listofproducts = _repo.GetAllProducts();

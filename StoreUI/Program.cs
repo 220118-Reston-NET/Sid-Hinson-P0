@@ -78,11 +78,11 @@ while(isValid)
         case "SearchProductsMenu":
             mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
             break;
-        case "AddNewOrdersMenu":
-            mainmenu = new AddNewOrdersMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+        case "AddNewOrderMenu":
+            mainmenu = new AddNewOrderMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
             break;
-        case "NewCustomerOrderMenu":
-            mainmenu = new NewCustomerOrderMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+        case "AddBusinessTransaction":
+            mainmenu = new AddNewOrderMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
             break;
         case "AddProductsDisplay":
             mainmenu = new AddProductsDisplay(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));

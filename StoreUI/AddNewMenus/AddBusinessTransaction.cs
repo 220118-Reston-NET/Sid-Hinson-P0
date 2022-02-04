@@ -2,14 +2,14 @@ using StoreModel;
 using StoreBL;
 namespace StoreUI
 {
-    public class AddNewOrdersMenu : IMenu
+    public class AddBusinessTransaction : IMenu
     {
         //Dependency Injection
         private IProductsBL _productBL;
         private IOrdersBL _orderBL;
         private ICustomersBL _customerBL;
         
-        public AddNewOrdersMenu(IOrdersBL p_orderBL, IProductsBL p_productBl, ICustomersBL p_customerBL)
+        public AddBusinessTransaction(IOrdersBL p_orderBL, IProductsBL p_productBl, ICustomersBL p_customerBL)
         {
             _orderBL = p_orderBL;
             _productBL = p_productBl;
@@ -54,13 +54,13 @@ namespace StoreUI
                 //Create Edit Orders
                 //Implement ***********
                 case "3":
-                return "NewCustomerOrderMenu";
+                return "AddCustomerOrderMenu";
 
 
                 //View Order History
                 //Implement ***********
                 case "4":
-                return "NewCustomerOrderMenu";
+                return "AddNewOrdersMenu";
 
                 //Default Case
                 default:

@@ -61,11 +61,11 @@ namespace StoreBL
         public List<Products> SearchProductsCat(string p_productCat);
         public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID);
         public int GetID(string p_prodName, string p_prodComp, int p_StoreID);
+ 
     }
 
     public interface IOrdersBL
     {
-        //******************************************Shopping Logic Here
         Orders AddOrders(Orders p_order);
 
         /// <summary>
@@ -76,7 +76,11 @@ namespace StoreBL
         // List<Orders> SearchOrders(string p_email);
         Orders AddOrdersHistory(Orders p_order);
         public List<Orders> SearchOrders(string p_email);
-    
+        public LineItems AddItem(int p_prodID, int p_prodStoreID, string? p_prodName, string? p_prodComp, double p_prodPrice, int p_prodQuant);
+        public List<LineItems> RemoveFromCart(List<LineItems> p_orderList);
+
+        public List<LineItems> DisplayCart(List<LineItems> p_List);
+        public void DisplayGraphic();
     }
 }
 
