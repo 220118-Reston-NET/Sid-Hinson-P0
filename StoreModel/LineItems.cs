@@ -2,6 +2,8 @@ namespace StoreModel
 {
     public class LineItems
     {
+       public string OrderDate { get; set; }
+       public int OrderID { get; set; }
        public int ProductID {get; set; }
        public string ProductCompany { get; set;}
        public int StoreID {get; set;}
@@ -49,12 +51,15 @@ namespace StoreModel
         public LineItems()
         {
         
+        OrderID = 0;
         ProductID = 0;
         StoreID = 0;
         ProductName = "None";
         ProductCompany = "None";
         ProductPrice = 0;
         ProductQuantity = 0;
+        OrderDate = "";
+
         }
         
         public override string ToString()
