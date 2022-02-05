@@ -2,13 +2,12 @@ namespace StoreModel
 {
     public class LineItems
     {
-       public string OrderDate { get; set; }
+       public string? OrderDate { get; set; }
        public int OrderID { get; set; }
-       public int ProductID {get; set; }
-       public string ProductCompany { get; set;}
+       public int ProductID { get; set; }
        public int StoreID {get; set;}
-       private string _ProductName;
-       public string ProductName
+       private string? _ProductName;
+       public string? ProductName
        {
            get { return _ProductName; }
            

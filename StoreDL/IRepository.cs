@@ -5,8 +5,9 @@ namespace StoreDL
     /// <summary>
     /// Data Layer Interface - DB - CRUD
     /// </summary>
-    
-    
+
+    //////////////////////JSON DEPRECATION BELOW HERE/////////////////////////////////////////
+
     /// <summary>
     /// Customers Interface
     /// </summary>

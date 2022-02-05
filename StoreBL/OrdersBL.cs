@@ -8,8 +8,8 @@ namespace StoreBL
         /// <summary>
         /// Dependency Injection Constructor
         /// </summary>
-        private IOrdersRepo _repo;
-        public OrdersBL(IOrdersRepo p_repo)
+        private ISQLOrdersRepo _repo;
+        public OrdersBL(ISQLOrdersRepo p_repo)
         {
             _repo = p_repo;
         }
@@ -70,13 +70,12 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_lineItem"></param>
         /// <returns></returns>
-        public LineItems AddItem(int p_prodID, int p_prodStoreID, string p_prodName, string p_prodComp, double p_prodPrice, int p_prodQuant)
+        public LineItems AddItem(int p_prodID, int p_prodStoreID, string p_prodName, double p_prodPrice, int p_prodQuant)
         {
             LineItems p_lineItem = new LineItems();
             p_lineItem.ProductID = p_prodID;
             p_lineItem.StoreID = p_prodStoreID;
             p_lineItem.ProductName = p_prodName;
-            p_lineItem.ProductCompany = p_prodComp;
             p_lineItem.ProductPrice = p_prodPrice;
             p_lineItem.ProductQuantity = p_prodQuant;
 

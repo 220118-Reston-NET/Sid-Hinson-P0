@@ -14,7 +14,7 @@ namespace StoreModel
             WarehouseID = 0;
             StoreID = 0;
             ProductID = 0;
-            Quantity =0;
+            Quantity = 0;
         }
         
         public override string ToString()

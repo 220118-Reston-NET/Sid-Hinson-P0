@@ -113,7 +113,7 @@ namespace StoreUI
                 case "5":
                     Console.Clear();
                     _orderBL.DisplayGraphic();
-                    Item = _orderBL.AddItem(ProductID, ProductStoreID, ProductName, ProductCompany, ProductPrice, ProductQuantity);
+                    Item = _orderBL.AddItem(ProductID, ProductStoreID, ProductName, ProductPrice, ProductQuantity);
                     ProductID = _productBL.GetID(ProductName, ProductCompany, ProductStoreID);
                     ProductPrice = _productBL.GetPrice(ProductName, ProductCompany, ProductStoreID);
                     ShoppingCart.Add(Item);
