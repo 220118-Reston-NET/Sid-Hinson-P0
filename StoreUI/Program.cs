@@ -60,7 +60,7 @@ while(isValid)
             break;
         case "NewCustomersMenu":
             // Log.Information("Displaying New Customer Menu to user");
-            mainmenu = new NewCustomersMenu(new CustomersBL(new CustomersRepository()));
+            mainmenu = new NewCustomersMenu(new CustomersBL(new SQL_CRepository()));
             break;
         case "SearchCustomersMenu":
             // Log.Information("Displaying Search Results Menu to user");

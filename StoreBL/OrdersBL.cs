@@ -8,8 +8,8 @@ namespace StoreBL
         /// <summary>
         /// Dependency Injection Constructor
         /// </summary>
-        private ISQLOrdersRepo _repo;
-        public OrdersBL(ISQLOrdersRepo p_repo)
+        private IOrdersRepo _repo;
+        public OrdersBL(IOrdersRepo p_repo)
         {
             _repo = p_repo;
         }

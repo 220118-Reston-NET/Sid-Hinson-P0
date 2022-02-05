@@ -6,7 +6,7 @@ namespace StoreDL
     /// <summary>
     /// Orders Repository CRUD
     /// </summary>
-    public class OrdersRepository : ISQLOrdersRepo
+    public class OrdersRepository : IOrdersRepo
     {
         private string _filepath = "../StoreDL/DB/";
         private string _jsonString;

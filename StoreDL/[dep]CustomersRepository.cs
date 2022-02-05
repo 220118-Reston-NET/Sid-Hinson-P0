@@ -6,7 +6,7 @@ namespace StoreDL
     /// <summary>
     /// Customers Repository CRUD
     /// </summary>
-    public class CustomersRepository : ICustomersRepo
+    public class CustomersRepository : ISQLCustomersRepo
     {
         //Path to DB
         private string _filepath = "../StoreDL/DB/";
