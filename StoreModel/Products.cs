@@ -28,14 +28,13 @@ namespace StoreModel
             ProductPrice = 0.00;
             ProductDescription = "";
             ProductCategory = "";
-            ProductSTFQuantity = 0;
         }
 
     public override string ToString()
     {
       return $"Product Id: {ProductID}\nStore Number: {StoreID}\n Name: {ProductName}" +
       $"\nPrice: {ProductPrice}\nDes: {ProductDescription}\nCategory: {ProductCategory}" +
-      $"\nCompany: {ProductCompany}\nQuantity: {ProductSTFQuantity}";
+      $"\nCompany: {ProductCompany}";
     }
 
     }

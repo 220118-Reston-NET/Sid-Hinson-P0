@@ -19,7 +19,7 @@ namespace StoreUI
         {
             Console.Clear();
             Console.WriteLine("********************************************************************************");
-            Console.WriteLine("*        Retro Barbarian Gaming Lair Has (3) Locations to Serve You            *");
+            Console.WriteLine("*      Retro Barbarian Online Gaming Lair Has (3) Locations to Serve You       *");
             Console.WriteLine("********************************************************************************");
             Console.WriteLine("*               Please Enter a Store Front Number (1-3)                        *");
             Console.WriteLine("*                           You will Need:                                     *");
@@ -30,6 +30,9 @@ namespace StoreUI
             Console.WriteLine("********************************************************************************");
             Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("    =========================================================="); 
+            Console.WriteLine("    )xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("    ==========================================================");
             Console.WriteLine("*******************************************************************");
             Console.WriteLine("***** Enter a Category To See Inventory - Games - or - Systems ****");
             Console.WriteLine("*******************************************************************");

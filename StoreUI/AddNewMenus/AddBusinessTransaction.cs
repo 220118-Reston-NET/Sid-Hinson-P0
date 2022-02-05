@@ -18,17 +18,23 @@ namespace StoreUI
         public void MenuDisplay()
         {
             Console.Clear();
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("     ================================================");
+            Console.WriteLine("     = Retro Barbarian Online Gaming Lair Shop Menu =");
+            Console.WriteLine("     ================================================");
+            Console.WriteLine("     =         Enter Number to Select Option        =");     
+            Console.WriteLine("     ================================================");
+            Console.WriteLine("     =[0] - Return to Main Menu / Exit              =");
+            Console.WriteLine("     =[1] - Display Product By Category             =");
+            Console.WriteLine("     =[2] - Search For Products by Criteria         =");
+            Console.WriteLine("     =[3] - Create/Edit Product Order               =");
+            Console.WriteLine("     =[4] - View Order History                      =");
             Console.WriteLine("================================================");
-            Console.WriteLine("=    Retro Barbarian Gaming Lair Shop Menu     =");
-            Console.WriteLine("================================================");
-            Console.WriteLine("=         Enter Number to Select Option        =");     
-            Console.WriteLine("================================================");
-            Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=[1] - Display Product By Category             =");
-            Console.WriteLine("=[2] - Search For Products by Criteria         =");
-            Console.WriteLine("=[3] - Create/Edit Product Order               =");
-            Console.WriteLine("=[4] - View Order History                      =");
-            Console.WriteLine("================================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()

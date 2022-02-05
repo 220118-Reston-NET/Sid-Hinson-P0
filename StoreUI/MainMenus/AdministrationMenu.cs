@@ -17,8 +17,8 @@ namespace StoreUI
             Console.WriteLine("=[2] - Search For Customer                     =");
             Console.WriteLine("=[3] - Enter New StoreFront                    =");
             Console.WriteLine("=[4] - Search For StoreFront                   =");
-            Console.WriteLine("=[5] - Enter New Product                       =");
-            Console.WriteLine("=[6] - Search For Product                      =");
+            Console.WriteLine("=[5] - Enter New Warehouse Product             =");
+            Console.WriteLine("=[6] - Search For Warehouse Product            =");
             Console.WriteLine("================================================");
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 

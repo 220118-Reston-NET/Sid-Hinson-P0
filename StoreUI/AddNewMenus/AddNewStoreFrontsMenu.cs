@@ -29,6 +29,9 @@ namespace StoreUI
             Console.WriteLine("=[5] - Enter StoreFront State: " + _newStoreFronts.StoreState);
             Console.WriteLine("=[6] - Update & Save Information");
             Console.WriteLine("===============================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()

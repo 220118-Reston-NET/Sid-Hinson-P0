@@ -13,13 +13,16 @@ namespace StoreUI
         public void MenuDisplay()
         {   
             Console.Clear();
+            Console.WriteLine("   =========================================================="); 
+            Console.WriteLine("   )xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("   ==========================================================");
             Console.WriteLine("================================================================");
             Console.WriteLine("=          Menu : Search Products                              =");
             Console.WriteLine("================================================================");
             Console.WriteLine("=              Select Option :                                 =");
             Console.WriteLine("= [0] - Exit Search                                            =");
             Console.WriteLine("= [1] - Find Product by Name, Store, and Company               ="); 
-            Console.WriteLine("= [2] - Find Product by Specific Category                    =");
+            Console.WriteLine("= [2] - Find Product by Specific Category                      =");
             Console.WriteLine("= [3] - Find Product by Company                                =");
             Console.WriteLine("================================================================");
         }

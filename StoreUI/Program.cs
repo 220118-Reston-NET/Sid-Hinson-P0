@@ -18,8 +18,8 @@ using StoreBL;
 // Log.Logger = new LoggerConfiguration()
     // .WriteTo.File("./Logs/User.txt") 
     // .CreateLogger();
-
-
+StoreMainLogo main = new StoreMainLogo();
+main.Display();
 /// <summary>
 /// Program Runtime Logic
 /// </summary>

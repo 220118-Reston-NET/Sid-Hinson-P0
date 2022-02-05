@@ -18,7 +18,7 @@ namespace StoreUI
             Console.WriteLine("==========================================================");
             Console.WriteLine("         ====================================");
             Console.WriteLine("         =            Welcome To            =");
-            Console.WriteLine("         =    Retro Barbarian Gaming Lair   =");
+            Console.WriteLine("       =    Retro Barbarian Online Gaming Lair   =");
             Console.WriteLine("         ====================================");
             Console.WriteLine("         =     Please Make a Selection      =");
             Console.WriteLine("         =      [0] Exit The Store          =");

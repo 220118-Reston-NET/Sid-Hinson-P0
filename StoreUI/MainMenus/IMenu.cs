@@ -17,4 +17,9 @@ namespace StoreUI
 
     }
 
+    interface ILogo
+    {
+        void Display();
+    }
+
 }
