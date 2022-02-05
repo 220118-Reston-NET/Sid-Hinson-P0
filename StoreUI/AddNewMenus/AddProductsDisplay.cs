@@ -94,8 +94,6 @@ namespace StoreUI
                     Console.ReadLine();
                 return "AddProductsDisplay";  
 
-
-
                 default:
                 return "AddProductsDisplay";
              }

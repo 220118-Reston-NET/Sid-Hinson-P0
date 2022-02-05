@@ -162,7 +162,7 @@ namespace StoreUI
                     _orderBL.DisplayCart(ShoppingOrder.OrderLineItems);
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                    _orderBL.AddOrders(ShoppingOrder);      
+                    // _orderBL.AddOrders(ShoppingOrder);      
                     return "AddNewOrderMenu";
 
 

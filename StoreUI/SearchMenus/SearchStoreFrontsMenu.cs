@@ -37,7 +37,7 @@ namespace StoreUI
                 case "0":
                     return "StoreMainMenu";
                 case "1":
-                    Console.WriteLine("Please Enter a Store Front Number (1-10)");
+                    Console.WriteLine("Please Enter a Store Front Number (1-6)");
                     int p_storeNumber = Convert.ToInt32(Console.ReadLine());
                     //Display Logic for Search Function
                     List<StoreFronts> listofStoreFronts = _frontBL.SearchStoreFronts(p_storeNumber);

@@ -52,7 +52,8 @@ namespace StoreDL
             //In the SQL CONNECTION NEW DECLARATION YOU NEED YOUR ADO.NET conn string or whatever server you are connecting to
             //If namespace not imported, you will get Compiler ERRORS
             using(SqlConnection con = new SqlConnection(_ConnectionStrings))
-            {                                     //7a. Here we ^ insert the private string, that is a parameter given to CONSTRUCTOR for  DB locale
+            {                                     //7a. Here we ^ insert the private string, that is a 
+                                                  // parameter given to CONSTRUCTOR for  DB locale
                 //5.Open the DB Connection
                 con.Open();
 
@@ -95,7 +96,7 @@ namespace StoreDL
             string sqlQuery =@"select * from Customers";
 
             //3.ESTABLISH the CONNECTION
-             using(SqlConnection con = new SqlConnection("Server=tcp:revature-retrodb.database.windows.net,1433;Initial Catalog=RetroBarbarianDB;Persist Security Info=False;User ID=RetroDBAdmin;Password=Skidrow345!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+             using(SqlConnection con = new SqlConnection(_ConnectionStrings))
             {
                 //3.OPEN the CONNECTION
                 con.Open();
