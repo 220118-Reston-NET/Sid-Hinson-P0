@@ -2,3 +2,4 @@ bin
 obj
 .vscode/
 StoreUI/Logs/
+StoreUI/appsettings.json

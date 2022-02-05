@@ -3,9 +3,26 @@ using StoreModel;
 namespace StoreDL
 {
     public class SQL_CRepository : ISQLCustomersRepo
-
-
     {
+
+        //7.Privatizing the Connection String as a PARAMETER
+        //This Method makes it DYNAMICALLY CHANGE
+        //So now it will require a STRING of the connection to CREATE OBJ out of it
+        private readonly string _ConnectionStrings;
+        public SQL_CRepository(string p_ConnectionStrings)
+        {
+            _ConnectionStrings = p_ConnectionStrings;
+        }
+        //8.Afterwards we go to/CREATE appsettings.json in the UI CLass, which is what configures the app
+        //We ignore the appsettings.json file. in .gitignore
+        //we set a connection string with a name KEY in the "ConnectionsStrings" configuration call of the appsettings.json
+        //We need to go to Program.cs (where creation logic of repo is called) and READ and OBTAIN connectionstring
+        //9. To do this we need to add : dotnet add package Microsoft.Extensions.Configuration --version 6.0.2-mauipre.1.22054.8 (or latest)
+        //We need to put this in the right project, in this case StoreUI. if dont correctly, it will appear in .csproj
+        //10. To manipulate the actual JSON, we need to download that specfic package too. Microsoft.Extensions.Configuration.Json (or latest)
+        //We add this as well to , to the StoreUI
+        //11. In ADDITON if we need to add the Extensions Package that allows for FileExtensions configuration which is ^ "..Configuration.FileExtensions" (latest)
+        //12. We go the program.cs in UI and add the code to do the above
         public Customers AddCustomers(Customers p_cust)
         {
             
@@ -34,8 +51,8 @@ namespace StoreDL
             //4."USING BLOCK" - This HELPS with Resource CLOSING like Open Connection i.e. optimization cpu resources
             //In the SQL CONNECTION NEW DECLARATION YOU NEED YOUR ADO.NET conn string or whatever server you are connecting to
             //If namespace not imported, you will get Compiler ERRORS
-            using(SqlConnection con = new SqlConnection("Server=tcp:revature-retrodb.database.windows.net,1433;Initial Catalog=RetroBarbarianDB;Persist Security Info=False;User ID=RetroDBAdmin;Password=Skidrow345!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            {
+            using(SqlConnection con = new SqlConnection(_ConnectionStrings))
+            {                                     //7a. Here we ^ insert the private string, that is a parameter given to CONSTRUCTOR for  DB locale
                 //5.Open the DB Connection
                 con.Open();
 
