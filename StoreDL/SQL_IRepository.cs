@@ -40,7 +40,7 @@ namespace StoreDL
         /// </summary>
         /// <param name="p_store"></param> Customer Object
         /// <returns>Storefront Added</returns>
-        StoreFronts AddStorefronts(StoreFronts p_store);
+        StoreFronts AddStoreFronts(StoreFronts p_store);
         /// <summary>
         /// Will Get All Storefronts in DB
         /// </summary>

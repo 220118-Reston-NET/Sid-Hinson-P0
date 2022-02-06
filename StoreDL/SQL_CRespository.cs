@@ -90,7 +90,7 @@ namespace StoreDL
         {
             //This operation will be bvery similar to the JSON one, with some caveats
             //1.CREATE the LIST OF CUSTOMERS
-            List<Customers> listofcutomers = new List<Customers>();
+            List<Customers> listofcustomers = new List<Customers>();
 
             //2.CREATE the SQL Query string desired
             string sqlQuery =@"select * from Customers";
@@ -118,7 +118,7 @@ namespace StoreDL
                     //Here WE NEED TO MAP it to a class to get this to work
                     //Here we have a new list object, and we state each list property
                     //NOTE : Bases in SQL are ZERO BASED SO MAPPING for both starts at 0 [ ~ i.eCustomerID[0] = Column Customers.CustomerID[0]]
-                    listofcutomers.Add(new Customers(){
+                    listofcustomers.Add(new Customers(){
                             CustomerID = reader.GetInt32(1),
                             CFirstName = reader.GetString(2),
                             CLastName = reader.GetString(3),
@@ -134,7 +134,7 @@ namespace StoreDL
 
                 }
             }
-            return listofcutomers;
+            return listofcustomers;
         }
     }
 }
