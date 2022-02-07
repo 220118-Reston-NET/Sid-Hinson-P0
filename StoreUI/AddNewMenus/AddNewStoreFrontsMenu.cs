@@ -40,22 +40,32 @@ namespace StoreUI
             {
                 case "0":
                     return "StoreMainMenu";
+
+
                 case "1":
                     Console.WriteLine("Enter a Street Address : ");
                     _newStoreFronts.StoreAddress = Console.ReadLine();
                     return "NewStoreFrontsMenu";
+
+
                 case "2":
                     Console.WriteLine("Enter a Store City : ");
                     _newStoreFronts.StoreCity = Console.ReadLine();
                     return "NewStoreFrontsMenu";
+
+
                 case "3":
                     Console.WriteLine("Enter a Zip Code : ");
                     _newStoreFronts.StoreZipCode = Console.ReadLine();
                     return "NewStoreFrontsMenu";
+
+
                 case "4":
                     Console.WriteLine("Enter a State Location : ");
                     _newStoreFronts.StoreState = Console.ReadLine();
-                    return "NewStoreFrontsMenu";               
+                    return "NewStoreFrontsMenu";
+
+
                 case "5":
                     try
                     {   
@@ -70,6 +80,8 @@ namespace StoreUI
                         Console.ReadLine();
                     }
                     return "NewStoreFrontsMenu";
+
+                    
                     default:
                     return "NewStoreFrontsMenu";
             }

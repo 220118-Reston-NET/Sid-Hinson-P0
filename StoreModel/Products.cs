@@ -3,7 +3,6 @@ namespace StoreModel
     public class Products
     {
         public int ProductID { get; set; }
-
         public int StoreID { get; set; }
         //Product Name
         public string ProductName { get; set; }

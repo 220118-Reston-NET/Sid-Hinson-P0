@@ -4,17 +4,7 @@ namespace StoreUI
 {
     public class AddBusinessTransaction : IMenu
     {
-        //Dependency Injection
-        private IProductsBL _productBL;
-        private IOrdersBL _orderBL;
-        private ICustomersBL _customerBL;
-        
-        public AddBusinessTransaction(IOrdersBL p_orderBL, IProductsBL p_productBl, ICustomersBL p_customerBL)
-        {
-            _orderBL = p_orderBL;
-            _productBL = p_productBl;
-            _customerBL = p_customerBL;
-        }
+
         public void MenuDisplay()
         {
             Console.Clear();
@@ -26,12 +16,12 @@ namespace StoreUI
             Console.WriteLine("     ================================================");
             Console.WriteLine("     =         Enter Number to Select Option        =");     
             Console.WriteLine("     ================================================");
-            Console.WriteLine("     =[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("     =[1] - Display Product By Category             =");
-            Console.WriteLine("     =[2] - Search For Products by Criteria         =");
-            Console.WriteLine("     =[3] - Create/Edit Product Order               =");
-            Console.WriteLine("     =[4] - View Order History                      =");
-            Console.WriteLine("================================================");
+            Console.WriteLine("     =[0]     - Return to Main Menu / Exit          =");
+            Console.WriteLine("     =[1]     - Display Product By Category         =");
+            Console.WriteLine("     =[2]     - Search For Products by Criteria     =");
+            Console.WriteLine("     =[3]     - Create/Edit Product Order           =");
+            Console.WriteLine("     =[4]     - View Your Order History             =");
+            Console.WriteLine("===========================================================");
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
             Console.WriteLine("==========================================================");
@@ -45,7 +35,7 @@ namespace StoreUI
             {
                 //Return to Main Menu
                 case "0":
-                return "StoreMainMenu";
+                return "CustomersMenu";
 
 
                 //Display Products by Category
@@ -58,19 +48,20 @@ namespace StoreUI
 
 
                 //Create Edit Orders
-                //Implement ***********
                 case "3":
-                return "AddCustomerOrderMenu";
+                return "AddNewOrderMenu";
 
 
                 //View Order History
-                //Implement ***********
+                //TODO ***********Implement ***********
                 case "4":
-                return "AddNewOrdersMenu";
+                Console.WriteLine("Not Implemented Yet- press Enter");
+                Console.ReadLine();
+                return "AddBusinessTransaction";
 
                 //Default Case
                 default:
-                return "AddNewOrdersMenu";
+                return "AddBusinessTransaction";
             }
         }
     }

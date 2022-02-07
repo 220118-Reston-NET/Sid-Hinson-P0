@@ -144,3 +144,5 @@
 2022-01-30 19:00:44.162 -05:00 [INF] Displaying New Customer Menu to user
 2022-01-30 19:01:01.669 -05:00 [INF] Displaying New Customer Menu to user
 2022-01-30 19:02:58.295 -05:00 [INF] Displaying Main Menu to user
+2022-02-07 15:55:59.403 -05:00 [INF] User has Exited The Program
+2022-02-07 15:56:54.816 -05:00 [INF] User has Exited The Program

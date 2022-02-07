@@ -19,13 +19,19 @@ namespace StoreUI
             Console.WriteLine("=          [0] - Return to Main Menu / Exit              =");
             Console.WriteLine("=          [1] - Enter New Customer                      =");
             Console.WriteLine("=          [2] - Search For StoreFront                   =");
-            Console.WriteLine("=          [3] - Order Products                          =");
+            Console.WriteLine("=          [3] - Products & Orders Viewing               =");
+            Console.WriteLine("=          [4] - Order Products Menu                     =");
             Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()
         {
-            string? userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
+            while(string.IsNullOrEmpty(userInput))
+            {
+                Console.WriteLine("Please Input a Selection");
+                userInput = Console.ReadLine();
+            }
             switch (userInput)
             {
                 case "0":
@@ -35,6 +41,8 @@ namespace StoreUI
                 case "2":
                     return "SearchStoreFrontsMenu";
                 case "3":
+                    return "AddBusinessTransaction";               
+                case "4":
                     return "AddNewOrderMenu";                    
                 default:
                     return "StoreMainMenu";

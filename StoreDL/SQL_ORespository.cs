@@ -18,15 +18,6 @@ namespace StoreDL
             string sqlQuery = @"insert into Customers 
                                 values (@OrderID, @OrderCustID, @OrderStoreID, @OrderDate, @OrderTotal)";
 
-            //2.MAP THESE VALUES into the sqlQuery string:
-            // OrderID int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-            // OrderCustID int FOREIGN KEY (OrderCustID) REFERENCES Customers (OrderID),
-            // OrderStoreID int FOREIGN KEY (OrderStoreID) REFERENCES StoreFronts (StoreID),
-            // OrderDate date,
-            // OrderTotal decimal
-
-
-
 
             using(SqlConnection con = new SqlConnection(_ConnectionStrings))
             {                      

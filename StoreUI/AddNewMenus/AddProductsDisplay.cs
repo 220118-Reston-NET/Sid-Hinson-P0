@@ -47,7 +47,7 @@ namespace StoreUI
             switch(userInput)
             {
                 case "0":
-                return "NewCustomerOrderMenu";
+                return "AddBusinessTransaction";
 
 
 

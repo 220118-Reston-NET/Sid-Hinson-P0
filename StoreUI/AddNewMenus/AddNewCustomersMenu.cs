@@ -40,7 +40,7 @@ namespace StoreUI
         
         public string UserSelection()
         {
-            string? userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "0":

@@ -8,8 +8,8 @@
     {
     
         public int CustomerID { get; set; }
-        private string? _CFirstName;
-        public string? CFirstName
+        private string _CFirstName;
+        public string CFirstName
         {
             get { return _CFirstName; }
 
@@ -27,8 +27,8 @@
             }
         }
 
-        private string? _CLastName;
-        public string? CLastName
+        private string _CLastName;
+        public string CLastName
         {
             get { return _CLastName; }
 
@@ -46,8 +46,8 @@
             }
         }
 
-        private string? _DateofBirth;
-        public string? CDateofBirth
+        private string _DateofBirth;
+        public string CDateofBirth
         {
             get { return _DateofBirth; }
 
@@ -65,8 +65,8 @@
                 
             }
         }
-        private string? _CustomerAddress;
-        public string? CustomerAddress
+        private string _CustomerAddress;
+        public string CustomerAddress
         {
             get { return _CustomerAddress; }
 
@@ -83,8 +83,8 @@
 
             }
         }
-        private string? _CustomerCity;
-        public string? CustomerCity
+        private string _CustomerCity;
+        public string CustomerCity
         {
             get { return _CustomerCity; }
 
@@ -102,8 +102,8 @@
             }
         }
    
-        private string? _CustomerState;
-        public string? CustomerState
+        private string _CustomerState;
+        public string CustomerState
         {
             get { return _CustomerState; }
 
@@ -112,8 +112,8 @@
                _CustomerState = value;
             }
         }
-        private string? _CustomerZipcode;
-        public string? CustomerZipcode
+        private string _CustomerZipcode;
+        public string CustomerZipcode
         {
             get { return _CustomerZipcode; }
 
@@ -131,8 +131,8 @@
             }
         }
 
-        private string? _CustCountry;
-        public string? CustCountry
+        private string _CustCountry;
+        public string CustCountry
         {
             get { return _CustCountry; }
 
@@ -149,39 +149,40 @@
 
             }
         }
-        private string? _CustomerEmail;
+        private string _CustomerEmail;
 
-        public string? CustomerEmail
+        public string CustomerEmail
         {
             get { return _CustomerEmail; }
 
             set 
             {
-                if (value != "")
+                if (string.IsNullOrEmpty(value))
                 {
-                    _CustomerEmail = value;
+                    throw new NullReferenceException("Email must have a input.");
                 }
                 else
                 {
-                    throw new NullReferenceException("Email must be entered.");
+                    _CustomerEmail = value;
                 }
 
             }
         }
-        private string? _Password;
-        public string? CPassword
+        private string _Password;
+        public string CPassword
         {
             get { return _Password; }
 
             set 
             {
-                if (value != "")
+                if (string.IsNullOrEmpty(value))
                 {
-                    _Password = value;
+                    throw new NullReferenceException("Password must have an input.");
+
                 }
                 else
                 {
-                    throw new NullReferenceException("Password must be entered.");
+                    _Password = value;
                 }
 
             }

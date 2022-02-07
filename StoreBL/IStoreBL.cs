@@ -78,7 +78,7 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(string p_email);
-        public LineItems AddItem(int p_prodID, int p_prodStoreID, string? p_prodName, double p_prodPrice, int p_prodQuant);
+        public LineItems AddItem(int p_prodID, int p_prodStoreID, string p_prodName, double p_prodPrice, int p_prodQuant);
         public List<LineItems> RemoveFromCart(List<LineItems> p_orderList);
 
         public List<LineItems> DisplayCart(List<LineItems> p_List);

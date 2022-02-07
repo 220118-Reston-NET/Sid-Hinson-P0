@@ -24,7 +24,7 @@ namespace StoreModel
             OrderID= 0;
             OrderCustID = 0;
             OrderStoreID = 0;
-            OrderDate = "";
+            OrderDate = "04201999";
             OrderTotal = 0.00;
             OrderLineItems = new List<LineItems>(){ new LineItems() };
     
