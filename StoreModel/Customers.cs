@@ -157,13 +157,13 @@
 
             set 
             {
-                if (value != "")
+                if (string.IsNullOrEmpty(value))
                 {
-                    _CustomerEmail = value;
+                    throw new NullReferenceException("Email must have a input.");
                 }
                 else
                 {
-                    throw new NullReferenceException("Email must be entered.");
+                    _CustomerEmail = value;
                 }
 
             }
@@ -175,13 +175,14 @@
 
             set 
             {
-                if (value != "")
+                if (string.IsNullOrEmpty(value))
                 {
-                    _Password = value;
+                    throw new NullReferenceException("Password must have an input.");
+
                 }
                 else
                 {
-                    throw new NullReferenceException("password must be entered.");
+                    _Password = value;
                 }
 
             }

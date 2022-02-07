@@ -18,7 +18,7 @@ namespace StoreUI
             Console.WriteLine("==========================================================");
             Console.WriteLine("         ====================================");
             Console.WriteLine("         =            Welcome To            =");
-            Console.WriteLine("         =    Retro Barbarian Gaming Lair   =");
+            Console.WriteLine("       =    Retro Barbarian Online Gaming Lair   =");
             Console.WriteLine("         ====================================");
             Console.WriteLine("         =     Please Make a Selection      =");
             Console.WriteLine("         =      [0] Exit The Store          =");
@@ -38,7 +38,11 @@ namespace StoreUI
         {
             //Read in Customer Input 
             string UserInput = Console.ReadLine();
-
+            while(string.IsNullOrEmpty(UserInput))
+            {
+                Console.WriteLine("Please Input a Selection");
+                UserInput = Console.ReadLine();
+            }
             switch (UserInput)
             {
                 case "0":
@@ -49,7 +53,7 @@ namespace StoreUI
                     return "AdministrationMenu";
                 default :
                     Console.WriteLine("Selection Invalid");
-                    Console.WriteLine("Press Enter");
+                    Console.WriteLine("Please Enter a Valid Selection from the Menu");
                     Console.ReadLine();
                     return "StoreMainMenu";
 

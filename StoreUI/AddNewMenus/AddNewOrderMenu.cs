@@ -7,8 +7,6 @@ namespace StoreUI
         public static List<LineItems> ShoppingCart = new List<LineItems>();
         public LineItems Item = new LineItems();
         public static Orders ShoppingOrder = new Orders();
-        private static string p_Fname;
-        private static string p_Lname;
         public static string p_Email;
         public static int ProductID;
         public static double ProductPrice;
@@ -36,7 +34,7 @@ namespace StoreUI
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
             Console.WriteLine("==========================================================");
             Console.WriteLine("==========================================================");
-            Console.WriteLine("=                  Menu : Add Customer                   =");
+            Console.WriteLine("=                    Menu : Add Order                    =");
             Console.WriteLine("==========================================================");
             Console.WriteLine("=              Enter New Order Info : Select             =");     
             Console.WriteLine("==========================================================");
@@ -61,8 +59,7 @@ namespace StoreUI
         public string UserSelection()
         {
 
-
-            string? userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
             switch (userInput)
             {
 
@@ -113,7 +110,7 @@ namespace StoreUI
                 case "5":
                     Console.Clear();
                     _orderBL.DisplayGraphic();
-                    Item = _orderBL.AddItem(ProductID, ProductStoreID, ProductName, ProductCompany, ProductPrice, ProductQuantity);
+                    Item = _orderBL.AddItem(ProductID, ProductStoreID, ProductName, ProductPrice, ProductQuantity);
                     ProductID = _productBL.GetID(ProductName, ProductCompany, ProductStoreID);
                     ProductPrice = _productBL.GetPrice(ProductName, ProductCompany, ProductStoreID);
                     ShoppingCart.Add(Item);
@@ -150,6 +147,7 @@ namespace StoreUI
                 case "8":
                     Console.Clear();
                     _orderBL.DisplayGraphic();
+                    Console.WriteLine("To Process Each Order, Please Input Your Email and Password");
                     Console.WriteLine("Enter Your User Email");
                     string userEmail = Console.ReadLine();
                     Console.WriteLine("Enter Your User Password");
@@ -162,7 +160,7 @@ namespace StoreUI
                     _orderBL.DisplayCart(ShoppingOrder.OrderLineItems);
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                    _orderBL.AddOrders(ShoppingOrder);      
+                    // _orderBL.AddOrders(ShoppingOrder);      
                     return "AddNewOrderMenu";
 
 

@@ -2,9 +2,48 @@ namespace StoreModel
 {
     public class LineItems
     {
-       public int ProductID {get; set; }
-       public string ProductCompany { get; set;}
-       public int StoreID {get; set;}
+       private int _orderID;
+       public int OrderID
+        {
+            get
+            {
+                  return _orderID;
+            }
+            set
+            {
+                 _orderID = value;
+            }
+        }
+
+
+       private int _productID;  
+       public int ProductID
+        {
+            get
+            {
+                  return _productID;
+            }
+            set
+            {
+                 _productID = value;
+            }
+        }
+
+
+       private int _storeID;  
+       public int StoreID
+        {
+            get
+            {
+                  return _storeID;
+            }
+            set
+            {
+                 _storeID = value;
+            }
+        }
+
+ 
        private string _ProductName;
        public string ProductName
        {
@@ -12,16 +51,43 @@ namespace StoreModel
            
            set
            {
-               if (value != "")
+               if (string.IsNullOrEmpty(value))
                {
-                   _ProductName = value;
+                    throw new NullReferenceException("Product Must Have a Name.");
                }
                else
                {
-                   throw new NullReferenceException("Product has no name value.");
+                   _ProductName = value;
+
                }
            }
        }
+       
+       private string _orderDate;
+       public string OrderDate
+       {
+           get { return _orderDate; }
+
+           set
+           {
+                int length = value.Length;
+
+                if (string.IsNullOrEmpty(value))
+                {
+                        throw new NullReferenceException("Please Enter a ZipCode");
+                }
+                else if(value.Length == 8)
+                {
+                    _orderDate = value;
+                }
+                else
+                {
+                    throw new Exception("Order date must be 8 characters i.e. 10211980 format : MMDDYYYY");
+ 
+                }
+                    
+            }
+       } 
 
         //Quantity of Product
        private int _ProductQuantity;
@@ -38,28 +104,51 @@ namespace StoreModel
                 }
                 else
                 {
-                    throw new Exception("A Quanitity equal or greater to Zero must be entered.");
+                    throw new Exception("Quanitity must equal or be greater to Zero.");
                 }
         
             }
         }
-        public double ProductPrice {get; set;}
+
+
+        private double _productPrice;
+        public double ProductPrice
+        {
+           get { return _ProductQuantity; }
+           
+           set
+           {
+
+               if (value >= 0)
+                {
+                    _productPrice = value;
+                }
+                else
+                {
+                    throw new Exception("Quanitity must equal or be greater to Zero.");
+                }
+        
+            }
+        }
+
 
         //Default Constructor 
         public LineItems()
         {
         
+        OrderID = 0;
         ProductID = 0;
         StoreID = 0;
         ProductName = "None";
-        ProductCompany = "None";
         ProductPrice = 0;
         ProductQuantity = 0;
+        OrderDate = "10211980";
+
         }
         
         public override string ToString()
         {
-            return $"\nProductID: {ProductID}\nProduct Name: {ProductName}\nStoreID: {StoreID}\nProduct Company: {ProductCompany}" +
+            return $"\nProductID: {ProductID}\nProduct Name: {ProductName}\nStoreID: {StoreID}\nOrderID: {OrderID}" +
             $"\nProduct Quantity: {ProductQuantity}\nProduct Price: {ProductPrice}";
         }
     }

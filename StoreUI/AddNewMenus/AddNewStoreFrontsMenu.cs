@@ -22,13 +22,15 @@ namespace StoreUI
             Console.WriteLine("=       Enter New StoreFronts Info : Select       =");     
             Console.WriteLine("================================================");
             Console.WriteLine("=[0] - Return to Main Menu");
-            Console.WriteLine("=[1] - Enter StoreFront Number: " + _newStoreFronts.StoreID );
-            Console.WriteLine("=[2] - Enter StoreFront Street Address: " + _newStoreFronts.StoreAddress );
-            Console.WriteLine("=[3] - Enter StoreFront City: " + _newStoreFronts.StoreCity );        
-            Console.WriteLine("=[4] - Enter StoreFront Zipcode: " + _newStoreFronts.StoreZipCode );
-            Console.WriteLine("=[5] - Enter StoreFront State: " + _newStoreFronts.StoreState);
-            Console.WriteLine("=[6] - Update & Save Information");
+            Console.WriteLine("=[1] - Enter StoreFront Street Address: " + _newStoreFronts.StoreAddress );
+            Console.WriteLine("=[2] - Enter StoreFront City: " + _newStoreFronts.StoreCity );        
+            Console.WriteLine("=[3] - Enter StoreFront Zipcode: " + _newStoreFronts.StoreZipCode );
+            Console.WriteLine("=[4] - Enter StoreFront State: " + _newStoreFronts.StoreState);
+            Console.WriteLine("=[5] - Update & Save Information");
             Console.WriteLine("===============================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()
@@ -38,27 +40,33 @@ namespace StoreUI
             {
                 case "0":
                     return "StoreMainMenu";
+
+
                 case "1":
-                    Console.WriteLine("Enter a Store Number :");
-                    _newStoreFronts.StoreID = Convert.ToInt32(Console.ReadLine());
-                    return "NewStoreFrontsMenu";
-                case "2":
                     Console.WriteLine("Enter a Street Address : ");
                     _newStoreFronts.StoreAddress = Console.ReadLine();
                     return "NewStoreFrontsMenu";
-                case "3":
+
+
+                case "2":
                     Console.WriteLine("Enter a Store City : ");
                     _newStoreFronts.StoreCity = Console.ReadLine();
                     return "NewStoreFrontsMenu";
-                case "4":
+
+
+                case "3":
                     Console.WriteLine("Enter a Zip Code : ");
                     _newStoreFronts.StoreZipCode = Console.ReadLine();
                     return "NewStoreFrontsMenu";
-                case "5":
+
+
+                case "4":
                     Console.WriteLine("Enter a State Location : ");
                     _newStoreFronts.StoreState = Console.ReadLine();
-                    return "NewStoreFrontsMenu";               
-                case "6":
+                    return "NewStoreFrontsMenu";
+
+
+                case "5":
                     try
                     {   
                         _frontBL.AddStoreFronts(_newStoreFronts);
@@ -72,6 +80,8 @@ namespace StoreUI
                         Console.ReadLine();
                     }
                     return "NewStoreFrontsMenu";
+
+                    
                     default:
                     return "NewStoreFrontsMenu";
             }

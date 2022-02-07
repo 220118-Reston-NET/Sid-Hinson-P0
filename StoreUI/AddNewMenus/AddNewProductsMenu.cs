@@ -28,7 +28,7 @@ namespace StoreUI
             Console.WriteLine("=[4] - Enter Product Price: " + _newProduct.ProductPrice); 
             Console.WriteLine("=[5] - Enter Product Description: " + _newProduct.ProductDescription);
             Console.WriteLine("=[6] - Enter Product Category: " + _newProduct.ProductCategory);
-            Console.WriteLine("=[7] - Enter Product Quantity: " + _newProduct.ProductSTQuantity);
+            Console.WriteLine("=[7] - Enter Product Quantity: " + _newProduct.ProductSTFQuantity);
             Console.WriteLine("=[8] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
@@ -66,7 +66,7 @@ namespace StoreUI
                     return "AddNewProductsMenu";
                 case "7":
                     Console.WriteLine("Enter a Quantity : ");
-                    _newProduct.ProductSTQuantity = Convert.ToInt32(Console.ReadLine());
+                    _newProduct.ProductSTFQuantity = Convert.ToInt32(Console.ReadLine());
                     return "AddNewProductsMenu";
                 case "8":
                     try

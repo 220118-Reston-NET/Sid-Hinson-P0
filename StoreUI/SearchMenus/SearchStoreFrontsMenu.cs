@@ -13,27 +13,42 @@ namespace StoreUI
         public void MenuDisplay()
         {   
             Console.Clear();
-            Console.WriteLine("============================================");
-            Console.WriteLine("=          Menu : Search StoreFronts       =");
-            Console.WriteLine("============================================");
-            Console.WriteLine("=              Select Option :             =");
-            Console.WriteLine("= [0] - Exit Search                        =");
-            Console.WriteLine("= [1] - Find StoreFront Information        =");
-            Console.WriteLine("============================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("     ============================================");
+            Console.WriteLine("     =          Menu : Search StoreFronts       =");
+            Console.WriteLine("     ============================================");
+            Console.WriteLine("     =              Select Option :             =");
+            Console.WriteLine("     = [0] - Exit Search                        =");
+            Console.WriteLine("     = [1] - Find StoreFront Information        =");
+            Console.WriteLine("     ============================================");
+            Console.WriteLine("=========================================================="); 
+            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("==========================================================");
         }
 
         public string UserSelection()
         {
-            string userInput = Console.ReadLine();
+            string UserInput = Console.ReadLine();
+            while(string.IsNullOrEmpty(UserInput))
+            {
+                Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
+                UserInput =Console.ReadLine();
 
-            switch (userInput)
+            }
+
+
+            switch (UserInput)
             {
                 case "0":
                     return "StoreMainMenu";
+
+                    
                 case "1":
-                    Console.WriteLine("Please Enter a Store Front Number (1-10)");
+                    Console.WriteLine("Please Enter a Store Front Number (1-6)");
                     int p_storeNumber = Convert.ToInt32(Console.ReadLine());
-                    //Display Logic for Search Function
+                    //***TODO***: Display Logic for Search Function - Add full iteration to actual method
                     List<StoreFronts> listofStoreFronts = _frontBL.SearchStoreFronts(p_storeNumber);
                     foreach (var StoreFront in listofStoreFronts)
                     {
@@ -42,8 +57,10 @@ namespace StoreUI
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
                     return "SearchStoreFrontsMenu";
+
+
                 default:
-                    Console.WriteLine("StoreFront not Found");
+                    Console.WriteLine("Invalid Selection. Please Try Again.");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "StoreMainMenu";

@@ -1,3 +1,3 @@
 @Sid Hinson
 Retro Gaming Store Shop Project 0
-c# Frontend / sql client Backend
+C# Frontend UI / SQL client Backend Repo Storage

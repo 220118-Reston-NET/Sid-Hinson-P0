@@ -9,8 +9,8 @@ namespace StoreBL
         /// <summary>
         /// Dependency Injection Constructor
         /// </summary>
-        private ICustomersRepo _repo;
-        public CustomersBL(ICustomersRepo p_repo)
+        private ISQLCustomersRepo _repo;
+        public CustomersBL(ISQLCustomersRepo p_repo)
         {
             _repo = p_repo;
         }

@@ -9,7 +9,7 @@ namespace StoreDL
     public class ProductsRepository : IProductsRepo
     {
         private string _filepath = "../StoreDL/DB/";
-        private string? _jsonString;
+        private string _jsonString;
         /// <summary>
         /// Write Products to DB
         /// </summary>

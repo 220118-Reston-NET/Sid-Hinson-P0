@@ -7,9 +7,9 @@ namespace StoreUI
         //Static Class for variable Consistently Across the Created Class Objects
         private static Customers _newCustomer = new Customers();
         //Dependency Injection
-        private ICustomersBL? _custBL;
+        private ICustomersBL _custBL;
         //
-        public NewCustomersMenu(ICustomersBL? p_custBL)
+        public NewCustomersMenu(ICustomersBL p_custBL)
         {
             _custBL = p_custBL;
         }
@@ -40,7 +40,7 @@ namespace StoreUI
         
         public string UserSelection()
         {
-            string? userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "0":

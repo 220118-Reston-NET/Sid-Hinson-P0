@@ -5,8 +5,9 @@ namespace StoreDL
     /// <summary>
     /// Data Layer Interface - DB - CRUD
     /// </summary>
-    
-    
+
+    //////////////////////JSON DEPRECATION BELOW HERE/////////////////////////////////////////
+
     /// <summary>
     /// Customers Interface
     /// </summary>
@@ -77,11 +78,11 @@ namespace StoreDL
         /// </summary>
         /// <param name="p_order"></param>
         /// <returns></returns>
-        Orders AddOrdersHistory(Orders p_order);
-        /// <summary>
-        /// Returns All Orders
-        /// </summary>
-        /// <returns>List of Orders</returns>
+        // Orders AddOrdersHistory(Orders p_order);
+        // /// <summary>
+        // /// Returns All Orders
+        // /// </summary>
+        // /// <returns>List of Orders</returns>
         List<Orders> GetAllOrders();
     }
 
