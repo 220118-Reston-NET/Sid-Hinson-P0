@@ -109,7 +109,14 @@
 
             set 
             {
-               _CustomerState = value;
+                if (value.Length == 2)
+                {
+                    _CustomerState = value;
+                }
+                else
+                {
+                    throw new NullReferenceException("Not Enough Digits");
+                }
             }
         }
         private string _CustomerZipcode;

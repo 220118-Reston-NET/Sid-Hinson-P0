@@ -36,6 +36,8 @@ namespace StoreUI
                 UserInput =Console.ReadLine();
 
             }
+
+
             switch (UserInput)
             {
                 case "0":
@@ -43,6 +45,7 @@ namespace StoreUI
 
 
                 case "1":
+                    //Grab Product name
                     Console.WriteLine("Please Enter a Product Name");
                     string p_ProductName = Console.ReadLine();
                     while(string.IsNullOrEmpty(p_ProductName))
@@ -50,6 +53,8 @@ namespace StoreUI
                         Console.WriteLine("Product Name must have an input. Please Enter Product Name.");
                         p_ProductName =Console.ReadLine();
                     }
+
+                    //Grab Company
                     Console.WriteLine("Please Enter a Product Company");
                     string p_ProductComp = Console.ReadLine();
                     while(string.IsNullOrEmpty(p_ProductComp))
@@ -57,22 +62,43 @@ namespace StoreUI
                         Console.WriteLine("Product Company must have an input. Please Enter Product Company.");
                         p_ProductComp =Console.ReadLine();
                     }
+
+                    //Grab Store Id
                     Console.WriteLine("Please Enter a StoreID");
-                    int p_ProductStoreID = Convert.ToInt32(Console.ReadLine());
-                    while(p_ProductStoreID >= 0)
+
+                    //Testing for an Integer Value
+                    bool isNumber = false;
+                    string Test = Console.ReadLine();
+                    isNumber = int.TryParse(Test, out int p_ProductStoreID);
+                    while(isNumber == false)
                     {
-                        Console.WriteLine("Store ID must have a positive value. Please enter a VALID Store ID");
-                        p_ProductComp =Console.ReadLine();
+                        Console.WriteLine("You Must Enter an Integer value:");
+                        string Retry = Console.ReadLine();
+                        isNumber = int.TryParse(Retry, out int result);
+                        p_ProductStoreID = result;
                     }
-                    //Display Logic for Search Function
+                    
+                    //Get products by Criteria
                     List<Products> listofproducts = _productBL.SearchProducts(p_ProductName, p_ProductComp, p_ProductStoreID);
-                    foreach (var Product in listofproducts)
+                    if(listofproducts.Any())
                     {
-                        Console.WriteLine(Product);
+                        //Return Product
+                        foreach (var Product in listofproducts)
+                        {
+                            Console.WriteLine(Product);
+                        }
+                        Console.WriteLine("Press Enter");
+                        Console.ReadLine();
+                        return "SearchProductsMenu";
                     }
-                    Console.WriteLine("Press Enter");
-                    Console.ReadLine();
-                    return "SearchProductsMenu";
+                    else
+                    {
+                        //Confirm to User no result
+                        Console.WriteLine("Your search did not return any results. Please try again");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchCustomersMenu";
+                    }
 
 
 
@@ -85,15 +111,28 @@ namespace StoreUI
                         p_ProductCat =Console.ReadLine();
                     }
 
-                    //***TODO***: Display Logic for Search Function - Add full iteration to actual method
+                    //Get products by Category
                     List<Products> listofproducts2 = _productBL.SearchProductsCat(p_ProductCat);
-                    foreach (var Product in listofproducts2)
+                    if(listofproducts2.Any())
                     {
-                        Console.WriteLine(Product);
+                        //Return Product
+                        foreach (var Product in listofproducts2)
+                        {
+                            Console.WriteLine(Product);
+                        }
+                        Console.WriteLine("Press Enter");
+                        Console.ReadLine();
+                        return "SearchProductsMenu";
                     }
-                    Console.WriteLine("Press Enter");
-                    Console.ReadLine();
-                    return "SearchProductsMenu";
+                    else
+                    {
+                        //Confirm to User no result
+                        Console.WriteLine("Your search did not return any results. Please try again");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchCustomersMenu";
+                    }
+
 
 
 
@@ -107,15 +146,29 @@ namespace StoreUI
 
                     }
 
-                    //***TODO***: Display Logic for Search Function - Add full iteration to actual method
+                    //Get products by Company
                     List<Products> listofproducts3 = _productBL.SearchProductsComp(p_ProductComp2);
-                    foreach (var Product in listofproducts3)
+                    if(listofproducts3.Any())
                     {
-                        Console.WriteLine(Product);
+                        //Return Product
+                        foreach (var Product in listofproducts3)
+                        {
+                            Console.WriteLine(Product);
+                        }
+                        Console.WriteLine("Press Enter");
+                        Console.ReadLine();
+                        return "SearchProductsMenu";
                     }
-                    Console.WriteLine("Press Enter");
-                    Console.ReadLine();
-                    return "SearchProductsMenu";
+                    else
+                    {
+                        //Confirm to User no result
+                        Console.WriteLine("Your search did not return any results. Please try again");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchCustomersMenu";
+                    }
+
+
 
 
                 default:

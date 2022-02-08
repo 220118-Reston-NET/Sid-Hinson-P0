@@ -1,12 +1,14 @@
+
 namespace StoreUI
 {
-
+    
     /// <summary>
     /// Store Menu Inherits Interface --> Entry Point
     /// User Selection Methods Implemented
     /// </summary>
     public class StoreMainMenu : IMenu
     {
+ 
         /// <summary>
         /// Displays Store Menu
         /// </summary>
@@ -37,23 +39,29 @@ namespace StoreUI
         public string UserSelection()
         {
             //Read in Customer Input 
+            Log.Information("User is selection an input");
             string UserInput = Console.ReadLine();
             while(string.IsNullOrEmpty(UserInput))
             {
+                Log.Information("User is retrying to input a new selection");
                 Console.WriteLine("Please Input a Selection");
                 UserInput = Console.ReadLine();
             }
             switch (UserInput)
             {
                 case "0":
+                    Log.Information("User has Exited The Program");
+                    Log.CloseAndFlush(); //To close our logger resource
                     return "Exit";
                 case "1":
+                Log.Information("User is selecting Customers Menu");
                     return "CustomersMenu";
                 case "2":
+                Log.Information("User is selecting Administration Menu");
                     return "AdministrationMenu";
                 default :
-                    Console.WriteLine("Selection Invalid");
-                    Console.WriteLine("Please Enter a Valid Selection from the Menu");
+                Log.Information("User has made an invalid Selection");
+                    Console.WriteLine("Invalid Seleciton. Please Try Again. Press Enter to Continue.");
                     Console.ReadLine();
                     return "StoreMainMenu";
 

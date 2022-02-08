@@ -29,38 +29,47 @@ namespace StoreUI
 
         public string UserSelection()
         {
+             Log.Information("User is making a selection");
             string userInput = Console.ReadLine();
 
             switch (userInput)
             {
                 //Return to Main Menu
                 case "0":
+                Log.Information("User is selecting Customers Menu");
                 return "CustomersMenu";
 
 
                 //Display Products by Category
                 case "1":
+                Log.Information("User is selecting Add Products Menu");
                 return "AddProductsDisplay";
 
                 //Search Products by Criteria
                 case "2":
+                Log.Information("User is selecting Search Products Menu");
                 return "SearchProductsMenu"; 
 
 
                 //Create Edit Orders
                 case "3":
+                Log.Information("User is selecting Add New Order Menu");
                 return "AddNewOrderMenu";
 
 
                 //View Order History
                 //TODO ***********Implement ***********
                 case "4":
+                Log.Information("User is selecting View Order History Menu");
                 Console.WriteLine("Not Implemented Yet- press Enter");
                 Console.ReadLine();
                 return "AddBusinessTransaction";
 
                 //Default Case
                 default:
+                Log.Information("User Has made an Invalid Selection");
+                Console.WriteLine("Please Enter a VALID Selection - Press Enter to Continue");
+                Console.ReadLine();
                 return "AddBusinessTransaction";
             }
         }

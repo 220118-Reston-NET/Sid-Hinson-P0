@@ -4,12 +4,19 @@ namespace StoreUI
 {
     public class SearchStoreFrontsMenu : IMenu
     {
+
+        //Dependecy Injection
         private IStoreFrontsBL _frontBL;
 
         public SearchStoreFrontsMenu(IStoreFrontsBL p_frontBL)
         {
             _frontBL = p_frontBL; 
         }
+
+
+        /// <summary>
+        /// Displays Menu
+        /// </summary>
         public void MenuDisplay()
         {   
             Console.Clear();
@@ -28,6 +35,12 @@ namespace StoreUI
             Console.WriteLine("==========================================================");
         }
 
+
+
+        /// <summary>
+        /// Allows User to Pick Selection
+        /// </summary>
+        /// <returns>menu object</returns>
         public string UserSelection()
         {
             string UserInput = Console.ReadLine();
@@ -47,17 +60,42 @@ namespace StoreUI
                     
                 case "1":
                     Console.WriteLine("Please Enter a Store Front Number (1-6)");
-                    int p_storeNumber = Convert.ToInt32(Console.ReadLine());
-                    //***TODO***: Display Logic for Search Function - Add full iteration to actual method
-                    List<StoreFronts> listofStoreFronts = _frontBL.SearchStoreFronts(p_storeNumber);
-                    foreach (var StoreFront in listofStoreFronts)
-                    {
-                        Console.WriteLine(StoreFront);
-                    }
-                    Console.WriteLine("Press Enter to Continue");
-                    Console.ReadLine();
-                    return "SearchStoreFrontsMenu";
 
+                    //Testing for an Integer Value
+                    bool isNumber = false;
+                    string Test = Console.ReadLine();
+                    isNumber = int.TryParse(Test, out int p_StoreNumber);
+                    while(isNumber == false)
+                    {
+                        Console.WriteLine("You Must Enter an Integer value:");
+                        string Retry = Console.ReadLine();
+                        isNumber = int.TryParse(Retry, out int result);
+                        p_StoreNumber = result;
+
+                    }
+                    
+                    //Find Store
+                    List<StoreFronts> listofStoreFronts = _frontBL.SearchStoreFronts(p_StoreNumber);
+                    if(listofStoreFronts.Any())
+                    {
+                        //Return the Store
+                        foreach (var StoreFront in listofStoreFronts)
+                        {
+                            Console.WriteLine(StoreFront);
+                        }
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchStoreFrontsMenu";
+                    }
+                    else
+                    {
+                        //Confirm to User no result
+                        Console.WriteLine("Your search did not return any results. Please try again");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchStoreFrontsMenu";
+                    }
+                    
 
                 default:
                     Console.WriteLine("Invalid Selection. Please Try Again.");
