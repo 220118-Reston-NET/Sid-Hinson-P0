@@ -35,38 +35,45 @@ namespace StoreUI
 
         public string UserSelection()
         {
+            Log.Information("User is inputting the Menu Selection");
             string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "0":
+                    Log.Information("User is selecting Store Main Menu");
                     return "StoreMainMenu";
 
 
                 case "1":
+                    Log.Information("User is inputting the Street Address");
                     Console.WriteLine("Enter a Street Address : ");
                     _newStoreFronts.StoreAddress = Console.ReadLine();
                     return "NewStoreFrontsMenu";
 
 
                 case "2":
+                    Log.Information("User is inputting the Store City");
                     Console.WriteLine("Enter a Store City : ");
                     _newStoreFronts.StoreCity = Console.ReadLine();
                     return "NewStoreFrontsMenu";
 
 
                 case "3":
+                   Log.Information("User is inputting the Zip Code");
                     Console.WriteLine("Enter a Zip Code : ");
                     _newStoreFronts.StoreZipCode = Console.ReadLine();
                     return "NewStoreFrontsMenu";
 
 
                 case "4":
+                   Log.Information("User is inputting the Zip Code");
                     Console.WriteLine("Enter a State Location : ");
                     _newStoreFronts.StoreState = Console.ReadLine();
                     return "NewStoreFrontsMenu";
 
-
+                //*************TODO: Validation check Method on all Inputs
                 case "5":
+                    Log.Information("User is attempting to save the Store Front to The DB");
                     try
                     {   
                         _frontBL.AddStoreFronts(_newStoreFronts);
@@ -83,6 +90,9 @@ namespace StoreUI
 
                     
                     default:
+                    Log.Information("User has made an Invalid Selection");
+                    Console.WriteLine("You have made an Invalid Selection - Please Press Enter to Continue");
+                    Console.ReadLine();
                     return "NewStoreFrontsMenu";
             }
         }

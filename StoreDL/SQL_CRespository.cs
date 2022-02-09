@@ -29,7 +29,7 @@ namespace StoreDL
             //1.Create a SQL Variable of How you Would Write the Query
             //@ BEFORE A STRING WILL IGNORE ALL SPECIAL CHARACTERS
             string sqlQuery = @"insert into Customers 
-                                values (@CustomerID, @CFirstName, @CLastName, @CDateofBirth, @CustomerAddress, @CustomerState, @CustomerCity, @CustomerZipCode, @CustCountry, @CustomerEmail, @CPassword)";
+                                values (@CFirstName, @CLastName, @CDateofBirth, @CustomerAddress, @CustomerState, @CustomerCity, @CustomerZipCode, @CustCountry, @CustomerEmail, @CPassword)";
 
             //2.MAP THESE VALUES into the sqlQuery string:
             // CustomerID int IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -64,7 +64,7 @@ namespace StoreDL
 
                 //7.Now it is time to pass in the parameters we defined earlier with the correct class values/fields
                 //You are essentially mapping the Parameters with the value to insert
-                command.Parameters.AddWithValue("@CustomerID", p_cust.CustomerID);
+
                 command.Parameters.AddWithValue("@CFirstName", p_cust.CFirstName);
                 command.Parameters.AddWithValue("@CLastName", p_cust.CLastName);
                 command.Parameters.AddWithValue("@CDateofBirth", p_cust.CDateofBirth);

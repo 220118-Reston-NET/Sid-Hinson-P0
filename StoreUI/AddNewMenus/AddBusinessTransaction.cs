@@ -5,6 +5,8 @@ namespace StoreUI
     public class AddBusinessTransaction : IMenu
     {
 
+        //************TODO: View Order History
+        //************TODO: View Current Orders
         public void MenuDisplay()
         {
             Console.Clear();

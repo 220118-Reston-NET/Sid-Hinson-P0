@@ -87,23 +87,24 @@ while(isValid)
             break;
         case "NewStoreFrontsMenu":
             Log.Information("Displaying New Store Fronts Menu to user");
-            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new SQL_SRepository(_connectionString)));
             break;
         case "SearchStoreFrontsMenu":
             Log.Information("DisplayingSearch Store Fronts Menu to user");
-            mainmenu = new SearchStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            mainmenu = new SearchStoreFrontsMenu(new StoreFrontsBL(new SQL_SRepository(_connectionString)));
             break;
         case "AddNewProductsMenu":
             Log.Information("Displaying Add New Products Menu to user");
-            mainmenu = new AddNewProductsMenu(new ProductsBL(new ProductsRepository()));
+            mainmenu = new AddNewProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
         case "SearchProductsMenu":
             Log.Information("Displaying Search products Menu to user");
-            mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
+            mainmenu = new SearchProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
         case "AddNewOrderMenu":
+            //Uses Triple Dependecy Injection to Abstract Access to All BL information 
             Log.Information("Displaying Add New orders Menu to user");
-            mainmenu = new AddNewOrderMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+            mainmenu = new AddNewOrderMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)));
             break;
         case "AddBusinessTransaction":
             Log.Information("Displaying Add Business Transaction Menu to user");
@@ -111,7 +112,7 @@ while(isValid)
             break;
         case "AddProductsDisplay":
             Log.Information("Displaying Products Display Menu to user");
-            mainmenu = new AddProductsDisplay(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+            mainmenu = new AddProductsDisplay(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
         case "Exit":
             Log.Information("User has Exited The Program");

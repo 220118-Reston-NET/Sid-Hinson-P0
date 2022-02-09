@@ -146,3 +146,25 @@
 2022-01-30 19:02:58.295 -05:00 [INF] Displaying Main Menu to user
 2022-02-07 15:55:59.403 -05:00 [INF] User has Exited The Program
 2022-02-07 15:56:54.816 -05:00 [INF] User has Exited The Program
+2022-02-07 23:46:32.404 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-07 23:46:34.597 -05:00 [INF] User is selection an input
+2022-02-07 23:46:36.488 -05:00 [INF] User is selecting Customers Menu
+2022-02-07 23:46:36.489 -05:00 [INF] Displaying Customers Menu to user
+2022-02-07 23:46:36.493 -05:00 [INF] User is selecting an input
+2022-02-07 23:46:38.216 -05:00 [INF] User is selecting New Customers Menu
+2022-02-07 23:46:38.216 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-07 23:46:43.250 -05:00 [INF] User is exiting to Store Main Menu
+2022-02-07 23:46:43.250 -05:00 [INF] Displaying Main Menu to user
+2022-02-07 23:46:43.253 -05:00 [INF] User is selection an input
+2022-02-07 23:46:44.593 -05:00 [INF] User is selecting Customers Menu
+2022-02-07 23:46:44.593 -05:00 [INF] Displaying Customers Menu to user
+2022-02-07 23:46:44.596 -05:00 [INF] User is selecting an input
+2022-02-07 23:46:48.491 -05:00 [INF] User is selecting Search Store Fronts Menu
+2022-02-07 23:46:48.491 -05:00 [INF] DisplayingSearch Store Fronts Menu to user
+2022-02-07 23:46:54.716 -05:00 [INF] DisplayingSearch Store Fronts Menu to user
+2022-02-07 23:46:58.936 -05:00 [INF] DisplayingSearch Store Fronts Menu to user
+2022-02-07 23:47:00.906 -05:00 [INF] Displaying Main Menu to user
+2022-02-07 23:47:00.909 -05:00 [INF] User is selection an input
+2022-02-08 00:15:44.795 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-08 00:15:52.789 -05:00 [INF] User is selection an input
+2022-02-08 00:15:56.039 -05:00 [INF] User has Exited The Program

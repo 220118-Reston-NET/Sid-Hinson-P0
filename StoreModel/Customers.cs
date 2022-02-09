@@ -53,14 +53,14 @@
 
             set 
             { 
-                if (value != "")
+                if (value != "" & value.Length == 8)
                 {
                     _DateofBirth = value; 
             
                 }
                 else
                 {
-                    throw new NullReferenceException("Last Name must be entered.");
+                    throw new NullReferenceException("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
                 } 
                 
             }
@@ -199,16 +199,16 @@
         public Customers()
         {
             CustomerID = 0;
-            CFirstName = "John";
-            CLastName = "Doe";
-            CDateofBirth = "010180";
-            CustomerAddress = "111 Street St";
-            CustomerState = "GA";
-            CustomerCity = "Macon";
-            CustomerZipcode = "55555";
-            CustCountry = "USA";
-            CustomerEmail = "john@aol.com";
-            CPassword = "john@aol.com";
+            CFirstName = "";
+            CLastName = "";
+            CDateofBirth = "";
+            CustomerAddress = "";
+            CustomerState = "";
+            CustomerCity = "";
+            CustomerZipcode = "";
+            CustCountry = "";
+            CustomerEmail = "";
+            CPassword = "";
         }
 
         public override string ToString()

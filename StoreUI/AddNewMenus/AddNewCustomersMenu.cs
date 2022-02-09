@@ -39,19 +39,24 @@ namespace StoreUI
         }
         
         public string UserSelection()
-        {
+        {   Log.Information("User is inputting a selection");
             string userInput = Console.ReadLine();
             switch (userInput)
             {
+
+                //Exit
                 case "0":
                     Log.Information("User is exiting to Store Main Menu");
                     return "StoreMainMenu";
 
 
+                //First Name Input
                 case "1":
                     Log.Information("User is entering a First Name");
                     Console.WriteLine("Enter your First Name :");
                     _newCustomer.CFirstName = Console.ReadLine();
+
+                    //Test for Null/Empty
                     while(string.IsNullOrEmpty(_newCustomer.CFirstName))
                     {
                         Console.WriteLine("Selection must have an input. Please retry.");
@@ -60,10 +65,13 @@ namespace StoreUI
                     return "NewCustomersMenu";
 
 
+                //Last Name Input
                 case "2":
                     Log.Information("User is entering a Last Name");
                     Console.WriteLine("Enter your Last Name : ");
                     _newCustomer.CLastName = Console.ReadLine();
+
+                    //Testing for Null/Empty
                     while(string.IsNullOrEmpty(_newCustomer.CLastName))
                     {
                         Console.WriteLine("Selection must have an input. Please retry.");
@@ -72,10 +80,13 @@ namespace StoreUI
                     return "NewCustomersMenu";
 
 
+                // Address Input
                 case "3":
                     Log.Information("User is entering their Address");
                     Console.WriteLine("Enter your Address : ");
                     _newCustomer.CustomerAddress = Console.ReadLine();
+
+                    //Test for Null/Empty
                     while(string.IsNullOrEmpty(_newCustomer.CustomerAddress))
                     {
                         Console.WriteLine("Selection must have an input. Please retry.");
@@ -84,10 +95,13 @@ namespace StoreUI
                     return "NewCustomersMenu";
 
 
+                // City Input
                 case "4":
                     Log.Information("User is entering their City");
                     Console.WriteLine("Enter your City :");
                     _newCustomer.CustomerCity = Console.ReadLine();
+
+                    //Test for Null/Empty
                     while(string.IsNullOrEmpty(_newCustomer.CustomerCity))
                     {
                         Console.WriteLine("Selection must have an input. Please enter on next line : ");
@@ -96,10 +110,13 @@ namespace StoreUI
                     return "NewCustomersMenu";
 
 
+                // State Input
                 case "5":
                     Log.Information("User is entering their State");
                     Console.WriteLine("Enter your State Abbreviation:");
                     _newCustomer.CustomerState = Console.ReadLine();
+
+                    //Test for Null/Empty and Length
                     while(string.IsNullOrEmpty(_newCustomer.CustomerState))
                     {
                         Console.WriteLine("Selection must have a valid input. Please enter on next line :");
@@ -113,10 +130,13 @@ namespace StoreUI
                     return "NewCustomersMenu";
 
 
+                // Country Input
                 case "6":
                     Log.Information("User is entering their Country");
                     Console.WriteLine("Enter your Country :");
                     _newCustomer.CustCountry = Console.ReadLine();
+
+                    //Test for Null/Empty
                     while(string.IsNullOrEmpty(_newCustomer.CustCountry))
                     {
                         Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
@@ -125,27 +145,45 @@ namespace StoreUI
                     return "NewCustomersMenu";
 
 
+                // Zip Code Input
                 case "7":
                     Log.Information("User is entering their Zipcode");
                     Console.WriteLine("Enter your Zipcode :");
                     _newCustomer.CustomerZipcode = Console.ReadLine();
+
+                    //Test for Null/Empty and Length
                     while(string.IsNullOrEmpty(_newCustomer.CustomerZipcode))
                     {
                         Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
                       _newCustomer.CustomerZipcode = Console.ReadLine();
                     }
-                    while(_newCustomer.CustomerState.Length < 5)
+                    while(_newCustomer.CustomerState.Length != 5)
                     {
                         Console.WriteLine("Selection must have a valid 5 Number Zipcode . Please enter on next line :");
                       _newCustomer.CustomerState = Console.ReadLine();
+                    }
+
+                    //Testing for an Integer Value
+                    bool isNumber = false;
+                    string Test = _newCustomer.CustomerZipcode;
+                    isNumber = int.TryParse(Test, out int i);
+                    while(isNumber == false)
+                    {
+                        Console.WriteLine("You Must Enter an 5 Digit Numerical ZipCode");
+                        string Retry = Console.ReadLine();
+                        isNumber = int.TryParse(Retry, out int result);
+                        _newCustomer.CustomerZipcode = Convert.ToString(result);
                     }              
                     return "NewCustomersMenu";
 
 
+                // Email Input
                 case "8":
                     Log.Information("User is entering their Email Address");
                     Console.WriteLine("Enter your Email Address :");
                     _newCustomer.CustomerEmail = Console.ReadLine();
+
+                    //Test for Null/Empty and @
                     while(string.IsNullOrEmpty(_newCustomer.CustomerEmail))
                     {
                         Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
@@ -157,24 +195,44 @@ namespace StoreUI
                     }
                     else
                     {
-                         Console.WriteLine("Selection must have a valid email. Resetting Email to Null. Please  enter again");
+                         Console.WriteLine("Selection must have a valid email. Resetting Email to empty value. Please  enter again");
                          _newCustomer.CustomerEmail = "";
             
                     }
                     return "NewCustomersMenu";
 
 
+                // Date of Birth Entry
                 case "9":
                     Log.Information("User is entering their Date of Birth");
                     Console.WriteLine("Enter your Date of Birth");
                     Console.WriteLine("Example : 10211980 for October 21st 1980");
                     _newCustomer.CDateofBirth = Console.ReadLine();
+
+                    //Test for Null/Empty and Length
                     while(string.IsNullOrEmpty(_newCustomer.CDateofBirth))
                     {
                         Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
                       _newCustomer.CDateofBirth = Console.ReadLine();
                       return "NewCustomersMenu";
-                    }  
+                    }
+                    while(_newCustomer.CDateofBirth.Length != 8)
+                    {
+                        Console.WriteLine("Selection must have proper number of characters. Please Input Date in MMDDYYYY Format");
+                      _newCustomer.CDateofBirth = Console.ReadLine();
+                    }
+
+                    //Testing for an Integer Value
+                    bool isANumber = false;
+                    string Test1 = _newCustomer.CDateofBirth;
+                    isANumber = int.TryParse(Test1, out int x);
+                    while(isANumber == false)
+                    {
+                        Console.WriteLine("You Must Enter an 8 Digit Integer value in MMDDYYY format - Ex: 10211980 for Oct 21st 1980:");
+                        string Retry = Console.ReadLine();
+                        isANumber = int.TryParse(Retry, out int result);
+                        _newCustomer.CDateofBirth = Convert.ToString(result);
+                    }
                     return "NewCustomersMenu";
 
 
@@ -190,7 +248,7 @@ namespace StoreUI
                     }  
                     return "NewCustomersMenu";     
 
-
+                //*************TODO: Validation check Method on all Inputs
                 case "11":
                     Log.Information("User is attempting to Save their Customer Information into the DB");
                     try
@@ -210,6 +268,7 @@ namespace StoreUI
 
 
                     default:
+                    Log.Information("User has made an Invalid Selection");
                     Console.WriteLine("You have made an Invalid Selection - Please Press Enter to Continue");
                     Console.ReadLine();
                     return "NewCustomersMenu";

@@ -69,6 +69,17 @@ namespace StoreBL
 
     public interface IOrdersBL
     {
+        /// <summary>
+        /// Add Line Items to Repo
+        /// </summary>
+        /// <param name="p_line"></param>
+        /// <returns>linetime</returns>
+        public LineItems AddLineItems(LineItems p_line);
+        /// <summary>
+        /// Add Orders to Repo
+        /// </summary>
+        /// <param name="p_order"></param>
+        /// <returns>order</returns>
         Orders AddOrders(Orders p_order);
 
         /// <summary>
@@ -78,11 +89,30 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(string p_email);
-        public LineItems AddItem(int p_prodID, int p_prodStoreID, string p_prodName, double p_prodPrice, int p_prodQuant);
+        public LineItems AddItem(int p_prodID, string p_orderID, int p_prodQuant);
         public List<LineItems> RemoveFromCart(List<LineItems> p_orderList);
 
-        public List<LineItems> DisplayCart(List<LineItems> p_List);
+        public List<LineItems> DisplayCart(List<LineItems> p_list);
         public void DisplayGraphic();
+
+    }
+
+        public interface I_inventoryBL
+    {
+        /// <summary>
+        /// Adds Inventory to DB passing a Inventory obj
+        /// </summary>
+        /// <param name="p_inv"></param>
+        /// <returns></returns>
+        Inventory AddInventory(Inventory p_inv);
+
+        /// <summary>
+        /// Will return List of objects related to Search query through p_name parameter
+        /// </summary>
+        /// <param name="p_storeNumber"></param>
+        /// <returns>Filtered Search Results </returns>
+        List<Inventory> SearchInventory(int p_storeID, int p_prodID);
+        
     }
 }
 

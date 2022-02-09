@@ -47,7 +47,7 @@ namespace StoreDL
         /// </summary>
         /// <param name="storeNumber"></param>
         /// <returns></returns>
-        public List<Products> GetAllProductsSF(string productName)
+        public List<Products> GetProdbyNameSF(string productName)
         {
             string _path = _filepath + "Product.json";
             List<Products> listofproducts = GetAllProducts();

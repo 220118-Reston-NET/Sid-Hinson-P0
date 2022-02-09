@@ -8,13 +8,14 @@ namespace StoreBL
         /// <summary>
         /// Dependency Injection Constructor
         /// </summary>
-        private IOrdersRepo _repo;
-        public OrdersBL(IOrdersRepo p_repo)
+
+        // private IProductsBL _prod;
+        private ISQLOrdersRepo _repo;
+        public OrdersBL(ISQLOrdersRepo p_repo)
         {
+            // _prod = p_prod;
             _repo = p_repo;
         }
-
-
 
         /// <summary>
         /// Add Order to Repo
@@ -24,31 +25,27 @@ namespace StoreBL
         public Orders AddOrders(Orders p_order)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
-            if(listoforders.Count < 25)
+            if(listoforders.Count < 500)
             {
                 return _repo.AddOrders(p_order);
             }
             else
             {
-                throw new Exception("Limit of 25 Orders is reached");
+                throw new Exception("Limit of 500 Orders is reached");
             }
         }
-
-
-
-        /// <summary>
-        /// Add Orders to Order History
-        /// </summary>
-        /// <param name="p_order"></param>
-        /// <returns></returns>
-        public Orders AddOrdersHistory(Orders p_order)
+        public LineItems AddLineItems(LineItems p_line)
         {
-            List<Orders> listoforders = _repo.GetAllOrders();
-            return _repo.AddOrders(p_order);
-
+            List<LineItems> listoflineitems = _repo.GetAllLineItems();
+            if(listoflineitems.Count < 500)
+            {
+                return _repo.AddLineItems(p_line);
+            }
+            else
+            {
+                throw new Exception("Limit of 500 Orders is reached");
+            }
         }
-
-
 
         /// <summary>
         /// Search All orders
@@ -69,16 +66,12 @@ namespace StoreBL
         /// Add values to Item
         /// </summary>
         /// <param name="p_lineItem"></param>
-        /// <returns></returns>
-        public LineItems AddItem(int p_prodID, int p_prodStoreID, string p_prodName, double p_prodPrice, int p_prodQuant)
+        /// <returns>LineItem</returns>
+        public LineItems AddItem(int p_prodID, string p_orderID, int p_prodQuant)
         {
             LineItems p_lineItem = new LineItems();
             p_lineItem.ProductID = p_prodID;
-            p_lineItem.StoreID = p_prodStoreID;
-            p_lineItem.ProductName = p_prodName;
-            p_lineItem.ProductPrice = p_prodPrice;
             p_lineItem.ProductQuantity = p_prodQuant;
-
             return p_lineItem;
         }
 
@@ -109,17 +102,18 @@ namespace StoreBL
                 Console.WriteLine("=========================================================="); 
                 Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
                 Console.WriteLine("==========================================================");
-                Console.WriteLine("Cart Contents:");
+                Console.WriteLine("Here are Your Cart Contents:");
         } 
 
-        public List<LineItems> DisplayCart(List<LineItems> p_List)
+        public List<LineItems> DisplayCart(List<LineItems> p_list)
         {   
-            foreach (LineItems item in p_List)
+            foreach (LineItems item in p_list)
             {
                 Console.WriteLine(item);
 
             }
-            return p_List;
+            return p_list;
+
         }  
     }
 }

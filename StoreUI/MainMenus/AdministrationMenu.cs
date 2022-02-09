@@ -6,6 +6,7 @@ namespace StoreUI
     {
         public void MenuDisplay()
         {
+            //********TODO: View/Update Order Inventory
             Console.Clear();
             Console.WriteLine("================================================");
             Console.WriteLine("=             Administration Menu               =");
