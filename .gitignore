@@ -8,3 +8,4 @@ StoreDL/[dep]Repo_Old/[dep]StoreFrontsRepository.cs
 StoreDL/[dep]Repo_Old/[dep]ProductsRepository.cs
 StoreDL/[dep]Repo_Old/[dep]OrdersRepository.cs
 StoreDL/[dep]Repo_Old/[dep]IRepository.cs
+StoreUI/Logs/User.txt
