@@ -180,7 +180,7 @@ namespace StoreUI
                     //Test for Format
                     do
                     {
-                       Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
+                       Console.WriteLine("You Must Enter an 5 Digit Numerical ZipCode.");
                        _newCustomer.CustomerZipcode = Console.ReadLine();
                        
                        string Test2 = _newCustomer.CustomerZipcode;
@@ -203,24 +203,13 @@ namespace StoreUI
                     Console.WriteLine("Enter your Email Address :");
                     _newCustomer.CustomerEmail = Console.ReadLine();
                     _newCustomer.CustomerEmail = _newCustomer.CustomerEmail.ToUpper();
-                    //Test for Null/Empty and @
-                    while(string.IsNullOrEmpty(_newCustomer.CustomerEmail))
+                    do
                     {
                         Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
-                      _newCustomer.CustomerEmail = Console.ReadLine();
-                      _newCustomer.CustomerEmail = _newCustomer.CustomerEmail.ToUpper();
+                       _newCustomer.CustomerEmail = Console.ReadLine();
+                       _newCustomer.CustomerEmail = _newCustomer.CustomerEmail.ToUpper();
                     }
-                    if(_newCustomer.CustomerEmail.Contains("@"))
-                    {
-                        return "NewCustomersMenu";
-                    }
-                    else
-                    {
-                         Console.WriteLine("Selection must have a valid email. Resetting Email to Default value. Please enter again");
-                         _newCustomer.CustomerEmail = "stephen.strange@aol.com";
-                         _newCustomer.CustomerEmail = _newCustomer.CustomerEmail.ToUpper();
-            
-                    }
+                    while(string.IsNullOrEmpty(_newCustomer.CustomerEmail) || !_newCustomer.CustomerEmail.Contains("@"));
                     return "NewCustomersMenu";
 
 

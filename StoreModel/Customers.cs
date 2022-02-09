@@ -17,15 +17,15 @@
 
             set 
             {
-                // if (value != "")
-                // {
-                //     _CFirstName = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("First Name must be entered.");
-                // }
-                _CFirstName = value;
+                if (value != "")
+                {
+                    _CFirstName = value;
+                }
+                else
+                {
+                    Console.WriteLine("First Name must be entered.");
+                }
+                
             }
         }
 
@@ -36,15 +36,15 @@
 
             set 
             {
-                // if (value != "")
-                // {
-                //     _CLastName = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("Last Name must be entered.");
-                // }
-                _CLastName = value;
+                if (value != "")
+                {
+                    _CLastName = value;
+                }
+                else
+                {
+                    Console.WriteLine("Last Name must be entered.");
+                }
+
             }
         }
 
@@ -55,16 +55,16 @@
 
             set 
             { 
-                // if (value != "" & value.Length >= 8)
-                // {
-                //     _DateofBirth = value; 
+                if (value != "" & value.Length >= 8)
+                {
+                    _DateofBirth = value; 
             
-                // }
-                // else
-                // {
-                //     Console.WriteLine("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
-                // } 
-                _DateofBirth = value; 
+                }
+                else
+                {
+                    Console.WriteLine("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
+                } 
+
             }
         }
         private string _CustomerAddress;
@@ -74,15 +74,15 @@
 
             set 
             {
-                // if (value != "")
-                // {
-                //     _CustomerAddress = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("Address must be entered.");
-                // }
-                _CustomerAddress = value;
+                if (value != "")
+                {
+                    _CustomerAddress = value;
+                }
+                else
+                {
+                    Console.WriteLine("Address must be entered.");
+                }
+
             }
         }
         private string _CustomerCity;
@@ -92,15 +92,15 @@
 
             set 
             {
-                // if (value != "")
-                // {
-                //     _CustomerCity = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("City must be entered.");
-                // }
-                _CustomerCity = value;
+                if (value != "")
+                {
+                    _CustomerCity = value;
+                }
+                else
+                {
+                    Console.WriteLine("City must be entered.");
+                }
+
             }
         }
    
@@ -111,15 +111,15 @@
 
             set 
             {
-                // if (value.Length == 2)
-                // {
-                //     _CustomerState = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("Must Be Digits");
-                // }
-                _CustomerState = value;
+                if (value.Length == 2)
+                {
+                    _CustomerState = value;
+                }
+                else
+                {
+                    Console.WriteLine("Must Be Digits");
+                }
+
             }
         }
         private string _CustomerZipcode;
@@ -129,15 +129,15 @@
 
             set 
             {
-                // if (value.Length >= 5)
-                // {
-                //     _CustomerZipcode = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("Not Enough Digits");
-                // }
-                _CustomerZipcode = value;
+                if (value.Length >= 5)
+                {
+                    _CustomerZipcode = value;
+                }
+                else
+                {
+                    Console.WriteLine("Not Enough Digits");
+                }
+
             }
         }
 
@@ -148,15 +148,15 @@
 
             set 
             {
-                // if (value != "")
-                // {
-                //     _CustCountry = value;
-                // }
-                // else
-                // {
-                //     Console.WriteLine("City must be entered.");
-                // }
-                _CustCountry = value;
+                if (value != "")
+                {
+                    _CustCountry = value;
+                }
+                else
+                {
+                    Console.WriteLine("City must be entered.");
+                }
+
             }
         }
         private string _CustomerEmail;
@@ -167,15 +167,15 @@
 
             set 
             {
-                // if (string.IsNullOrEmpty(value))
-                // {
-                //     Console.WriteLine("Email must have a input.");
-                // }
-                // else
-                // {
-                //     _CustomerEmail = value;
-                // }
-                _CustomerEmail = value;
+                if (value != "")
+                {
+                    Console.WriteLine("Email must have a input.");
+                }
+                else
+                {
+                    _CustomerEmail = value;
+                }
+
             }
         }
         private string _Password;
@@ -185,16 +185,16 @@
 
             set 
             {
-                // if (string.IsNullOrEmpty(value))
-                // {
-                //     Console.WriteLine("Password must have an input.");
+                if (value != "")
+                {
+                    Console.WriteLine("Password must have an input.");
 
-                // }
-                // else
-                // {
-                //     _Password = value;
-                // }
-                _Password = value;
+                }
+                else
+                {
+                    _Password = value;
+                }
+ 
             }
         }
 

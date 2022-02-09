@@ -583,3 +583,39 @@
 2022-02-09 17:47:25.154 -05:00 [INF] User is entering their State
 2022-02-09 17:47:35.388 -05:00 [INF] Displaying New Customer Menu to user
 2022-02-09 17:47:35.405 -05:00 [INF] User is inputting a selection
+2022-02-09 18:12:28.155 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-09 18:13:14.579 -05:00 [INF] User is selection an input
+2022-02-09 18:13:16.239 -05:00 [INF] User is selecting Customers Menu
+2022-02-09 18:13:16.239 -05:00 [INF] Displaying Customers Menu to user
+2022-02-09 18:13:16.248 -05:00 [INF] User is selecting an input
+2022-02-09 18:13:17.211 -05:00 [INF] User is selecting New Customers Menu
+2022-02-09 18:13:17.211 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:17.250 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:22.704 -05:00 [INF] User is entering a First Name
+2022-02-09 18:13:26.119 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:26.129 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:28.337 -05:00 [INF] User is entering a Last Name
+2022-02-09 18:13:30.689 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:30.708 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:32.890 -05:00 [INF] User is entering their Address
+2022-02-09 18:13:37.888 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:37.916 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:39.756 -05:00 [INF] User is entering their City
+2022-02-09 18:13:43.409 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:43.414 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:45.867 -05:00 [INF] User is entering their State
+2022-02-09 18:13:49.464 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:49.479 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:51.055 -05:00 [INF] User has made an Invalid Selection
+2022-02-09 18:13:53.797 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:53.802 -05:00 [INF] User is inputting a selection
+2022-02-09 18:13:56.334 -05:00 [INF] User is entering their Country
+2022-02-09 18:13:58.255 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:13:58.267 -05:00 [INF] User is inputting a selection
+2022-02-09 18:14:01.250 -05:00 [INF] User is entering their Country
+2022-02-09 18:14:04.882 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:14:04.998 -05:00 [INF] User is inputting a selection
+2022-02-09 18:14:06.775 -05:00 [INF] User is entering their Country
+2022-02-09 18:14:09.840 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 18:14:09.844 -05:00 [INF] User is inputting a selection
+2022-02-09 18:14:12.377 -05:00 [INF] User is entering their Zipcode
