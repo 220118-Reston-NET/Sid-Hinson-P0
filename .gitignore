@@ -4,3 +4,7 @@ obj
 StoreDL/[dep]Repo_Old/
 StoreUI/Logs/
 StoreUI/appsettings.json
+StoreDL/[dep]Repo_Old/[dep]StoreFrontsRepository.cs
+StoreDL/[dep]Repo_Old/[dep]ProductsRepository.cs
+StoreDL/[dep]Repo_Old/[dep]OrdersRepository.cs
+StoreDL/[dep]Repo_Old/[dep]IRepository.cs
