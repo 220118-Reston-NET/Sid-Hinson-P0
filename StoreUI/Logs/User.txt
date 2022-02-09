@@ -572,3 +572,14 @@
 2022-02-09 17:16:14.244 -05:00 [INF] Displaying New Customer Menu to user
 2022-02-09 17:16:14.256 -05:00 [INF] User is inputting a selection
 2022-02-09 17:16:23.566 -05:00 [INF] User is entering their State
+2022-02-09 17:47:20.165 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-09 17:47:21.032 -05:00 [INF] User is selection an input
+2022-02-09 17:47:22.048 -05:00 [INF] User is selecting Customers Menu
+2022-02-09 17:47:22.048 -05:00 [INF] Displaying Customers Menu to user
+2022-02-09 17:47:22.052 -05:00 [INF] User is selecting an input
+2022-02-09 17:47:22.881 -05:00 [INF] User is selecting New Customers Menu
+2022-02-09 17:47:22.882 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 17:47:22.907 -05:00 [INF] User is inputting a selection
+2022-02-09 17:47:25.154 -05:00 [INF] User is entering their State
+2022-02-09 17:47:35.388 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-09 17:47:35.405 -05:00 [INF] User is inputting a selection
