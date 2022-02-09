@@ -83,7 +83,7 @@ namespace StoreDL
         /// <returns></returns>
         public List<Inventory> GetAllInventory();
 
-        // public Inventory UpdateInventory(Inventory p_inv);
+        public Inventory UpdateInventory(Inventory p_inv);
 
     }
 }

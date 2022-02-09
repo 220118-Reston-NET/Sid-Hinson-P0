@@ -53,9 +53,26 @@ namespace StoreDL
             return listofinventory;
         }
 
-        // public Inventory UpdateInventory(Inventory p_inv)
-        // {
+        public Inventory UpdateInventory(Inventory p_inv)
+        {
+            Console.WriteLine("Attempting to Update Inventory...............");
+            string sqlQuery = @"UPDATE Inventory
+                                SET  ProductQuantity = @ProductQuantity
+                                WHERE StoreID = @StoreID and ProductID = @ProductID";
 
-        // }
+
+            using(SqlConnection con = new SqlConnection(_ConnectionStrings))
+            {          
+                con.Open();
+                SqlCommand command =  new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@StoreID", p_inv.StoreID);
+                command.Parameters.AddWithValue("@ProductID", p_inv.ProductID);
+                command.Parameters.AddWithValue("@ProductQuantity", p_inv.ProductQuantity);
+                command.ExecuteNonQuery();
+            }
+            return p_inv;
+
+
+        }
     }
 }

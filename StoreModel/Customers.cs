@@ -4,6 +4,8 @@
     /// <summary>
     /// Customer Class with Private Fields,Default Constructor
     /// </summary>
+    /// Instead of throwing exceptions, a suggestion is made to fix.
+    /// Input Validation on UI side should fix the issues instead of a THROW
     public class Customers
     {
     
@@ -15,15 +17,15 @@
 
             set 
             {
-                if (value != "")
-                {
-                    _CFirstName = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("First Name must be entered.");
-                }
-
+                // if (value != "")
+                // {
+                //     _CFirstName = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("First Name must be entered.");
+                // }
+                _CFirstName = value;
             }
         }
 
@@ -34,15 +36,15 @@
 
             set 
             {
-                if (value != "")
-                {
-                    _CLastName = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("Last Name must be entered.");
-                }
-
+                // if (value != "")
+                // {
+                //     _CLastName = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Last Name must be entered.");
+                // }
+                _CLastName = value;
             }
         }
 
@@ -53,16 +55,16 @@
 
             set 
             { 
-                if (value != "" & value.Length == 8)
-                {
-                    _DateofBirth = value; 
+                // if (value != "" & value.Length >= 8)
+                // {
+                //     _DateofBirth = value; 
             
-                }
-                else
-                {
-                    throw new NullReferenceException("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
-                } 
-                
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
+                // } 
+                _DateofBirth = value; 
             }
         }
         private string _CustomerAddress;
@@ -72,15 +74,15 @@
 
             set 
             {
-                if (value != "")
-                {
-                    _CustomerAddress = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("Address must be entered.");
-                }
-
+                // if (value != "")
+                // {
+                //     _CustomerAddress = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Address must be entered.");
+                // }
+                _CustomerAddress = value;
             }
         }
         private string _CustomerCity;
@@ -90,15 +92,15 @@
 
             set 
             {
-                if (value != "")
-                {
-                    _CustomerCity = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("City must be entered.");
-                }
-
+                // if (value != "")
+                // {
+                //     _CustomerCity = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("City must be entered.");
+                // }
+                _CustomerCity = value;
             }
         }
    
@@ -109,14 +111,15 @@
 
             set 
             {
-                if (value.Length == 2)
-                {
-                    _CustomerState = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("Not Enough Digits");
-                }
+                // if (value.Length == 2)
+                // {
+                //     _CustomerState = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Must Be Digits");
+                // }
+                _CustomerState = value;
             }
         }
         private string _CustomerZipcode;
@@ -126,15 +129,15 @@
 
             set 
             {
-                if (value.Length >= 5)
-                {
-                    _CustomerZipcode = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("Not Enough Digits");
-                }
-
+                // if (value.Length >= 5)
+                // {
+                //     _CustomerZipcode = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("Not Enough Digits");
+                // }
+                _CustomerZipcode = value;
             }
         }
 
@@ -145,15 +148,15 @@
 
             set 
             {
-                if (value != "")
-                {
-                    _CustCountry = value;
-                }
-                else
-                {
-                    throw new NullReferenceException("City must be entered.");
-                }
-
+                // if (value != "")
+                // {
+                //     _CustCountry = value;
+                // }
+                // else
+                // {
+                //     Console.WriteLine("City must be entered.");
+                // }
+                _CustCountry = value;
             }
         }
         private string _CustomerEmail;
@@ -164,15 +167,15 @@
 
             set 
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new NullReferenceException("Email must have a input.");
-                }
-                else
-                {
-                    _CustomerEmail = value;
-                }
-
+                // if (string.IsNullOrEmpty(value))
+                // {
+                //     Console.WriteLine("Email must have a input.");
+                // }
+                // else
+                // {
+                //     _CustomerEmail = value;
+                // }
+                _CustomerEmail = value;
             }
         }
         private string _Password;
@@ -182,16 +185,16 @@
 
             set 
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new NullReferenceException("Password must have an input.");
+                // if (string.IsNullOrEmpty(value))
+                // {
+                //     Console.WriteLine("Password must have an input.");
 
-                }
-                else
-                {
-                    _Password = value;
-                }
-
+                // }
+                // else
+                // {
+                //     _Password = value;
+                // }
+                _Password = value;
             }
         }
 
@@ -199,16 +202,16 @@
         public Customers()
         {
             CustomerID = 0;
-            CFirstName = "";
-            CLastName = "";
-            CDateofBirth = "";
-            CustomerAddress = "";
-            CustomerState = "";
-            CustomerCity = "";
-            CustomerZipcode = "";
-            CustCountry = "";
-            CustomerEmail = "";
-            CPassword = "";
+            CFirstName = "Stephen";
+            CLastName = "Strange";
+            CDateofBirth = "11181930";
+            CustomerAddress = "117A Bleecker Street";
+            CustomerState = "NY";
+            CustomerCity = "New York City";
+            CustomerZipcode = "100112";
+            CustCountry = "USA";
+            CustomerEmail = "stephen.strange@aol.com";
+            CPassword = "mordoisajerk";
         }
 
         public override string ToString()

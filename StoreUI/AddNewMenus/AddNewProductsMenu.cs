@@ -52,7 +52,18 @@ namespace StoreUI
                 case "1":
                     Log.Information("User is inputting the Store Number");
                     Console.WriteLine("Enter a Store Number :");
-                    _newProduct.StoreID = Convert.ToInt32(Console.ReadLine());
+                    string Test = Console.ReadLine();
+                    //Testing for an Integer Value
+                    bool isNumber = false;
+                    isNumber = int.TryParse(Test, out int i);
+                    _newProduct.StoreID = i;
+                    while(isNumber == false || _newProduct.StoreID < 0)
+                    {
+                        Console.WriteLine("You Must Enter a Numerical, Postive Whole Number for Store ID");
+                        string Retry = Console.ReadLine();
+                        isNumber = int.TryParse(Retry, out int result);
+                        _newProduct.StoreID = result;
+                    }   
                     return "AddNewProductsMenu";
 
 
@@ -60,6 +71,13 @@ namespace StoreUI
                     Log.Information("User is inputting the Product Name");
                     Console.WriteLine("Enter a Product Name : ");
                     _newProduct.ProductName = Console.ReadLine();
+                    _newProduct.ProductName = _newProduct.ProductName.ToUpper();
+                    while(string.IsNullOrEmpty(_newProduct.ProductName))
+                    {
+                        Console.WriteLine("Selected Information must have an input. Please Re-enter now :");
+                        _newProduct.ProductName = Console.ReadLine();
+                        _newProduct.ProductName = _newProduct.ProductName.ToUpper();
+                    }
                     return "AddNewProductsMenu";
 
 
@@ -67,13 +85,31 @@ namespace StoreUI
                     Log.Information("User is inputting the Product Company");
                     Console.WriteLine("Enter a Product Company : ");
                     _newProduct.ProductCompany = Console.ReadLine();
+                    _newProduct.ProductCompany = _newProduct.ProductCompany.ToUpper();
+                    while(string.IsNullOrEmpty(_newProduct.ProductCompany))
+                    {
+                        Console.WriteLine("Selected Information must have an input. Please Re-enter Now :");
+                        _newProduct.ProductCompany =Console.ReadLine();
+                        _newProduct.ProductCompany = _newProduct.ProductCompany.ToUpper();
+                    }
                     return "AddNewProductsMenu";
 
 
                 case "4":
                     Log.Information("User is inputting the Product Price");
                     Console.WriteLine("Enter a Product Price : ");
-                    _newProduct.ProductPrice = Convert.ToDouble(Console.ReadLine());
+                    string Test2 = Console.ReadLine();
+                    //Testing for an Integer Value
+                    bool isNumber2 = false;
+                    isNumber = int.TryParse(Test2, out int y);
+                    _newProduct.ProductPrice = y;
+                    while(isNumber2 == false ||  _newProduct.ProductPrice < 0)
+                    {
+                        Console.WriteLine("You Must Enter a Numerical, Postive Value For Price. Please re-enter Now:");
+                        string Retry = Console.ReadLine();
+                        isNumber2 = int.TryParse(Retry, out int result);
+                        _newProduct.ProductPrice = result;
+                    }  
                     return "AddNewProductsMenu";
 
 
@@ -81,6 +117,14 @@ namespace StoreUI
                     Log.Information("User is inputting the Product Description");
                     Console.WriteLine("Enter a Product Description : ");
                     _newProduct.ProductDescription = Console.ReadLine();
+                    _newProduct.ProductDescription = _newProduct.ProductDescription.ToUpper();
+                    //Test for Null/Empty
+                    while(string.IsNullOrEmpty(_newProduct.ProductDescription))
+                    {
+                        Console.WriteLine("Selected Information must have an input. Please Re-enter now :");
+                        _newProduct.ProductDescription =Console.ReadLine();
+                        _newProduct.ProductDescription = _newProduct.ProductDescription.ToUpper();
+                    }
                     return "AddNewProductsMenu";
 
 
@@ -88,14 +132,35 @@ namespace StoreUI
                     Log.Information("User is inputting the Product Category");
                     Console.WriteLine("Enter a Product Category : ");
                     _newProduct.ProductCategory = Console.ReadLine();
+                    _newProduct.ProductCategory = _newProduct.ProductCategory.ToUpper();
+                    //Test for Null/Empty
+                    while(string.IsNullOrEmpty(_newProduct.ProductCategory))
+                    {
+                        Console.WriteLine("Selected Information must have an input. Please Re-enter now :");
+                        _newProduct.ProductCategory =Console.ReadLine();
+                        _newProduct.ProductCategory = _newProduct.ProductCategory.ToUpper();
+                    }
                     return "AddNewProductsMenu";
 
 
                 case "7":
                     Log.Information("User is inputting the Product Quantity");
                     Console.WriteLine("Enter a Quantity : ");
-                    _newInventory.ProductQuantity = Convert.ToInt32(Console.ReadLine());
+                    bool isNumber3 = false;
+                    string Test3 = Console.ReadLine();
+                    isNumber3 = int.TryParse(Test3, out int x);
+                    _newInventory.ProductQuantity = x;
+                    do
+                    {
+                        Console.WriteLine("Selected Information must have a Postive, Numerical input. Please Re-enter now :");
+                        string Retry = Console.ReadLine();
+                        isNumber3 = int.TryParse(Retry, out int result);
+                        _newInventory.ProductQuantity = result;
+
+                    }
+                    while(isNumber3 == false || _newInventory.ProductQuantity < 0);
                     return "AddNewProductsMenu";
+
 
                 //*************TODO: Validation check Method on all Inputs, CHECK FOR NULLS/EMPTY BEFORE ADD
                 case "8":

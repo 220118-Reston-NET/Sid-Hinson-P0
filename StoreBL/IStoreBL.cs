@@ -115,6 +115,9 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         public List<Inventory> SearchInventory(int p_storeID, int p_prodID);
         public Inventory FindItem(int p_storeID, int p_prodID);
+
+        public Inventory UpdateInventory(Inventory p_inv);
+
     }
 }
 

@@ -101,11 +101,13 @@ namespace StoreUI
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Name : ");
                     _productName = Console.ReadLine();
+                    _productName.ToUpper();
                     //Test for Null or Empty
                     while(string.IsNullOrEmpty(_productName))
                     {
                         Console.WriteLine("Input must have a Product Name. Please Enter a Product Name:");
-                       _productName = Console.ReadLine();
+                        _productName = Console.ReadLine();
+                        _productName.ToUpper();
                         return "AddNewOrderMenu";
                     }
                     return "AddNewOrderMenu";
@@ -118,11 +120,13 @@ namespace StoreUI
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Company :");
                     _productCompany = Console.ReadLine();
+                    _productCompany.ToUpper();
                     //Test for Null or Empty
                     while(string.IsNullOrEmpty(_productCompany))
                     {
                         Console.WriteLine("Input must have a Product Company. Please Enter a Product Company:");
-                      _productCompany = Console.ReadLine();
+                        _productCompany = Console.ReadLine();
+                        _productCompany.ToUpper();
                         return "AddNewOrderMenu";
                     }
                     return "AddNewOrderMenu";
@@ -203,6 +207,8 @@ namespace StoreUI
 
 
                 //**Save and Checkout Process
+                //**Processes Lineitems into DB, Processes Order into DB, Updates Inventory into DB
+                //This is an all or nothing scenario - either everything updates or its fails for Data Consistency
                 case "8":
                 try
                  {
@@ -227,22 +233,24 @@ namespace StoreUI
 
                     //Adding StoreID
                     _shoppingOrder.OrderStoreID = _productStoreID;
+
                     //Adding Date Time of Order
                     DateTime OrderDate = DateTime.Now;
                     _shoppingOrder.OrderDate = OrderDate.ToString("MM/dd/yyyy");
+
                     //Adding Order Total
                     _shoppingOrder.OrderTotal = OrderTotal;
+
                     //Adding Line Items Cart to Order
                     _shoppingOrder.OrderLineItems = new List<LineItems>();
                     _shoppingOrder.OrderLineItems = _shoppingCart;
                     _shoppingOrder.OrderStatus = "Processing";
+
                     //*************TODO: Validation check Method on all Inputs and TRY/CATCH 
-                    //*************TODO: Inventory Logic that subtracts from WAREHOUSE Inventory DB Inventory
                     _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
 
-                    //**Processing
                     //Add All LineItems to Repo
                     foreach(LineItems item in _shoppingCart)
                     {
@@ -253,15 +261,34 @@ namespace StoreUI
                     
                     
                     //Update Inventory
+                    //Set IDs, Pull Inventory Item Info, subtract quantity, reupdate Item totals in DB
+                    //Throws exceptions when needed
                     foreach(LineItems inv_item in _shoppingCart)
                     {
+                        try
+                        {
                         Inventory inventoryobj = new Inventory();
                         inv_item.StoreID = inventoryobj.StoreID;
                         inv_item.ProductID = inventoryobj.ProductID;
                         int subtractvalue = inv_item.ProductQuantity;
                         inventoryobj = _inv.FindItem(inventoryobj.StoreID, inventoryobj.ProductID);
                         inventoryobj.ProductQuantity -= subtractvalue;
-                        //Update Inventory with Item Qualities
+                            if(inventoryobj.ProductQuantity < 0)
+                            {
+                                Console.WriteLine("I am sorry but the Quantity Specified in one of your Orders, cannot be fulfilled.");
+                                throw new ArgumentOutOfRangeException();
+                            }
+                            else
+                            {
+                                _inv.UpdateInventory(inventoryobj);
+                            }
+
+                        }
+                        catch
+                        {
+                            Console.WriteLine(" One of your Orders Cannot be Fulfilled due to incorrect Data. Please restart your order.");
+                            throw new ArgumentException();
+                        }
                     }
                 }
                 catch(InvalidDataException)

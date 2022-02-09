@@ -45,6 +45,11 @@ namespace StoreBL
             
             return FoundItem;
         }
+
+        public Inventory UpdateInventory(Inventory p_inv)
+        {
+            return _repo.UpdateInventory(p_inv);
+        }
         
     }
 }
