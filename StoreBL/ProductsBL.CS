@@ -84,5 +84,11 @@ namespace StoreBL
 
             return StoreID;
         }
+
+        public List<Products> GetAllProducts()
+        {
+            List<Products> listofproducts = _repo.GetAllProducts();
+            return listofproducts;
+        }
     }
 }

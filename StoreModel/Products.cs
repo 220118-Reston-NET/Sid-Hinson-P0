@@ -14,8 +14,6 @@ namespace StoreModel
         //Product Category 
         public string ProductCategory { get; set; }
 
-        public int ProductSTFQuantity { get; set; }
-
         //Default Constructor
 
         public Products()

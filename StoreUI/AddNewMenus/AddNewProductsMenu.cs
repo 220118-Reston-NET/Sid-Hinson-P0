@@ -5,13 +5,17 @@ namespace StoreUI
     public class AddNewProductsMenu : IMenu
     {
         //Static Class for variable Consistently Across the Created Class Objects
+
+        private static Inventory _newInventory = new Inventory();
         private static Products _newProduct = new Products();
         //Dependency Injection
+        private IInventoryBL _invBL;
         private IProductsBL _productBL;
         //
-        public AddNewProductsMenu(IProductsBL p_product)
+        public AddNewProductsMenu(IProductsBL p_product, IInventoryBL p_inv)
         {
             _productBL = p_product;
+            _invBL = p_inv;
         }
         public void MenuDisplay()
         {
@@ -28,11 +32,12 @@ namespace StoreUI
             Console.WriteLine("=[4] - Enter Product Price: " + _newProduct.ProductPrice); 
             Console.WriteLine("=[5] - Enter Product Description: " + _newProduct.ProductDescription);
             Console.WriteLine("=[6] - Enter Product Category: " + _newProduct.ProductCategory);
-            Console.WriteLine("=[7] - Enter Product Quantity: " + _newProduct.ProductSTFQuantity);
+            Console.WriteLine("=[7] - Enter Product Quantity: " + _newInventory.ProductQuantity);
             Console.WriteLine("=[8] - Update & Save Information");
             Console.WriteLine("===============================================");
         }
 
+        //***TODO:VALIDATION ON ALL INPUTS
         public string UserSelection()
         {
             Log.Information("User is inputting the Menu Selection");
@@ -89,16 +94,34 @@ namespace StoreUI
                 case "7":
                     Log.Information("User is inputting the Product Quantity");
                     Console.WriteLine("Enter a Quantity : ");
-                    _newProduct.ProductSTFQuantity = Convert.ToInt32(Console.ReadLine());
+                    _newInventory.ProductQuantity = Convert.ToInt32(Console.ReadLine());
                     return "AddNewProductsMenu";
 
-                //*************TODO: Validation check Method on all Inputs 
-                //*************TODO: Logic to add to WAREHOUSE INVENTORY DB ---and---- Products DB 
+                //*************TODO: Validation check Method on all Inputs, CHECK FOR NULLS/EMPTY BEFORE ADD
                 case "8":
+                    //Add Product to DB
                     Log.Information("User is attempting to Save the Product to the DB");
                     try
                     {   
                         _productBL.AddProducts(_newProduct);
+
+                    }
+                    catch (System.Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                        Console.WriteLine("Something Unexpected Happened");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                    }
+                    //Add Product Information to Inventory
+                    List<Products> getlastindex = new List<Products>();
+                    getlastindex = _productBL.GetAllProducts();
+                    int ProductID = getlastindex.Count() - 1 ;
+                    _newInventory.StoreID = _newProduct.StoreID;
+                    _newInventory.ProductID = ProductID;
+                    try
+                    {   
+                        _invBL.AddInventory(_newInventory);
 
                     }
                     catch (System.Exception exc)

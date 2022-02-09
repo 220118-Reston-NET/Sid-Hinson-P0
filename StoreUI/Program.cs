@@ -95,16 +95,16 @@ while(isValid)
             break;
         case "AddNewProductsMenu":
             Log.Information("Displaying Add New Products Menu to user");
-            mainmenu = new AddNewProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)));
+            mainmenu = new AddNewProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)));
             break;
         case "SearchProductsMenu":
             Log.Information("Displaying Search products Menu to user");
             mainmenu = new SearchProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
         case "AddNewOrderMenu":
-            //Uses Triple Dependecy Injection to Abstract Access to All BL information 
+            //Uses Quadruple Dependecy Injection to Abstract Access to All BL Methods information 
             Log.Information("Displaying Add New orders Menu to user");
-            mainmenu = new AddNewOrderMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)));
+            mainmenu = new AddNewOrderMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)));
             break;
         case "AddBusinessTransaction":
             Log.Information("Displaying Add Business Transaction Menu to user");

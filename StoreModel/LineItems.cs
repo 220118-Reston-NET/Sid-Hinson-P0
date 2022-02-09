@@ -51,8 +51,7 @@ namespace StoreModel
             }
         }
 
-
-
+        public int StoreID { get; set; }
 
         //Default Constructor 
         public LineItems()
@@ -61,7 +60,7 @@ namespace StoreModel
         OrderID = "";
         ProductID = 0;
         ProductQuantity = 0;
-
+        StoreID = 0;
         }
         
         public override string ToString()

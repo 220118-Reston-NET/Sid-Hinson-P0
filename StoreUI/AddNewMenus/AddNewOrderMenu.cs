@@ -21,11 +21,13 @@ namespace StoreUI
         private IProductsBL _productBL;
         private IOrdersBL _orderBL;
         private ICustomersBL _customerBL;
-        public AddNewOrderMenu(IOrdersBL p_orderBL, IProductsBL p_productBl, ICustomersBL p_customerBL)
+        private IInventoryBL _inv;
+        public AddNewOrderMenu(IOrdersBL p_orderBL, IProductsBL p_productBl, ICustomersBL p_customerBL, IInventoryBL p_inv)
         {
             _orderBL = p_orderBL;
             _productBL = p_productBl;
             _customerBL = p_customerBL;
+            _inv = p_inv;
         }
 
         public void MenuDisplay()
@@ -164,6 +166,7 @@ namespace StoreUI
                     _productPrice = _productBL.GetPrice(_productName, _productCompany, _productStoreID);
                     OrderTotal += _productPrice;
                     Item = _orderBL.AddItem(_productID, _orderID, _productQuantity);
+                    Item.StoreID = _productStoreID;
                     //Add Item to Cart
                     _shoppingCart.Add(Item);
                     Console.WriteLine("Item was Added to cart.");
@@ -201,6 +204,8 @@ namespace StoreUI
 
                 //**Save and Checkout Process
                 case "8":
+                try
+                 {
                     Log.Information("User is attempting to Save their Order to the DB");
                     Console.Clear();
                     _orderBL.DisplayGraphic();
@@ -215,6 +220,7 @@ namespace StoreUI
                     Console.WriteLine("Enter Your User Password");
                     string userPass = Console.ReadLine();
 
+                
                     //**Create Shopping Order To Send to REPO**
                     //Adding CustomerID
                     _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
@@ -231,7 +237,7 @@ namespace StoreUI
                     _shoppingOrder.OrderLineItems = _shoppingCart;
                     _shoppingOrder.OrderStatus = "Processing";
                     //*************TODO: Validation check Method on all Inputs and TRY/CATCH 
-                    //*************TODO: Inventory Logic that subtracts from WAREHOUSE Inventory DB ---and--- Store Product Inventory
+                    //*************TODO: Inventory Logic that subtracts from WAREHOUSE Inventory DB Inventory
                     _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
@@ -244,7 +250,27 @@ namespace StoreUI
                     }
                     //Add Order to Repo
                     _orderBL.AddOrders(_shoppingOrder);      
+                    
+                    
+                    //Update Inventory
+                    foreach(LineItems inv_item in _shoppingCart)
+                    {
+                        Inventory inventoryobj = new Inventory();
+                        inv_item.StoreID = inventoryobj.StoreID;
+                        inv_item.ProductID = inventoryobj.ProductID;
+                        int subtractvalue = inv_item.ProductQuantity;
+                        inventoryobj = _inv.FindItem(inventoryobj.StoreID, inventoryobj.ProductID);
+                        inventoryobj.ProductQuantity -= subtractvalue;
+                        //Update Inventory with Item Qualities
+                    }
+                }
+                catch(InvalidDataException)
+                {
+                    Console.WriteLine("The Data could not be processed.");
+                    Console.WriteLine("Please Look at your Order Input Data and Try Again.");
+                }
                     return "AddNewOrderMenu";
+                    
 
 
                 //Default Menu

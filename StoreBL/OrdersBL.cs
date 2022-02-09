@@ -37,14 +37,8 @@ namespace StoreBL
         public LineItems AddLineItems(LineItems p_line)
         {
             List<LineItems> listoflineitems = _repo.GetAllLineItems();
-            if(listoflineitems.Count < 500)
-            {
+
                 return _repo.AddLineItems(p_line);
-            }
-            else
-            {
-                throw new Exception("Limit of 500 Orders is reached");
-            }
         }
 
         /// <summary>

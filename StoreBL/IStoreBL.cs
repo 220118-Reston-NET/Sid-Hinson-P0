@@ -64,6 +64,8 @@ namespace StoreBL
         public List<Products> SearchProductsCat(string p_productCat);
         public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID);
         public int GetID(string p_prodName, string p_prodComp, int p_StoreID);
+
+        public List<Products> GetAllProducts();
  
     }
 
@@ -97,22 +99,22 @@ namespace StoreBL
 
     }
 
-        public interface I_inventoryBL
+        public interface IInventoryBL
     {
         /// <summary>
         /// Adds Inventory to DB passing a Inventory obj
         /// </summary>
         /// <param name="p_inv"></param>
         /// <returns></returns>
-        Inventory AddInventory(Inventory p_inv);
+        public Inventory AddInventory(Inventory p_inv);
 
         /// <summary>
         /// Will return List of objects related to Search query through p_name parameter
         /// </summary>
         /// <param name="p_storeNumber"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Inventory> SearchInventory(int p_storeID, int p_prodID);
-        
+        public List<Inventory> SearchInventory(int p_storeID, int p_prodID);
+        public Inventory FindItem(int p_storeID, int p_prodID);
     }
 }
 

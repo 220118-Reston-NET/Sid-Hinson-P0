@@ -3,7 +3,7 @@ using StoreDL;
 
 namespace StoreBL
 {
-    public class InventoryBL : I_inventoryBL
+    public class InventoryBL : IInventoryBL
     {
         /// <summary>
         /// Dependency Injection Constructor
@@ -28,10 +28,23 @@ namespace StoreBL
             List<Inventory> listofInventory = _repo.GetAllInventory();
             return listofInventory
                     .Where(Inventory => Inventory.StoreID.Equals(p_storeID))//Filter a collection with a Lamda
-                    .Where(Inventory => Inventory.StoreID.Equals(p_storeID))//Filter a collection with a Lamda
+                    .Where(Inventory => Inventory.ProductID.Equals(p_prodID))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
 
+        public Inventory FindItem(int p_storeID, int p_prodID)
+        {
+            List<Inventory> listofInventory = _repo.GetAllInventory();
+            Inventory FoundItem = new Inventory();
+            foreach(Inventory item in listofInventory)
+            {
+                if(item.StoreID.Equals(p_storeID) & item.ProductID.Equals(p_prodID))
+                FoundItem = item;
+                return FoundItem;
+            }
+            
+            return FoundItem;
+        }
         
     }
 }
