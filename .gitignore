@@ -1,5 +1,6 @@
 bin
 obj
 .vscode/
+StoreDL/[dep]Repo_Old/
 StoreUI/Logs/
 StoreUI/appsettings.json
