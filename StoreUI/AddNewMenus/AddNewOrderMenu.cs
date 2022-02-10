@@ -215,7 +215,7 @@ namespace StoreUI
                     //Adding Line Items Cart to Order
                     _shoppingOrder.OrderLineItems = new List<LineItems>();
                     _shoppingOrder.OrderLineItems = _shoppingCart;
-                    _shoppingOrder.OrderStatus = "Processing";
+                    _shoppingOrder.OrderStatus = "PROCESSING";
 
                     //Add Order to Repo
                     Console.WriteLine("Attempting to Add Order ........");
@@ -269,7 +269,8 @@ namespace StoreUI
                         if(inventoryobj2.ProductQuantity < 0)
                         {
                             Console.WriteLine($"We cannot fulfill your order. We are missing {inventoryobj2.ProductQuantity} units ");
-                            // throw new ArgumentOutOfRangeException();
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
                         }
                         else
                         {

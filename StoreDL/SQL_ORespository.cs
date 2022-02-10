@@ -94,10 +94,9 @@ namespace StoreDL
                     {
 
                         listoflineitems.Add(new LineItems(){
-                                OrderID = reader.GetInt32(1),
-                                ProductID = reader.GetInt32(2),
-                                ProductQuantity = reader.GetInt32(3),
-
+                                OrderID = reader.GetInt32(0),
+                                ProductID = reader.GetInt32(1),
+                                ProductQuantity = reader.GetInt32(2),
                                 });
                     }
                 }

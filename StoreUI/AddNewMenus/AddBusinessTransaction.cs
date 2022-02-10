@@ -60,12 +60,9 @@ namespace StoreUI
 
 
                 //View Order History
-                //TODO ***********Implement ***********
                 case "4":
-                Log.Information("User is selecting View Order History Menu");
-                Console.WriteLine("Not Implemented Yet- press Enter");
-                Console.ReadLine();
-                return "AddBusinessTransaction";
+                Log.Information("User is selecting Search Orders Customer Menu");
+                return "SearchOrdersCMenu";
 
                 //Default Case
                 default:

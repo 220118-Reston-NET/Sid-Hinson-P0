@@ -50,21 +50,12 @@ namespace StoreUI
 
                     Console.WriteLine("Please Enter a Last Name");
                     string p_Lname = Console.ReadLine();
-                    while(string.IsNullOrEmpty(p_Lname))
-                    {
-                        Console.WriteLine("Last Name must have an input. Please Enter a Last Name");
-                        p_Lname =Console.ReadLine();
 
-                    }
+
 
                     Console.WriteLine("Please Enter an Email Address");
                     string p_Email = Console.ReadLine();
-                    while(string.IsNullOrEmpty(p_Email))
-                    {
-                        Console.WriteLine("Email must have an input. Please Enter an Email Address");
-                        p_Email =Console.ReadLine();
 
-                    }
 
                     //Search for Customer
                     List<Customers> listofcustomers = _custBL.SearchCustomers(p_Fname, p_Lname, p_Email);
@@ -90,7 +81,7 @@ namespace StoreUI
 
 
                 default:
-                    Console.WriteLine("Customer not Found");
+                    Console.WriteLine("Invalid Selection");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "StoreMainMenu";

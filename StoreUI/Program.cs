@@ -114,6 +114,10 @@ while(isValid)
             Log.Information("Displaying Products Display Menu to user");
             mainmenu = new AddProductsDisplay(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
+        case "SearchOrdersCMenu":
+            Log.Information("Displaying Search Orders Menu to user");
+            mainmenu = new SearchOrdersCMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)));
+            break;
         case "Exit":
             Log.Information("User has Exited The Program");
             Log.CloseAndFlush(); //To close our logger resource

@@ -46,20 +46,29 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_email"></param>
         /// <returns></returns>
-        public List<Orders> SearchOrders(string p_email)
+        public List<Orders> SearchOrders(int p_custID, string p_status)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
             return listoforders
-                    .Where(Orders => Orders.Equals(p_email))
+                    .Where(Orders => Orders.OrderCustID.Equals(p_custID))
+                    .Where(Orders => Orders.OrderStatus.Contains(p_status))
                     .ToList(); //ToList method converts into return List collection
         }
 
-
+        //******LineItems*******//
 
         public LineItems AddLineItems(LineItems p_line)
         {
             List<LineItems> listoflineitems = _repo.GetAllLineItems();
             return _repo.AddLineItems(p_line);
+        }
+
+        public List<LineItems> SearchLineItems(int p_orderID)
+        {
+            List<LineItems> listoflineitems = _repo.GetAllLineItems();
+            return listoflineitems
+                    .Where(LineItems => LineItems.OrderID.Equals(p_orderID))
+                    .ToList(); //ToList method converts into return List collection
         }
         /// <summary>
         /// Add values to Item
