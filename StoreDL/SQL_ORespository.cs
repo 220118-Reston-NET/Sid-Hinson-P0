@@ -65,12 +65,12 @@ namespace StoreDL
                     {
 
                         listoforders.Add(new Orders(){
-                                OrderID = reader.GetInt32(1),
-                                OrderCustID = reader.GetInt32(2),
-                                OrderStoreID = reader.GetInt32(3),
-                                OrderDate = reader.GetString(4),
-                                OrderTotal = reader.GetInt32(5),
-                                OrderStatus = reader.GetString(6)
+                                OrderID = reader.GetInt32(0),
+                                OrderCustID = reader.GetInt32(1),
+                                OrderStoreID = reader.GetInt32(2),
+                                OrderDate = reader.GetString(3),
+                                OrderTotal = Convert.ToDouble(reader.GetDecimal(4)),
+                                OrderStatus = reader.GetString(5)
                                 });
                     }
             }

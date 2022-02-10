@@ -2080,3 +2080,57 @@
 2022-02-10 03:39:55.406 -05:00 [INF] User is attempting to Save their Order to the DB
 2022-02-10 03:39:55.457 -05:00 [INF] User is inputting their email address
 2022-02-10 03:40:21.512 -05:00 [INF] User is inputting their email password
+2022-02-10 03:45:59.364 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-10 03:46:00.719 -05:00 [INF] User is selection an input
+2022-02-10 03:46:04.312 -05:00 [INF] User is selecting Customers Menu
+2022-02-10 03:46:04.312 -05:00 [INF] Displaying Customers Menu to user
+2022-02-10 03:46:04.319 -05:00 [INF] User is selecting an input
+2022-02-10 03:46:05.752 -05:00 [INF] User is selecting Add New Order Menu
+2022-02-10 03:46:05.752 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:46:05.813 -05:00 [INF] User is entering their selection
+2022-02-10 03:46:07.029 -05:00 [INF] User is entering the Store ID
+2022-02-10 03:46:07.882 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:46:07.898 -05:00 [INF] User is entering their selection
+2022-02-10 03:46:08.929 -05:00 [INF] User is entering the Product Name
+2022-02-10 03:46:10.706 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:46:10.715 -05:00 [INF] User is entering their selection
+2022-02-10 03:46:12.114 -05:00 [INF] User is entering the Product Company
+2022-02-10 03:46:13.898 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:46:13.922 -05:00 [INF] User is entering their selection
+2022-02-10 03:46:15.596 -05:00 [INF] User is entering the Product Quantity
+2022-02-10 03:46:16.522 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:46:16.538 -05:00 [INF] User is entering their selection
+2022-02-10 03:46:18.155 -05:00 [INF] User is adding the Item to the Static Cart
+2022-02-10 03:46:20.186 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:46:20.204 -05:00 [INF] User is entering their selection
+2022-02-10 03:46:31.629 -05:00 [INF] User is attempting to Save their Order to the DB
+2022-02-10 03:46:31.631 -05:00 [INF] User is inputting their email address
+2022-02-10 03:46:50.434 -05:00 [INF] User is inputting their email password
+2022-02-10 03:49:32.394 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-10 03:49:33.555 -05:00 [INF] User is selection an input
+2022-02-10 03:49:35.035 -05:00 [INF] User is selecting Customers Menu
+2022-02-10 03:49:35.035 -05:00 [INF] Displaying Customers Menu to user
+2022-02-10 03:49:35.052 -05:00 [INF] User is selecting an input
+2022-02-10 03:49:36.449 -05:00 [INF] User is selecting Add New Order Menu
+2022-02-10 03:49:36.449 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:49:36.489 -05:00 [INF] User is entering their selection
+2022-02-10 03:49:37.370 -05:00 [INF] User is entering the Store ID
+2022-02-10 03:49:38.090 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:49:38.105 -05:00 [INF] User is entering their selection
+2022-02-10 03:49:39.022 -05:00 [INF] User is entering the Product Name
+2022-02-10 03:49:40.061 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:49:40.068 -05:00 [INF] User is entering their selection
+2022-02-10 03:49:41.324 -05:00 [INF] User is entering the Product Company
+2022-02-10 03:49:42.953 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:49:42.962 -05:00 [INF] User is entering their selection
+2022-02-10 03:49:45.716 -05:00 [INF] User is entering the Product Quantity
+2022-02-10 03:49:47.548 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:49:47.579 -05:00 [INF] User is entering their selection
+2022-02-10 03:49:49.917 -05:00 [INF] User is adding the Item to the Static Cart
+2022-02-10 03:49:52.059 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:49:52.075 -05:00 [INF] User is entering their selection
+2022-02-10 03:49:54.707 -05:00 [INF] User is attempting to Save their Order to the DB
+2022-02-10 03:49:54.708 -05:00 [INF] User is inputting their email address
+2022-02-10 03:50:02.759 -05:00 [INF] User is inputting their email password
+2022-02-10 03:51:05.606 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-10 03:51:05.620 -05:00 [INF] User is entering their selection

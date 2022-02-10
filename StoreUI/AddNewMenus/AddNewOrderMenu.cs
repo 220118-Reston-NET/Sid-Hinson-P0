@@ -222,7 +222,7 @@ namespace StoreUI
                     _orderBL.AddOrders(_shoppingOrder); 
                     Console.WriteLine("Order Added. Press Enter");
 
-                    //*************<-----Here
+
 
                     //Find the OrderID
                     List<Orders> getcount = new List<Orders>();
@@ -234,6 +234,7 @@ namespace StoreUI
                     _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
+
 
                     //Add Order ID to ALL LineItems
                     foreach(LineItems item in _shoppingCart)
