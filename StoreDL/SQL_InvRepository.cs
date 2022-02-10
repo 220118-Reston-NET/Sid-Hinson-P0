@@ -69,10 +69,9 @@ namespace StoreDL
                 command.Parameters.AddWithValue("@ProductID", p_inv.ProductID);
                 command.Parameters.AddWithValue("@ProductQuantity", p_inv.ProductQuantity);
                 command.ExecuteNonQuery();
+                Console.WriteLine("Inventory Updated");
             }
             return p_inv;
-
-
         }
     }
 }

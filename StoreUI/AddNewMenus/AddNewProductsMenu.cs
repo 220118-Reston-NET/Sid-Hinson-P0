@@ -124,15 +124,15 @@ namespace StoreUI
                          Console.WriteLine(_newProduct);
                          Console.ReadLine();
                          //Add Product Information to Inventory
-                         List<Products> getlastelement = new List<Products>();
-                         getlastelement = _productBL.GetAllProducts();
+                         List<Products> getelementcount = new List<Products>();
+                         getelementcount = _productBL.GetAllProducts();
                          Console.WriteLine("This List Was returned : Press Enter");
-                         foreach(Products product in getlastelement)
+                         foreach(Products product in getelementcount)
                          {
                              Console.WriteLine(product);
                          }
                          Console.ReadLine();
-                         int ProductID = getlastelement.Count();
+                         int ProductID = getelementcount.Count();
                          Console.WriteLine($"Product ID is: {ProductID}. Press Enter.");
                          Console.ReadLine();
                          _newInventory.StoreID = _newProduct.StoreID;

@@ -15,13 +15,13 @@ namespace StoreDL
         public Orders AddOrders(Orders p_ord)
         {
             string sqlQuery = @"insert into Orders 
-                                values (@OrderID, @OrderCustID, @OrderStoreID, @OrderDate, @OrderTotal, @OrderStatus)";
+                                values (@OrderCustID, @OrderStoreID, @OrderDate, @OrderTotal, @OrderStatus)";
             using(SqlConnection con = new SqlConnection(_ConnectionStrings))
             {                      
                 con.Open();
                 SqlCommand command =  new SqlCommand(sqlQuery, con);
 
-                command.Parameters.AddWithValue("@OrderID", p_ord.OrderID);
+
                 command.Parameters.AddWithValue("@OrderCustID", p_ord.OrderCustID);
                 command.Parameters.AddWithValue("@OrderStoreID", p_ord.OrderStoreID);
                 command.Parameters.AddWithValue("@OrderDate", p_ord.OrderDate);
@@ -65,7 +65,7 @@ namespace StoreDL
                     {
 
                         listoforders.Add(new Orders(){
-                                OrderID = reader.GetString(1),
+                                OrderID = reader.GetInt32(1),
                                 OrderCustID = reader.GetInt32(2),
                                 OrderStoreID = reader.GetInt32(3),
                                 OrderDate = reader.GetString(4),
@@ -94,7 +94,7 @@ namespace StoreDL
                     {
 
                         listoflineitems.Add(new LineItems(){
-                                OrderID = reader.GetString(1),
+                                OrderID = reader.GetInt32(1),
                                 ProductID = reader.GetInt32(2),
                                 ProductQuantity = reader.GetInt32(3),
 

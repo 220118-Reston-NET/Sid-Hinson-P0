@@ -3,7 +3,7 @@ namespace StoreModel
     public class LineItems
     {
        
-       public string OrderID { get; set; }
+       public int OrderID { get; set; }
 
        private int _productID;  
        public int ProductID
@@ -39,7 +39,7 @@ namespace StoreModel
         
             }
         }
-
+        public double Price { get; set; }
         public int StoreID { get; set; }
 
         //Default Constructor 

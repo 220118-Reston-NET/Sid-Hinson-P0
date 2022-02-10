@@ -71,6 +71,7 @@ namespace StoreBL
 
     public interface IOrdersBL
     {
+        public List<Orders> GetAllOrders();
         /// <summary>
         /// Add Line Items to Repo
         /// </summary>
@@ -91,7 +92,7 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(string p_email);
-        public LineItems AddItemFields(int p_prodID, string p_orderID, int p_prodQuant);
+        public LineItems AddItemFields(int p_prodID, int p_prodQuant, int p_storeID, double p_price);
         public List<LineItems> RemoveFromCart(List<LineItems> p_orderList);
 
         public List<LineItems> DisplayCart(List<LineItems> p_list);

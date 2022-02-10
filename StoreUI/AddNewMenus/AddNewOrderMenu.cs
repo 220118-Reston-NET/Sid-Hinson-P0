@@ -10,7 +10,7 @@ namespace StoreUI
         private static string p_Email;
         private static int _productID;
         private static double _productPrice;
-        private static int _productStoreID;
+        public static int _productStoreID;
         private static string _productName;
         private static string _productCompany;
         private static int _productQuantity;
@@ -126,15 +126,28 @@ namespace StoreUI
                     _productID = _productBL.GetID(_productName, _productCompany, _productStoreID);
                     _productPrice = _productBL.GetPrice(_productName, _productCompany, _productStoreID);
                     //Building Line Item
-                    CartItem = _orderBL.AddItemFields(_productID, _orderID, _productQuantity);
-                    CartItem.StoreID = _productStoreID;
+                    CartItem = _orderBL.AddItemFields(_productID, _productQuantity,_productStoreID, _productPrice);
                     //Running Total
                     OrderTotal += _productPrice;
-                    //Add Item to Shopping Cart
-                    _shoppingCart.Add(CartItem);
-                    Console.WriteLine("This Item was Added to cart.");
-                    Console.WriteLine(CartItem);
-                    Console.ReadLine();
+                    
+                    //Validate Inventory Level
+                    Inventory parlevel = new Inventory();
+                    parlevel =_inv.FindItem(_productStoreID, _productID);
+                    parlevel.ProductQuantity -= _productQuantity;
+
+                    if(parlevel.ProductQuantity >= 0)
+                    {
+                        //Add Item to Shopping Cart
+                        _shoppingCart.Add(CartItem);
+                        Console.WriteLine("This Item was Added to cart.");
+                        Console.WriteLine(CartItem);
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("We are sorry, but your we cannot fulfill your order. We must restock.");
+                        Console.ReadLine();
+                    }
                     return "AddNewOrderMenu";
 
 
@@ -146,9 +159,7 @@ namespace StoreUI
                     _orderBL.DisplayGraphic();
                     _shoppingCart.Clear();
                     OrderTotal = 0;
-                    _shoppingOrder.OrderID = "";
-                    Console.WriteLine("Your Cart is Empty!");
-                    Console.WriteLine("Your Unique Order ID has been reset to void value. Press Enter.");
+                    Console.WriteLine("Your Cart is Empty! Press Enter to Continue");
                     Console.ReadLine();
                     return "AddNewOrderMenu";
 
@@ -169,13 +180,14 @@ namespace StoreUI
 
                 //**Save to DB Repo
                 case "8":
+
                 try
                  {
                     Log.Information("User is attempting to Save their Order to the DB");
                     Console.Clear();
                     _orderBL.DisplayGraphic();
 
-                    //Get Inputs
+                    //Get Inputs From User - these are parameterized to get the ID
                     Console.WriteLine("To Process Each Order, Please Input Your Email and Password");
                     Log.Information("User is inputting their email address");                   
                     Console.WriteLine("Enter Your User Email");
@@ -187,7 +199,7 @@ namespace StoreUI
 
                 
                     //**Create Shopping Order To Send to REPO**
-                    //Adding CustomerID
+                    //Get CustomerID
                     _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
 
                     //Adding StoreID
@@ -205,48 +217,62 @@ namespace StoreUI
                     _shoppingOrder.OrderLineItems = _shoppingCart;
                     _shoppingOrder.OrderStatus = "Processing";
 
-                    //*************TODO: Validation check Method on all Inputs and TRY/CATCH 
+                    //Add Order to Repo
+                    Console.WriteLine("Attempting to Add Order ........");
+                    _orderBL.AddOrders(_shoppingOrder); 
+                    Console.WriteLine("Order Added. Press Enter");
+
+                    //*************<-----Here
+
+                    //Find the OrderID
+                    List<Orders> getcount = new List<Orders>();
+                    getcount = _orderBL.GetAllOrders();
+                    int OrderID = getcount.Count();
+                    
+                    //Display Items Ordered
+                    Console.WriteLine("These were the Items Ordered");
                     _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
+
+                    //Add Order ID to ALL LineItems
+                    foreach(LineItems item in _shoppingCart)
+                    {
+                        item.OrderID = OrderID;
+                    }
 
                     //Add All LineItems to Repo
                     foreach(LineItems item in _shoppingCart)
                     {
                         _orderBL.AddLineItems(item);
                     }
-                    //Add Order to Repo
-                    _orderBL.AddOrders(_shoppingOrder);      
-                    
+     
                     
                     //Update Inventory
                     //Set IDs, Pull Inventory Item Info, subtract quantity, reupdate Item totals in DB
                     //Throws exceptions when needed
-                    foreach(LineItems inv_item in _shoppingCart)
+                    foreach(LineItems item in _shoppingCart)
                     {
-                        try
+                    //New Inventory object every loop
+                    Inventory inventoryobj1 = new Inventory();
+                    //Populating Fields
+                    item.StoreID = inventoryobj1.StoreID;
+                    item.ProductID = inventoryobj1.ProductID;
+                    //Calculate Quantity to subtract in a Variable
+                    int subtractvalue = item.ProductQuantity;
+                    //Second Inventory object to hold the actual Row Record We Need to Manipulate
+                    Inventory inventoryobj2 = new Inventory();
+                    inventoryobj2 = _inv.FindItem(inventoryobj1.StoreID, inventoryobj1.ProductID);
+                    //Subtract the Value From the Quantity
+                    inventoryobj2.ProductQuantity -= subtractvalue;
+                        if(inventoryobj2.ProductQuantity < 0)
                         {
-                        Inventory inventoryobj = new Inventory();
-                        inv_item.StoreID = inventoryobj.StoreID;
-                        inv_item.ProductID = inventoryobj.ProductID;
-                        int subtractvalue = inv_item.ProductQuantity;
-                        inventoryobj = _inv.FindItem(inventoryobj.StoreID, inventoryobj.ProductID);
-                        inventoryobj.ProductQuantity -= subtractvalue;
-                            if(inventoryobj.ProductQuantity < 0)
-                            {
-                                Console.WriteLine("I am sorry but the Quantity Specified in one of your Orders, cannot be fulfilled.");
-                                throw new ArgumentOutOfRangeException();
-                            }
-                            else
-                            {
-                                _inv.UpdateInventory(inventoryobj);
-                            }
-
+                            Console.WriteLine($"We cannot fulfill your order. We are missing {inventoryobj2.ProductQuantity} units ");
+                            // throw new ArgumentOutOfRangeException();
                         }
-                        catch
+                        else
                         {
-                            Console.WriteLine(" One of your Orders Cannot be Fulfilled due to incorrect Data. Please restart your order.");
-                            throw new ArgumentException();
+                            _inv.UpdateInventory(inventoryobj2);
                         }
                     }
                 }
@@ -255,7 +281,7 @@ namespace StoreUI
                     Console.WriteLine("The Data could not be processed.");
                     Console.WriteLine("Please Look at your Order Input Data and Try Again.");
                 }
-                    return "AddNewOrderMenu";
+                return "AddNewOrderMenu";
                     
 
 

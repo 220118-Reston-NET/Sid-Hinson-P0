@@ -3,7 +3,7 @@ namespace StoreModel
     public class Orders
     {
         
-       public string OrderID { get; set; }
+       public int OrderID { get; set; }
 
        public int OrderCustID { get; set; }
 

@@ -17,6 +17,12 @@ namespace StoreBL
             _repo = p_repo;
         }
 
+
+        public List<Orders> GetAllOrders()
+        {
+            List<Orders> listoforders = _repo.GetAllOrders();
+            return listoforders;
+        }
         /// <summary>
         /// Add Order to Repo
         /// </summary>
@@ -60,11 +66,13 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_lineItem"></param>
         /// <returns>LineItem</returns>
-        public LineItems AddItemFields(int p_prodID, string p_orderID, int p_prodQuant)
+        public LineItems AddItemFields(int p_prodID, int p_prodQuant,int p_storeID, double p_price)
         {
             LineItems p_lineItem = new LineItems();
             p_lineItem.ProductID = p_prodID;
             p_lineItem.ProductQuantity = p_prodQuant;
+            p_lineItem.StoreID = p_storeID;
+            p_lineItem.Price = p_price;
             return p_lineItem;
         }
 
