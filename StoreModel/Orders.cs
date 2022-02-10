@@ -22,8 +22,6 @@ namespace StoreModel
       //Default Constructor      
         public Orders()
         {
-
-            OrderID = "";
             OrderCustID = 0;
             OrderStoreID = 0;
             OrderDate = "";

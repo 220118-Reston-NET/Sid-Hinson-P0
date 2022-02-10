@@ -39,11 +39,11 @@ namespace StoreDL
                 while(reader.Read())
                 {
                     listofstorefronts.Add(new StoreFronts(){
-                            StoreID = reader.GetInt32(1),
-                            StoreAddress = reader.GetString(2),
-                            StoreZipCode = reader.GetString(3),
-                            StoreState = reader.GetString(4),
-                            StoreCity = reader.GetString(5),
+                            StoreID = reader.GetInt32(0),
+                            StoreAddress = reader.GetString(1),
+                            StoreZipCode = reader.GetString(2),
+                            StoreState = reader.GetString(3),
+                            StoreCity = reader.GetString(4),
                     });
                 }
             }

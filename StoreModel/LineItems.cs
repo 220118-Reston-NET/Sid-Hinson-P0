@@ -2,19 +2,8 @@ namespace StoreModel
 {
     public class LineItems
     {
-       private string _orderID;
-       public string OrderID
-        {
-            get
-            {
-                  return _orderID;
-            }
-            set
-            {
-                 _orderID = value;
-            }
-        }
-
+       
+       public string OrderID { get; set; }
 
        private int _productID;  
        public int ProductID
@@ -45,7 +34,7 @@ namespace StoreModel
                 }
                 else
                 {
-                    throw new Exception("Quanitity must equal or be greater to Zero.");
+                    throw new Exception("Quantity must equal or be greater to Zero.");
                 }
         
             }
@@ -57,7 +46,6 @@ namespace StoreModel
         public LineItems()
         {
         
-        OrderID = "";
         ProductID = 0;
         ProductQuantity = 0;
         StoreID = 0;

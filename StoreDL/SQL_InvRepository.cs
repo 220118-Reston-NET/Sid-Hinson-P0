@@ -43,10 +43,10 @@ namespace StoreDL
                 {
 
                     listofinventory.Add(new Inventory(){
-                            WarehouseID = reader.GetInt32(1),
-                            StoreID = reader.GetInt32(2),
-                            ProductID= reader.GetInt32(3),
-                            ProductQuantity = reader.GetInt32(4),
+                            WarehouseID = reader.GetInt32(0),
+                            StoreID = reader.GetInt32(1),
+                            ProductID= reader.GetInt32(2),
+                            ProductQuantity = reader.GetInt32(3),
                     });
                 }
             }

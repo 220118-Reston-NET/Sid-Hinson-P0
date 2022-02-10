@@ -34,12 +34,6 @@ namespace StoreBL
                 throw new Exception("Limit of 500 Orders is reached");
             }
         }
-        public LineItems AddLineItems(LineItems p_line)
-        {
-            List<LineItems> listoflineitems = _repo.GetAllLineItems();
-
-                return _repo.AddLineItems(p_line);
-        }
 
         /// <summary>
         /// Search All orders
@@ -56,12 +50,17 @@ namespace StoreBL
 
 
 
+        public LineItems AddLineItems(LineItems p_line)
+        {
+            List<LineItems> listoflineitems = _repo.GetAllLineItems();
+            return _repo.AddLineItems(p_line);
+        }
         /// <summary>
         /// Add values to Item
         /// </summary>
         /// <param name="p_lineItem"></param>
         /// <returns>LineItem</returns>
-        public LineItems AddItem(int p_prodID, string p_orderID, int p_prodQuant)
+        public LineItems AddItemFields(int p_prodID, string p_orderID, int p_prodQuant)
         {
             LineItems p_lineItem = new LineItems();
             p_lineItem.ProductID = p_prodID;
@@ -70,33 +69,22 @@ namespace StoreBL
         }
 
 
-
-
-        public List<LineItems> AddtoCart(List<LineItems> p_orderList, LineItems p_lineItem)
+        public List<LineItems> AddItemtoCart(List<LineItems> p_orderList, LineItems p_lineItem)
         {
-
-
                 return p_orderList;
         }
 
 
-
-
         public List<LineItems> RemoveFromCart(List<LineItems> p_orderList)
         {
-
-
             return p_orderList;
         }
 
-
         public void DisplayGraphic()
         {
-                
                 Console.WriteLine("=========================================================="); 
                 Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
                 Console.WriteLine("==========================================================");
-                Console.WriteLine("Here are Your Cart Contents:");
         } 
 
         public List<LineItems> DisplayCart(List<LineItems> p_list)
@@ -104,10 +92,8 @@ namespace StoreBL
             foreach (LineItems item in p_list)
             {
                 Console.WriteLine(item);
-
             }
             return p_list;
-
         }  
     }
 }

@@ -111,13 +111,13 @@
 
             set 
             {
-                if (value.Length == 2)
+                if (value != "")
                 {
                     _CustomerState = value;
                 }
                 else
                 {
-                    Console.WriteLine("Must Be Digits");
+                    Console.WriteLine("Must Be 2 Letters");
                 }
 
             }
@@ -129,13 +129,13 @@
 
             set 
             {
-                if (value.Length >= 5)
+                if (value != "")
                 {
                     _CustomerZipcode = value;
                 }
                 else
                 {
-                    Console.WriteLine("Not Enough Digits");
+                    Console.WriteLine("Cant be Null.");
                 }
 
             }
@@ -169,11 +169,11 @@
             {
                 if (value != "")
                 {
-                    Console.WriteLine("Email must have a input.");
+                    _CustomerEmail = value;
                 }
                 else
                 {
-                    _CustomerEmail = value;
+                    Console.WriteLine("Email must have a input.");
                 }
 
             }
@@ -187,12 +187,11 @@
             {
                 if (value != "")
                 {
-                    Console.WriteLine("Password must have an input.");
-
+                    _Password = value;
                 }
                 else
                 {
-                    _Password = value;
+                    Console.WriteLine("Password must have an input.");
                 }
  
             }
@@ -201,16 +200,15 @@
         //Default Class Constructor
         public Customers()
         {
-            CustomerID = 0;
-            CFirstName = "Stephen";
-            CLastName = "Strange";
+            CFirstName = "STEPHEN";
+            CLastName = "STRANGE";
             CDateofBirth = "11181930";
-            CustomerAddress = "117A Bleecker Street";
+            CustomerAddress = "117A BlEECKER STREET";
             CustomerState = "NY";
-            CustomerCity = "New York City";
-            CustomerZipcode = "100112";
+            CustomerCity = "NEW YORK CITY";
+            CustomerZipcode = "10011";
             CustCountry = "USA";
-            CustomerEmail = "stephen.strange@aol.com";
+            CustomerEmail = "STEPHEN.STRANGE@AOL.COM";
             CPassword = "mordoisajerk";
         }
 

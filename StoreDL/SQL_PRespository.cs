@@ -16,13 +16,14 @@ namespace StoreDL
             
  
             string sqlQuery = @"insert into Products 
-                                values (@ProductName, @ProductCompany, @ProductPrice, @ProductDescription, @ProductCategory)";
+                                values (@StoreID,@ProductName, @ProductCompany, @ProductPrice, @ProductDescription, @ProductCategory)";
 
 
             using(SqlConnection con = new SqlConnection(_ConnectionStrings))
             {          
                 con.Open();
                 SqlCommand command =  new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@StoreID", p_prod.StoreID);
                 command.Parameters.AddWithValue("@ProductName", p_prod.ProductName);
                 command.Parameters.AddWithValue("@ProductCompany", p_prod.ProductCompany);
                 command.Parameters.AddWithValue("@ProductPrice", p_prod.ProductPrice);
@@ -45,7 +46,8 @@ namespace StoreDL
                 {
 
                     listofproducts.Add(new Products(){
-                            ProductID = reader.GetInt32(1),
+                            ProductID = reader.GetInt32(0),
+                            StoreID = reader.GetInt32(1),
                             ProductName = reader.GetString(2),
                             ProductCompany = reader.GetString(3),
                             ProductPrice = Decimal.ToInt32(reader.GetDecimal(4)),

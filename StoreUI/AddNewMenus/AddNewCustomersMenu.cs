@@ -34,10 +34,10 @@ namespace StoreUI
             Console.WriteLine("=[7]  -  Zipcode : " + _newCustomer.CustomerZipcode);
             Console.WriteLine("=[8]  -  Email : " + _newCustomer.CustomerEmail);
             Console.WriteLine("=[9]  -  Date Of Birth : " + _newCustomer.CDateofBirth);
-            Console.WriteLine("=[10] - Password : " + _newCustomer.CPassword);
-            Console.WriteLine("=[11] - Update & Save Information");
+            Console.WriteLine("=[10] -  Password : " + _newCustomer.CPassword);
+            Console.WriteLine("=[11] -  Update & Save Information");
             Console.WriteLine("===============================================");
-            Console.WriteLine("=(Press a Number to Enter Your Selected Info!)=");
+            Console.WriteLine("=!Press Number + Enter to input Selected Info!=");
             Console.WriteLine("===============================================");
         }
         
@@ -59,15 +59,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your First Name :");
                     _newCustomer.CFirstName = Console.ReadLine();
                     _newCustomer.CFirstName = _newCustomer.CFirstName.ToUpper();
-
-                    //Test for Null/Empty
-                    while(string.IsNullOrEmpty(_newCustomer.CFirstName))
-                    {
-                        Console.WriteLine("Selection must have an input. Please retry.");
-                        _newCustomer.CFirstName =Console.ReadLine();
-                        _newCustomer.CFirstName = _newCustomer.CFirstName.ToUpper();
-
-                    }
                     return "NewCustomersMenu";
 
 
@@ -77,15 +68,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your Last Name : ");
                     _newCustomer.CLastName = Console.ReadLine();
                     _newCustomer.CLastName = _newCustomer.CLastName.ToUpper();
- 
-                    //Testing for Null/Empty
-                    while(string.IsNullOrEmpty(_newCustomer.CLastName))
-                    {
-                        Console.WriteLine("Selection must have an input. Please retry.");
-                        _newCustomer.CLastName =Console.ReadLine();
-                        _newCustomer.CLastName = _newCustomer.CLastName.ToUpper();
-
-                    }
                     return "NewCustomersMenu";
 
 
@@ -95,15 +77,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your Address : ");
                     _newCustomer.CustomerAddress = Console.ReadLine();
                     _newCustomer.CustomerAddress = _newCustomer.CustomerAddress.ToUpper();
-
-                    //Test for Null/Empty
-                    while(string.IsNullOrEmpty(_newCustomer.CustomerAddress))
-                    {
-                        Console.WriteLine("Selection must have an input. Please enter on next line : ");
-                        _newCustomer.CustomerAddress = Console.ReadLine();
-                        _newCustomer.CustomerAddress = _newCustomer.CustomerAddress.ToUpper();
-
-                    }
                     return "NewCustomersMenu";
 
 
@@ -113,14 +86,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your City :");
                     _newCustomer.CustomerCity = Console.ReadLine();
                     _newCustomer.CustomerCity = _newCustomer.CustomerCity.ToUpper();
-
-                    //Test for Null Or Empty
-                    while(string.IsNullOrEmpty(_newCustomer.CustomerCity))
-                    {
-                        Console.WriteLine("Selection must have an input. Please enter on next line : ");
-                        _newCustomer.CustomerCity = Console.ReadLine();
-                        _newCustomer.CustomerCity = _newCustomer.CustomerCity.ToUpper();
-                    }
                     return "NewCustomersMenu";
 
 
@@ -130,27 +95,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your State Abbreviation:");
                     _newCustomer.CustomerState = Console.ReadLine();
                     _newCustomer.CustomerState = _newCustomer.CustomerState.ToUpper();
-                    bool isANumber = false;
-                    //Test for Format
-                    do
-                    {
-                        Console.WriteLine("Selection must have a valid input. Please enter on next line :");
-                        _newCustomer.CustomerState = Console.ReadLine();
-                        _newCustomer.CustomerState = _newCustomer.CustomerState.ToUpper();
-                        string Test1 = _newCustomer.CustomerState;
-                        isANumber = int.TryParse(Test1, out int x);
-                        _newCustomer.CustomerState = Test1;
-                        _newCustomer.CustomerState = _newCustomer.CustomerState.ToUpper();
-                        while(isANumber == true)
-                        {
-                            Console.WriteLine("You Must Enter Alphabetical Characaters. Please enter on next line:");
-                            string Retry = Console.ReadLine();
-                            isANumber = int.TryParse(Retry, out int result);
-                            _newCustomer.CustomerState = Retry;
-                            _newCustomer.CustomerState = _newCustomer.CustomerState.ToUpper();
-                        }
-
-                    }while(string.IsNullOrEmpty(_newCustomer.CustomerState) || _newCustomer.CustomerState.Length > 2 || _newCustomer.CustomerState.Length < 2 || isANumber == true);
                     return "NewCustomersMenu";
 
 
@@ -160,14 +104,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your Country :");
                     _newCustomer.CustCountry = Console.ReadLine();
                     _newCustomer.CustCountry = _newCustomer.CustCountry.ToUpper();
-                    //Test for Null/Empty
-                    while(string.IsNullOrEmpty(_newCustomer.CustCountry))
-                    {
-                        Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
-                        _newCustomer.CustCountry = Console.ReadLine();
-                        _newCustomer.CustCountry = _newCustomer.CustCountry.ToUpper();
-
-                    }
                     return "NewCustomersMenu";
 
 
@@ -176,24 +112,6 @@ namespace StoreUI
                     Log.Information("User is entering their Zipcode");
                     Console.WriteLine("Enter your Zipcode :");
                     _newCustomer.CustomerZipcode = Console.ReadLine();
-                    bool isNumber = false;
-                    //Test for Format
-                    do
-                    {
-                       Console.WriteLine("You Must Enter an 5 Digit Numerical ZipCode.");
-                       _newCustomer.CustomerZipcode = Console.ReadLine();
-                       
-                       string Test2 = _newCustomer.CustomerZipcode;
-                       isNumber = int.TryParse(Test2, out int z);
-                       while(isNumber == false)
-                        {
-                            Console.WriteLine("You Must Enter an 5 Digit Numerical ZipCode");
-                            string Retry = Console.ReadLine();
-                            isNumber = int.TryParse(Retry, out int result);
-                            _newCustomer.CustomerZipcode = Convert.ToString(result);
-                        }     
-                    }
-                    while(string.IsNullOrEmpty(_newCustomer.CustomerZipcode) || _newCustomer.CustomerState.Length != 5 ||  isNumber == false);        
                     return "NewCustomersMenu";
 
 
@@ -203,13 +121,6 @@ namespace StoreUI
                     Console.WriteLine("Enter your Email Address :");
                     _newCustomer.CustomerEmail = Console.ReadLine();
                     _newCustomer.CustomerEmail = _newCustomer.CustomerEmail.ToUpper();
-                    do
-                    {
-                        Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
-                       _newCustomer.CustomerEmail = Console.ReadLine();
-                       _newCustomer.CustomerEmail = _newCustomer.CustomerEmail.ToUpper();
-                    }
-                    while(string.IsNullOrEmpty(_newCustomer.CustomerEmail) || !_newCustomer.CustomerEmail.Contains("@"));
                     return "NewCustomersMenu";
 
 
@@ -219,38 +130,17 @@ namespace StoreUI
                     Console.WriteLine("Enter your Date of Birth");
                     Console.WriteLine("Example : 10211980 for October 21st 1980");
                     _newCustomer.CDateofBirth = Console.ReadLine();
-                    bool isNotALetter = false;
-                    do
-                    {
-                        Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
-                        _newCustomer.CDateofBirth = Console.ReadLine();
-                        string Test3 = _newCustomer.CDateofBirth;
-                        isNotALetter = int.TryParse(Test3, out int y);
-                        while(isNotALetter == false)
-                        {
-                            Console.WriteLine("You Must Enter an 8 Digit Integer value in MMDDYYY format - Ex: 10211980 for Oct 21st 1980:");
-                            string Retry = Console.ReadLine();
-                            isNotALetter = int.TryParse(Retry, out int result);
-                            _newCustomer.CDateofBirth = Convert.ToString(result);
-                        }
-                    }
-                    while( string.IsNullOrEmpty(_newCustomer.CDateofBirth) || _newCustomer.CDateofBirth.Length > 8 || _newCustomer.CDateofBirth.Length < 8 || isNotALetter == false);
                     return "NewCustomersMenu";
 
-
+                // Password Entry
                 case "10":
                     Log.Information("User is entering their Password");
                     Console.WriteLine("Enter your Password");
+                    Console.WriteLine("A combination of Letters and charcter is more secure - ex: [@#$]@@!!^&*");
                     _newCustomer.CPassword = Console.ReadLine();
-                    while(string.IsNullOrEmpty(_newCustomer.CPassword))
-                    {
-                        Console.WriteLine("Selection must have an input. Please Enter a Menu selection.");
-                      _newCustomer.CPassword = Console.ReadLine();
-                      return "NewCustomersMenu";
-                    }  
                     return "NewCustomersMenu";     
 
-                //*************TODO: Validation check Method on all Inputs
+                //**Save to DB Repo
                 case "11":
                     Log.Information("User is attempting to Save their Customer Information into the DB");
                     try

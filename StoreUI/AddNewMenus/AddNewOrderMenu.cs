@@ -5,7 +5,7 @@ namespace StoreUI
     public class AddNewOrderMenu : IMenu
     {
         private static List<LineItems> _shoppingCart = new List<LineItems>();
-        public LineItems Item = new LineItems();
+        private static LineItems CartItem = new LineItems();
         private static Orders _shoppingOrder = new Orders();
         private static string p_Email;
         private static int _productID;
@@ -79,18 +79,7 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Store ID :");
-                    //Test for Number
-                    string test = Console.ReadLine();
-                    bool isNumber = false;
-                    isNumber = int.TryParse(test, out int x);
-                    _productStoreID = x;
-                    while(isNumber == false)
-                    {
-                        Console.WriteLine("You Must Enter A Whole Number Interger. Please Enter Now :");
-                        string Retry = Console.ReadLine();
-                        isNumber = int.TryParse(Retry, out int result);
-                       _productStoreID = result;
-                    }
+                    _productStoreID = Convert.ToInt32(Console.ReadLine());
                     return "AddNewOrderMenu";
 
 
@@ -101,15 +90,7 @@ namespace StoreUI
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Name : ");
                     _productName = Console.ReadLine();
-                    _productName.ToUpper();
-                    //Test for Null or Empty
-                    while(string.IsNullOrEmpty(_productName))
-                    {
-                        Console.WriteLine("Input must have a Product Name. Please Enter a Product Name:");
-                        _productName = Console.ReadLine();
-                        _productName.ToUpper();
-                        return "AddNewOrderMenu";
-                    }
+                    _productName = _productName.ToUpper();
                     return "AddNewOrderMenu";
 
 
@@ -120,15 +101,7 @@ namespace StoreUI
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Company :");
                     _productCompany = Console.ReadLine();
-                    _productCompany.ToUpper();
-                    //Test for Null or Empty
-                    while(string.IsNullOrEmpty(_productCompany))
-                    {
-                        Console.WriteLine("Input must have a Product Company. Please Enter a Product Company:");
-                        _productCompany = Console.ReadLine();
-                        _productCompany.ToUpper();
-                        return "AddNewOrderMenu";
-                    }
+                    _productCompany = _productCompany.ToUpper();
                     return "AddNewOrderMenu";
 
 
@@ -139,18 +112,7 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter an Product Quantity : ");
-                    //Test for Number
-                    string test2 = Console.ReadLine();
-                    bool isANumber = false;
-                    isANumber = int.TryParse(test2, out int y);
-                    _productQuantity = y;
-                    while(isANumber == false)
-                    {
-                        Console.WriteLine("You Must Enter A Whole Number Interger. Please Enter Now :");
-                        string Retry = Console.ReadLine();
-                        isANumber = int.TryParse(Retry, out int result);
-                       _productQuantity  = result;
-                    }
+                    _productQuantity = Convert.ToInt32(Console.ReadLine());
                     return "AddNewOrderMenu";
 
 
@@ -160,21 +122,18 @@ namespace StoreUI
                     Log.Information("User is adding the Item to the Static Cart");
                     Console.Clear();
                     _orderBL.DisplayGraphic();
-                    //Generate Unique ID for Lineitem/Order
-                    //This was opted for global uniqueness and security
-                    _orderID = System.Guid.NewGuid().ToString();
-                    Item.OrderID = _orderID;
-                    _shoppingOrder.OrderID = _orderID;
-                    //Add Values to Line Item
+                    //Getting Values For Line Item
                     _productID = _productBL.GetID(_productName, _productCompany, _productStoreID);
                     _productPrice = _productBL.GetPrice(_productName, _productCompany, _productStoreID);
+                    //Building Line Item
+                    CartItem = _orderBL.AddItemFields(_productID, _orderID, _productQuantity);
+                    CartItem.StoreID = _productStoreID;
+                    //Running Total
                     OrderTotal += _productPrice;
-                    Item = _orderBL.AddItem(_productID, _orderID, _productQuantity);
-                    Item.StoreID = _productStoreID;
-                    //Add Item to Cart
-                    _shoppingCart.Add(Item);
-                    Console.WriteLine("Item was Added to cart.");
-                    Console.WriteLine("Press Enter to Continue");
+                    //Add Item to Shopping Cart
+                    _shoppingCart.Add(CartItem);
+                    Console.WriteLine("This Item was Added to cart.");
+                    Console.WriteLine(CartItem);
                     Console.ReadLine();
                     return "AddNewOrderMenu";
 
@@ -182,12 +141,14 @@ namespace StoreUI
 
                 // Clear Items from cart
                 case "6":
-                    Log.Information("User is clearing Items in the Static Cart");
+                    Log.Information("User is clearing ALL Items in the Static Cart");
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     _shoppingCart.Clear();
                     OrderTotal = 0;
-                    Console.WriteLine("Cart is Empty! Press Enter to Continue");
+                    _shoppingOrder.OrderID = "";
+                    Console.WriteLine("Your Cart is Empty!");
+                    Console.WriteLine("Your Unique Order ID has been reset to void value. Press Enter.");
                     Console.ReadLine();
                     return "AddNewOrderMenu";
 
@@ -206,9 +167,7 @@ namespace StoreUI
 
 
 
-                //**Save and Checkout Process
-                //**Processes Lineitems into DB, Processes Order into DB, Updates Inventory into DB
-                //This is an all or nothing scenario - either everything updates or its fails for Data Consistency
+                //**Save to DB Repo
                 case "8":
                 try
                  {

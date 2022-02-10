@@ -35,7 +35,7 @@ namespace StoreDL
             // CustomerID int IDENTITY(1,1) PRIMARY KEY NOT NULL,
             // CFirstName varchar(50),
             // CLastName varchar(50),
-            // CDateofBirth date,
+            // CDateofBirth varchar(50),
             // CustomerAddress varchar(50),
             // CustomerState varchar(50),
             // CustomerCity varchar(50),
@@ -119,17 +119,17 @@ namespace StoreDL
                     //Here we have a new list object, and we state each list property
                     //NOTE : Bases in SQL are ZERO BASED SO MAPPING for both starts at 0 [ ~ i.eCustomerID[0] = Column Customers.CustomerID[0]]
                     listofcustomers.Add(new Customers(){
-                            CustomerID = reader.GetInt32(1),
-                            CFirstName = reader.GetString(2),
-                            CLastName = reader.GetString(3),
-                            CDateofBirth = reader.GetString(4),
-                            CustomerAddress = reader.GetString(5),
-                            CustomerState = reader.GetString(6),
-                            CustomerCity = reader.GetString(7),
-                            CustomerZipcode = reader.GetString(8),
-                            CustCountry = reader.GetString(9),
-                            CustomerEmail = reader.GetString(10),
-                            CPassword = reader.GetString(11)
+                            CustomerID = reader.GetInt32(0),
+                            CFirstName = reader.GetString(1),
+                            CLastName = reader.GetString(2),
+                            CDateofBirth = reader.GetString(3),
+                            CustomerAddress = reader.GetString(4),
+                            CustomerState = reader.GetString(5),
+                            CustomerCity = reader.GetString(6),
+                            CustomerZipcode = reader.GetString(7),
+                            CustCountry = reader.GetString(8),
+                            CustomerEmail = reader.GetString(9),
+                            CPassword = reader.GetString(10)
                     });
 
                 }

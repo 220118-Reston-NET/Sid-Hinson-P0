@@ -22,17 +22,8 @@ namespace StoreBL
         public Customers AddCustomers(Customers p_cust)
         {
             List<Customers> listofcustomers = _repo.GetAllCustomers();
-
-            if(listofcustomers.Count < 20)
-            {
-                Console.WriteLine("Adding Customer............");
-                return _repo.AddCustomers(p_cust);
-            }   
-            else
-            {
-                throw new Exception("Limit of 20 Customers is reached");
-            }
-
+            Console.WriteLine("Adding Customer............");
+            return _repo.AddCustomers(p_cust);
         }
         
         /// <summary>
