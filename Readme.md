@@ -1,3 +1,4 @@
-@Sid Hinson
+@Sid Hinson, sid.hinson@revature.net
 Retro Gaming Store Shop Project 0
-C# UI / ADO.NET Connection / Azure SQL Repo-DB
+Concept : " Online Gaming Merchant "
+C# UI / Azure SQL Repo-DB

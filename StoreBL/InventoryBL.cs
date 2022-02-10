@@ -32,6 +32,24 @@ namespace StoreBL
                     .ToList(); //ToList method converts into return List collection
         }
 
+        public Inventory Search4Inv(int p_storeID, int p_prodID)
+        {
+            Inventory getinv = new Inventory();
+            List<Inventory> listofInventory = _repo.GetAllInventory();
+            for(int i = 0; i < listofInventory.Count; i++)
+            {   
+                Inventory foundproduct = new Inventory();
+                if(listofInventory[i].Equals(p_storeID) & listofInventory[i].Equals(p_prodID))
+                {
+                    foundproduct = listofInventory[i];
+                    return foundproduct;
+                }
+              getinv = foundproduct;
+              return getinv;
+            }
+            return getinv;
+        }
+
         public Inventory FindItem(int p_storeID, int p_prodID)
         {
             List<Inventory> listofInventory = _repo.GetAllInventory();

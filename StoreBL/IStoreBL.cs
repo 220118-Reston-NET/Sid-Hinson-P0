@@ -46,14 +46,14 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_sfront"></param>
         /// <returns></returns>
-        StoreFronts AddStoreFronts(StoreFronts p_sfront);
+        public StoreFronts AddStoreFronts(StoreFronts p_sfront);
 
         /// <summary>
         /// Will return List of objects related to Search query through p_name parameter
         /// </summary>
         /// <param name="p_storeNumber"></param>
         /// <returns>Filtered Search Results </returns>
-        List<StoreFronts> SearchStoreFronts(int p_storeNumber);
+        public List<StoreFronts> SearchStoreFronts(int p_storeNumber);
         
     }
 
@@ -64,14 +64,22 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_product"></param>
         /// <returns></returns>
-        Products AddProducts(Products p_product);
+        public Products AddProducts(Products p_product);
 
         /// <summary>
         /// Will return List of objects related to Search query through p_name parameter
         /// </summary>
         /// <param name="p_productNumber"></param>
         /// <returns>Filtered Search Results </returns>
-        List<Products> SearchProducts(string p_productName, string p_productComp, int p_productStoreID);
+        public List<Products> SearchProducts(string p_productName, string p_productComp, int p_productStoreID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_productName"></param>
+        /// <param name="p_productComp"></param>
+        /// <param name="p_productStoreID"></param>
+        /// <returns></returns>
+        public Products Search4Product(string p_productName, string p_productComp, int p_productStoreID);
         // List<Products> SearchProductsCat(string p_productCat);
         // List<Products> SearchProductsComp(string p_productComp);
         public List<Products> SearchProductsComp(string p_productComp);
@@ -109,12 +117,15 @@ namespace StoreBL
 
     public interface IOrdersBL
     {
+
+        //*********Orders***********//
+
         /// <summary>
         /// Add Orders to Repo
         /// </summary>
         /// <param name="p_order"></param>
         /// <returns>order</returns>
-        Orders AddOrders(Orders p_order);
+        public Orders AddOrders(Orders p_order);
 
         /// <summary>
         /// 
@@ -193,6 +204,14 @@ namespace StoreBL
         /// <param name="p_storeID"></param>
         /// <param name="p_prodID"></param>
         /// <returns></returns>
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_storeID"></param>
+        /// <param name="p_prodname"></param>
+        /// <returns></returns>
+        public Inventory Search4Inv(int p_storeID, int p_prodID);
         public Inventory FindItem(int p_storeID, int p_prodID);
         /// <summary>
         /// 

@@ -83,8 +83,8 @@ namespace StoreUI
                                     foreach (Products product in listofproductc)
                                     {
                                         Console.WriteLine("Here is Associated Line Item Product Information :");
-                                        Console.WriteLine("Please Press Enter to Continue");
                                         Console.WriteLine(product);
+                                        Console.WriteLine("Please Press Enter to Continue");
                                         Console.ReadLine();
                                     }
                             }
@@ -145,9 +145,10 @@ namespace StoreUI
                                     foreach (Products product in listofproductc)
                                     {   
                                         Console.WriteLine("Here is Associated Line Item Product Information :");
+                                        Console.WriteLine(product);
                                         Console.WriteLine("Please Press Enter to Continue");
                                         Console.ReadLine();
-                                        Console.WriteLine(product);
+
                                     }
                             }
                         }

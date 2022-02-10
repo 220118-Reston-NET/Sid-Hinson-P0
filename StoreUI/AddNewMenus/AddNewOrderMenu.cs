@@ -128,7 +128,7 @@ namespace StoreUI
                     //Building Line Item
                     CartItem = _orderBL.AddItemFields(_productID, _productQuantity,_productStoreID, _productPrice);
                     //Running Total
-                    OrderTotal += _productPrice;
+                    OrderTotal += (_productPrice * _productQuantity);
                     
                     //Validate Inventory Level
                     Inventory parlevel = new Inventory();
@@ -246,36 +246,50 @@ namespace StoreUI
                     foreach(LineItems item in _shoppingCart)
                     {
                         _orderBL.AddLineItems(item);
+                        Console.WriteLine($"Added to DB : {item}");
                     }
-     
+                    Console.WriteLine("Press Enter to Continue");
+                    Console.ReadLine();
                     
                     //Update Inventory
                     //Set IDs, Pull Inventory Item Info, subtract quantity, reupdate Item totals in DB
                     //Throws exceptions when needed
                     foreach(LineItems item in _shoppingCart)
                     {
-                    //New Inventory object every loop
-                    Inventory inventoryobj1 = new Inventory();
-                    //Populating Fields
-                    item.StoreID = inventoryobj1.StoreID;
-                    item.ProductID = inventoryobj1.ProductID;
-                    //Calculate Quantity to subtract in a Variable
-                    int subtractvalue = item.ProductQuantity;
-                    //Second Inventory object to hold the actual Row Record We Need to Manipulate
-                    Inventory inventoryobj2 = new Inventory();
-                    inventoryobj2 = _inv.FindItem(inventoryobj1.StoreID, inventoryobj1.ProductID);
-                    //Subtract the Value From the Quantity
-                    inventoryobj2.ProductQuantity -= subtractvalue;
-                        if(inventoryobj2.ProductQuantity < 0)
-                        {
-                            Console.WriteLine($"We cannot fulfill your order. We are missing {inventoryobj2.ProductQuantity} units ");
-                            Console.WriteLine("Press Enter to Continue");
-                            Console.ReadLine();
-                        }
-                        else
-                        {
-                            _inv.UpdateInventory(inventoryobj2);
-                        }
+                        //New Inventory object every loop
+                        Inventory inventoryobj1 = new Inventory();
+                        //Populating Fields
+                        inventoryobj1.StoreID = item.StoreID;
+                        inventoryobj1.ProductID = item.ProductID;
+                        //Calculate Quantity to subtract in a Variable
+                        int subtractvalue = item.ProductQuantity;
+                        Console.WriteLine($"Inventory Will be subtracted by: {subtractvalue}");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        //Second Inventory object to hold the actual Row Record We Need to Manipulate
+                        Inventory inventoryobj2 = new Inventory();
+                        inventoryobj2 = _inv.FindItem(inventoryobj1.StoreID, inventoryobj1.ProductID);
+                        Console.WriteLine($"Inventory previously held : {inventoryobj2.ProductQuantity}");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        //Subtract the Value From the Quantity
+                        inventoryobj2.ProductQuantity -= subtractvalue;
+                        Console.WriteLine($"Inventory will now have {inventoryobj2.ProductQuantity}");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                            if(inventoryobj2.ProductQuantity < 0)
+                            {
+                                Console.WriteLine($"We cannot fulfill your order. We are missing {inventoryobj2.ProductQuantity} units ");
+                                Console.WriteLine("Press Enter to Continue");
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                _inv.UpdateInventory(inventoryobj2);
+                                Console.WriteLine($"Inventory Item Now Added :  {inventoryobj2}");
+                                Console.WriteLine("Press Enter to Continue");
+                                Console.ReadLine();
+                            }
                     }
                 }
                 catch(InvalidDataException)
@@ -283,6 +297,8 @@ namespace StoreUI
                     Console.WriteLine("The Data could not be processed.");
                     Console.WriteLine("Please Look at your Order Input Data and Try Again.");
                 }
+                Console.WriteLine("Press Enter to Continue");
+                Console.ReadLine();
                 return "AddNewOrderMenu";
                     
 

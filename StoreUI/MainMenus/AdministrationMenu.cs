@@ -8,22 +8,21 @@ namespace StoreUI
         {
             //********TODO: View/Update Order Inventory
             Console.Clear();
-            Console.WriteLine("================================================");
-            Console.WriteLine("=             Administration Menu               =");
-            Console.WriteLine("================================================");
-            Console.WriteLine("=               Select Option                   =");     
-            Console.WriteLine("================================================");
-            Console.WriteLine("=[0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=[1] - Enter New Customer                      ="); 
-            Console.WriteLine("=[2] - Search For Customer                     =");
-            Console.WriteLine("=[3] - Enter New StoreFront                    =");
-            Console.WriteLine("=[4] - Search For StoreFront                   =");
-            Console.WriteLine("=[5] - Enter New Warehouse Product             =");
-            Console.WriteLine("=[6] - Search For Warehouse Product            =");
-            Console.WriteLine("================================================");
-            Console.WriteLine("=========================================================="); 
-            Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
-            Console.WriteLine("==========================================================");
+            Console.WriteLine("   ==================================================");
+            Console.WriteLine("   =             Administration Menu                =");
+            Console.WriteLine("   ==================================================");
+            Console.WriteLine("   =               Select Option                    =");     
+            Console.WriteLine("   ==================================================");
+            Console.WriteLine("   = [0] - Return to Main Menu / Exit               =");
+            Console.WriteLine("   = [1] - Enter New Customer                       ="); 
+            Console.WriteLine("   = [2] - Search For Customer                      =");
+            Console.WriteLine("   = [3] - Enter New StoreFront                     =");
+            Console.WriteLine("   = [4] - Search For StoreFront                    =");
+            Console.WriteLine("   = [5] - Enter New Warehouse Product              =");
+            Console.WriteLine("   = [6] - Search For Warehouse Product             =");
+            Console.WriteLine("   = [8] - Check Product Level/Replenish Product    =");
+            Console.WriteLine("   ==================================================");
+
         }
 
         public string UserSelection()
@@ -53,8 +52,8 @@ namespace StoreUI
                 case "6":
                     Log.Information("User is selecting Search Products Menu");
                     return "SearchProductsMenu";
-                case "7":
-                    Log.Information("User is selecting Display All Products in Store Menu");
+                case "8":
+                    Log.Information("User is selecting Check/Update Product");
                     return "DisplayAllProdsStoreMenu";
                 default:
                     Log.Information("User is making an Invalid Selection");
