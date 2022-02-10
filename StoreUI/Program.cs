@@ -30,13 +30,20 @@ var configuration = new ConfigurationBuilder()
 
 string _connectionString = configuration.GetConnectionString("Ref2DB");
 
+
+//Main Logo Presentation Layer
 StoreMainLogo main = new StoreMainLogo();
 main.Display();
+
+
 /// <summary>
 /// Program Runtime Logic
 /// </summary>
 bool isValid = true;
 IMenu mainmenu = new StoreMainMenu();
+
+
+
 while(isValid)
 {
     mainmenu.MenuDisplay();
@@ -46,57 +53,66 @@ while(isValid)
     switch(userInput)
     {
         case "StoreMainMenu":
-            // Log.Information("Displaying Main Menu to user");
+            Log.Information("Displaying Main Menu to user");
             mainmenu = new StoreMainMenu();
             break;
         //Added in very primtive password protection : Pass is "8675309"
         //Added in For Effect ONLY; to be implemented better in future projects
         case "AdministrationMenu":
-            AdminValidate admin = new AdminValidate();
-            bool uservalidate = admin.ValidateAdminPassword();
-            if (uservalidate == true)
-            {
-                mainmenu =  new AdministrationMenu();
-            }
-            else
-            {
-                Console.WriteLine("Incorrect Password");
-                mainmenu = new StoreMainMenu();
-                break;
-            }
+            // AdminValidate admin = new AdminValidate();
+            // bool uservalidate = admin.ValidateAdminPassword();
+            // if (uservalidate == true)
+            // {
+            //     mainmenu =  new AdministrationMenu();
+            // }
+            // else
+            // {
+            //     Console.WriteLine("Incorrect Password");
+            //     mainmenu = new StoreMainMenu();
+            //     break;
+            // }
             mainmenu =  new AdministrationMenu();
             break;
         case "CustomersMenu":
+            Log.Information("Displaying Customers Menu to user");
             mainmenu = new CustomersMenu();
             break;
         case "NewCustomersMenu":
-            // Log.Information("Displaying New Customer Menu to user");
+            Log.Information("Displaying New Customer Menu to user");
             mainmenu = new NewCustomersMenu(new CustomersBL(new SQL_CRepository(_connectionString)));
             break;
         case "SearchCustomersMenu":
-            // Log.Information("Displaying Search Results Menu to user");
+            Log.Information("Displaying Search Results Menu to user");
             mainmenu = new SearchCustomersMenu(new CustomersBL(new SQL_CRepository(_connectionString)));
             break;
         case "NewStoreFrontsMenu":
-            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            Log.Information("Displaying New Store Fronts Menu to user");
+            mainmenu = new NewStoreFrontsMenu(new StoreFrontsBL(new SQL_SRepository(_connectionString)));
             break;
         case "SearchStoreFrontsMenu":
-            mainmenu = new SearchStoreFrontsMenu(new StoreFrontsBL(new StoreFrontsRepository()));
+            Log.Information("DisplayingSearch Store Fronts Menu to user");
+            mainmenu = new SearchStoreFrontsMenu(new StoreFrontsBL(new SQL_SRepository(_connectionString)));
             break;
         case "AddNewProductsMenu":
-            mainmenu = new AddNewProductsMenu(new ProductsBL(new ProductsRepository()));
+            Log.Information("Displaying Add New Products Menu to user");
+            mainmenu = new AddNewProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)));
             break;
         case "SearchProductsMenu":
-            mainmenu = new SearchProductsMenu(new ProductsBL(new ProductsRepository()));
+            Log.Information("Displaying Search products Menu to user");
+            mainmenu = new SearchProductsMenu(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
         case "AddNewOrderMenu":
-            mainmenu = new AddNewOrderMenu(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+            //Uses Quadruple Dependecy Injection to Abstract Access to All BL Methods information 
+            Log.Information("Displaying Add New orders Menu to user");
+            mainmenu = new AddNewOrderMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)));
             break;
         case "AddBusinessTransaction":
+            Log.Information("Displaying Add Business Transaction Menu to user");
             mainmenu = new AddBusinessTransaction();
             break;
         case "AddProductsDisplay":
-            mainmenu = new AddProductsDisplay(new OrdersBL(new OrdersRepository()), new ProductsBL(new ProductsRepository()), new CustomersBL(new CustomersRepository()));
+            Log.Information("Displaying Products Display Menu to user");
+            mainmenu = new AddProductsDisplay(new ProductsBL(new SQL_PRepository(_connectionString)));
             break;
         case "Exit":
             Log.Information("User has Exited The Program");
@@ -104,7 +120,7 @@ while(isValid)
             isValid = false;
             break;
         default:
-            // Log.Information("User input wrong selection");
+            Log.Information("User Input Wrong Selection");
             Console.WriteLine("No Page Found!");
             Console.WriteLine("Press Enter to Continue");
             Console.ReadLine();

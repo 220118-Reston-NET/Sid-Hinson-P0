@@ -35,38 +35,48 @@ namespace StoreUI
 
         public string UserSelection()
         {
+            Log.Information("User is inputting the Menu Selection");
             string userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "0":
+                    Log.Information("User is selecting Store Main Menu");
                     return "StoreMainMenu";
 
-
+                // Store Address Entry
                 case "1":
+                    Log.Information("User is inputting the Store Front Street Address");
                     Console.WriteLine("Enter a Street Address : ");
                     _newStoreFronts.StoreAddress = Console.ReadLine();
+                    _newStoreFronts.StoreAddress= _newStoreFronts.StoreAddress.ToUpper();
                     return "NewStoreFrontsMenu";
 
-
+                // Store City Entry
                 case "2":
+                    Log.Information("User is inputting the Store Front City");
                     Console.WriteLine("Enter a Store City : ");
                     _newStoreFronts.StoreCity = Console.ReadLine();
+                    _newStoreFronts.StoreCity = _newStoreFronts.StoreCity.ToUpper();
                     return "NewStoreFrontsMenu";
 
-
+                // Store Zip Code entry
                 case "3":
-                    Console.WriteLine("Enter a Zip Code : ");
-                    _newStoreFronts.StoreZipCode = Console.ReadLine();
+                   Log.Information("User is inputting the Store Front Zip Code");
+                    Console.WriteLine("Enter a Zip Code: ");
+                   _newStoreFronts.StoreZipCode = Console.ReadLine();
                     return "NewStoreFrontsMenu";
 
-
+                // Store State Entry
                 case "4":
+                   Log.Information("User is inputting the Store Front State");
                     Console.WriteLine("Enter a State Location : ");
                     _newStoreFronts.StoreState = Console.ReadLine();
+                    _newStoreFronts.StoreState = _newStoreFronts.StoreState.ToUpper();
                     return "NewStoreFrontsMenu";
 
-
+                // * Save to DB
                 case "5":
+                    Log.Information("User is attempting to save the Store Front to The DB");
                     try
                     {   
                         _frontBL.AddStoreFronts(_newStoreFronts);
@@ -83,6 +93,9 @@ namespace StoreUI
 
                     
                     default:
+                    Log.Information("User has made an Invalid Selection");
+                    Console.WriteLine("You have made an Invalid Selection - Please Press Enter to Continue");
+                    Console.ReadLine();
                     return "NewStoreFrontsMenu";
             }
         }

@@ -14,19 +14,16 @@ namespace StoreModel
         //Product Category 
         public string ProductCategory { get; set; }
 
-        public int ProductSTFQuantity { get; set; }
-
         //Default Constructor
 
         public Products()
         {
-            ProductID = 0;
-            StoreID = 0;
-            ProductName = "";
-            ProductCompany ="";
-            ProductPrice = 0.00;
-            ProductDescription = "";
-            ProductCategory = "";
+            StoreID = 1;
+            ProductName = "SNES";
+            ProductCompany ="NINTENDO";
+            ProductPrice = 200.00;
+            ProductDescription = "RETRO GAMING SYSTEM";
+            ProductCategory = "SYSTEM";
         }
 
     public override string ToString()

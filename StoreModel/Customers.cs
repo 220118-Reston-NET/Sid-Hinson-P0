@@ -4,6 +4,8 @@
     /// <summary>
     /// Customer Class with Private Fields,Default Constructor
     /// </summary>
+    /// Instead of throwing exceptions, a suggestion is made to fix.
+    /// Input Validation on UI side should fix the issues instead of a THROW
     public class Customers
     {
     
@@ -21,9 +23,9 @@
                 }
                 else
                 {
-                    throw new NullReferenceException("First Name must be entered.");
+                    Console.WriteLine("First Name must be entered.");
                 }
-
+                
             }
         }
 
@@ -40,7 +42,7 @@
                 }
                 else
                 {
-                    throw new NullReferenceException("Last Name must be entered.");
+                    Console.WriteLine("Last Name must be entered.");
                 }
 
             }
@@ -53,16 +55,16 @@
 
             set 
             { 
-                if (value != "")
+                if (value != "" & value.Length >= 8)
                 {
                     _DateofBirth = value; 
             
                 }
                 else
                 {
-                    throw new NullReferenceException("Last Name must be entered.");
+                    Console.WriteLine("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
                 } 
-                
+
             }
         }
         private string _CustomerAddress;
@@ -78,7 +80,7 @@
                 }
                 else
                 {
-                    throw new NullReferenceException("Address must be entered.");
+                    Console.WriteLine("Address must be entered.");
                 }
 
             }
@@ -96,7 +98,7 @@
                 }
                 else
                 {
-                    throw new NullReferenceException("City must be entered.");
+                    Console.WriteLine("City must be entered.");
                 }
 
             }
@@ -109,7 +111,15 @@
 
             set 
             {
-               _CustomerState = value;
+                if (value != "")
+                {
+                    _CustomerState = value;
+                }
+                else
+                {
+                    Console.WriteLine("Must Be 2 Letters");
+                }
+
             }
         }
         private string _CustomerZipcode;
@@ -119,13 +129,13 @@
 
             set 
             {
-                if (value.Length >= 5)
+                if (value != "")
                 {
                     _CustomerZipcode = value;
                 }
                 else
                 {
-                    throw new NullReferenceException("Not Enough Digits");
+                    Console.WriteLine("Cant be Null.");
                 }
 
             }
@@ -144,7 +154,7 @@
                 }
                 else
                 {
-                    throw new NullReferenceException("City must be entered.");
+                    Console.WriteLine("City must be entered.");
                 }
 
             }
@@ -157,13 +167,13 @@
 
             set 
             {
-                if (string.IsNullOrEmpty(value))
+                if (value != "")
                 {
-                    throw new NullReferenceException("Email must have a input.");
+                    _CustomerEmail = value;
                 }
                 else
                 {
-                    _CustomerEmail = value;
+                    Console.WriteLine("Email must have a input.");
                 }
 
             }
@@ -175,33 +185,31 @@
 
             set 
             {
-                if (string.IsNullOrEmpty(value))
-                {
-                    throw new NullReferenceException("Password must have an input.");
-
-                }
-                else
+                if (value != "")
                 {
                     _Password = value;
                 }
-
+                else
+                {
+                    Console.WriteLine("Password must have an input.");
+                }
+ 
             }
         }
 
         //Default Class Constructor
         public Customers()
         {
-            CustomerID = 0;
-            CFirstName = "John";
-            CLastName = "Doe";
-            CDateofBirth = "010180";
-            CustomerAddress = "111 Street St";
-            CustomerState = "GA";
-            CustomerCity = "Macon";
-            CustomerZipcode = "55555";
+            CFirstName = "STEPHEN";
+            CLastName = "STRANGE";
+            CDateofBirth = "11181930";
+            CustomerAddress = "117A BlEECKER STREET";
+            CustomerState = "NY";
+            CustomerCity = "NEW YORK CITY";
+            CustomerZipcode = "10011";
             CustCountry = "USA";
-            CustomerEmail = "john@aol.com";
-            CPassword = "john@aol.com";
+            CustomerEmail = "STEPHEN.STRANGE@AOL.COM";
+            CPassword = "mordoisajerk";
         }
 
         public override string ToString()

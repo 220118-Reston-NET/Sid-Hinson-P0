@@ -66,15 +66,27 @@ namespace StoreUI
 
                     }
 
-                    //***TODO***: Display Logic for Search Function - Add full iteration to actual method
+                    //Search for Customer
                     List<Customers> listofcustomers = _custBL.SearchCustomers(p_Fname, p_Lname, p_Email);
-                    foreach (var Customer in listofcustomers)
+                    if(listofcustomers.Any())
                     {
-                        Console.WriteLine(Customer);
+                        foreach (var Customer in listofcustomers)
+                        {
+                            Console.WriteLine(Customer);
+                        }
+                        Console.WriteLine("Press Enter");
+                        Console.ReadLine();
+                        return "SearchCustomersMenu";
                     }
-                    Console.WriteLine("Press Enter");
-                    Console.ReadLine();
-                    return "SearchCustomersMenu";
+                    else
+                    {
+                        //Confirm to User no result
+                        Console.WriteLine("Your search did not return any results. Please try again");
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchCustomersMenu";
+                    }
+
 
 
                 default:

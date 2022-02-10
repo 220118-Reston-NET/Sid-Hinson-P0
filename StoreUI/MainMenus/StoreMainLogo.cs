@@ -27,6 +27,7 @@ namespace StoreUI
             Console.WriteLine("=  Your Home For All Things Gaming --> Retro and New | Follow Us on Instagram  =");
             Console.WriteLine("================================================================================");
             Console.WriteLine("           ↓↓↓↓   Press Enter to Access Services and Products   ↓↓↓↓            ");
+            Log.Information("User is pressing enter to go to Main Program Menu");
             Console.ReadLine();
 
 

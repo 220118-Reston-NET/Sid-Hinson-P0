@@ -64,11 +64,25 @@ namespace StoreBL
         public List<Products> SearchProductsCat(string p_productCat);
         public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID);
         public int GetID(string p_prodName, string p_prodComp, int p_StoreID);
+
+        public List<Products> GetAllProducts();
  
     }
 
     public interface IOrdersBL
     {
+        public List<Orders> GetAllOrders();
+        /// <summary>
+        /// Add Line Items to Repo
+        /// </summary>
+        /// <param name="p_line"></param>
+        /// <returns>linetime</returns>
+        public LineItems AddLineItems(LineItems p_line);
+        /// <summary>
+        /// Add Orders to Repo
+        /// </summary>
+        /// <param name="p_order"></param>
+        /// <returns>order</returns>
         Orders AddOrders(Orders p_order);
 
         /// <summary>
@@ -78,11 +92,33 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(string p_email);
-        public LineItems AddItem(int p_prodID, int p_prodStoreID, string p_prodName, double p_prodPrice, int p_prodQuant);
+        public LineItems AddItemFields(int p_prodID, int p_prodQuant, int p_storeID, double p_price);
         public List<LineItems> RemoveFromCart(List<LineItems> p_orderList);
 
-        public List<LineItems> DisplayCart(List<LineItems> p_List);
+        public List<LineItems> DisplayCart(List<LineItems> p_list);
         public void DisplayGraphic();
+
+    }
+
+        public interface IInventoryBL
+    {
+        /// <summary>
+        /// Adds Inventory to DB passing a Inventory obj
+        /// </summary>
+        /// <param name="p_inv"></param>
+        /// <returns></returns>
+        public Inventory AddInventory(Inventory p_inv);
+
+        /// <summary>
+        /// Will return List of objects related to Search query through p_name parameter
+        /// </summary>
+        /// <param name="p_storeNumber"></param>
+        /// <returns>Filtered Search Results </returns>
+        public List<Inventory> SearchInventory(int p_storeID, int p_prodID);
+        public Inventory FindItem(int p_storeID, int p_prodID);
+
+        public Inventory UpdateInventory(Inventory p_inv);
+
     }
 }
 

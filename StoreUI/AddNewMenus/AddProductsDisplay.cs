@@ -6,14 +6,12 @@ namespace StoreUI
     {
         //Dependency Injection
         private IProductsBL _productBL;
-        private IOrdersBL _orderBL;
-        private ICustomersBL _customerBL;
         
-        public AddProductsDisplay(IOrdersBL p_orderBL, IProductsBL p_productBl, ICustomersBL p_customerBL)
+        public AddProductsDisplay(IProductsBL p_productBl)
         {
-            _orderBL = p_orderBL;
+            
             _productBL = p_productBl;
-            _customerBL = p_customerBL;
+            
         }
         public void MenuDisplay()
         {
@@ -30,9 +28,9 @@ namespace StoreUI
             Console.WriteLine("********************************************************************************");
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("    =========================================================="); 
-            Console.WriteLine("    )xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
-            Console.WriteLine("    ==========================================================");
+            Console.WriteLine("   =========================================================="); 
+            Console.WriteLine("   )xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
+            Console.WriteLine("   ==========================================================");
             Console.WriteLine("*******************************************************************");
             Console.WriteLine("***** Enter a Category To See Inventory - Games - or - Systems ****");
             Console.WriteLine("*******************************************************************");

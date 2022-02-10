@@ -26,25 +26,35 @@ namespace StoreUI
 
         public string UserSelection()
         {
+            Log.Information("User is selecting an input");
             string userInput = Console.ReadLine();
             while(string.IsNullOrEmpty(userInput))
             {
+                Log.Information("User is retrying to select an input");
                 Console.WriteLine("Please Input a Selection");
                 userInput = Console.ReadLine();
             }
             switch (userInput)
             {
                 case "0":
+                    Log.Information("User is selecting Store Main Menu");
                     return "StoreMainMenu";
                 case "1":
+                    Log.Information("User is selecting New Customers Menu");
                     return "NewCustomersMenu";
                 case "2":
+                    Log.Information("User is selecting Search Store Fronts Menu");
                     return "SearchStoreFrontsMenu";
                 case "3":
+                    Log.Information("User is selecting Add Business Transaction Menu");
                     return "AddBusinessTransaction";               
                 case "4":
+                    Log.Information("User is selecting Add New Order Menu");
                     return "AddNewOrderMenu";                    
                 default:
+                    Log.Information("User has made an invalid selection");
+                    Console.WriteLine("Invalid Selection. Please Try Again. Press Enter to Continue");
+                    Console.ReadLine();
                     return "StoreMainMenu";
             }
         }
