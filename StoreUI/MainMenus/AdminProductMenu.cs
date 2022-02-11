@@ -1,6 +1,5 @@
 using StoreModel;
 using StoreBL;
-using StoreUI;
 
 namespace StoreUI
 {

@@ -62,6 +62,8 @@ namespace StoreDL
         /// </summary>
         /// <returns>Returns List</returns>
         public List<Orders> GetAllOrders();
+
+        public void UpdateOrdStat(int p_ordID, string p_stat);
         public LineItems AddLineItems(LineItems p_line);
 
         public List<LineItems> GetAllLineItems();

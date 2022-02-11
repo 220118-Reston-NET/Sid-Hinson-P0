@@ -31,13 +31,13 @@ namespace StoreBL
         public Orders AddOrders(Orders p_order)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
-            if(listoforders.Count < 500)
+            if(listoforders.Count < 1000)
             {
                 return _repo.AddOrders(p_order);
             }
             else
             {
-                throw new Exception("Limit of 500 Orders is reached");
+                throw new Exception("Limit of 1000 Orders is reached");
             }
         }
 
@@ -53,6 +53,34 @@ namespace StoreBL
                     .Where(Orders => Orders.OrderCustID.Equals(p_custID))
                     .Where(Orders => Orders.OrderStatus.Contains(p_status))
                     .ToList(); //ToList method converts into return List collection
+        }
+        public List<Orders> Search4Order(int p_custID, int p_storeID)
+        {
+            List<Orders> listoforders = _repo.GetAllOrders();
+            return listoforders
+                    .Where(Orders => Orders.OrderCustID.Equals(p_custID))
+                    .Where(Orders => Orders.OrderStatus.Equals(p_storeID))
+                    .ToList(); //ToList method converts into return List collection
+        }
+
+        public Orders SearchOrdStat(int p_ordID)
+        {
+            Orders foundord = new Orders();
+            List<Orders> listoforders = _repo.GetAllOrders();
+            foreach(Orders ord in listoforders)
+            {
+                if(ord.OrderID == p_ordID)
+                {
+                    return ord;
+                }
+                foundord = ord;
+            }
+            return foundord;
+        }
+
+        public void UpdateOrdStat(int p_ordID, string p_stat)
+        {
+            _repo.UpdateOrdStat(p_ordID, p_stat);
         }
 
         //******LineItems*******//

@@ -35,6 +35,26 @@ namespace StoreDL
             return p_ord;
         }
 
+        public void UpdateOrdStat(int p_ordID, string p_stat)
+        {
+            Console.WriteLine("Changing Order Status");
+            string sqlQuery = @"UPDATE Orders
+                                SET  OrderStatus = @OrderStatus
+                                WHERE OrderID = @OrderID";
+
+
+            using(SqlConnection con = new SqlConnection(_ConnectionStrings))
+            {          
+                con.Open();
+                SqlCommand command =  new SqlCommand(sqlQuery, con);
+                command.Parameters.AddWithValue("@OrderID", p_ordID);
+                command.Parameters.AddWithValue("@OrderStatus", p_stat);
+                command.ExecuteNonQuery();
+                Console.WriteLine("Inventory Updated");
+            }
+        
+        }
+
         public LineItems AddLineItems(LineItems p_line)
         {
             string sqlQuery = @"insert into LineItems 

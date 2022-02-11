@@ -29,6 +29,14 @@ namespace StoreBL
         /// <param name="p_pass"></param>
         /// <returns></returns>
         List<Customers> SearchCustomers(string p_fname, string p_lname, string p_email, string p_pass);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_fname"></param>
+        /// <param name="p_lname"></param>
+        /// <returns></returns>
+        List<Customers> Search4Customers(string p_fname, string p_lname, string p_city, string p_state);
         /// <summary>
         /// 
         /// </summary>
@@ -141,6 +149,26 @@ namespace StoreBL
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(int p_custID, string p_status);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_custID"></param>
+        /// <param name="p_storeID"></param>
+        /// <returns></returns>
+        public List<Orders> Search4Order(int p_custID, int p_storeID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_ordID"></param>
+        /// <returns></returns>
+        public Orders SearchOrdStat(int p_ordID);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_ordID"></param>
+        /// <param name="p_stat"></param>
+        public void UpdateOrdStat(int p_ordID, string p_stat);
 
         //********Lineitems**********//
 
@@ -159,7 +187,11 @@ namespace StoreBL
         /// <param name="p_price"></param>
         /// <returns></returns>
         public LineItems AddItemFields(int p_prodID, int p_prodQuant, int p_storeID, double p_price);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_orderID"></param>
+        /// <returns></returns>
         public List<LineItems> SearchLineItems(int p_orderID);
         /// <summary>
         /// 
@@ -193,18 +225,13 @@ namespace StoreBL
         public Inventory AddInventory(Inventory p_inv);
 
         /// <summary>
-        /// Will return List of objects related to Search query through p_name parameter
-        /// </summary>
-        /// <param name="p_storeNumber"></param>
-        /// <returns>Filtered Search Results </returns>
-        public List<Inventory> SearchInventory(int p_storeID, int p_prodID);
-        /// <summary>
         /// 
         /// </summary>
         /// <param name="p_storeID"></param>
         /// <param name="p_prodID"></param>
         /// <returns></returns>
-        
+        public List<Inventory> SearchInventory(int p_storeID, int p_prodID);
+
         /// <summary>
         /// 
         /// </summary>
@@ -212,6 +239,12 @@ namespace StoreBL
         /// <param name="p_prodname"></param>
         /// <returns></returns>
         public Inventory Search4Inv(int p_storeID, int p_prodID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_storeID"></param>
+        /// <param name="p_prodID"></param>
+        /// <returns></returns>
         public Inventory FindItem(int p_storeID, int p_prodID);
         /// <summary>
         /// 

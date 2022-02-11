@@ -1,5 +1,5 @@
-using StoreModel;
-using StoreBL;
+
+
 namespace StoreUI
 {
     public class AdministrationMenu : IMenu
@@ -20,7 +20,8 @@ namespace StoreUI
             Console.WriteLine("   = [4] - Search For StoreFront                    =");
             Console.WriteLine("   = [5] - Enter New Warehouse Product              =");
             Console.WriteLine("   = [6] - Search For Warehouse Product             =");
-            Console.WriteLine("   = [8] - Check Product Level/Replenish Product    =");
+            Console.WriteLine("   = [7] - Check Orders Status/Change Status        =");
+            Console.WriteLine("   = [8] - Check Product Level/Replenish Level      =");
             Console.WriteLine("   ==================================================");
 
         }

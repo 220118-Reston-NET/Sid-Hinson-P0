@@ -37,9 +37,9 @@ namespace StoreBL
         {
         List<Customers> listofcustomers = _repo.GetAllCustomers();
         return listofcustomers
-                    .Where(Customers => Customers.CFirstName.Equals(p_fname))
-                    .Where(Customers => Customers.CLastName.Equals(p_lname))
-                    .Where(Customers => Customers.CustomerEmail.Equals(p_email)) //Filter a collection with a Lambda
+                    .Where(Customers => Customers.CFirstName.Contains(p_fname))
+                    .Where(Customers => Customers.CLastName.Contains(p_lname))
+                    .Where(Customers => Customers.CustomerEmail.Contains(p_email)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
 
@@ -47,10 +47,21 @@ namespace StoreBL
         {
         List<Customers> listofcustomers = _repo.GetAllCustomers();
         return listofcustomers
-                    .Where(Customers => Customers.CFirstName.Equals(p_fname))
-                    .Where(Customers => Customers.CLastName.Equals(p_lname))
-                    .Where(Customers => Customers.CustomerEmail.Equals(p_email))
-                    .Where(Customers => Customers.CPassword.Equals(p_pass)) //Filter a collection with a Lambda
+                    .Where(Customers => Customers.CFirstName.Contains(p_fname))
+                    .Where(Customers => Customers.CLastName.Contains(p_lname))
+                    .Where(Customers => Customers.CustomerEmail.Contains(p_email))
+                    .Where(Customers => Customers.CPassword.Contains(p_pass)) //Filter a collection with a Lambda
+                    .ToList(); //ToList method converts into return List collection
+        }
+        public List<Customers> Search4Customers(string p_fname, string p_lname, string p_city, string p_state)
+        {
+                    List<Customers> listofcustomers = _repo.GetAllCustomers();
+        return listofcustomers
+                    .Where(Customers => Customers.CFirstName.Contains(p_fname))
+                    .Where(Customers => Customers.CLastName.Contains(p_lname))
+                    .Where(Customers => Customers.CustomerCity.Contains(p_city))
+                    .Where(Customers => Customers.CustomerState.Contains(p_state))
+                     //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
 
