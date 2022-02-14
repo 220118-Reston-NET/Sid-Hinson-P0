@@ -11,16 +11,18 @@ namespace StoreUI
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
             Console.WriteLine("==========================================================");
+            Console.WriteLine(" ***All NEW Customers Must Register / SHOP NOW to Order** ");
             Console.WriteLine("==========================================================");
             Console.WriteLine("=                     Customer Menu                      =");
             Console.WriteLine("==========================================================");
             Console.WriteLine("=              Enter Number to Select Option             =");     
             Console.WriteLine("==========================================================");
             Console.WriteLine("=          [0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=          [1] - Enter New Customer                      =");
+            Console.WriteLine("=          [1] - Enter Your Customer Information         =");
             Console.WriteLine("=          [2] - Search For StoreFront                   =");
             Console.WriteLine("=          [3] - Products & Orders Viewing               =");
-            Console.WriteLine("=          [4] - Order Products Menu                     =");
+            Console.WriteLine("=          [4] - Bulk Order Products Menu              =");
+            Console.WriteLine("=          [5] - SELECT STORE - STORE SHOP NOW           =");
             Console.WriteLine("==========================================================");
         }
 
@@ -50,7 +52,10 @@ namespace StoreUI
                     return "AddBusinessTransaction";               
                 case "4":
                     Log.Information("User is selecting Add New Order Menu");
-                    return "AddNewOrderMenu";                    
+                    return "AddNewOrderMenu";
+                case "5":
+                    Log.Information("User is selecting Shop NOW");
+                    return "AddShopNowMenu";                             
                 default:
                     Log.Information("User has made an invalid selection");
                     Console.WriteLine("Invalid Selection. Please Try Again. Press Enter to Continue");

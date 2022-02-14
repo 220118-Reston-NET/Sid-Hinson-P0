@@ -56,6 +56,16 @@ namespace StoreBL
                     .Where(Products => Products.ProductCategory.Contains(p_productCat))//Filter a collection with a Lamda
                     .ToList(); //ToList method converts into return List collection
         }
+
+        public List<Products> SearchProductsCat(string p_productCat, int p_storeID) 
+        {
+            Console.WriteLine("Searching for Product ...........");
+            List<Products> listofproducts = _repo.GetAllProducts();
+            return listofproducts
+                    .Where(Products => Products.ProductCategory.Contains(p_productCat))//Filter a collection with a Lamda
+                    .Where(Products => Products.StoreID.Equals(p_storeID))
+                    .ToList(); //ToList method converts into return List collection
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -132,6 +142,22 @@ namespace StoreBL
 
             }
 
+            return Price;
+        }
+
+        public double GetPrice(int p_productID)
+        {
+            double Price = 0;
+            List<Products> listofproducts = _repo.GetAllProducts();
+            for(int i = 0; i < listofproducts.Count; i++)
+            {
+                if(listofproducts[i].ProductName.Equals(p_productID))
+                {
+                    Price = listofproducts[i].ProductPrice;
+                    
+                }
+
+            }
             return Price;
         }
         /// <summary>

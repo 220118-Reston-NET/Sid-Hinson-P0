@@ -263,7 +263,7 @@ namespace StoreUI
                         inventoryobj1.ProductID = item.ProductID;
                         //Calculate Quantity to subtract in a Variable
                         int subtractvalue = item.ProductQuantity;
-                        Console.WriteLine($"Inventory Will be subtracted by: {subtractvalue}");
+                        Console.WriteLine($"Inventory will be subtracted by: {subtractvalue}");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
                         //Second Inventory object to hold the actual Row Record We Need to Manipulate

@@ -62,6 +62,8 @@ namespace StoreBL
         /// <param name="p_storeNumber"></param>
         /// <returns>Filtered Search Results </returns>
         public List<StoreFronts> SearchStoreFronts(int p_storeNumber);
+
+        public List<StoreFronts> GetStoreFronts();
         
     }
 
@@ -97,6 +99,7 @@ namespace StoreBL
         /// <param name="p_productCat"></param>
         /// <returns></returns>
         public List<Products> SearchProductsCat(string p_productCat);
+        public List<Products> SearchProductsCat(string p_productCat, int p_storeid);
         /// <summary>
         /// 
         /// </summary>
@@ -105,7 +108,7 @@ namespace StoreBL
         /// <param name="p_StoreID"></param>
         /// <returns></returns>
         public List<Products> SearchProductsID(int p_productID);
-
+        public double GetPrice(int p_productID);
         public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID);
         /// <summary>
         /// 

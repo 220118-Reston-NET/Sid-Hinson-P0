@@ -1,6 +1,5 @@
 ﻿global using Serilog;
 using StoreUI;
-using StoreModel;
 using StoreDL;
 using StoreBL;
 using Microsoft.Extensions.Configuration;
@@ -117,6 +116,11 @@ while(isValid)
         case "SearchOrdersCMenu":
             Log.Information("Displaying Search Orders Menu to user");
             mainmenu = new SearchOrdersCMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)));
+            break;
+        case "AddShopNowMenu":
+            //Uses Quadruple Dependecy Injection to Abstract Access to All BL Methods information 
+            Log.Information("Displaying Add New orders Menu to user");
+            mainmenu = new AddShopNowMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)),new StoreFrontsBL(new SQL_SRepository(_connectionString)));
             break;
         case "Exit":
             Log.Information("User has Exited The Program");

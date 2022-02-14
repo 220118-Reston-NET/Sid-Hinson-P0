@@ -118,7 +118,6 @@ namespace StoreModel
         //Default Class Constructor
         public StoreFronts()
         {
-            StoreID = 1;
             StoreAddress = "742 CHERRY STREET";
             StoreZipCode = "30210";
             StoreState = "GA";

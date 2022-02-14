@@ -2360,3 +2360,31 @@
 2022-02-10 18:06:02.073 -05:00 [INF] User is inputting their email password
 2022-02-10 18:08:14.084 -05:00 [INF] Displaying Add New orders Menu to user
 2022-02-10 18:08:14.119 -05:00 [INF] User is entering their selection
+2022-02-11 17:19:42.427 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-11 17:19:57.483 -05:00 [INF] User is selection an input
+2022-02-11 17:19:59.517 -05:00 [INF] User is selecting Customers Menu
+2022-02-11 17:19:59.518 -05:00 [INF] Displaying Customers Menu to user
+2022-02-11 17:19:59.528 -05:00 [INF] User is selecting an input
+2022-02-11 17:20:01.916 -05:00 [INF] User is selecting Shop NOW
+2022-02-11 17:20:01.916 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-12 23:28:46.106 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-12 23:28:46.148 -05:00 [INF] User is selection an input
+2022-02-12 23:28:57.402 -05:00 [INF] User is selecting Administration Menu
+2022-02-12 23:28:57.419 -05:00 [INF] User is making a Selection
+2022-02-12 23:29:08.566 -05:00 [INF] User is selecting New Customers Menu
+2022-02-12 23:29:08.566 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-12 23:29:08.600 -05:00 [INF] User is inputting a selection
+2022-02-12 23:29:26.209 -05:00 [INF] User is entering a First Name
+2022-02-12 23:29:30.977 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-12 23:29:30.984 -05:00 [INF] User is inputting a selection
+2022-02-12 23:29:33.531 -05:00 [INF] User is entering a Last Name
+2022-02-12 23:29:37.492 -05:00 [INF] Displaying New Customer Menu to user
+2022-02-12 23:29:37.540 -05:00 [INF] User is inputting a selection
+2022-02-14 15:17:43.432 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-14 15:17:46.808 -05:00 [INF] User is selection an input
+2022-02-14 15:17:49.188 -05:00 [INF] User is selecting Customers Menu
+2022-02-14 15:17:49.189 -05:00 [INF] Displaying Customers Menu to user
+2022-02-14 15:17:49.197 -05:00 [INF] User is selecting an input
+2022-02-14 15:17:52.740 -05:00 [INF] User is selecting Shop NOW
+2022-02-14 15:17:52.741 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-14 16:22:48.078 -05:00 [INF] User Input Wrong Selection
