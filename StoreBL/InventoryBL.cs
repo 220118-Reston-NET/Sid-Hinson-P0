@@ -53,6 +53,12 @@ namespace StoreBL
         {
             return _repo.UpdateInventory(p_inv);
         }
+
+        public List<Inventory> GetAllInventory()
+        {
+            List<Inventory> listofinventory = _repo.GetAllInventory();
+            return listofinventory;
+        }
         
     }
 }

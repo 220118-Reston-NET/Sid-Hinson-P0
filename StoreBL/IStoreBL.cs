@@ -66,7 +66,7 @@ namespace StoreBL
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<StoreFronts> GetStoreFronts();
+        public List<StoreFronts> GetAllStoreFronts();
         /// <summary>
         /// 
         /// </summary>
@@ -281,6 +281,11 @@ namespace StoreBL
         /// <param name="p_inv"></param>
         /// <returns></returns>
         public Inventory UpdateInventory(Inventory p_inv);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Inventory> GetAllInventory();
 
     }
 }

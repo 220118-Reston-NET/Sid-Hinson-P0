@@ -36,7 +36,7 @@ namespace StoreBL
                     .ToList(); //ToList method converts into return List collection
         }
 
-        public List<StoreFronts> GetStoreFronts()
+        public List<StoreFronts> GetAllStoreFronts()
         {
             List<StoreFronts> listofstorefronts = _repo.GetAllStoreFronts();
             return listofstorefronts;

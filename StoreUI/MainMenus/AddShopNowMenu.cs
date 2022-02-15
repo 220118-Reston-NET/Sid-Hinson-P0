@@ -61,7 +61,7 @@ namespace StoreUI
                 Console.WriteLine("=          RETRO BARBARIAN ONLINE GAMING LAIR            =");
                 Console.WriteLine("==========================================================");
                 Console.WriteLine("Please Enter a Store ID Number from the List :");
-                List<StoreFronts> choice = _store.GetStoreFronts();
+                List<StoreFronts> choice = _store.GetAllStoreFronts();
                 foreach(StoreFronts store in choice)
                 {
                     Console.WriteLine("*********************");
