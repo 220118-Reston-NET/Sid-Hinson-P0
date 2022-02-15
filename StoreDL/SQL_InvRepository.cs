@@ -41,7 +41,6 @@ namespace StoreDL
                 SqlDataReader reader = command.ExecuteReader();
                 while(reader.Read())
                 {
-
                     listofinventory.Add(new Inventory(){
                             WarehouseID = reader.GetInt32(0),
                             StoreID = reader.GetInt32(1),

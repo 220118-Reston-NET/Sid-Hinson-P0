@@ -41,21 +41,16 @@ namespace StoreUI
                 case "1":
                     Console.WriteLine("Please Enter a First Name");
                     string p_Fname = Console.ReadLine();
-                    while(string.IsNullOrEmpty(p_Fname))
-                    {
-                        Console.WriteLine("First Name must have an input. Please Enter a First Name");
-                        p_Fname =Console.ReadLine();
-
-                    }
+                    p_Fname = p_Fname.ToUpper();
 
                     Console.WriteLine("Please Enter a Last Name");
                     string p_Lname = Console.ReadLine();
-
+                    p_Lname = p_Lname.ToUpper();
 
 
                     Console.WriteLine("Please Enter an Email Address");
                     string p_Email = Console.ReadLine();
-
+                    p_Email = p_Email.ToUpper();
 
                     //Search for Customer
                     List<Customers> listofcustomers = _custBL.SearchCustomers(p_Fname, p_Lname, p_Email);

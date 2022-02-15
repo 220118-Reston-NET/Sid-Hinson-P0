@@ -52,8 +52,8 @@ namespace StoreUI
             Console.WriteLine("=[7] Display Orders From Cart");
             Console.WriteLine("=[8] Save and Checkout Order");
             Console.WriteLine("==========================================================");
-            Console.WriteLine("= * ProductID - " + _productID);
-            Console.WriteLine("= * Product Price - " + _productPrice);
+            Console.WriteLine("= * Last Item Added - ProductID - " + _productID);
+            Console.WriteLine("= * Last Item Added = Product Price - " + _productPrice);
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
             Console.WriteLine("==========================================================");
@@ -122,18 +122,39 @@ namespace StoreUI
                     Log.Information("User is adding the Item to the Static Cart");
                     Console.Clear();
                     _orderBL.DisplayGraphic();
+
                     //Getting Values For Line Item
                     _productID = _productBL.GetID(_productName, _productCompany, _productStoreID);
-                    _productPrice = _productBL.GetPrice(_productName, _productCompany, _productStoreID);
+                    _productPrice = _productBL.GetPrice(_productID);
+                    Console.WriteLine("Product ID is " + _productID);
+                    Console.ReadLine();
+
+
                     //Building Line Item
                     CartItem = _orderBL.AddItemFields(_productID, _productQuantity,_productStoreID, _productPrice);
+                    Console.WriteLine("CartItem info is " + CartItem);
+                    Console.ReadLine();
+
+
                     //Running Total
                     OrderTotal += (_productPrice * _productQuantity);
+                    Console.WriteLine("OrderTotal is " + OrderTotal);
+                    Console.ReadLine();
                     
+
                     //Validate Inventory Level
-                    Inventory parlevel = new Inventory();
-                    parlevel =_inv.FindItem(_productStoreID, _productID);
+                    // Inventory parlevel = new Inventory();
+                    Inventory parlevel = _inv.FindItemLevel(_productStoreID, _productID);
+                    Console.WriteLine(_inv.FindItemLevel(_productStoreID, _productID));
+                    Console.WriteLine("*********************");
+                    Console.WriteLine("Inventory Located:" + parlevel );
+                    Console.WriteLine("Checking Levels.....");
+                    Console.ReadLine();
+                    Console.WriteLine("*********************");
+                    Console.WriteLine("Old Inventory LEVEL = " + parlevel.ProductQuantity);
                     parlevel.ProductQuantity -= _productQuantity;
+                    Console.WriteLine("Quantity to subtract = " + _productQuantity);
+                    Console.WriteLine("NEW Inventory LEVEL = " + parlevel.ProductQuantity);
 
                     if(parlevel.ProductQuantity >= 0)
                     {
@@ -145,7 +166,7 @@ namespace StoreUI
                     }
                     else
                     {
-                        Console.WriteLine("We are sorry, but your we cannot fulfill your order. We must restock.");
+                        Console.WriteLine("We are sorry, but we cannot fulfill your order. We must restock.");
                         Console.ReadLine();
                     }
                     return "AddNewOrderMenu";
@@ -192,15 +213,25 @@ namespace StoreUI
                     Log.Information("User is inputting their email address");                   
                     Console.WriteLine("Enter Your User Email");
                     string userEmail = Console.ReadLine();
+                    userEmail = userEmail.ToUpper();
                     
                     Log.Information("User is inputting their email password");
                     Console.WriteLine("Enter Your User Password");
                     string userPass = Console.ReadLine();
 
                 
-                    //**Create Shopping Order To Send to REPO**
-                    //Get CustomerID
-                    _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
+                    try
+                    {
+                        _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
+                        Console.WriteLine("Your Customer ID is " + _shoppingOrder.OrderCustID);
+                        Console.ReadLine();
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Something went wrong. Check your information and re-try. Press Enter to Continue");
+                        Console.ReadLine();
+                        return "AddNewOrderMenu";
+                    }
 
                     //Adding StoreID
                     _shoppingOrder.OrderStoreID = _productStoreID;
@@ -217,17 +248,20 @@ namespace StoreUI
                     _shoppingOrder.OrderLineItems = _shoppingCart;
                     _shoppingOrder.OrderStatus = "PROCESSING";
 
+                    //****Stuck
+
                     //Add Order to Repo
                     Console.WriteLine("Attempting to Add Order ........");
                     _orderBL.AddOrders(_shoppingOrder); 
                     Console.WriteLine("Order Added. Press Enter");
 
 
-
                     //Find the OrderID
                     List<Orders> getcount = new List<Orders>();
                     getcount = _orderBL.GetAllOrders();
                     int OrderID = getcount.Count();
+                    Console.WriteLine("Your Order ID is : " + OrderID);
+                    Console.ReadLine();
                     
                     //Display Items Ordered
                     Console.WriteLine("These were the Items Ordered");
@@ -235,6 +269,7 @@ namespace StoreUI
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
 
+                    //******************HERE
 
                     //Add Order ID to ALL LineItems
                     foreach(LineItems item in _shoppingCart)
@@ -268,7 +303,7 @@ namespace StoreUI
                         Console.ReadLine();
                         //Second Inventory object to hold the actual Row Record We Need to Manipulate
                         Inventory inventoryobj2 = new Inventory();
-                        inventoryobj2 = _inv.FindItem(inventoryobj1.StoreID, inventoryobj1.ProductID);
+                        inventoryobj2 = _inv.FindItemLevel(inventoryobj1.StoreID, inventoryobj1.ProductID);
                         Console.WriteLine($"Inventory previously held : {inventoryobj2.ProductQuantity}");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();

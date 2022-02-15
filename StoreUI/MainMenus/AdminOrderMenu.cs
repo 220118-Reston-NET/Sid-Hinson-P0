@@ -9,10 +9,12 @@ namespace StoreUI
 
         private IOrdersBL _ordBL;
         private ICustomersBL _custBL;
-        public AdminOrderMenu(IOrdersBL p_ord, ICustomersBL p_cust)
+        private IStoreFrontsBL _storebl;
+        public AdminOrderMenu(IOrdersBL p_ord, ICustomersBL p_cust, IStoreFrontsBL p_store)
         {
             _custBL = p_cust;
             _ordBL = p_ord;
+            _storebl = p_store;
         }
         public void MenuDisplay()
         {
@@ -25,8 +27,10 @@ namespace StoreUI
             Console.WriteLine("=[0] - Return to Main Menu");
             Console.WriteLine("=[1] - Check Order Status ");
             Console.WriteLine("=[2] - Change Order Status");
-            Console.WriteLine("=[3] - Locate Customer Order For ID");
+            Console.WriteLine("=[3] - Locate Customer Order by Cust/StoreID");
             Console.WriteLine("=[4] - Locate Customer ID Retrieval Tool");
+            Console.WriteLine("=[5] - Show All Current Orders for a Given StoreFront");
+            Console.WriteLine("=[6] - Show All Past Orders for a Given StoreFront");
             Console.WriteLine("===============================================");
 
         }
@@ -104,9 +108,9 @@ namespace StoreUI
 
                 case "3":
                     Log.Information("User is selecting Search for Customer Order");
-                    Console.WriteLine();
+                    Console.WriteLine("Please Enter a Customer ID");
                     int p_cID = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine();
+                    Console.WriteLine("Please Enter a Store ID");
                     int p_sID = Convert.ToInt32(Console.ReadLine());
                     List<Orders> searchorder = _ordBL.Search4Order(p_cID, p_sID);
                     Console.Clear();
@@ -125,12 +129,16 @@ namespace StoreUI
                     Log.Information("User is selecting Search for Customer");
                     Console.WriteLine("Please enter Customer First Name:");
                     string p_f = Console.ReadLine();
+                    p_f = p_f.ToUpper();
                     Console.WriteLine("Please enter Customer Last Name:");
                     string p_l = Console.ReadLine();
+                    p_l = p_l.ToUpper();
                     Console.WriteLine("Please enter Customer City:");
                     string p_c = Console.ReadLine();
+                    p_c = p_c.ToUpper();
                     Console.WriteLine("Please enter Customer State:");
                     string p_s = Console.ReadLine();
+                    p_s = p_s.ToUpper();
                     List<Customers> searchcust = _custBL.Search4Customers(p_f,p_l,p_c,p_s);
                     Console.Clear();
                     _ordBL.DisplayGraphic();
@@ -141,6 +149,41 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter to Return to Order Admin");
                     Console.ReadLine();
+                    return "AdminOrderMenu";
+
+
+                case "5":
+                    Log.Information("User is selecting Show CurrentAll Orders for a Store");
+                    Console.WriteLine("Please Enter a Store ID");
+                    int p_sCID = Convert.ToInt32(Console.ReadLine());
+                    List<Orders> findcurrent = _ordBL.SearchStoreOrders(p_sCID, "PROCESSING");
+                    Console.WriteLine("PROCESSING Orders:");
+                    foreach(Orders ord in findcurrent)
+                    {
+                        Console.WriteLine(ord);
+                    }
+                    return "AdminOrderMenu";
+
+
+                case "6":
+                    Log.Information("User is selecting Show ALL Past Orders for a Store");
+                    Console.WriteLine("Please Enter a Store ID");
+                    int p_sPID = Convert.ToInt32(Console.ReadLine());
+                    List<Orders> findold1 = _ordBL.SearchStoreOrders(p_sPID, "CANCELLED");
+                    Console.WriteLine("CANCELLED Orders:");
+                    foreach(Orders ord in findold1)
+                    {
+                        
+                        Console.WriteLine(ord);
+                    }
+                    List<Orders> findold2 = _ordBL.SearchStoreOrders(p_sPID, "FULFILLED");
+                    Console.WriteLine("FULFILLED Orders:");
+                    foreach(Orders ord in findold2)
+                    {
+                        Console.WriteLine(ord);
+                    }
+
+
                     return "AdminOrderMenu";
 
 

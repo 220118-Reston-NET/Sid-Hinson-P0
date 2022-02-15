@@ -59,7 +59,7 @@ namespace StoreUI
 
                     
                 case "1":
-                    Console.WriteLine("Please Enter a Store Front Number (1-6)");
+                    Console.WriteLine("Please Enter a Store Front Number");
 
                     //Testing for an Integer Value
                     bool isNumber = false;

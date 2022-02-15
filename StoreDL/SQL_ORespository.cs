@@ -30,7 +30,6 @@ namespace StoreDL
  
                 //EXECUTES THE SQL Statement
                 command.ExecuteNonQuery();
-
             }
             return p_ord;
         }

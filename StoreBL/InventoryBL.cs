@@ -39,7 +39,7 @@ namespace StoreBL
             for(int i = 0; i < listofInventory.Count; i++)
             {   
                 Inventory foundproduct = new Inventory();
-                if(listofInventory[i].Equals(p_storeID) & listofInventory[i].Equals(p_prodID))
+                if(listofInventory[i].StoreID.Equals(p_storeID) & listofInventory[i].ProductID.Equals(p_prodID))
                 {
                     foundproduct = listofInventory[i];
                     return foundproduct;
@@ -50,18 +50,21 @@ namespace StoreBL
             return getinv;
         }
 
-        public Inventory FindItem(int p_storeID, int p_prodID)
+        public Inventory FindItemLevel(int p_storeID, int p_prodID)
         {
             List<Inventory> listofInventory = _repo.GetAllInventory();
             Inventory FoundItem = new Inventory();
             foreach(Inventory item in listofInventory)
             {
                 if(item.StoreID.Equals(p_storeID) & item.ProductID.Equals(p_prodID))
-                FoundItem = item;
-                return FoundItem;
+                {
+                    FoundItem = item;
+                    return FoundItem;
+                }
+
             }
             
-            return FoundItem;
+          return FoundItem;
         }
 
         public Inventory UpdateInventory(Inventory p_inv)

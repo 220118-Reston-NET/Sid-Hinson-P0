@@ -40,7 +40,20 @@ namespace StoreBL
                 throw new Exception("Limit of 1000 Orders is reached");
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_storeID"></param>
+        /// <param name="p_status"></param>
+        /// <returns></returns>
+        public List<Orders> SearchStoreOrders(int p_storeID, string p_status)
+        {
+            List<Orders> listoforders = _repo.GetAllOrders();
+            return listoforders
+                    .Where(Orders => Orders.OrderStoreID.Equals(p_storeID))
+                    .Where(Orders => Orders.OrderStatus.Contains(p_status))
+                    .ToList(); //ToList method converts into return List collection
+        }
         /// <summary>
         /// Search All orders
         /// </summary>

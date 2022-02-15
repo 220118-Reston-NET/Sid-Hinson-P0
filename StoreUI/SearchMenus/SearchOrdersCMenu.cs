@@ -36,13 +36,11 @@ namespace StoreUI
         public string UserSelection()
         {
             string UserInput = Console.ReadLine();
-
             switch (UserInput)
             {
                 case "0":
                     Log.Information("User is selecting Store Main Menu");
                     return "StoreMainMenu";
-
 
                 case "1":
                     Log.Information("User is selecting view Current Orders");
@@ -50,6 +48,7 @@ namespace StoreUI
                     //Get Inputs
                     Console.WriteLine("Please Enter Your Email Address");
                     string p_emailc = Console.ReadLine();
+                    p_emailc = p_emailc.ToUpper();
 
                     Console.WriteLine("Please Enter Your Password");
                     string p_passc = Console.ReadLine();
@@ -60,8 +59,12 @@ namespace StoreUI
                     Console.WriteLine("Please Press Enter to Continue");
                     Console.ReadLine();
                     string p_statusc = "PROCESSING";
+
+
                     //Search for Current Order
                     List<Orders> listofordersc = _ordBL.SearchOrders(p_custID,p_statusc);
+
+
                     //List Information About Order if possible
                     if(listofordersc.Any())
                     {
@@ -113,6 +116,7 @@ namespace StoreUI
                     //Get Inputs
                     Console.WriteLine("Please Enter Your Email Address");
                     string p_emailf = Console.ReadLine();
+                    p_emailf = p_emailf.ToUpper();
 
                     Console.WriteLine("Please Enter Your Password");
                     string p_passf = Console.ReadLine();

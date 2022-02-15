@@ -214,7 +214,7 @@
 
         public override string ToString()
         {
-            return $"Product Id: {CustomerID}\nFirst Name: {CFirstName}\nLast name: {CLastName}\nDate of Birth {CDateofBirth}" +
+            return $"Customer Id: {CustomerID}\nFirst Name: {CFirstName}\nLast name: {CLastName}\nDate of Birth {CDateofBirth}" +
             $"\nAddress: {CustomerAddress}\nCustomer State: {CustomerState}\nCustomer City: {CustomerCity}" +
             $"\nCustomer Country: {CustCountry}\nEmail: {CustomerEmail}";
         }

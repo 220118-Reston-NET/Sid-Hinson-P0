@@ -151,7 +151,7 @@ namespace StoreBL
             List<Products> listofproducts = _repo.GetAllProducts();
             for(int i = 0; i < listofproducts.Count; i++)
             {
-                if(listofproducts[i].ProductName.Equals(p_productID))
+                if(listofproducts[i].ProductID.Equals(p_productID))
                 {
                     Price = listofproducts[i].ProductPrice;
                     
@@ -175,10 +175,10 @@ namespace StoreBL
             {
                 if(listofproducts[i].ProductName.Contains(p_prodName) & listofproducts[i].ProductCompany.Contains(p_prodComp) & listofproducts[i].StoreID.Equals(p_StoreID))
                 {
-                    StoreID = listofproducts[i].StoreID;
+                    return listofproducts[i].StoreID;
                     
                 }
-
+                StoreID = listofproducts[i].StoreID;
             }
 
             return StoreID;

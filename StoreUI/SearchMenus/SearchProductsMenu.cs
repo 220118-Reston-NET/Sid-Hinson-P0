@@ -48,19 +48,23 @@ namespace StoreUI
                     //Grab Product name
                     Console.WriteLine("Please Enter a Product Name");
                     string p_ProductName = Console.ReadLine();
+                    p_ProductName = p_ProductName.ToUpper();
                     while(string.IsNullOrEmpty(p_ProductName))
                     {
                         Console.WriteLine("Product Name must have an input. Please Enter Product Name.");
                         p_ProductName =Console.ReadLine();
+                        p_ProductName = p_ProductName.ToUpper();
                     }
 
                     //Grab Company
                     Console.WriteLine("Please Enter a Product Company");
                     string p_ProductComp = Console.ReadLine();
+                    p_ProductComp = p_ProductComp.ToUpper();
                     while(string.IsNullOrEmpty(p_ProductComp))
                     {
                         Console.WriteLine("Product Company must have an input. Please Enter Product Company.");
                         p_ProductComp =Console.ReadLine();
+                        p_ProductComp = p_ProductComp.ToUpper();
                     }
 
                     //Grab Store Id
@@ -97,7 +101,7 @@ namespace StoreUI
                         Console.WriteLine("Your search did not return any results. Please try again");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
-                        return "SearchCustomersMenu";
+                        return "SearchProductsMenu";
                     }
 
 
@@ -105,10 +109,12 @@ namespace StoreUI
                 case "2":
                     Console.WriteLine("Please Enter a Product Category");
                     string p_ProductCat = Console.ReadLine();
+                    p_ProductCat = p_ProductCat.ToUpper();
                     while(string.IsNullOrEmpty(p_ProductCat))
                     {
                         Console.WriteLine("Product Category must have an input. Please Enter Product Category.");
                         p_ProductCat =Console.ReadLine();
+                        p_ProductCat = p_ProductCat.ToUpper();
                     }
 
                     //Get products by Category
@@ -130,7 +136,7 @@ namespace StoreUI
                         Console.WriteLine("Your search did not return any results. Please try again");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
-                        return "SearchCustomersMenu";
+                        return "SearchProductsMenu";
                     }
 
 
@@ -139,11 +145,12 @@ namespace StoreUI
                 case "3":
                     Console.WriteLine("Please Enter a Product Company");
                     string p_ProductComp2 = Console.ReadLine();
+                    p_ProductComp2 = p_ProductComp2.ToUpper();
                     while(string.IsNullOrEmpty(p_ProductComp2))
                     {
                         Console.WriteLine("Product Company must have an input. Please Enter a Product Company Name");
                         p_ProductComp2 =Console.ReadLine();
-
+                        p_ProductComp2 = p_ProductComp2.ToUpper();
                     }
 
                     //Get products by Company
@@ -165,7 +172,7 @@ namespace StoreUI
                         Console.WriteLine("Your search did not return any results. Please try again");
                         Console.WriteLine("Press Enter to Continue");
                         Console.ReadLine();
-                        return "SearchCustomersMenu";
+                        return "SearchProductsMenu";
                     }
 
 

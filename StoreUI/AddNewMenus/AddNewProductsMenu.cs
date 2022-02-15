@@ -137,7 +137,7 @@ namespace StoreUI
                          Console.ReadLine();
                          _newInventory.StoreID = _newProduct.StoreID;
                          _newInventory.ProductID = ProductID;
-                         //Inv already has quantity assigned by here
+                         //Inv already has quantity assigned by here --> Add to repo
                          _invBL.AddInventory(_newInventory);
                          Console.WriteLine("This Inventory Was Added. Press Enter");
                          Console.WriteLine(_newInventory);

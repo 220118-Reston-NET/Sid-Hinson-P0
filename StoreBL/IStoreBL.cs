@@ -151,7 +151,7 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(int p_custID, string p_status);
-
+        public List<Orders> SearchStoreOrders(int p_storeID, string p_status);
         /// <summary>
         /// 
         /// </summary>
@@ -213,6 +213,7 @@ namespace StoreBL
         /// </summary>
         public void DisplayGraphic();
 
+
     }
 
 
@@ -248,7 +249,7 @@ namespace StoreBL
         /// <param name="p_storeID"></param>
         /// <param name="p_prodID"></param>
         /// <returns></returns>
-        public Inventory FindItem(int p_storeID, int p_prodID);
+        public Inventory FindItemLevel(int p_storeID, int p_prodID);
         /// <summary>
         /// 
         /// </summary>

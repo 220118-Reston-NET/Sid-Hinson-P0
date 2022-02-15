@@ -99,7 +99,8 @@ namespace StoreUI
                     Console.WriteLine("Do you wish to Continue? This cannot be undone.");
                     Console.WriteLine("Type 'Yes' to Commit Changes. Type 'No' to Exit.");
                     string answer = Console.ReadLine();
-                    if(answer == "Yes" || answer == "yes")
+                    answer = answer.ToUpper();
+                    if(answer == "YES")
                     {
                         Console.ReadLine();
                         _invBL.UpdateInventory(RepInv);

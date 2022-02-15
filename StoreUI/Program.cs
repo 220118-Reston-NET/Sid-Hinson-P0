@@ -119,8 +119,18 @@ while(isValid)
             break;
         case "AddShopNowMenu":
             //Uses Quadruple Dependecy Injection to Abstract Access to All BL Methods information 
-            Log.Information("Displaying Add New orders Menu to user");
+            Log.Information("Displaying Add Shop Now to user");
             mainmenu = new AddShopNowMenu(new OrdersBL(new SQL_ORepository(_connectionString)), new ProductsBL(new SQL_PRepository(_connectionString)), new CustomersBL(new SQL_CRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)),new StoreFrontsBL(new SQL_SRepository(_connectionString)));
+            break;
+        case "AdminProductMenu":
+            //Uses Quadruple Dependecy Injection to Abstract Access to All BL Methods information 
+            Log.Information("Displaying Admin Products Menu to user");
+            mainmenu = new AdminProductMenu(new ProductsBL(new SQL_PRepository(_connectionString)), new InventoryBL(new SQL_InvRepository(_connectionString)));
+            break;
+        case "AdminOrderMenu":
+            //Uses Quadruple Dependecy Injection to Abstract Access to All BL Methods information 
+            Log.Information("Displaying Admin Orders Menu to user");
+            mainmenu = new AdminOrderMenu(new OrdersBL(new SQL_ORepository(_connectionString)),  new CustomersBL(new SQL_CRepository(_connectionString)), new StoreFrontsBL(new SQL_SRepository(_connectionString)));
             break;
         case "Exit":
             Log.Information("User has Exited The Program");

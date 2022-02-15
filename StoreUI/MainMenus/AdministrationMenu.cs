@@ -53,9 +53,12 @@ namespace StoreUI
                 case "6":
                     Log.Information("User is selecting Search Products Menu");
                     return "SearchProductsMenu";
+                case "7":
+                    Log.Information("User is selecting Admin Orders History");
+                    return "AdminOrderMenu";           
                 case "8":
-                    Log.Information("User is selecting Check/Update Product");
-                    return "DisplayAllProdsStoreMenu";
+                    Log.Information("User is selecting Admin Check/Update Product");
+                    return "AdminProductMenu";
                 default:
                     Log.Information("User is making an Invalid Selection");
                     Console.WriteLine("Invalid Selection. Please Try Again. Press Enter to Continue");
