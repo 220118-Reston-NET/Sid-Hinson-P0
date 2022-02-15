@@ -49,7 +49,8 @@ namespace StoreUI
                     int p_prodID = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Enter StoreID");
                     int p_prodstoreID = Convert.ToInt32(Console.ReadLine());
-                    Inventory MyInv = _invBL.Search4Inv(p_prodstoreID, p_prodID);
+                    // Inventory MyInv = _invBL.Search4Inv(p_prodstoreID, p_prodID);
+                    Inventory MyInv = _invBL.FindItemLevel(p_prodstoreID, p_prodID);
                     if(MyInv != null)
                     {
                         Console.WriteLine("Inventory Located :");
@@ -77,7 +78,7 @@ namespace StoreUI
                     int p_prodinvID = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Enter StoreID");
                     int p_prodinvstoreID = Convert.ToInt32(Console.ReadLine());
-                    Inventory RepInv = _invBL.Search4Inv(p_prodinvstoreID, p_prodinvID);
+                    Inventory RepInv = _invBL.FindItemLevel(p_prodinvstoreID, p_prodinvID);
                     if(RepInv != null)
                     {
                         Console.WriteLine("Inventory Located :");
@@ -124,11 +125,10 @@ namespace StoreUI
                     Console.WriteLine("================================================");
                     Console.WriteLine("Enter Product Name");
                     string p_prodname = Console.ReadLine();
-                    Console.WriteLine("Enter Product Company");
-                    string p_prodcomp = Console.ReadLine();
+                    p_prodname = p_prodname.ToUpper();
                     Console.WriteLine("Enter Product StoreID");
                     int p_prodstore = Convert.ToInt32(Console.ReadLine());
-                    Products MyProd = _productBL.Search4Product(p_prodname, p_prodcomp, p_prodstore);
+                    Products MyProd = _productBL.SearchForProduct(p_prodname, p_prodstore);
                     if(MyProd != null)
                     {
                         Console.WriteLine("Product Located :");

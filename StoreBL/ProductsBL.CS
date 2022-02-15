@@ -103,20 +103,16 @@ namespace StoreBL
         /// <param name="p_productComp"></param>
         /// <param name="p_productStoreID"></param>
         /// <returns></returns>
-        public Products Search4Product(string p_productName, string p_productComp, int p_productStoreID)
+        public Products SearchForProduct(string p_productName, int p_productStoreID)
         {
             Products getprod = new Products();
             List<Products> listofproducts = _repo.GetAllProducts();
-            for(int i = 0; i < listofproducts.Count; i++)
-            {   
-                Products foundproduct = new Products();
-                if(listofproducts[i].ProductName.Contains(p_productName) & listofproducts[i].ProductCompany.Contains(p_productComp) & listofproducts[i].StoreID.Equals(p_productStoreID))
+            foreach(Products prod in listofproducts)
+            {
+                if(prod.ProductName == p_productName & prod.StoreID == p_productStoreID)
                 {
-                    foundproduct = listofproducts[i];
-                    return foundproduct;
+                    getprod = prod;
                 }
-              getprod = foundproduct;
-              return getprod;
             }
             return getprod;
         }
@@ -128,22 +124,6 @@ namespace StoreBL
         /// <param name="p_prodComp"></param>
         /// <param name="p_StoreID"></param>
         /// <returns></returns>
-        public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID)
-        {   
-            double Price = 0;
-            List<Products> listofproducts = _repo.GetAllProducts();
-            for(int i = 0; i < listofproducts.Count; i++)
-            {
-                if(listofproducts[i].ProductName.Contains(p_prodName) & listofproducts[i].ProductCompany.Contains(p_prodComp) & listofproducts[i].StoreID.Equals(p_StoreID))
-                {
-                    Price = listofproducts[i].ProductPrice;
-                    
-                }
-
-            }
-
-            return Price;
-        }
 
         public double GetPrice(int p_productID)
         {

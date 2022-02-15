@@ -89,12 +89,14 @@ namespace StoreBL
         /// 
         /// </summary>
         /// <param name="p_productName"></param>
-        /// <param name="p_productComp"></param>
         /// <param name="p_productStoreID"></param>
         /// <returns></returns>
-        public Products Search4Product(string p_productName, string p_productComp, int p_productStoreID);
-        // List<Products> SearchProductsCat(string p_productCat);
-        // List<Products> SearchProductsComp(string p_productComp);
+        public Products SearchForProduct(string p_productName, int p_productStoreID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_productComp"></param>
+        /// <returns></returns>
         public List<Products> SearchProductsComp(string p_productComp);
         /// <summary>
         /// 
@@ -123,14 +125,6 @@ namespace StoreBL
         /// <param name="p_productID"></param>
         /// <returns></returns>
         public double GetPrice(int p_productID);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="p_prodName"></param>
-        /// <param name="p_prodComp"></param>
-        /// <param name="p_StoreID"></param>
-        /// <returns></returns>
-        public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID);
         /// <summary>
         /// 
         /// </summary>
@@ -267,13 +261,6 @@ namespace StoreBL
         /// </summary>
         /// <param name="p_storeID"></param>
         /// <param name="p_prodname"></param>
-        /// <returns></returns>
-        public Inventory Search4Inv(int p_storeID, int p_prodID);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="p_storeID"></param>
-        /// <param name="p_prodID"></param>
         /// <returns></returns>
         public Inventory FindItemLevel(int p_storeID, int p_prodID);
         /// <summary>
