@@ -44,7 +44,7 @@ namespace StoreBL
         /// <param name="p_pass"></param>
         /// <returns></returns>
         public int GetID(string p_email, string p_pass);
-
+        public List<Customers> GetAllCustomers();
 
     }
     public interface IStoreFrontsBL
@@ -62,7 +62,10 @@ namespace StoreBL
         /// <param name="p_storeNumber"></param>
         /// <returns>Filtered Search Results </returns>
         public List<StoreFronts> SearchStoreFronts(int p_storeNumber);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<StoreFronts> GetStoreFronts();
         
     }
@@ -99,6 +102,12 @@ namespace StoreBL
         /// <param name="p_productCat"></param>
         /// <returns></returns>
         public List<Products> SearchProductsCat(string p_productCat);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_productCat"></param>
+        /// <param name="p_storeid"></param>
+        /// <returns></returns>
         public List<Products> SearchProductsCat(string p_productCat, int p_storeid);
         /// <summary>
         /// 
@@ -108,7 +117,19 @@ namespace StoreBL
         /// <param name="p_StoreID"></param>
         /// <returns></returns>
         public List<Products> SearchProductsID(int p_productID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_productID"></param>
+        /// <returns></returns>
         public double GetPrice(int p_productID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_prodName"></param>
+        /// <param name="p_prodComp"></param>
+        /// <param name="p_StoreID"></param>
+        /// <returns></returns>
         public double GetPrice(string p_prodName, string p_prodComp, int p_StoreID);
         /// <summary>
         /// 
@@ -129,7 +150,6 @@ namespace StoreBL
     public interface IOrdersBL
     {
 
-        //*********Orders***********//
 
         /// <summary>
         /// Add Orders to Repo
@@ -151,6 +171,12 @@ namespace StoreBL
         /// <returns>Filtered Search Results </returns>
         // List<Orders> SearchOrders(string p_email);
         public List<Orders> SearchOrders(int p_custID, string p_status);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_storeID"></param>
+        /// <param name="p_status"></param>
+        /// <returns></returns>
         public List<Orders> SearchStoreOrders(int p_storeID, string p_status);
         /// <summary>
         /// 

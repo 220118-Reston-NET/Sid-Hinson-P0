@@ -3413,3 +3413,4 @@
 2022-02-14 23:39:21.257 -05:00 [INF] Displaying Search Orders Menu to user
 2022-02-14 23:39:23.744 -05:00 [INF] User is selecting view Current Orders
 2022-02-14 23:42:29.164 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 00:25:11.070 -05:00 [INF] User is pressing enter to go to Main Program Menu

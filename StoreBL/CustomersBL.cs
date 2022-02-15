@@ -43,6 +43,14 @@ namespace StoreBL
                     .ToList(); //ToList method converts into return List collection
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_fname"></param>
+        /// <param name="p_lname"></param>
+        /// <param name="p_email"></param>
+        /// <param name="p_pass"></param>
+        /// <returns></returns>
         public List<Customers> SearchCustomers(string p_fname, string p_lname, string p_email, string p_pass)
         {
         List<Customers> listofcustomers = _repo.GetAllCustomers();
@@ -53,6 +61,15 @@ namespace StoreBL
                     .Where(Customers => Customers.CPassword.Contains(p_pass)) //Filter a collection with a Lambda
                     .ToList(); //ToList method converts into return List collection
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_fname"></param>
+        /// <param name="p_lname"></param>
+        /// <param name="p_city"></param>
+        /// <param name="p_state"></param>
+        /// <returns></returns>
         public List<Customers> Search4Customers(string p_fname, string p_lname, string p_city, string p_state)
         {
                     List<Customers> listofcustomers = _repo.GetAllCustomers();
@@ -85,7 +102,14 @@ namespace StoreBL
             }
             return CustomerID;
         }
-
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Customers> GetAllCustomers()
+        {
+            List<Customers> listofcustomers = _repo.GetAllCustomers();
+            return listofcustomers;
+        }
     }
 }
