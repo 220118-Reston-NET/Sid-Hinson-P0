@@ -8,21 +8,21 @@ namespace StoreUI
         {
             //********TODO: View/Update Order Inventory
             Console.Clear();
-            Console.WriteLine("   ==================================================");
-            Console.WriteLine("   =             Administration Menu                =");
-            Console.WriteLine("   ==================================================");
-            Console.WriteLine("   =               Select Option                    =");     
-            Console.WriteLine("   ==================================================");
-            Console.WriteLine("   = [0] - Return to Main Menu / Exit               =");
-            Console.WriteLine("   = [1] - Enter New Customer                       ="); 
-            Console.WriteLine("   = [2] - Search For Customer                      =");
-            Console.WriteLine("   = [3] - Enter New StoreFront                     =");
-            Console.WriteLine("   = [4] - Search For StoreFront                    =");
-            Console.WriteLine("   = [5] - Enter New Warehouse Product              =");
-            Console.WriteLine("   = [6] - Search For Warehouse Product             =");
-            Console.WriteLine("   = [7] - Check Orders Status/Change Status        =");
-            Console.WriteLine("   = [8] - Check Product Level/Replenish Level      =");
-            Console.WriteLine("   ==================================================");
+            Console.WriteLine("         ==================================================");
+            Console.WriteLine("         =             Administration Menu                =");
+            Console.WriteLine("         ==================================================");
+            Console.WriteLine("         =               Select Option                    =");     
+            Console.WriteLine("   ============================================================");
+            Console.WriteLine("   = [0] - Return to Main Menu / Exit                         =");
+            Console.WriteLine("   = [1] - Enter New Customer                                 ="); 
+            Console.WriteLine("   = [2] - Search For Customer                                =");
+            Console.WriteLine("   = [3] - Enter New StoreFront                               =");
+            Console.WriteLine("   = [4] - Search For StoreFront                              =");
+            Console.WriteLine("   = [5] - Enter New Warehouse Product                        =");
+            Console.WriteLine("   = [6] - Search For Warehouse Product                       =");
+            Console.WriteLine("   = [7] - Check Orders Status/StoreFront Order Status        =");
+            Console.WriteLine("   = [8] - Check Product Level/Replenish Level                =");
+            Console.WriteLine("   ============================================================");
 
         }
 

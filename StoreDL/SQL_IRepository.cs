@@ -51,6 +51,12 @@ namespace StoreDL
         /// </summary>
         /// <returns>Returns List</returns>
         public List<StoreFronts> GetAllStoreFronts();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_store"></param>
+        /// <returns></returns>
+        public List<StoreFronts> GetCompStoreHist(int p_store);
     }
     
 

@@ -41,6 +41,11 @@ namespace StoreBL
             List<StoreFronts> listofstorefronts = _repo.GetAllStoreFronts();
             return listofstorefronts;
         }
+
+        public List<StoreFronts> GetCompStoreHist(int p_store)
+        {
+            return _repo.GetCompStoreHist(p_store);
+        }
         
     }
 }

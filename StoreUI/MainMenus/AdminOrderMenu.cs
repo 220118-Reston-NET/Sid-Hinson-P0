@@ -29,7 +29,7 @@ namespace StoreUI
             Console.WriteLine("=[2] - Change Order Status");
             Console.WriteLine("=[3] - Locate Customer Order by Cust/StoreID");
             Console.WriteLine("=[4] - Locate Customer ID Retrieval Tool");
-            Console.WriteLine("=[5] - View All Orders for a Given StoreFront");
+            Console.WriteLine("=[5] - View All Orders for a StoreFront");
             Console.WriteLine("===============================================");
 
         }
@@ -145,6 +145,7 @@ namespace StoreUI
                     foreach(Customers cust in searchcust)
                     {
                         Console.WriteLine(cust);
+                        Console.WriteLine("The Found CustomerID is : " + cust.CustomerID);
                     }
                     Console.WriteLine("Press Enter to Return to Order Admin");
                     Console.ReadLine();
@@ -152,50 +153,32 @@ namespace StoreUI
 
 
                 case "5":
-                    Log.Information("User is selecting Show CurrentAll Orders for a Store");
+                    Log.Information("User is selecting View All Orders for a Store Front");
                     Console.WriteLine("Please Enter a Store ID");
                     int p_sCID = Convert.ToInt32(Console.ReadLine());
-                    List<Orders> findcurrent = _ordBL.SearchStoreOrders(p_sCID, "PROCESSING");
-                    Console.WriteLine("PROCESSING Orders:");
-                    foreach(Orders ord in findcurrent)
+                    List<StoreFronts> findstoreorders = _storebl.GetCompStoreHist(p_sCID);
+                    foreach(StoreFronts store in findstoreorders)
                     {
-                        Console.WriteLine(ord);
+                        Console.WriteLine("******************");
+                        Console.WriteLine("Store Order Information");
+                        Console.WriteLine("StoreID          : " + store.StoreID);
+                        Console.WriteLine("StoreAddress     : " + store.StoreAddress);
+                        Console.WriteLine("StoreZipcode     : " + store.StoreZipCode);
+                        Console.WriteLine("StoreState       : " + store.StoreState);
+                        Console.WriteLine("StoreCity        : " + store.StoreCity);
+                        Console.WriteLine("StoreOrderID     : " + store.OrderID);
+                        Console.WriteLine("StoreOrderDate   : " + store.OrderDate);
+                        Console.WriteLine("StoreOrderTotal  : " + store.OrderTotal);
+                        Console.WriteLine("StoreOrderStatus : " + store.OrderStatus);
+                        Console.WriteLine("Order - CustID   : " + store.CustID);
+                        Console.WriteLine("Order - CustLast : " + store.CLastName);
+                        Console.WriteLine("******************");
+
                     }
+                    Console.WriteLine("Press Enter to Continer");
+                    Console.ReadLine();
                     return "AdminOrderMenu";
 
-
-                // case "5":
-                //     Log.Information("User is selecting Show CurrentAll Orders for a Store");
-                //     Console.WriteLine("Please Enter a Store ID");
-                //     int p_sCID = Convert.ToInt32(Console.ReadLine());
-                //     List<Orders> findcurrent = _ordBL.SearchStoreOrders(p_sCID, "PROCESSING");
-                //     Console.WriteLine("PROCESSING Orders:");
-                //     foreach(Orders ord in findcurrent)
-                //     {
-                //         Console.WriteLine(ord);
-                //     }
-                //     return "AdminOrderMenu";
-
-                // case "6":
-                //     Log.Information("User is selecting Show ALL Past Orders for a Store");
-                //     Console.WriteLine("Please Enter a Store ID");
-                //     int p_sPID = Convert.ToInt32(Console.ReadLine());
-                //     List<Orders> findold1 = _ordBL.SearchStoreOrders(p_sPID, "CANCELLED");
-                //     Console.WriteLine("CANCELLED Orders:");
-                //     foreach(Orders ord in findold1)
-                //     {
-                        
-                //         Console.WriteLine(ord);
-                //     }
-                //     List<Orders> findold2 = _ordBL.SearchStoreOrders(p_sPID, "FULFILLED");
-                //     Console.WriteLine("FULFILLED Orders:");
-                //     foreach(Orders ord in findold2)
-                //     {
-                //         Console.WriteLine(ord);
-                //     }
-
-
-                //     return "AdminOrderMenu";
 
 
                 default :

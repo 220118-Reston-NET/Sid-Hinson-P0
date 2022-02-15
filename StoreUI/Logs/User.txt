@@ -3560,3 +3560,44 @@
 2022-02-15 15:04:37.374 -05:00 [INF] User is selecting view Comprehensive Order History
 2022-02-15 15:04:37.375 -05:00 [INF] User is selecting view Current Orders
 2022-02-15 15:08:44.436 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 15:47:07.743 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 15:47:09.063 -05:00 [INF] User is selection an input
+2022-02-15 15:47:10.787 -05:00 [INF] User is selecting Administration Menu
+2022-02-15 15:47:10.789 -05:00 [INF] User is making a Selection
+2022-02-15 15:47:49.091 -05:00 [INF] User is selecting Admin Orders History
+2022-02-15 15:47:49.091 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 15:47:49.145 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 15:47:51.473 -05:00 [INF] User is selecting View All Orders for a Store Front
+2022-02-15 15:52:44.259 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 15:58:26.148 -05:00 [INF] User is selection an input
+2022-02-15 15:58:32.541 -05:00 [INF] User is selecting Administration Menu
+2022-02-15 15:58:32.546 -05:00 [INF] User is making a Selection
+2022-02-15 15:58:37.465 -05:00 [INF] User is selecting Admin Orders History
+2022-02-15 15:58:37.466 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 15:58:37.486 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 15:58:40.634 -05:00 [INF] User is selecting View All Orders for a Store Front
+2022-02-15 15:58:43.747 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 15:58:43.751 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 15:59:33.575 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 15:59:34.225 -05:00 [INF] User is selection an input
+2022-02-15 15:59:37.216 -05:00 [INF] User is selecting Administration Menu
+2022-02-15 15:59:37.220 -05:00 [INF] User is making a Selection
+2022-02-15 15:59:40.725 -05:00 [INF] User is selecting Admin Orders History
+2022-02-15 15:59:40.725 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 15:59:40.745 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 15:59:42.814 -05:00 [INF] User is selecting View All Orders for a Store Front
+2022-02-15 15:59:59.552 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 15:59:59.554 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 16:00:01.526 -05:00 [INF] User is selecting View All Orders for a Store Front
+2022-02-15 16:00:04.714 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 16:00:04.716 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 16:00:06.728 -05:00 [INF] User is selecting View All Orders for a Store Front
+2022-02-15 16:00:12.106 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 16:00:12.109 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 16:00:14.306 -05:00 [INF] User is selecting View All Orders for a Store Front
+2022-02-15 16:00:15.834 -05:00 [INF] Displaying Admin Orders Menu to user
+2022-02-15 16:00:15.837 -05:00 [INF] User is inputting the Menu Selection
+2022-02-15 16:02:19.093 -05:00 [INF] User is selecting Store Main Menu
+2022-02-15 16:02:19.093 -05:00 [INF] Displaying Main Menu to user
+2022-02-15 16:02:19.096 -05:00 [INF] User is selection an input
+2022-02-15 16:02:22.074 -05:00 [INF] User has Exited The Program

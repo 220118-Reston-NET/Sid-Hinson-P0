@@ -113,6 +113,13 @@ namespace StoreModel
                     _storeCity = value;
                 }
         }
+        
+        public int OrderID { get; set; }
+        public string OrderDate { get; set; }
+        public double OrderTotal { get; set; }
+        public string OrderStatus { get; set; }
+        public int CustID { get; set; }
+        public string CLastName { get; set; }
 
 
         //Default Class Constructor

@@ -67,6 +67,12 @@ namespace StoreBL
         /// </summary>
         /// <returns></returns>
         public List<StoreFronts> GetStoreFronts();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_store"></param>
+        /// <returns></returns>
+        public List<StoreFronts> GetCompStoreHist(int p_store);
         
     }
 
