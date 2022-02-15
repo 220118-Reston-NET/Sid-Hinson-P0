@@ -192,6 +192,12 @@ namespace StoreBL
         /// <param name="p_ordID"></param>
         /// <param name="p_stat"></param>
         public void UpdateOrdStat(int p_ordID, string p_stat);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_custID"></param>
+        /// <returns></returns>
+        public List<Orders> GetCompOrderHist(int p_custID);
 
         //********Lineitems**********//
 

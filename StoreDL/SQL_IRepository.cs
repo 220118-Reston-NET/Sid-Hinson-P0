@@ -17,6 +17,8 @@ namespace StoreDL
         public List<Customers> GetAllCustomers();
     }
     
+
+
         public interface ISQLProductsRepo
     {
         /// <summary>
@@ -34,6 +36,8 @@ namespace StoreDL
 
     }
     
+
+
         public interface ISQLStoreFrontsRepo
     {
         /// <summary>
@@ -49,6 +53,8 @@ namespace StoreDL
         public List<StoreFronts> GetAllStoreFronts();
     }
     
+
+
         public interface ISQLOrdersRepo
     {
         /// <summary>
@@ -62,14 +68,33 @@ namespace StoreDL
         /// </summary>
         /// <returns>Returns List</returns>
         public List<Orders> GetAllOrders();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Orders> GetCompOrderHist(int p_custID);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_ordID"></param>
+        /// <param name="p_stat"></param>
         public void UpdateOrdStat(int p_ordID, string p_stat);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p_line"></param>
+        /// <returns></returns>
         public LineItems AddLineItems(LineItems p_line);
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public List<LineItems> GetAllLineItems();
 
     }
     
+
+
 
         public interface ISQLInventoryRepo
     {

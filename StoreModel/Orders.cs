@@ -13,6 +13,11 @@ namespace StoreModel
 
        public string OrderStatus { get; set; }
 
+       public int ProductID { get; set; }
+       public int ProductQuantity { get; set; }
+       public string ProductName { get; set; }
+       public string CLastName { get; set; }
+
 
        //List of Line Items for an Order, Line Items is a String/int type
        //May need to be ArrayList or something else

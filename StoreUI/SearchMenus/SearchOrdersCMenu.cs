@@ -27,6 +27,7 @@ namespace StoreUI
             Console.WriteLine("      = [0] - Exit Search                        =");
             Console.WriteLine("      = [1] - Find Current Order                 =");
             Console.WriteLine("      = [2] - Find Fulfilled Orders              =");
+            Console.WriteLine("      = [3] - Find Comprehensive Orders History  =");
             Console.WriteLine("==========================================================");
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
@@ -172,6 +173,46 @@ namespace StoreUI
                         Console.ReadLine();
                         return "SearchOrdersCMenu";
                     }
+                case "3":
+                Log.Information("User is selecting view Comprehensive Order History");
+                Log.Information("User is selecting view Current Orders");
+
+                //Get Inputs
+                Console.WriteLine("Please Enter Your Email Address");
+                string p_emailc2 = Console.ReadLine();
+                p_emailc2 = p_emailc2.ToUpper();
+
+                Console.WriteLine("Please Enter Your Password");
+                string p_passc2 = Console.ReadLine();
+
+                // Verify GetID & Display ID
+                p_custID = _custbl.GetID(p_emailc2, p_passc2);
+                Console.WriteLine($"Your Customer ID is {p_custID}");
+                Console.WriteLine("Please Press Enter to Continue");
+                Console.ReadLine();
+
+                Console.WriteLine("This is your Comprehensive Order history");
+                List<Orders> comporders = _ordBL.GetCompOrderHist(p_custID);
+                foreach(Orders order in comporders)
+                {
+                    Console.WriteLine("******************");
+                    Console.WriteLine("Order Information:");
+                    Console.WriteLine("OrderID      : " + order.OrderID);
+                    Console.WriteLine("CustID       : " + order.OrderCustID);
+                    Console.WriteLine("StoreID      : " + order.OrderStoreID);
+                    Console.WriteLine("OrderDate    : " + order.OrderDate);
+                    Console.WriteLine("OrderTotal   : " + order.OrderTotal);
+                    Console.WriteLine("OrderStatus  : " + order.OrderStatus);
+                    Console.WriteLine("ProductID    : " + order.ProductID);
+                    Console.WriteLine("ProductQuant : " + order.ProductQuantity);
+                    Console.WriteLine("ProductName  : " + order.ProductName);
+                    Console.WriteLine("CustLastName : " + order.CLastName);
+                    Console.WriteLine("*****************");
+                }
+                Console.WriteLine("Press Enter");
+                Console.ReadLine();
+                return "SearchOrdersCMenu";
+
 
                 default:
                     Console.WriteLine("Invalid Selection");

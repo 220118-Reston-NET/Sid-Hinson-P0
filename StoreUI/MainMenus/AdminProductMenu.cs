@@ -96,7 +96,7 @@ namespace StoreUI
                     Console.WriteLine("Please Enter New Inventory Quantity Level");
                     int newLevel = Convert.ToInt32(Console.ReadLine());
                     RepInv.ProductQuantity = newLevel;
-                    Console.WriteLine($"New Level To Be Entered: {RepInv}");
+                    Console.WriteLine($"New Level To Be Entered: {RepInv.ProductQuantity}");
                     Console.WriteLine("Do you wish to Continue? This cannot be undone.");
                     Console.WriteLine("Type 'Yes' to Commit Changes. Type 'No' to Exit.");
                     string answer = Console.ReadLine();

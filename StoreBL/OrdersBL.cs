@@ -96,6 +96,11 @@ namespace StoreBL
             _repo.UpdateOrdStat(p_ordID, p_stat);
         }
 
+        public List<Orders> GetCompOrderHist(int p_custID)
+        {
+            return _repo.GetCompOrderHist(p_custID);
+        }
+
         //******LineItems*******//
 
         public LineItems AddLineItems(LineItems p_line)

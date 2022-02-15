@@ -3486,3 +3486,77 @@
 2022-02-15 02:02:44.866 -05:00 [INF] Displaying Admin Products Menu to user
 2022-02-15 02:02:44.870 -05:00 [INF] User is inputting the Menu Selection
 2022-02-15 02:03:00.502 -05:00 [INF] Displaying Admin Products Menu to user
+2022-02-15 11:51:57.240 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 11:52:08.122 -05:00 [INF] User is selection an input
+2022-02-15 11:52:16.948 -05:00 [INF] User is selecting Customers Menu
+2022-02-15 11:52:16.948 -05:00 [INF] Displaying Customers Menu to user
+2022-02-15 11:52:16.993 -05:00 [INF] User is selecting an input
+2022-02-15 11:52:23.781 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-15 11:52:23.783 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-15 11:52:23.806 -05:00 [INF] User is making a selection
+2022-02-15 11:52:26.013 -05:00 [INF] User is selecting Search Orders Customer Menu
+2022-02-15 11:52:26.013 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 14:51:52.755 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 14:51:56.001 -05:00 [INF] User is selection an input
+2022-02-15 14:51:58.368 -05:00 [INF] User is selecting Customers Menu
+2022-02-15 14:51:58.369 -05:00 [INF] Displaying Customers Menu to user
+2022-02-15 14:51:58.387 -05:00 [INF] User is selecting an input
+2022-02-15 14:52:00.496 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-15 14:52:00.496 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-15 14:52:00.502 -05:00 [INF] User is making a selection
+2022-02-15 14:52:02.583 -05:00 [INF] User is selecting Search Orders Customer Menu
+2022-02-15 14:52:02.583 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 14:52:04.422 -05:00 [INF] User is selecting view Comprehensive Order History
+2022-02-15 14:52:04.422 -05:00 [INF] User is selecting view Current Orders
+2022-02-15 14:55:00.829 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 14:55:01.961 -05:00 [INF] User is selection an input
+2022-02-15 14:55:03.128 -05:00 [INF] User is selecting Customers Menu
+2022-02-15 14:55:03.129 -05:00 [INF] Displaying Customers Menu to user
+2022-02-15 14:55:03.133 -05:00 [INF] User is selecting an input
+2022-02-15 14:55:05.345 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-15 14:55:05.345 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-15 14:55:05.357 -05:00 [INF] User is making a selection
+2022-02-15 14:55:07.042 -05:00 [INF] User is selecting Search Orders Customer Menu
+2022-02-15 14:55:07.042 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 14:55:09.884 -05:00 [INF] User is selecting view Comprehensive Order History
+2022-02-15 14:55:09.884 -05:00 [INF] User is selecting view Current Orders
+2022-02-15 14:55:20.555 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 14:55:57.935 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 14:55:59.990 -05:00 [INF] User is selection an input
+2022-02-15 14:56:01.645 -05:00 [INF] User is selecting Customers Menu
+2022-02-15 14:56:01.645 -05:00 [INF] Displaying Customers Menu to user
+2022-02-15 14:56:01.667 -05:00 [INF] User is selecting an input
+2022-02-15 14:56:04.231 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-15 14:56:04.232 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-15 14:56:04.242 -05:00 [INF] User is making a selection
+2022-02-15 14:56:06.666 -05:00 [INF] User is selecting Search Orders Customer Menu
+2022-02-15 14:56:06.666 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 14:56:08.247 -05:00 [INF] User is selecting view Comprehensive Order History
+2022-02-15 14:56:08.248 -05:00 [INF] User is selecting view Current Orders
+2022-02-15 15:00:36.216 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 15:00:44.512 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 15:00:45.681 -05:00 [INF] User is selection an input
+2022-02-15 15:00:47.313 -05:00 [INF] User is selecting Customers Menu
+2022-02-15 15:00:47.313 -05:00 [INF] Displaying Customers Menu to user
+2022-02-15 15:00:47.317 -05:00 [INF] User is selecting an input
+2022-02-15 15:00:49.814 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-15 15:00:49.814 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-15 15:00:49.849 -05:00 [INF] User is making a selection
+2022-02-15 15:00:51.250 -05:00 [INF] User is selecting Search Orders Customer Menu
+2022-02-15 15:00:51.250 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 15:00:53.337 -05:00 [INF] User is selecting view Comprehensive Order History
+2022-02-15 15:00:53.338 -05:00 [INF] User is selecting view Current Orders
+2022-02-15 15:04:15.987 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 15:04:24.809 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-15 15:04:28.309 -05:00 [INF] User is selection an input
+2022-02-15 15:04:29.976 -05:00 [INF] User is selecting Customers Menu
+2022-02-15 15:04:29.978 -05:00 [INF] Displaying Customers Menu to user
+2022-02-15 15:04:29.985 -05:00 [INF] User is selecting an input
+2022-02-15 15:04:33.701 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-15 15:04:33.701 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-15 15:04:33.715 -05:00 [INF] User is making a selection
+2022-02-15 15:04:35.388 -05:00 [INF] User is selecting Search Orders Customer Menu
+2022-02-15 15:04:35.389 -05:00 [INF] Displaying Search Orders Menu to user
+2022-02-15 15:04:37.374 -05:00 [INF] User is selecting view Comprehensive Order History
+2022-02-15 15:04:37.375 -05:00 [INF] User is selecting view Current Orders
+2022-02-15 15:08:44.436 -05:00 [INF] Displaying Search Orders Menu to user
