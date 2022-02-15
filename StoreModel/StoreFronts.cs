@@ -56,12 +56,11 @@ namespace StoreModel
                 }
                 set
                 {
-                    int length = value.Length;
                     if (string.IsNullOrEmpty(value))
                     {
                          throw new NullReferenceException("State Abbreviation must have an input");
                     }
-                    else if(value.Length < 2 || value.Length > 2)
+                    else if(value.Length < 2)
                     {
                         throw new Exception("State abbreviation is two letters");
                     }

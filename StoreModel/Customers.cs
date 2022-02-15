@@ -23,7 +23,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("First Name must be entered.");
+                    throw new Exception("First Name must be entered and have a value.");
                 }
                 
             }
@@ -42,7 +42,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Last Name must be entered.");
+                    throw new Exception("Last Name must be entered and have a value.");
                 }
 
             }
@@ -55,14 +55,14 @@
 
             set 
             { 
-                if (value != "" & value.Length >= 8)
+                if (value != "" & value.Length == 8)
                 {
                     _DateofBirth = value; 
             
                 }
                 else
                 {
-                    Console.WriteLine("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
+                    throw new Exception("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
                 } 
 
             }
@@ -80,7 +80,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Address must be entered.");
+                    throw new Exception("Address must be entered.");
                 }
 
             }
@@ -98,7 +98,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("City must be entered.");
+                    throw new Exception("City must be entered and have a value.");
                 }
 
             }
@@ -117,7 +117,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Must Be 2 Letters");
+                    throw new Exception("State must have a value");
                 }
 
             }
@@ -135,7 +135,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Cant be Null.");
+                    throw new Exception("ZipCode must have a value.");
                 }
 
             }
@@ -154,7 +154,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("City must be entered.");
+                    throw new Exception("Country must be entered.");
                 }
 
             }
@@ -173,7 +173,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Email must have a input.");
+                    throw new Exception("Email must have a input.");
                 }
 
             }
@@ -191,7 +191,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Password must have an input.");
+                    throw new Exception("Password must have an input.");
                 }
  
             }
