@@ -126,12 +126,12 @@ namespace StoreUI
                          //Add Product Information to Inventory
                          List<Products> getelementcount = new List<Products>();
                          getelementcount = _productBL.GetAllProducts();
-                         Console.WriteLine("This List Was returned : Press Enter");
-                         foreach(Products product in getelementcount)
-                         {
-                             Console.WriteLine(product);
-                         }
-                         Console.ReadLine();
+                        //  Console.WriteLine("This List Was returned : Press Enter");
+                        //  foreach(Products product in getelementcount)
+                        //  {
+                        //      Console.WriteLine(product);
+                        //  }
+                        //  Console.ReadLine();
                          int ProductID = getelementcount.Count();
                          Console.WriteLine($"Product ID is: {ProductID}. Press Enter.");
                          Console.ReadLine();
@@ -140,7 +140,7 @@ namespace StoreUI
                          //Inv already has quantity assigned by here --> Add to repo
                          _invBL.AddInventory(_newInventory);
                          Console.WriteLine("This Inventory Was Added. Press Enter");
-                         Console.WriteLine(_newInventory);
+                        //  Console.WriteLine(_newInventory);
                          Console.ReadLine();
                     }
                     catch (System.Exception exc)
