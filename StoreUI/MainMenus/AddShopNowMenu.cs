@@ -45,6 +45,8 @@ namespace StoreUI
             Console.WriteLine("==========================================================");
             Console.WriteLine("=         *SHOP NOW!  - MAKE SHOPPING EASIER!*           =");
             Console.WriteLine("==========================================================");
+            Console.WriteLine("              Press Enter to Continue                     ");
+            Console.ReadLine();
         }
 
          public string UserSelection()
@@ -393,8 +395,8 @@ namespace StoreUI
                             else
                             {
                                 _inv.UpdateInventory(updateinv);
-                                _shoppingCart.Clear();
-                                OrderTotal = 0;
+                                // _shoppingCart.Clear();
+                                // OrderTotal = 0;
                                 Console.WriteLine($"Inventory Item Now Added : {updateinv}");
                                 Console.WriteLine("Press Enter to Continue");
                                 Console.ReadLine();
