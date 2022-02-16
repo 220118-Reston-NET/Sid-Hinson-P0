@@ -393,6 +393,8 @@ namespace StoreUI
                             else
                             {
                                 _inv.UpdateInventory(updateinv);
+                                _shoppingCart.Clear();
+                                OrderTotal = 0;
                                 Console.WriteLine($"Inventory Item Now Added : {updateinv}");
                                 Console.WriteLine("Press Enter to Continue");
                                 Console.ReadLine();

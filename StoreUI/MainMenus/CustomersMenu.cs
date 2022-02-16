@@ -19,10 +19,11 @@ namespace StoreUI
             Console.WriteLine("==========================================================");
             Console.WriteLine("=          [0] - Return to Main Menu / Exit              =");
             Console.WriteLine("=          [1] - Enter Your Customer Information         =");
-            Console.WriteLine("=          [2] - Search For StoreFront                   =");
-            Console.WriteLine("=          [3] - Products & Orders Viewing               =");
-            Console.WriteLine("=          [4] - Bulk Order Products Menu              =");
-            Console.WriteLine("=          [5] - SELECT STORE - STORE SHOP NOW           =");
+            Console.WriteLine("=          [2] - Find Your Customer ID                   =");
+            Console.WriteLine("=          [3] - Search For StoreFront                   =");
+            Console.WriteLine("=          [4] - Products & Orders Viewing               =");
+            Console.WriteLine("=          [5] - Bulk Order Products Menu                =");
+            Console.WriteLine("=          [6] - SELECT STORE - STORE SHOP NOW           =");
             Console.WriteLine("==========================================================");
         }
 
@@ -45,15 +46,18 @@ namespace StoreUI
                     Log.Information("User is selecting New Customers Menu");
                     return "NewCustomersMenu";
                 case "2":
+                    Log.Information("User is selecting Find Customers ID Menu");
+                    return "SearchCustomersMenu";                    
+                case "3":
                     Log.Information("User is selecting Search Store Fronts Menu");
                     return "SearchStoreFrontsMenu";
-                case "3":
+                case "4":
                     Log.Information("User is selecting Add Business Transaction Menu");
                     return "AddBusinessTransaction";               
-                case "4":
+                case "5":
                     Log.Information("User is selecting Add New Order Menu");
                     return "AddNewOrderMenu";
-                case "5":
+                case "6":
                     Log.Information("User is selecting Shop NOW");
                     return "AddShopNowMenu";                             
                 default:

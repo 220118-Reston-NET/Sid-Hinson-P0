@@ -18,7 +18,7 @@ namespace StoreModel
 
         public Products()
         {
-            StoreID = 1;
+            StoreID = 0;
             ProductName = "SNES";
             ProductCompany ="NINTENDO";
             ProductPrice = 200.00;

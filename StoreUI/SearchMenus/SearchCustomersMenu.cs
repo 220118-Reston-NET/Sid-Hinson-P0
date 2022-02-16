@@ -59,6 +59,9 @@ namespace StoreUI
                         foreach (var Customer in listofcustomers)
                         {
                             Console.WriteLine(Customer);
+                            Console.WriteLine("******************");
+                            Console.WriteLine("Customer ID : " +Customer.CustomerID);
+                            Console.WriteLine("******************");
                         }
                         Console.WriteLine("Press Enter");
                         Console.ReadLine();

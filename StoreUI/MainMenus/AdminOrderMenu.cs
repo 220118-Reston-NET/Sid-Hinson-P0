@@ -73,6 +73,8 @@ namespace StoreUI
                     Console.WriteLine("=[2] - FULFILLED");
                     Console.WriteLine("=[3] - CANCELLED");
                     Console.WriteLine("===================================");
+                    Console.WriteLine("=[4] - Exit this Menu");
+                    Console.WriteLine("===================================");
                     string p_newos = Console.ReadLine();
                     switch(p_newos)
                     {   
@@ -97,6 +99,8 @@ namespace StoreUI
                         Console.WriteLine("Press Enter to Continer");
                         Console.ReadLine();
                         return "AdminOrderMenu";
+                        case "4":
+                        return "AdminOrderMenu";
                         default:
                         Console.WriteLine("Invalid Selection.Press Enter to Continer");
                         Console.ReadLine();
@@ -112,13 +116,23 @@ namespace StoreUI
                     Console.WriteLine("Please Enter a Store ID");
                     int p_sID = Convert.ToInt32(Console.ReadLine());
                     List<Orders> searchorder = _ordBL.Search4Order(p_cID, p_sID);
-                    Console.Clear();
-                    _ordBL.DisplayGraphic();
-                    Console.WriteLine("The following orders were found:");
-                    foreach(Orders ord in searchorder)
+                    if(searchorder.Any())
                     {
-                        Console.WriteLine(ord);
+                        Console.Clear();
+                        _ordBL.DisplayGraphic();
+                        Console.WriteLine("The following orders were found:");
+                        foreach(Orders ord in searchorder)
+                        {
+                            Console.WriteLine("********");
+                            Console.WriteLine(ord);
+                            Console.WriteLine("********");
+                        }
                     }
+                    else
+                    {
+                        Console.WriteLine("No Orders were found!");
+                    }
+
                     Console.WriteLine("Press Enter to Return to Order Admin");
                     Console.ReadLine();
                     return "AdminOrderMenu";
@@ -139,14 +153,22 @@ namespace StoreUI
                     string p_s = Console.ReadLine();
                     p_s = p_s.ToUpper();
                     List<Customers> searchcust = _custBL.Search4Customers(p_f,p_l,p_c,p_s);
-                    Console.Clear();
-                    _ordBL.DisplayGraphic();
-                    Console.WriteLine("The following customers were found:");
-                    foreach(Customers cust in searchcust)
+                    if(searchcust.Any())
                     {
-                        Console.WriteLine(cust);
-                        Console.WriteLine("The Found CustomerID is : " + cust.CustomerID);
+                        Console.Clear();
+                        _ordBL.DisplayGraphic();
+                        Console.WriteLine("The following customers were found:");
+                        foreach(Customers cust in searchcust)
+                        {
+                            Console.WriteLine(cust);
+                            Console.WriteLine("The Found CustomerID is : " + cust.CustomerID);
+                        }
                     }
+                    else
+                    {
+                        Console.WriteLine("No Customer was found");
+                    }
+
                     Console.WriteLine("Press Enter to Return to Order Admin");
                     Console.ReadLine();
                     return "AdminOrderMenu";

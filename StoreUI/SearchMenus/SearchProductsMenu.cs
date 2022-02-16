@@ -13,9 +13,9 @@ namespace StoreUI
         public void MenuDisplay()
         {   
             Console.Clear();
-            Console.WriteLine("   =========================================================="); 
-            Console.WriteLine("   )xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
-            Console.WriteLine("   ==========================================================");
+            Console.WriteLine("   ==========================================================   "); 
+            Console.WriteLine("   )xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>   "); 
+            Console.WriteLine("   ==========================================================   ");
             Console.WriteLine("================================================================");
             Console.WriteLine("=          Menu : Search Products                              =");
             Console.WriteLine("================================================================");
@@ -69,7 +69,6 @@ namespace StoreUI
 
                     //Grab Store Id
                     Console.WriteLine("Please Enter a StoreID");
-
                     //Testing for an Integer Value
                     bool isNumber = false;
                     string Test = Console.ReadLine();
@@ -89,7 +88,9 @@ namespace StoreUI
                         //Return Product
                         foreach (var Product in listofproducts)
                         {
+                            Console.WriteLine("***************");
                             Console.WriteLine(Product);
+                            Console.WriteLine("***************");
                         }
                         Console.WriteLine("Press Enter");
                         Console.ReadLine();
@@ -123,8 +124,10 @@ namespace StoreUI
                     {
                         //Return Product
                         foreach (var Product in listofproducts2)
-                        {
+                        {   
+                            Console.WriteLine("***************");
                             Console.WriteLine(Product);
+                            Console.WriteLine("***************");
                         }
                         Console.WriteLine("Press Enter");
                         Console.ReadLine();
@@ -159,8 +162,10 @@ namespace StoreUI
                     {
                         //Return Product
                         foreach (var Product in listofproducts3)
-                        {
+                        {   
+                            Console.WriteLine("***************");
                             Console.WriteLine(Product);
+                            Console.WriteLine("***************");
                         }
                         Console.WriteLine("Press Enter");
                         Console.ReadLine();
@@ -175,11 +180,8 @@ namespace StoreUI
                         return "SearchProductsMenu";
                     }
 
-
-
-
                 default:
-                    Console.WriteLine("Customer not Found");
+                    Console.WriteLine("Selection not Found");
                     Console.WriteLine("Press Enter");
                     Console.ReadLine();
                     return "SearchProductsMenu";

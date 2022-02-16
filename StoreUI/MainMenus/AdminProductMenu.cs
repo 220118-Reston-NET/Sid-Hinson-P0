@@ -21,11 +21,11 @@ namespace StoreUI
             Console.WriteLine("================================================");
             Console.WriteLine("=       Check or Update Warehouse Products     =");     
             Console.WriteLine("================================================");
-            Console.WriteLine("=[0] - Return to Main Menu");
-            Console.WriteLine("=[1] - Check Inventory Level");
-            Console.WriteLine("=[2] - Replenish Inventory");
-            Console.WriteLine("=[3] - Search Products - Find Product ID");
-            Console.WriteLine("===============================================");
+            Console.WriteLine("=[0] - Return to Main Menu                      0");
+            Console.WriteLine("=[1] - Check Inventory Level - [P#id] [sf#id]   ");
+            Console.WriteLine("=[2] - Replenish Inventory - [P#id] [sf#id]     ");
+            Console.WriteLine("=[3] - Search Products - Find Product ID        ");
+            Console.WriteLine("================================================");
         }
 
         public string UserSelection()

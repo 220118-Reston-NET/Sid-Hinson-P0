@@ -50,7 +50,7 @@ namespace StoreUI
 
 
                 case "1":
-                string answer1 = "Games";
+                string answer1 = "GAME";
                 List<Products> listofprod1 = _productBL.SearchProductsCat(answer1);
                     foreach (var Products in listofprod1)
                     {
@@ -65,7 +65,7 @@ namespace StoreUI
 
 
                 case "2":
-                string answer2 = "System";
+                string answer2 = "SYSTEM";
                 List<Products> listofprod2 = _productBL.SearchProductsCat(answer2);
                     foreach (var Products in listofprod2)
                     {
@@ -80,7 +80,7 @@ namespace StoreUI
 
 
                 case "3":
-                string answer3 = "Merchandise";
+                string answer3 = "MERCHANDISE";
                 List<Products> listofprod3 = _productBL.SearchProductsCat(answer3);
                     foreach (var Products in listofprod3)
                     {

@@ -38,7 +38,7 @@ namespace StoreModel
         public override string ToString()
         {
             return $"OrderID: {OrderID}\nCustomerID: {OrderCustID}\nStoreID: {OrderStoreID}\nOrder Date: {OrderDate}" +
-            $"\nOrderTotal: {OrderTotal}\nOrder Items{OrderLineItems}";
+            $"\nOrderTotal: {OrderTotal}";
         }
 
         public string AlsoToString()

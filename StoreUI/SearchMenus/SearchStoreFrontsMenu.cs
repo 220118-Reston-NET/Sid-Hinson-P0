@@ -28,7 +28,8 @@ namespace StoreUI
             Console.WriteLine("     ============================================");
             Console.WriteLine("     =              Select Option :             =");
             Console.WriteLine("     = [0] - Exit Search                        =");
-            Console.WriteLine("     = [1] - Find StoreFront Information        =");
+            Console.WriteLine("     = [1] - Find StoreFront Information [#]    =");
+            Console.WriteLine("     = [2] - Find StoreFront Information [City] =");
             Console.WriteLine("     ============================================");
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
@@ -59,8 +60,7 @@ namespace StoreUI
 
                     
                 case "1":
-                    Console.WriteLine("Please Enter a Store Front Number");
-
+                    Console.WriteLine("Please Enter a Store Front Number to find its information.");
                     //Testing for an Integer Value
                     bool isNumber = false;
                     string Test = Console.ReadLine();
@@ -96,7 +96,27 @@ namespace StoreUI
                         return "SearchStoreFrontsMenu";
                     }
                     
-
+                case "2":
+                        Console.WriteLine("Please Enter a Store Front City to Search for Locations");
+                        string cityinput = Console.ReadLine();
+                        cityinput = cityinput.ToUpper();
+                        List<StoreFronts> listofStoreFrontsCity = _frontBL.GetAllStoreFronts();
+                        foreach(StoreFronts store in listofStoreFrontsCity)
+                        {
+                            if(store.StoreCity == cityinput)
+                            {
+                                Console.WriteLine("******************");
+                                Console.WriteLine(store);
+                                Console.WriteLine("******************");
+                            }
+                            else
+                            {
+                                Console.WriteLine("No stores were located. Please try again.");
+                            }
+                        }
+                        Console.WriteLine("Press Enter to Continue");
+                        Console.ReadLine();
+                        return "SearchStoreFrontsMenu";
                 default:
                     Console.WriteLine("Invalid Selection. Please Try Again.");
                     Console.WriteLine("Press Enter");
