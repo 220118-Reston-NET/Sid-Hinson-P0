@@ -55,7 +55,7 @@
 
             set 
             { 
-                if (value != "" & value.Length == 8)
+                if (value.Length == 8)
                 {
                     _DateofBirth = value; 
             
