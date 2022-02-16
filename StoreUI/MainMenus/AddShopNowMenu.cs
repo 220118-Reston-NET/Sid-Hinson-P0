@@ -292,120 +292,120 @@ namespace StoreUI
                 case "4":
                     Log.Information("User is selecting Finalize Order");
                     Console.Clear();
-                try
-                    {
-                        Log.Information("User is attempting to Save their Order to the DB");
-                        Console.Clear();
-                        _orderBL.DisplayGraphic();
+                    try
+                        {
+                            Log.Information("User is attempting to Save their Order to the DB");
+                            Console.Clear();
+                            _orderBL.DisplayGraphic();
 
-                        //Get Inputs From User - these are parameterized to get the ID
-                        Console.WriteLine("To Process Each Order, Please Input Your Email and Password");
-                        Log.Information("User is inputting their email address");                   
-                        Console.WriteLine("Enter Your User Email");
-                        string userEmail = Console.ReadLine();
-                        userEmail = userEmail.ToUpper();
+                            //Get Inputs From User - these are parameterized to get the ID
+                            Console.WriteLine("To Process Each Order, Please Input Your Email and Password");
+                            Log.Information("User is inputting their email address");                   
+                            Console.WriteLine("Enter Your User Email");
+                            string userEmail = Console.ReadLine();
+                            userEmail = userEmail.ToUpper();
+                            
+                            Log.Information("User is inputting their email password");
+                            Console.WriteLine("Enter Your User Password");
+                            string userPass = Console.ReadLine();
+
                         
-                        Log.Information("User is inputting their email password");
-                        Console.WriteLine("Enter Your User Password");
-                        string userPass = Console.ReadLine();
+                            //**Create Shopping Order To Send to REPO**
+                            //Get CustomerID
+                            _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
+                            Console.WriteLine("Your CustomerID is: " + _shoppingOrder.OrderCustID);
 
-                    
-                        //**Create Shopping Order To Send to REPO**
-                        //Get CustomerID
-                        _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
-                        Console.WriteLine("Your CustomerID is: " + _shoppingOrder.OrderCustID);
+                            //Adding StoreID
+                            _shoppingOrder.OrderStoreID = _productStoreID;
+                            Console.WriteLine("Your StoreID is: " + _shoppingOrder.OrderStoreID);
 
-                        //Adding StoreID
-                        _shoppingOrder.OrderStoreID = _productStoreID;
-                        Console.WriteLine("Your StoreID is: " + _shoppingOrder.OrderStoreID);
+                            //Adding Date Time of Order
+                            DateTime OrderDate = DateTime.Now;
+                            _shoppingOrder.OrderDate = OrderDate.ToString("MM/dd/yyyy");
 
-                        //Adding Date Time of Order
-                        DateTime OrderDate = DateTime.Now;
-                        _shoppingOrder.OrderDate = OrderDate.ToString("MM/dd/yyyy");
+                            //Adding Order Total
+                            _shoppingOrder.OrderTotal = OrderTotal;
 
-                        //Adding Order Total
-                        _shoppingOrder.OrderTotal = OrderTotal;
+                            //Adding Line Items Cart to Order
+                            _shoppingOrder.OrderLineItems = new List<LineItems>();
+                            _shoppingOrder.OrderLineItems = _shoppingCart;
+                            _shoppingOrder.OrderStatus = "PROCESSING";
 
-                        //Adding Line Items Cart to Order
-                        _shoppingOrder.OrderLineItems = new List<LineItems>();
-                        _shoppingOrder.OrderLineItems = _shoppingCart;
-                        _shoppingOrder.OrderStatus = "PROCESSING";
+                            //Add Order to Repo
+                            Console.WriteLine("Attempting to Add Order ........");
+                            _orderBL.AddOrders(_shoppingOrder); 
+                            Console.WriteLine("Order Added. Press Enter");
 
-                        //Add Order to Repo
-                        Console.WriteLine("Attempting to Add Order ........");
-                        _orderBL.AddOrders(_shoppingOrder); 
-                        Console.WriteLine("Order Added. Press Enter");
+                            //Find the OrderID
+                            List<Orders> getcount = new List<Orders>();
+                            getcount = _orderBL.GetAllOrders();
+                            int OrderID = getcount.Count();
+                            Console.WriteLine("Your Order ID is : " + OrderID);
+                            Console.ReadLine();
+                            
 
-                        //Find the OrderID
-                        List<Orders> getcount = new List<Orders>();
-                        getcount = _orderBL.GetAllOrders();
-                        int OrderID = getcount.Count();
-                        Console.WriteLine("Your Order ID is : " + OrderID);
-                        Console.ReadLine();
-                        
+                            //Display Items Ordered
+                            Console.WriteLine("These were the Items Ordered");
+                            _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
 
-                        //Display Items Ordered
-                        Console.WriteLine("These were the Items Ordered");
-                        _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
-
-                        //Add All LineItems to Repo
+                            //Add All LineItems to Repo
+                            foreach(LineItems item in _shoppingCart)
+                            {
+                                item.OrderID = OrderID;
+                                _orderBL.AddLineItems(item);
+                                Console.WriteLine($"Added to DB : {item}");
+                            }
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
+                            
+                        //Update Inventory
+                        //Set IDs, Pull Inventory Item Info, subtract quantity, reupdate Item totals in DB
+                        //Throws exceptions when needed
                         foreach(LineItems item in _shoppingCart)
                         {
-                            item.OrderID = OrderID;
-                            _orderBL.AddLineItems(item);
-                            Console.WriteLine($"Added to DB : {item}");
+                            // //New Inventory object every loop
+                            // Inventory inventoryobj1 = new Inventory();
+                            // //Populating Fields
+                            // inventoryobj1.StoreID = item.StoreID;
+                            // inventoryobj1.ProductID = item.ProductID;
+                            //Calculate Quantity to subtract in a Variable
+                            int subtractvalue = item.ProductQuantity;
+                            Console.WriteLine($"Inventory will be subtracted by: {subtractvalue}");
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
+                            Console.WriteLine("StoreID - " + item.StoreID);
+                            Console.ReadLine();
+                            Console.WriteLine("ProductID - " +  item.ProductID);
+                            Console.ReadLine();
+                            //Inventory object to hold the actual Row Record We Need to Manipulate
+                            Inventory updateinv = _inv.FindItemLevel(item.StoreID, item.ProductID);
+                            Console.WriteLine($"Inventory previously held : {updateinv.ProductQuantity}");
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
+                            //Subtract the Value From the Quantity
+                            updateinv.ProductQuantity -= subtractvalue;
+                            Console.WriteLine($"Inventory will now have {updateinv.ProductQuantity}");
+                            Console.WriteLine("Press Enter to Continue");
+                            Console.ReadLine();
+                                if(updateinv.ProductQuantity < 0)
+                                {
+                                    Console.WriteLine($"We cannot fulfill your order. We are missing {updateinv.ProductQuantity} units ");
+                                    Console.WriteLine("Press Enter to Continue");
+                                    Console.ReadLine();
+                                }
+                                else
+                                {
+                                    _inv.UpdateInventory(updateinv);
+                                    // _shoppingCart.Clear();
+                                    // OrderTotal = 0;
+                                    Console.WriteLine($"Inventory Item Now Added : {updateinv}");
+                                    Console.WriteLine("Press Enter to Continue");
+                                    Console.ReadLine();
+                                }
                         }
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
-                        
-                    //Update Inventory
-                    //Set IDs, Pull Inventory Item Info, subtract quantity, reupdate Item totals in DB
-                    //Throws exceptions when needed
-                    foreach(LineItems item in _shoppingCart)
-                    {
-                        // //New Inventory object every loop
-                        // Inventory inventoryobj1 = new Inventory();
-                        // //Populating Fields
-                        // inventoryobj1.StoreID = item.StoreID;
-                        // inventoryobj1.ProductID = item.ProductID;
-                        //Calculate Quantity to subtract in a Variable
-                        int subtractvalue = item.ProductQuantity;
-                        Console.WriteLine($"Inventory will be subtracted by: {subtractvalue}");
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
-                        Console.WriteLine("StoreID - " + item.StoreID);
-                        Console.ReadLine();
-                        Console.WriteLine("ProductID - " +  item.ProductID);
-                        Console.ReadLine();
-                        //Inventory object to hold the actual Row Record We Need to Manipulate
-                        Inventory updateinv = _inv.FindItemLevel(item.StoreID, item.ProductID);
-                        Console.WriteLine($"Inventory previously held : {updateinv.ProductQuantity}");
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
-                        //Subtract the Value From the Quantity
-                        updateinv.ProductQuantity -= subtractvalue;
-                        Console.WriteLine($"Inventory will now have {updateinv.ProductQuantity}");
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
-                            if(updateinv.ProductQuantity < 0)
-                            {
-                                Console.WriteLine($"We cannot fulfill your order. We are missing {updateinv.ProductQuantity} units ");
-                                Console.WriteLine("Press Enter to Continue");
-                                Console.ReadLine();
-                            }
-                            else
-                            {
-                                _inv.UpdateInventory(updateinv);
-                                // _shoppingCart.Clear();
-                                // OrderTotal = 0;
-                                Console.WriteLine($"Inventory Item Now Added : {updateinv}");
-                                Console.WriteLine("Press Enter to Continue");
-                                Console.ReadLine();
-                            }
                     }
-                }
                     catch(InvalidDataException)
                     {
                         Console.WriteLine("The Data could not be processed.");
@@ -413,7 +413,7 @@ namespace StoreUI
                     }
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
-                    return "AddShopNowMenu";
+                return "AddShopNowMenu";
 
 
                 default:

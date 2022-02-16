@@ -1,4 +1,4 @@
-@Sid Hinson, sid.hinson@revature.net
-Retro Gaming Store Shop Project 0
-Concept : Online Gaming Merchant 
-C# UI / Azure SQL Repo-DB
+#Retro Gaming Store Shop Project 0\
+Concept : Inventory and Customer Order Management Application\
+Languages : C# UI / Azure SQL Repo-DB\
+Author : sid.hinson@revature.net\
