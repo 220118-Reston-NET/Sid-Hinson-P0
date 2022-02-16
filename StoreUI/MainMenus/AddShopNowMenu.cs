@@ -6,7 +6,7 @@ namespace StoreUI
     public class AddShopNowMenu: IMenu
     {
         private static List<LineItems> _shoppingCart = new List<LineItems>();
-        private static LineItems CartItem = new LineItems();
+        // private static LineItems CartItem = new LineItems();
         private static Orders _shoppingOrder = new Orders();
         private static string p_Email;
         private static int _productID;
@@ -127,10 +127,11 @@ namespace StoreUI
                         userchoice = userchoice.ToUpper();
                         switch(userchoice)
                         {   case "YES":
+                                LineItems CartItem = new LineItems();
                                 CartItem.StoreID = _productStoreID;
                                 CartItem.ProductID = product.ProductID;
                                 CartItem.ProductQuantity = 1;
-                                OrderTotal =+ _productBL.GetPrice(CartItem.ProductID);
+                                OrderTotal += _productBL.GetPrice(CartItem.ProductID);
                                 
                                 //Validate Inventory Level
                                 Inventory parlevel =_inv.FindItemLevel(_productStoreID, CartItem.ProductID);
@@ -179,10 +180,11 @@ namespace StoreUI
                         userchoice = userchoice.ToUpper();
                         switch(userchoice)
                         {   case "YES":
+                                LineItems CartItem = new LineItems();
                                 CartItem.StoreID = _productStoreID;
                                 CartItem.ProductID = product.ProductID;
                                 CartItem.ProductQuantity = 1;
-                                OrderTotal =+ _productBL.GetPrice(CartItem.ProductID);
+                                OrderTotal += _productBL.GetPrice(CartItem.ProductID);
                                 
                                 //Validate Inventory Level
                                 Inventory parlevel =_inv.FindItemLevel(_productStoreID, CartItem.ProductID);
@@ -231,10 +233,11 @@ namespace StoreUI
                         userchoice = userchoice.ToUpper();
                         switch(userchoice)
                         {   case "YES":
+                                LineItems CartItem = new LineItems();
                                 CartItem.StoreID = _productStoreID;
                                 CartItem.ProductID = product.ProductID;
                                 CartItem.ProductQuantity = 1;
-                                OrderTotal =+ _productBL.GetPrice(CartItem.ProductID);
+                                OrderTotal += _productBL.GetPrice(CartItem.ProductID);
                                 
                                 //Validate Inventory Level
                                 Inventory parlevel =_inv.FindItemLevel(_productStoreID, CartItem.ProductID);
