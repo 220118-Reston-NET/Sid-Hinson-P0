@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using StoreModel;
 namespace StoreDL
 {
-    public class SQL_ORepository : ISQLOrdersRepo
+    public class SQL_ORepository : ISQL_ORepository
     {
 
 

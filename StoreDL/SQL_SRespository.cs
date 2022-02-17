@@ -2,18 +2,14 @@ using System.Data.SqlClient;
 using StoreModel;
 namespace StoreDL
 {
-    public class SQL_SRepository : ISQLStoreFrontsRepo
+    public class SQL_SRepository : ISQL_SRepository
     {
         private readonly string _ConnectionStrings;
         public SQL_SRepository(string p_ConnectionStrings)
         {
             _ConnectionStrings = p_ConnectionStrings;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="p_store"></param>
-        /// <returns></returns>
+
         public StoreFronts AddStoreFronts(StoreFronts p_store)
         {
 
@@ -31,10 +27,7 @@ namespace StoreDL
             }
             return p_store;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+
         public List<StoreFronts> GetAllStoreFronts()
         {
             List<StoreFronts> listofstorefronts = new List<StoreFronts>();

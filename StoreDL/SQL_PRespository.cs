@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using StoreModel;
 namespace StoreDL
 {
-    public class SQL_PRepository : ISQLProductsRepo
+    public class SQL_PRepository : ISQL_PRepository
     {
 
         private readonly string _ConnectionStrings;

@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using StoreModel;
 namespace StoreDL
 {
-    public class SQL_InvRepository : ISQLInventoryRepo
+    public class SQL_InvRepository : ISQL_InvRepository
     {
 
         private readonly string _ConnectionStrings;

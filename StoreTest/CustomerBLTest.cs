@@ -43,7 +43,7 @@ namespace StoreTest
             expectedlistofcust.Add(customer1);
 
             //Mock The Repo that is a dependency
-            Mock<ISQLCustomersRepo> mockRepo = new Mock<ISQLCustomersRepo>();
+            Mock<ISQL_CRepository> mockRepo = new Mock<ISQL_CRepository>();
             //Mock GetAllCustomers
             mockRepo.Setup(repo => repo.GetAllCustomers()).Returns(expectedlistofcust);
 

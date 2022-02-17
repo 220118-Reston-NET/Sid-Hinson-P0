@@ -5,15 +5,10 @@ namespace StoreBL
 {
     public class OrdersBL : IOrdersBL
     {
-        /// <summary>
-        /// Dependency Injection Constructor
-        /// </summary>
-
-        // private IProductsBL _prod;
-        private ISQLOrdersRepo _repo;
-        public OrdersBL(ISQLOrdersRepo p_repo)
+        private ISQL_ORepository _repo;
+        public OrdersBL(ISQL_ORepository p_repo)
         {
-            // _prod = p_prod;
+            
             _repo = p_repo;
         }
 
@@ -23,11 +18,7 @@ namespace StoreBL
             List<Orders> listoforders = _repo.GetAllOrders();
             return listoforders;
         }
-        /// <summary>
-        /// Add Order to Repo
-        /// </summary>
-        /// <param name="p_order"></param>
-        /// <returns></returns>
+
         public Orders AddOrders(Orders p_order)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
@@ -40,12 +31,7 @@ namespace StoreBL
                 throw new Exception("Limit of 1000 Orders is reached");
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="p_storeID"></param>
-        /// <param name="p_status"></param>
-        /// <returns></returns>
+
         public List<Orders> SearchStoreOrders(int p_storeID, string p_status)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
@@ -54,11 +40,7 @@ namespace StoreBL
                     .Where(Orders => Orders.OrderStatus.Contains(p_status))
                     .ToList(); //ToList method converts into return List collection
         }
-        /// <summary>
-        /// Search All orders
-        /// </summary>
-        /// <param name="p_email"></param>
-        /// <returns></returns>
+
         public List<Orders> SearchOrders(int p_custID, string p_status)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
@@ -67,7 +49,7 @@ namespace StoreBL
                     .Where(Orders => Orders.OrderStatus.Contains(p_status))
                     .ToList(); //ToList method converts into return List collection
         }
-        public List<Orders> Search4Order(int p_custID, int p_storeID)
+        public List<Orders> SearchForOrderbyID(int p_custID, int p_storeID)
         {
             List<Orders> listoforders = _repo.GetAllOrders();
             return listoforders
@@ -116,11 +98,7 @@ namespace StoreBL
                     .Where(LineItems => LineItems.OrderID.Equals(p_orderID))
                     .ToList(); //ToList method converts into return List collection
         }
-        /// <summary>
-        /// Add values to Item
-        /// </summary>
-        /// <param name="p_lineItem"></param>
-        /// <returns>LineItem</returns>
+
         public LineItems AddItemFields(int p_prodID, int p_prodQuant,int p_storeID, double p_price)
         {
             LineItems p_lineItem = new LineItems();

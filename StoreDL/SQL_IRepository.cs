@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using StoreModel;
 namespace StoreDL
 {
-    public interface ISQLCustomersRepo
+    public interface ISQL_CRepository
     {
         /// <summary>
         /// Add Customers to DB
@@ -19,7 +19,10 @@ namespace StoreDL
     
 
 
-        public interface ISQLProductsRepo
+
+
+
+        public interface ISQL_PRepository
     {
         /// <summary>
         /// Add Products to DB
@@ -38,7 +41,10 @@ namespace StoreDL
     
 
 
-        public interface ISQLStoreFrontsRepo
+
+
+
+        public interface ISQL_SRepository
     {
         /// <summary>
         /// Add Storefronts to DB
@@ -52,7 +58,7 @@ namespace StoreDL
         /// <returns>Returns List</returns>
         public List<StoreFronts> GetAllStoreFronts();
         /// <summary>
-        /// 
+        /// Pulls a Single StoreFront ID to Grab History
         /// </summary>
         /// <param name="p_store"></param>
         /// <returns></returns>
@@ -61,7 +67,10 @@ namespace StoreDL
     
 
 
-        public interface ISQLOrdersRepo
+
+
+
+        public interface ISQL_ORepository
     {
         /// <summary>
         /// Add Orders to DB
@@ -75,24 +84,24 @@ namespace StoreDL
         /// <returns>Returns List</returns>
         public List<Orders> GetAllOrders();
         /// <summary>
-        /// 
+        /// Gets a Comprehensive Order List for a Customer
         /// </summary>
         /// <returns></returns>
         public List<Orders> GetCompOrderHist(int p_custID);
         /// <summary>
-        /// 
+        /// Updates Order Status
         /// </summary>
         /// <param name="p_ordID"></param>
         /// <param name="p_stat"></param>
         public void UpdateOrdStat(int p_ordID, string p_stat);
         /// <summary>
-        /// 
+        /// Add Items to LineItem
         /// </summary>
         /// <param name="p_line"></param>
         /// <returns></returns>
         public LineItems AddLineItems(LineItems p_line);
         /// <summary>
-        /// 
+        /// Gets All Line Items
         /// </summary>
         /// <returns></returns>
         public List<LineItems> GetAllLineItems();
@@ -102,7 +111,7 @@ namespace StoreDL
 
 
 
-        public interface ISQLInventoryRepo
+        public interface ISQL_InvRepository
     {
         /// <summary>
         /// Adds Inventory to DB
@@ -115,7 +124,11 @@ namespace StoreDL
         /// </summary>
         /// <returns></returns>
         public List<Inventory> GetAllInventory();
-
+        /// <summary>
+        /// Updates Inventory with a constructed INV object
+        /// </summary>
+        /// <param name="p_inv"></param>
+        /// <returns></returns>
         public Inventory UpdateInventory(Inventory p_inv);
 
     }

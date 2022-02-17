@@ -2,7 +2,7 @@ using System.Data.SqlClient;
 using StoreModel;
 namespace StoreDL
 {
-    public class SQL_CRepository : ISQLCustomersRepo
+    public class SQL_CRepository : ISQL_CRepository
     {
 
         //7.Privatizing the Connection String as a PARAMETER

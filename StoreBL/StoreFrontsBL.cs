@@ -5,11 +5,8 @@ namespace StoreBL
 {
     public class StoreFrontsBL : IStoreFrontsBL
     {
-        /// <summary>
-        /// Dependency Injection Constructor
-        /// </summary>
-        private ISQLStoreFrontsRepo _repo;
-        public StoreFrontsBL(ISQLStoreFrontsRepo p_repo)
+        private ISQL_SRepository _repo;
+        public StoreFrontsBL(ISQL_SRepository p_repo)
         {
             _repo = p_repo;
         }

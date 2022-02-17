@@ -115,7 +115,7 @@ namespace StoreUI
                     int p_cID = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Please Enter a Store ID");
                     int p_sID = Convert.ToInt32(Console.ReadLine());
-                    List<Orders> searchorder = _ordBL.Search4Order(p_cID, p_sID);
+                    List<Orders> searchorder = _ordBL.SearchForOrderbyID(p_cID, p_sID);
                     if(searchorder.Any())
                     {
                         Console.Clear();
@@ -152,7 +152,7 @@ namespace StoreUI
                     Console.WriteLine("Please enter Customer State:");
                     string p_s = Console.ReadLine();
                     p_s = p_s.ToUpper();
-                    List<Customers> searchcust = _custBL.Search4Customers(p_f,p_l,p_c,p_s);
+                    List<Customers> searchcust = _custBL.SearchForCustomers(p_f,p_l,p_c,p_s);
                     if(searchcust.Any())
                     {
                         Console.Clear();
