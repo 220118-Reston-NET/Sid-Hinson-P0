@@ -2,9 +2,7 @@ namespace StoreModel
 {
     public class LineItems
     {
-       
        public int OrderID { get; set; }
-
        private int _productID;  
        public int ProductID
         {
@@ -17,9 +15,6 @@ namespace StoreModel
                  _productID = value;
             }
         }
-
-
-        //Quantity of Product
        private int _ProductQuantity;
        public int ProductQuantity
        {
@@ -41,16 +36,15 @@ namespace StoreModel
         }
         public double Price { get; set; }
         public int StoreID { get; set; }
-
+        
         //Default Constructor 
         public LineItems()
         {
-        
         ProductID = 0;
         ProductQuantity = 0;
         StoreID = 0;
         }
-        
+
         public override string ToString()
         {
             return $"\nProductID: {ProductID}\nOrderID: {OrderID}" +

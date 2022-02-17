@@ -17,15 +17,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (value != "")
+                // {
                     _CFirstName = value;
-                }
-                else
-                {
-                    throw new Exception("First Name must be entered and have a value.");
-                }
-                
+                // }
+                // else
+                // {
+                //     throw new Exception("First Name must be entered and have a value.");
+                // }         
             }
         }
 
@@ -36,18 +35,16 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _CLastName = value;
-                }
-                else
-                {
-                    throw new Exception("Last Name must be entered and have a value.");
-                }
-
+                // }
+                // else
+                // {
+                //     throw new Exception("Last Name must be entered and have a value.");
+                // }
             }
         }
-
         private string _DateofBirth;
         public string CDateofBirth
         {
@@ -55,16 +52,15 @@
 
             set 
             { 
-                if (value.Length == 8)
-                {
+                // if (value.Length == 8)
+                // {
                     _DateofBirth = value; 
             
-                }
-                else
-                {
-                    throw new Exception("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
-                } 
-
+                // }
+                // else
+                // {
+                //     throw new Exception("Date of Birth must be 8 Numeric Characters. MMDDYYYY");
+                // } 
             }
         }
         private string _CustomerAddress;
@@ -74,15 +70,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _CustomerAddress = value;
-                }
-                else
-                {
-                    throw new Exception("Address must be entered.");
-                }
-
+                // }
+                // else
+                // {
+                //     throw new Exception("Address must be entered.");
+                // }
             }
         }
         private string _CustomerCity;
@@ -92,15 +87,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _CustomerCity = value;
-                }
-                else
-                {
-                    throw new Exception("City must be entered and have a value.");
-                }
-
+                // }
+                // else
+                // {
+                //     throw new Exception("City must be entered and have a value.");
+                // }
             }
         }
    
@@ -111,15 +105,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _CustomerState = value;
-                }
-                else
-                {
-                    throw new Exception("State must have a value");
-                }
-
+                // }
+                // else
+                // {
+                //     throw new Exception("State must have a value");
+                // }
             }
         }
         private string _CustomerZipcode;
@@ -129,15 +122,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value) || value.Length != 5)
+                // {
                     _CustomerZipcode = value;
-                }
-                else
-                {
-                    throw new Exception("ZipCode must have a value.");
-                }
-
+                // }
+                // else
+                // {
+                //     throw new Exception("ZipCode must have a value.");
+                // }
             }
         }
 
@@ -148,14 +140,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _CustCountry = value;
-                }
-                else
-                {
-                    throw new Exception("Country must be entered.");
-                }
+                // }
+                // else
+                // {
+                //     throw new Exception("Country must be entered.");
+                // }
 
             }
         }
@@ -167,14 +159,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _CustomerEmail = value;
-                }
-                else
-                {
-                    throw new Exception("Email must have a input.");
-                }
+                // }
+                // else
+                // {
+                //     throw new Exception("Email must have a input.");
+                // }
 
             }
         }
@@ -185,14 +177,14 @@
 
             set 
             {
-                if (value != "")
-                {
+                // if (string.IsNullOrEmpty(value))
+                // {
                     _Password = value;
-                }
-                else
-                {
-                    throw new Exception("Password must have an input.");
-                }
+                // }
+                // else
+                // {
+                //     throw new Exception("Password must have an input.");
+                // }
  
             }
         }
@@ -200,16 +192,16 @@
         //Default Class Constructor
         public Customers()
         {
-            CFirstName = "STEPHEN";
-            CLastName = "STRANGE";
-            CDateofBirth = "11181930";
-            CustomerAddress = "117A BlEECKER STREET";
-            CustomerState = "NY";
-            CustomerCity = "NEW YORK CITY";
-            CustomerZipcode = "10011";
-            CustCountry = "USA";
-            CustomerEmail = "STEPHEN.STRANGE@AOL.COM";
-            CPassword = "mordoisajerk";
+            CFirstName ="";
+            CLastName = "";
+            CDateofBirth = "";
+            CustomerAddress = "";
+            CustomerState = "";
+            CustomerCity = "";
+            CustomerZipcode = "";
+            CustCountry = "";
+            CustomerEmail = "";
+            CPassword = "";
         }
 
         public override string ToString()

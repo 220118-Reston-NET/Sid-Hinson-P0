@@ -1,6 +1,4 @@
 namespace StoreModel
-
-
 {
     public class Inventory
     {

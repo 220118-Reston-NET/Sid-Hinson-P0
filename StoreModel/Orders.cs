@@ -4,26 +4,19 @@ namespace StoreModel
     {
         
        public int OrderID { get; set; }
-
        public int OrderCustID { get; set; }
-
        public int OrderStoreID { get; set; }
-
        public string OrderDate { get; set; }
-
        public string OrderStatus { get; set; }
-
+       ///
        public int ProductID { get; set; }
        public int ProductQuantity { get; set; }
        public string ProductName { get; set; }
        public string CLastName { get; set; }
-
-
-       //List of Line Items for an Order, Line Items is a String/int type
-       //May need to be ArrayList or something else
+       /// 
        public List<LineItems> OrderLineItems { get; set;}
-        //Order total of Customer Order
        public double OrderTotal { get; set; }
+       
       //Default Constructor      
         public Orders()
         {
@@ -41,9 +34,5 @@ namespace StoreModel
             $"\nOrderTotal: {OrderTotal}";
         }
 
-        public string AlsoToString()
-        {
-            return $"{OrderLineItems}";
-        }
     }
 }
