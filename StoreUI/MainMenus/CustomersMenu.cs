@@ -18,10 +18,10 @@ namespace StoreUI
             Console.WriteLine("=              Enter Number to Select Option             =");     
             Console.WriteLine("==========================================================");
             Console.WriteLine("=          [0] - Return to Main Menu / Exit              =");
-            Console.WriteLine("=          [1] - Enter Your Customer Information         =");
+            Console.WriteLine("=          [1] - Register Customer Information           =");
             Console.WriteLine("=          [2] - Find Your Customer ID                   =");
-            Console.WriteLine("=          [3] - Search For StoreFront                   =");
-            Console.WriteLine("=          [4] - Products & Orders Viewing               =");
+            Console.WriteLine("=          [3] - Search StoreFront Info                  =");
+            Console.WriteLine("=          [4] - View Products & Orders                  =");
             Console.WriteLine("=          [5] - Bulk Order Products Menu                =");
             Console.WriteLine("=          [6] - SELECT STORE - STORE SHOP NOW           =");
             Console.WriteLine("==========================================================");

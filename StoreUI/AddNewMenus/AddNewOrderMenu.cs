@@ -5,16 +5,11 @@ namespace StoreUI
     public class AddNewOrderMenu : IMenu
     {
         private static List<LineItems> _shoppingCart = new List<LineItems>();
-        private static LineItems CartItem = new LineItems();
+        private static LineItems _cartItem = new LineItems();
         private static Orders _shoppingOrder = new Orders();
-        private static string p_Email;
-        private static int _productID;
-        private static double _productPrice;
-        public static int _productStoreID;
-        private static string _productName;
-        private static string _productCompany;
-        private static int _productQuantity;
-        private static string _orderID;
+        private static Customers _customerInfo = new Customers();
+        private static Products _productInfo = new Products();
+
         public static double OrderTotal;
 
         //Dependency Injection
@@ -43,17 +38,17 @@ namespace StoreUI
             Console.WriteLine("=              Enter New Order Info : Select             =");     
             Console.WriteLine("==========================================================");
             Console.WriteLine("=[0] Return to Main Menu"); 
-            Console.WriteLine("=[1] Store # - " + _productStoreID);
-            Console.WriteLine("=[2] Product Name - " + _productName);
-            Console.WriteLine("=[3] Product Company - " + _productCompany);
-            Console.WriteLine("=[4] Quantity - " + _productQuantity);  
+            Console.WriteLine("=[1] Store # - " + _productInfo.StoreID);
+            Console.WriteLine("=[2] Product Name - " + _productInfo.ProductName);
+            Console.WriteLine("=[3] Product Company - " + _productInfo.ProductCompany);
+            Console.WriteLine("=[4] Quantity - " + _cartItem.ProductQuantity);  
             Console.WriteLine("=[5] Add Order to Cart");
             Console.WriteLine("=[6] Remove Orders From Cart");
             Console.WriteLine("=[7] Display Orders From Cart");
             Console.WriteLine("=[8] Save and Checkout Order");
             Console.WriteLine("==========================================================");
-            Console.WriteLine("= * Last Item Added - ProductID - " + _productID);
-            Console.WriteLine("= * Last Item Added = Product Price - " + _productPrice);
+            Console.WriteLine("= * Last Item Added - ProductID - " + _productInfo.ProductID);
+            Console.WriteLine("= * Last Item Added = Product Price - " + _productInfo.ProductPrice);
             Console.WriteLine("=========================================================="); 
             Console.WriteLine(")xxxxx[;;;;;;;;;>    )xxxxx[;;;;;;;;;>   )xxxxx[;;;;;;;;;>"); 
             Console.WriteLine("==========================================================");
@@ -79,7 +74,7 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Store ID :");
-                    _productStoreID = Convert.ToInt32(Console.ReadLine());
+                    _productInfo.StoreID = Convert.ToInt32(Console.ReadLine());
                     return "AddNewOrderMenu";
 
 
@@ -89,8 +84,8 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Name : ");
-                    _productName = Console.ReadLine();
-                    _productName = _productName.ToUpper();
+                    _productInfo.ProductName = Console.ReadLine();
+                    _productInfo.ProductName = _productInfo.ProductName.ToUpper();
                     return "AddNewOrderMenu";
 
 
@@ -100,8 +95,8 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter a Product Company :");
-                    _productCompany = Console.ReadLine();
-                    _productCompany = _productCompany.ToUpper();
+                    _productInfo.ProductCompany = Console.ReadLine();
+                    _productInfo.ProductCompany = _productInfo.ProductCompany.ToUpper();
                     return "AddNewOrderMenu";
 
 
@@ -112,7 +107,7 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     Console.WriteLine("Enter an Product Quantity : ");
-                    _productQuantity = Convert.ToInt32(Console.ReadLine());
+                    _cartItem.ProductQuantity = Convert.ToInt32(Console.ReadLine());
                     return "AddNewOrderMenu";
 
 
@@ -125,67 +120,85 @@ namespace StoreUI
 
 
                     //Getting Values For Line Item
-                    _productID = _productBL.GetID(_productName, _productCompany, _productStoreID);
-                    _productPrice = _productBL.GetPrice(_productID);
-                    Console.WriteLine("Product ID is " + _productID);
+                    _productInfo.ProductID = _productBL.GetID(_productInfo.ProductName, _productInfo.ProductCompany, _productInfo.StoreID);
+                    _productInfo.ProductPrice = _productBL.GetPrice(_productInfo.ProductID);
+                    Console.WriteLine("*****************************************");
+                    Console.WriteLine("* Find Product ID ..........");
+                    Console.WriteLine("* Product ID is " + _productInfo.ProductID);
+                    Console.WriteLine("*****************************************");
+                    Console.WriteLine("Press Enter");
                     Console.ReadLine();
+                    Console.Clear();
 
                     //ChecktoSee if ProductID returned
-                    if(_productID != 0)
+                    if(_productInfo.ProductID != 0)
                     {
                         //Building Line Item
-                        CartItem = _orderBL.AddItemFields(_productID, _productQuantity,_productStoreID, _productPrice);
-                        Console.WriteLine("CartItem info is " + CartItem);
+                        _cartItem = _orderBL.AddItemFields(_productInfo.ProductID, _cartItem.ProductQuantity,_productInfo.StoreID, _productInfo.ProductPrice);
+                        Console.WriteLine("*****************************************");
+                        Console.WriteLine("* Item info : " + _cartItem);
+                        Console.WriteLine("*****************************************");
                         Console.WriteLine("Press Enter");
                         Console.ReadLine();
-
+                        Console.Clear();
 
                         //Running Total
-                        OrderTotal += (_productPrice * _productQuantity);
-                        Console.WriteLine("OrderTotal is " + OrderTotal);
+                        _shoppingOrder.OrderTotal += (_productInfo.ProductPrice * _cartItem.ProductQuantity);
+                        Console.WriteLine("*****************************************");
+                        Console.WriteLine("* OrderTotal : " + _shoppingOrder.OrderTotal);
+                        Console.WriteLine("*****************************************");
                         Console.WriteLine("Press Enter");
                         Console.ReadLine();
-                        
+                        Console.Clear();
 
                         //Validate Inventory Level
                         // Inventory parlevel = new Inventory();
-                        Inventory parlevel = _inv.FindItemLevel(_productStoreID, _productID);
-                        Console.WriteLine(_inv.FindItemLevel(_productStoreID, _productID));
-                        Console.WriteLine("*********************");
-                        Console.WriteLine("Inventory Located:" + parlevel );
-                        Console.WriteLine("Checking Levels.....");
-                        Console.ReadLine();
-                        Console.WriteLine("*********************");
-                        Console.WriteLine("Old Inventory LEVEL = " + parlevel.ProductQuantity);
-                        parlevel.ProductQuantity -= _productQuantity;
-                        Console.WriteLine("Quantity to subtract = " + _productQuantity);
-                        Console.WriteLine("NEW Inventory LEVEL = " + parlevel.ProductQuantity);
+                        Inventory parlevel = _inv.FindItemLevel(_productInfo.StoreID, _productInfo.ProductID);
+                        Console.WriteLine(_inv.FindItemLevel(_productInfo.StoreID, _productInfo.ProductID));
+                        Console.WriteLine("***********************************");
+                        Console.WriteLine("* Inventory Located:" + parlevel );
+                        Console.WriteLine("***********************************");
+                        Console.WriteLine("* Old Inventory LEVEL = " + parlevel.ProductQuantity);
+                        Console.WriteLine("***********************************");
+                        parlevel.ProductQuantity -= _cartItem.ProductQuantity;
+                        Console.WriteLine("* Quantity to Subtract = " + _cartItem.ProductQuantity);
+                        Console.WriteLine("* New Inventory Level = " + parlevel.ProductQuantity);
+                        Console.WriteLine("***********************************");
+                        Console.WriteLine("* Calculating Outcome");
+                        Console.WriteLine("***********************************");
                         if(parlevel.ProductQuantity >= 0)
                         {
                             //Add Item to Shopping Cart
-                            Console.WriteLine("Product Can be Added");
-                            _shoppingCart.Add(CartItem);
-                            Console.WriteLine("This Item was Added to cart.");
-                            Console.WriteLine(CartItem);
+                            Console.WriteLine("****************************");
+                            Console.WriteLine("*Product Can be Added.......");
+                            _shoppingCart.Add(_cartItem);
+                            Console.WriteLine("*This Item was Added to cart.");
+                            Console.WriteLine("****************************");
                             Console.WriteLine("Press Enter");
                             Console.ReadLine();
+                            Console.Clear();
                         }
                         else
                         {
-                            Console.WriteLine("Product Can NOT be Added");
-                            Console.WriteLine("We are sorry, but we cannot fulfill your order. We must restock.");
+                            Console.WriteLine("*****************************************************************");
+                            Console.WriteLine("* Product can NOT be added to your order");
+                            Console.WriteLine("* We are sorry, but we cannot fulfill your order. We must restock.");
+                            Console.WriteLine("******************************************************************");
                             Console.WriteLine("Press Enter to Continue");
                             Console.ReadLine();
+                            Console.Clear();
                         }
                     }
                     else
                     {
+                        Console.WriteLine("*************************************");
                         Console.WriteLine("Your Product Did not return an ID.");
                         Console.WriteLine("Please Try Again");
                         Console.WriteLine("Press Enter to Continue");
+                        Console.WriteLine("*************************************");
                         Console.ReadLine();
+                        Console.Clear();
                     }
-
                     return "AddNewOrderMenu";
 
 
@@ -196,9 +209,12 @@ namespace StoreUI
                     Console.Clear();
                     _orderBL.DisplayGraphic();
                     _shoppingCart.Clear();
-                    OrderTotal = 0;
+                    _shoppingOrder.OrderTotal = 0;
+                    Console.WriteLine("*********************************************");
                     Console.WriteLine("Your Cart is Empty! Press Enter to Continue");
+                    Console.WriteLine("********************************************");
                     Console.ReadLine();
+                    Console.Clear();
                     return "AddNewOrderMenu";
 
 
@@ -211,10 +227,11 @@ namespace StoreUI
                     Console.WriteLine("==============YourCart================");
                     _orderBL.DisplayCart(_shoppingCart);
                     Console.WriteLine("======================================");
-                    Console.WriteLine($"Current Order Total = ${OrderTotal}");
+                    Console.WriteLine($"Current Order Total = ${_shoppingOrder.OrderTotal}");
                     Console.WriteLine("======================================");
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
+                    Console.Clear();
                     return "AddNewOrderMenu";
 
 
@@ -229,46 +246,43 @@ namespace StoreUI
                     _orderBL.DisplayGraphic();
 
                     //Get Inputs From User - these are parameterized to get the ID
+                    Console.WriteLine("************************************************************");
                     Console.WriteLine("To Process Each Order, Please Input Your Email and Password");
                     Log.Information("User is inputting their email address");                   
-                    Console.WriteLine("Enter Your User Email");
+                    Console.WriteLine("* Please Enter Your User Email");
+                    Console.WriteLine("************************************************************");
                     string userEmail = Console.ReadLine();
                     userEmail = userEmail.ToUpper();
                     
                     Log.Information("User is inputting their email password");
-                    Console.WriteLine("Enter Your User Password");
+                    Console.WriteLine("************************************************************");
+                    Console.WriteLine("Please Enter Your User Password");
+                    Console.WriteLine("************************************************************");
                     string userPass = Console.ReadLine();
 
-                
-                    try
+                    //Must Find a Valid Customer ID
+                    do
                     {
                         _shoppingOrder.OrderCustID = _customerBL.GetID(userEmail, userPass);
-                        Console.WriteLine("Your Customer ID is " + _shoppingOrder.OrderCustID);
-                        Console.ReadLine();
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Something went wrong. Check your information and re-try. Press Enter to Continue");
-                        Console.ReadLine();
-                        return "AddNewOrderMenu";
-                    }
+                        Console.WriteLine("Customer ID : " + _shoppingOrder.OrderCustID);
 
+                    }while(_shoppingOrder.OrderCustID == 0);
+             
                     //Adding StoreID
-                    _shoppingOrder.OrderStoreID = _productStoreID;
+                    _shoppingOrder.OrderStoreID = _productInfo.StoreID;
 
                     //Adding Date Time of Order
                     DateTime OrderDate = DateTime.Now;
                     _shoppingOrder.OrderDate = OrderDate.ToString("MM/dd/yyyy");
 
-                    //Adding Order Total
-                    _shoppingOrder.OrderTotal = OrderTotal;
+                    // //Adding Order Total
+                    // _shoppingOrder.OrderTotal = OrderTotal;
 
                     //Adding Line Items Cart to Order
                     _shoppingOrder.OrderLineItems = new List<LineItems>();
                     _shoppingOrder.OrderLineItems = _shoppingCart;
                     _shoppingOrder.OrderStatus = "PROCESSING";
 
-                    //****Stuck
 
                     //Add Order to Repo
                     Console.WriteLine("Attempting to Add Order ........");
@@ -284,8 +298,11 @@ namespace StoreUI
                     Console.ReadLine();
                     
                     //Display Items Ordered
+                    Console.Clear();
+                    Console.WriteLine("*******************************");
                     Console.WriteLine("These were the Items Ordered");
                     _orderBL.DisplayCart(_shoppingOrder.OrderLineItems);
+                    Console.WriteLine("*******************************");
                     Console.WriteLine("Press Enter to Continue");
                     Console.ReadLine();
 
@@ -302,9 +319,8 @@ namespace StoreUI
                     {
                         _orderBL.AddLineItems(item);
                         Console.WriteLine($"Added to DB : {item}");
+                        Console.Clear();
                     }
-                    Console.WriteLine("Press Enter to Continue");
-                    Console.ReadLine();
                     
                     //Update Inventory
                     //Set IDs, Pull Inventory Item Info, subtract quantity, reupdate Item totals in DB
@@ -326,8 +342,7 @@ namespace StoreUI
                         //Subtract the Value From the Quantity
                         inventoryobj2.ProductQuantity -= subtractvalue;
                         Console.WriteLine($"Inventory will now have {inventoryobj2.ProductQuantity}");
-                        Console.WriteLine("Press Enter to Continue");
-                        Console.ReadLine();
+
                             if(inventoryobj2.ProductQuantity < 0)
                             {
                                 Console.WriteLine($"We cannot fulfill your order. We are missing {inventoryobj2.ProductQuantity} units ");
@@ -351,7 +366,7 @@ namespace StoreUI
                     Console.ReadLine();
                 }
                 _shoppingCart.Clear();
-                OrderTotal = 0;
+                _shoppingOrder.OrderTotal = 0;
                 return "AddNewOrderMenu";
                     
 

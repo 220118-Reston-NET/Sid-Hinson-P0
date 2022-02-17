@@ -4673,3 +4673,131 @@
 2022-02-16 22:49:18.322 -05:00 [INF] Displaying Main Menu to user
 2022-02-16 22:49:18.325 -05:00 [INF] User is selection an input
 2022-02-16 22:49:47.001 -05:00 [INF] User is retrying to input a new selection
+2022-02-16 23:43:58.956 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-17 00:29:28.309 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-17 00:29:41.750 -05:00 [INF] User is selection an input
+2022-02-17 00:30:47.892 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 00:30:47.892 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 00:30:47.901 -05:00 [INF] User is selecting an input
+2022-02-17 00:30:58.560 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-17 00:30:58.561 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-17 00:30:58.568 -05:00 [INF] User is making a selection
+2022-02-17 00:31:06.523 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 00:31:06.524 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 00:31:06.527 -05:00 [INF] User is selecting an input
+2022-02-17 00:31:12.341 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-17 00:31:12.341 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-17 00:31:12.345 -05:00 [INF] User is making a selection
+2022-02-17 00:31:19.140 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 00:31:19.141 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 00:31:19.156 -05:00 [INF] User is selecting an input
+2022-02-17 00:31:45.363 -05:00 [INF] User is selecting Add Business Transaction Menu
+2022-02-17 00:31:45.363 -05:00 [INF] Displaying Add Business Transaction Menu to user
+2022-02-17 00:31:45.366 -05:00 [INF] User is making a selection
+2022-02-17 00:32:50.129 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 00:32:50.129 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 00:32:50.132 -05:00 [INF] User is selecting an input
+2022-02-17 00:34:11.439 -05:00 [INF] User is selecting Add New Order Menu
+2022-02-17 00:34:11.440 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:11.472 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:14.513 -05:00 [INF] User is entering the Store ID
+2022-02-17 00:34:16.389 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:16.392 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:18.121 -05:00 [INF] User is entering the Product Name
+2022-02-17 00:34:21.308 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:21.312 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:23.006 -05:00 [INF] User is entering the Product Company
+2022-02-17 00:34:28.599 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:28.603 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:30.952 -05:00 [INF] User is entering the Product Quantity
+2022-02-17 00:34:31.807 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:31.815 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:33.673 -05:00 [INF] User is adding the Item to the Static Cart
+2022-02-17 00:34:49.532 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:49.536 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:52.851 -05:00 [INF] User is entering the Store ID
+2022-02-17 00:34:56.916 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:34:56.919 -05:00 [INF] User is entering their selection
+2022-02-17 00:34:59.285 -05:00 [INF] User is entering the Product Name
+2022-02-17 00:35:03.813 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:35:03.817 -05:00 [INF] User is entering their selection
+2022-02-17 00:35:06.838 -05:00 [INF] User is entering the Product Company
+2022-02-17 00:35:08.717 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:35:08.730 -05:00 [INF] User is entering their selection
+2022-02-17 00:35:11.014 -05:00 [INF] User is entering the Product Quantity
+2022-02-17 00:35:12.327 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:35:12.337 -05:00 [INF] User is entering their selection
+2022-02-17 00:35:14.135 -05:00 [INF] User is adding the Item to the Static Cart
+2022-02-17 00:35:32.196 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:35:32.199 -05:00 [INF] User is entering their selection
+2022-02-17 00:35:37.245 -05:00 [INF] User is displaying Items in the Static Cart
+2022-02-17 00:35:40.493 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:35:40.500 -05:00 [INF] User is entering their selection
+2022-02-17 00:35:43.156 -05:00 [INF] User is attempting to Save their Order to the DB
+2022-02-17 00:35:43.159 -05:00 [INF] User is inputting their email address
+2022-02-17 00:35:57.186 -05:00 [INF] User is inputting their email password
+2022-02-17 00:36:13.912 -05:00 [INF] Displaying Add New orders Menu to user
+2022-02-17 00:36:13.916 -05:00 [INF] User is entering their selection
+2022-02-17 00:36:20.931 -05:00 [INF] User is selecting Store Main Menu
+2022-02-17 00:36:20.931 -05:00 [INF] Displaying Main Menu to user
+2022-02-17 00:36:20.938 -05:00 [INF] User is selection an input
+2022-02-17 00:36:22.875 -05:00 [INF] User has Exited The Program
+2022-02-17 00:58:48.946 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-17 00:58:50.846 -05:00 [INF] User is selection an input
+2022-02-17 00:58:52.597 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 00:58:52.597 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 00:58:52.601 -05:00 [INF] User is selecting an input
+2022-02-17 00:58:56.602 -05:00 [INF] User is selecting Shop NOW
+2022-02-17 00:58:56.603 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 00:59:22.546 -05:00 [INF] User is selecting Game Category
+2022-02-17 00:59:36.909 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 00:59:40.214 -05:00 [INF] User is selecting System Category
+2022-02-17 00:59:58.324 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:00:00.685 -05:00 [INF] User is selecting Merchandise Category
+2022-02-17 01:00:10.569 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:00:16.356 -05:00 [INF] User is Displaying the Order
+2022-02-17 01:00:57.506 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:01:02.808 -05:00 [INF] User is clearing the Order
+2022-02-17 01:01:04.015 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:01:07.833 -05:00 [INF] User is Displaying the Order
+2022-02-17 01:01:09.313 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:01:12.681 -05:00 [INF] User is selecting System Category
+2022-02-17 01:01:24.943 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:01:29.076 -05:00 [INF] User is Displaying the Order
+2022-02-17 01:03:24.563 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-17 01:03:43.964 -05:00 [INF] User is selection an input
+2022-02-17 01:03:45.493 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 01:03:45.493 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 01:03:45.500 -05:00 [INF] User is selecting an input
+2022-02-17 01:03:47.560 -05:00 [INF] User is selecting Shop NOW
+2022-02-17 01:03:47.560 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:03:52.818 -05:00 [INF] User is selecting Game Category
+2022-02-17 01:04:02.978 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:04:06.460 -05:00 [INF] User is Displaying the Order
+2022-02-17 01:04:09.676 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:04:13.640 -05:00 [INF] User is selecting System Category
+2022-02-17 01:04:40.000 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:04:43.178 -05:00 [INF] User is Displaying the Order
+2022-02-17 01:04:46.035 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:04:49.636 -05:00 [INF] User is selecting Finalize Order
+2022-02-17 01:04:49.638 -05:00 [INF] User is attempting to Save their Order to the DB
+2022-02-17 01:04:49.671 -05:00 [INF] User is inputting their email address
+2022-02-17 01:04:57.261 -05:00 [INF] User is inputting their email password
+2022-02-17 01:14:04.332 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-17 01:14:05.121 -05:00 [INF] User is selection an input
+2022-02-17 01:16:12.252 -05:00 [INF] User is selecting Customers Menu
+2022-02-17 01:16:12.253 -05:00 [INF] Displaying Customers Menu to user
+2022-02-17 01:16:12.275 -05:00 [INF] User is selecting an input
+2022-02-17 01:16:16.637 -05:00 [INF] User is selecting Shop NOW
+2022-02-17 01:16:16.638 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:16:20.650 -05:00 [INF] User is selecting Game Category
+2022-02-17 01:16:38.987 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:16:42.062 -05:00 [INF] User is selecting System Category
+2022-02-17 01:16:49.662 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:16:53.072 -05:00 [INF] User is Displaying the Order
+2022-02-17 01:16:56.992 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 01:16:59.617 -05:00 [INF] User is selecting Finalize Order
+2022-02-17 01:16:59.636 -05:00 [INF] User is attempting to Save their Order to the DB
+2022-02-17 01:16:59.647 -05:00 [INF] User is inputting their email address
+2022-02-17 01:17:07.889 -05:00 [INF] User is inputting their email password
+2022-02-17 01:17:31.126 -05:00 [INF] Displaying Add Shop Now to user
