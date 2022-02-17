@@ -13,32 +13,24 @@ namespace StoreBL
 
         public Products AddProducts(Products p_product)
         {
-            List<Products> listofproducts = _repo.GetAllProducts();
-            if(listofproducts.Count < 20)
-            {
-                Console.WriteLine("Adding Product............");
                 return _repo.AddProducts(p_product);
-            }
-            else
-            {
-                throw new Exception("Limit of 20 objects is reached");
-            }
+
         }
         public List<Products> SearchProductsComp(string p_productComp) 
         {
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductCompany.Contains(p_productComp))//Filter a collection with a Lamda
-                    .ToList(); //ToList method converts into return List collection
+                    .Where(Products => Products.ProductCompany.Contains(p_productComp))
+                    .ToList(); 
         }
         public List<Products> SearchProductsCat(string p_productCat) 
         {
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductCategory.Contains(p_productCat))//Filter a collection with a Lamda
-                    .ToList(); //ToList method converts into return List collection
+                    .Where(Products => Products.ProductCategory.Contains(p_productCat))
+                    .ToList(); 
         }
 
         public List<Products> SearchProductsCat(string p_productCat, int p_storeID) 
@@ -46,38 +38,32 @@ namespace StoreBL
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductCategory.Contains(p_productCat))//Filter a collection with a Lamda
+                    .Where(Products => Products.ProductCategory.Contains(p_productCat))
                     .Where(Products => Products.StoreID.Equals(p_storeID))
-                    .ToList(); //ToList method converts into return List collection
+                    .ToList(); 
         }
         public List<Products> SearchProductsID(int p_productID)
         {
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductID.Equals(p_productID))//Filter a collection with a Lamda
-                    .ToList(); //ToList method converts into return List collection
+                    .Where(Products => Products.ProductID.Equals(p_productID))
+                    .ToList(); 
         }
         public List<Products> SearchProducts(string p_prodName, string p_prodComp, int p_StoreID)
         {
             Console.WriteLine("Searching for Product ...........");
             List<Products> listofproducts = _repo.GetAllProducts();
             return listofproducts
-                    .Where(Products => Products.ProductName.Contains(p_prodName))//Filter a collection with a Lamda
-                    .Where(Products => Products.ProductCompany.Contains(p_prodComp))//Filter a collection with a Lamda
-                    .Where(Products => Products.StoreID.Equals(p_StoreID))//Filter a collection with a Lamda
-                    .ToList(); //ToList method converts into return List collection
+                    .Where(Products => Products.ProductName.Contains(p_prodName))
+                    .Where(Products => Products.ProductCompany.Contains(p_prodComp))
+                    .Where(Products => Products.StoreID.Equals(p_StoreID))
+                    .ToList(); 
         }
         public Products SearchForProduct(string p_productName, int p_productStoreID)
         {
             Products getprod = new Products();
             List<Products> listofproducts = _repo.GetAllProducts();
-            foreach(Products prod in listofproducts)
-            {
-                if(prod.ProductName == p_productName & prod.StoreID == p_productStoreID)
-                {
-                    getprod = prod;
-                }
-            }
+            getprod = GetAllProducts().Where(p => p.ProductName.Contains(p_productName) & p.StoreID.Equals(p_productStoreID)).First();
             return getprod;
         }
         public double GetPrice(int p_productID)

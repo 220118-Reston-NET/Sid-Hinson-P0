@@ -15,22 +15,13 @@ namespace StoreBL
             List<Inventory> listofInventory = _repo.GetAllInventory();
             Console.WriteLine("Adding Inventory............");
             return _repo.AddInventory(p_inv);
-          
-    
         }
 
         public Inventory FindItemLevel(int p_storeID, int p_prodID)
         {
             List<Inventory> listofInventory = _repo.GetAllInventory();
             Inventory FoundItem = new Inventory();
-            foreach(Inventory item in listofInventory)
-            {
-                if(item.StoreID.Equals(p_storeID) & item.ProductID.Equals(p_prodID))
-                {
-                    FoundItem = item;
-                    // return FoundItem;
-                }
-            }
+            FoundItem = GetAllInventory().Where(inv => inv.StoreID.Equals(p_storeID) & inv.ProductID.Equals(p_prodID)).First();
             return FoundItem;
         }
 

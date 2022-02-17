@@ -24,20 +24,19 @@ namespace StoreBL
         return listofcustomers
                     .Where(Customers => Customers.CFirstName.Contains(p_fname))
                     .Where(Customers => Customers.CLastName.Contains(p_lname))
-                    .Where(Customers => Customers.CustomerEmail.Contains(p_email)) //Filter a collection with a Lambda
-                    .ToList(); //ToList method converts into return List collection
+                    .Where(Customers => Customers.CustomerEmail.Contains(p_email))
+                    .ToList(); 
         }
 
         public List<Customers> SearchForCustomers(string p_fname, string p_lname, string p_city, string p_state)
         {
-                    List<Customers> listofcustomers = _repo.GetAllCustomers();
-        return listofcustomers
+            List<Customers> listofcustomers = _repo.GetAllCustomers();
+            return listofcustomers
                     .Where(Customers => Customers.CFirstName.Contains(p_fname))
                     .Where(Customers => Customers.CLastName.Contains(p_lname))
                     .Where(Customers => Customers.CustomerCity.Contains(p_city))
                     .Where(Customers => Customers.CustomerState.Contains(p_state))
-                     //Filter a collection with a Lambda
-                    .ToList(); //ToList method converts into return List collection
+                    .ToList();
         }
 
         public int GetID(string p_email, string p_pass)

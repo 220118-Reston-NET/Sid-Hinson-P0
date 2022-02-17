@@ -4801,3 +4801,13 @@
 2022-02-17 01:16:59.647 -05:00 [INF] User is inputting their email address
 2022-02-17 01:17:07.889 -05:00 [INF] User is inputting their email password
 2022-02-17 01:17:31.126 -05:00 [INF] Displaying Add Shop Now to user
+2022-02-17 13:39:26.647 -05:00 [INF] User is pressing enter to go to Main Program Menu
+2022-02-17 13:39:28.175 -05:00 [INF] User is selection an input
+2022-02-17 13:39:34.330 -05:00 [INF] User is selecting Administration Menu
+2022-02-17 13:39:34.344 -05:00 [INF] User is making a Selection
+2022-02-17 13:39:37.684 -05:00 [INF] User is selecting Admin Check/Update Product
+2022-02-17 13:39:37.684 -05:00 [INF] Displaying Admin Products Menu to user
+2022-02-17 13:39:37.703 -05:00 [INF] User is inputting the Menu Selection
+2022-02-17 13:39:40.087 -05:00 [INF] User is selecting Check Product Level
+2022-02-17 13:41:54.414 -05:00 [INF] Displaying Admin Products Menu to user
+2022-02-17 13:41:54.426 -05:00 [INF] User is inputting the Menu Selection

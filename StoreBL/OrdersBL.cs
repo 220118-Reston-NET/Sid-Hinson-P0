@@ -12,7 +12,6 @@ namespace StoreBL
             _repo = p_repo;
         }
 
-
         public List<Orders> GetAllOrders()
         {
             List<Orders> listoforders = _repo.GetAllOrders();
@@ -62,14 +61,7 @@ namespace StoreBL
         {
             Orders foundord = new Orders();
             List<Orders> listoforders = _repo.GetAllOrders();
-            foreach(Orders ord in listoforders)
-            {
-                if(ord.OrderID == p_ordID)
-                {
-                    return ord;
-                }
-                foundord = ord;
-            }
+            foundord = GetAllOrders().Where(order => order.OrderID.Equals(p_ordID)).First();
             return foundord;
         }
 
